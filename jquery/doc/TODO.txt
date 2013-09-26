@@ -1,0 +1,7 @@
+do demos for:
+	grep
+	more selectors
+	more events
+	$.ajax
+	ajax events
+	animations
