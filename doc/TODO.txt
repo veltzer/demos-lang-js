@@ -1,5 +1,3 @@
-- add the media data to the download script too.
-
 - add demos of YUI.
 - add demos of require.js.
 - add demo of "use strict";
