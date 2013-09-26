@@ -1,0 +1,24 @@
+You must configure apache with following of symlinks:
+
+<IfModule mod_userdir.c>
+        UserDir public_html
+        #UserDir disabled root
+	
+	# enable user dir only for the mark user...
+	UserDir disabled
+	UserDir enabled mark
+
+        <Directory /home/*/public_html>
+                AllowOverride FileInfo AuthConfig Limit Indexes
+                Options MultiViews Indexes IncludesNoExec FollowSymLinks
+                #Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec FollowSymLinks
+                <Limit GET POST OPTIONS>
+                        Order allow,deny
+                        Allow from all
+                </Limit>
+                <LimitExcept GET POST OPTIONS>
+                        Order deny,allow
+                        Deny from all
+                </LimitExcept>
+        </Directory>
+</IfModule>
