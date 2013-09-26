@@ -43,6 +43,8 @@ packs=[
 	'yui-builder',
 	'yui-compressor',
 	'libjs-backbone',
+	'libjs-mootools',
+	'libjs-scriptaculous',
 ]
 
 args=['sudo','apt-get','install']
