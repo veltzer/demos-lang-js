@@ -1,5 +1,4 @@
-- make this project be able to download and install it's own dependencies
-	instead of relying on the ugly "resources.tar.xz" file in my dropbox account.
+- add the media data to the download script too.
 
 - add demos of YUI.
 - add demos of require.js.

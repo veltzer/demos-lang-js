@@ -32,6 +32,16 @@ packs=[
 	'libjs-dojo-dojox',
 	'libjs-extjs',
 	'libjs-extjs-doc',
+	'libjs-yui',
+	#'libjs-yui2',
+	'libjs-yui-doc',
+	'libjs-yui3-common',
+	'libjs-yui3-debug',
+	'libjs-yui3-doc',
+	'libjs-yui3-full',
+	'libjs-yui3-min',
+	'yui-builder',
+	'libjs-backbone',
 ]
 
 args=['sudo','apt-get','install']
