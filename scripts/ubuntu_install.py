@@ -78,9 +78,7 @@ if not os.path.isdir(folder):
 	z.close()
 	os.rename('download/ext-4.2.1.883', folder)
 
-if not os.path.isdir('media'):
-	os.mkdir('media')
-	download('http://veltzer.net/media/sample.ogg', 'media/sample.ogg')
-	download('http://veltzer.net/media/sample.ogv', 'media/sample.ogv')
-	download('http://veltzer.net/media/sample.mp4', 'media/sample.mp4')
-	download('http://veltzer.net/media/sample.mp3', 'media/sample.mp3')
+download('http://veltzer.net/media/sample.ogg', 'download/sample.ogg')
+download('http://veltzer.net/media/sample.ogv', 'download/sample.ogv')
+download('http://veltzer.net/media/sample.mp4', 'download/sample.mp4')
+download('http://veltzer.net/media/sample.mp3', 'download/sample.mp3')
