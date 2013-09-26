@@ -11,7 +11,7 @@ all: $(ALL)
 .PHONY: clean
 clean:
 	$(info doing [$@])
-	rm -rf $(OUT_DIR)
+	@rm -rf $(OUT_DIR)
 .PHONY: debug
 debug:
 	$(info doing [$@])
@@ -22,5 +22,5 @@ debug:
 # rules
 $(OBJ): $(OUT_DIR)%: $(SRC_DIR)%
 	$(info doing [$@])
-	-mkdir $(dir $@) 2> /dev/null || exit 0
-	yui-compressor $< -o $@
+	-@mkdir $(dir $@) 2> /dev/null || exit 0
+	@yui-compressor $< -o $@

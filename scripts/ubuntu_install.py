@@ -41,6 +41,7 @@ packs=[
 	'libjs-yui3-full',
 	'libjs-yui3-min',
 	'yui-builder',
+	'yui-compressor',
 	'libjs-backbone',
 ]
 
