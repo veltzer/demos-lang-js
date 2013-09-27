@@ -1,0 +1,34 @@
+<!--
+This is a standard extjs page. Note that the nocss approach of extjs
+make even regular HTML appear different.
+Compare this example to nocss_scope.html.
+
+http://www.sencha.com/forum/showthread.php?260608-New-theme-CSS-breaks-other-CSS-on-the-page
+
+	Mark Veltzer <mark@veltzer.net>
+-->
+<html>
+	<head>
+		<title>Nocss, standard</title>
+		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
+		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<script>
+			Ext.onReady(function() {
+				Ext.getBody().removeCls('x-body');
+				Ext.create('Ext.Button', {
+					text: 'Click me',
+					renderTo: Ext.getBody(),
+					handler: function() {
+						Ext.MessageBox.alert('Status', 'You clicked me', function() {
+							console.log('button was clicked');
+						});
+					},
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>This is some regular HTML</h1>
+		<p>This is a paragraph</p>
+	</body>
+</html>
