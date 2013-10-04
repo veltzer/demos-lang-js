@@ -13,7 +13,7 @@ var store=Ext.create('Ext.data.Store', {
 
 /*
 This store will consume data of the following kind (assuming
-thaat the 'User' model was correctly defined...)...
+that the 'User' model was correctly defined...)...
 {
 	'users': [
 		{
