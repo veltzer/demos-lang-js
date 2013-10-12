@@ -1,0 +1,50 @@
+<!--
+	This is an example of a script tag referencing it's own dom element.
+
+	References:
+	http://stackoverflow.com/questions/6932679/get-dom-element-where-script-tag-is
+
+	Mark Veltzer <mark@veltzer.net>
+-->
+<html>
+	<head>
+		<script>
+			function get_last_elem() {
+				var target = document.documentElement; // start at the root element
+				while (target.childNodes.length && target.lastChild.nodeType == 1) { // find last HTMLElement child node
+					target = target.lastChild;
+				}
+				// target is now the script element
+				//alert(target.parentNode); // this is p
+				return target
+			}
+			function add_content_at_current_position(content) {
+				//var target=get_last_elem()
+				//target.parentNode.insertBefore(button, target)
+				get_last_elem().parentNode.appendChild(content)
+			}
+			function create_button(title) {
+				var button=document.createElement('button')
+				var content=document.createTextNode(title)
+				button.appendChild(content)
+				add_content_at_current_position(button)
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+			This is some text
+			<script>
+				create_button('this is the first paragraph');
+			</script>
+			This is more text
+		</p>
+		<p>
+			This is some text
+			<script>
+				create_button('this is the second paragraph');
+			</script>
+			This is more text
+		</p>
+	</body>
+</html>
