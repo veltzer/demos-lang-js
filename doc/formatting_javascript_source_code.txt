@@ -1,0 +1,4 @@
+I use eclipse to do that. Just fire up eclipse, load the file you want in the eclipse
+editor and use CTRL+SHIFT+F.
+
+Another option is to use the 'fixjsstyle' utility which comes with the google linter.
