@@ -45,6 +45,8 @@ packs=[
 	'libjs-backbone',
 	'libjs-mootools',
 	'libjs-scriptaculous',
+	'slimit',
+	'shrinksafe',
 ]
 
 args=['sudo','apt-get','install']
