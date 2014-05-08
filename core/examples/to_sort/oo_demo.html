@@ -1,0 +1,45 @@
+<!--
+	Demo of object oriented JavaScript
+
+	Mark Veltzer <mark@veltzer.net>
+-->
+<html>
+	<head>
+		<title>InnerHTML Example</title>
+		<script>
+			var m_getName=function() {
+				return this.name
+			}
+			var m_getId=function() {
+				return this.id
+			}
+			var m_setName=function(name) {
+				this.name=name
+			}
+			var m_setId=function(id) {
+				this.id=id
+			}
+			var m_printMe=function() {
+				document.write("my name is "+this.name+"<br/>")
+				document.write("my id is "+this.id+"<br/>")
+			}
+			// start of person class
+			function Person(iname, iid) {
+				this.name=iname
+				this.id=iid
+			}
+			Person.prototype.printMe=m_printMe
+			Person.prototype.getName=m_getName
+			Person.prototype.getId=m_getId
+			Person.prototype.setName=m_setName
+			Person.prototype.setId=m_setId
+			// end of person class
+			var p1=new Person("mark", "23423423");
+			var p2=new Person("doron", "5464563465");
+			p1.printMe()
+			p2.printMe()
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
