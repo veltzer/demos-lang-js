@@ -1,20 +1,23 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # this script will install all the required packages that you need on
 # ubuntu to compile and work with this package.
 
 import subprocess # for check_call
-import urllib2 # for urlopen
+import urllib.request # for build_opener, urlretrieve
 import os # for mkdir
 import os.path # for isdir, isfile
 import zipfile # for ZipFile
 
 def download(url,output_file):
+	print('downloading [{0}]'.format(output_file))
 	if not os.path.isfile(output_file):
-		opener = urllib2.build_opener()
+		# this doesn't work because I need user agent...
+		#urllib.request.urlretrieve(url, output_file)
+		opener = urllib.request.build_opener()
 		opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 		response = opener.open(url)
-		f=open(output_file,'w')
+		f=open(output_file,'wb')
 		f.write(response.read())
 		f.close()
 
@@ -49,14 +52,14 @@ packs=[
 	'shrinksafe',
 ]
 
-args=['sudo','apt-get','install']
+args=['sudo','apt-get','install','--assume-yes']
 args.extend(packs)
 subprocess.check_call(args)
 
 # now install stuff which is not in the ubuntu store...
 
 # this is so apache will be able to access all the stuff that we create below...
-os.umask(0022)
+os.umask(0o022)
 
 if not os.path.isdir('download'):
 	os.mkdir('download')
