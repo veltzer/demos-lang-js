@@ -2,6 +2,9 @@
 
 # this script will install all the required packages that you need on
 # ubuntu to compile and work with this package.
+#
+# TODO:
+# - add progress report on downloading
 
 import subprocess # for check_call
 import urllib.request # for build_opener, urlretrieve
@@ -10,8 +13,8 @@ import os.path # for isdir, isfile
 import zipfile # for ZipFile
 
 def download(url,output_file):
-	print('downloading [{0}]'.format(output_file))
 	if not os.path.isfile(output_file):
+		print('downloading [{0}] because it is not there...'.format(output_file))
 		# this doesn't work because I need user agent...
 		#urllib.request.urlretrieve(url, output_file)
 		opener = urllib.request.build_opener()
