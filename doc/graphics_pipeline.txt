@@ -1,0 +1,21 @@
+
+
+			Your javascript code (javascript)
+
+			Javascript VM (C/C++)
+
+			Browser (C/C++)
+
+			libgl.so (C/C++)
+
+			user space
+			==========================================
+			kernel space
+
+			Generic graphics layer
+
+			Driver for graphics acceleration
+
+			Device (Nvidia, ATI)
+
+			Screen
