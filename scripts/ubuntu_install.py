@@ -53,6 +53,7 @@ packs=[
 	'libjs-scriptaculous',
 	'slimit',
 	'shrinksafe',
+	'closure-linter',
 ]
 
 args=['sudo','apt-get','install','--assume-yes']
