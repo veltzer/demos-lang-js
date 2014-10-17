@@ -8,15 +8,15 @@
 		<title>InnerHTML Example</title>
 		<script>
 			function doit() {
-				var s="<ul><li onclick='alert(\"foo\")'>this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>"
-				var e=document.getElementById('mydiv').innerHTML=s
+				var s="<ul><li onclick='alert(\"foo\")'>this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
+				document.getElementById('mydiv').innerHTML=s;
 			}
 			function doit_safe() {
-				var s="<ul><li onclick='alert(\"foo\")'>this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>"
-				var e=document.getElementById('mysafediv').childNodes[0].nodeValue=s
+				var s="<ul><li onclick='alert(\"foo\")'>this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
+				document.getElementById('mysafediv').childNodes[0].nodeValue=s;
 			}
 			function eval_is_evil() {
-				eval("alert(\"hi there\")")
+				eval("alert(\"hi there\")");
 			}
 		</script>
 	</head>

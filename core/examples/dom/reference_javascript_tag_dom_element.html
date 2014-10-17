@@ -16,18 +16,18 @@
 				}
 				// target is now the script element
 				//alert(target.parentNode); // this is p
-				return target
+				return target;
 			}
 			function add_content_at_current_position(content) {
 				//var target=get_last_elem()
 				//target.parentNode.insertBefore(button, target)
-				get_last_elem().parentNode.appendChild(content)
+				get_last_elem().parentNode.appendChild(content);
 			}
 			function create_button(title) {
-				var button=document.createElement('button')
-				var content=document.createTextNode(title)
-				button.appendChild(content)
-				add_content_at_current_position(button)
+				var button=document.createElement('button');
+				var content=document.createTextNode(title);
+				button.appendChild(content);
+				add_content_at_current_position(button);
 			}
 		</script>
 	</head>

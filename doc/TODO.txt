@@ -1,3 +1,5 @@
+- the checking of the source code checks the external toolkits as well which I
+	should not.
 - add demos of YUI.
 - add demos of require.js.
 - add demo of "use strict";
