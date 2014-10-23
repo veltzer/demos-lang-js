@@ -2,9 +2,7 @@
 # parameters #
 ##############
 # do you want to show the commands executed ?
-# Since we are using ?= for assignment it means that you can just
-# set this from the command line and avoid changing the makefile...
-DO_MKDBG?=0
+DO_MKDBG:=0
 FOLDERS_GREP:=jquery core jquery_controls extjs
 FOLDERS_CHECK:=jquery core jquery_controls
 SOURCES_GREP:=$(shell find $(FOLDERS_GREP) -name "*.html" -or -name "*.js")
