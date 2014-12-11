@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html>
+	<head>
+		<title>my first html page</title>
+	</head>
+	<body bgcolor="ffffff" text="000000">
+		<h2><u>Basic Syntax</u></h2>
+		<font size="13" face="Arial">Hello World</font>
+		<hr>
+
+		<b><i>This is a bold text</i></b>
+		<br/>
+		<i>This is an Italic text</i>
+		<br/>
+		<U>This text is underlined</U>
+		<br/>
+		<s>This is a cross-lined text</s>
+		<br/>
+		This regular text, and <sup>This is superscript</sup>
+		<br/>
+		This regular text, and <sub>This is subscript</sub>
+		<br/>
+		<tt>This is a tt text bla blabl </tt>
+
+		<OL type="a" start="4">
+			<lh>My first OL list</lh>
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+		</OL>
+
+		<OL style="list-style-position:inside;list-style-type:lower-greek">
+			<lh>My second OL list</lh>
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+		</OL>
+
+		<uL type="circle">
+			<lh>My first UL list</lh>
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+		</uL>
+
+		This is a space "&nbsp;"
+		<br/>
+		This is "&lt;"
+		<br/>
+		This is "&gt;"
+		<br/>
+		This is "&amp;"
+		<br/>
+		This is "&quot;"
+		<br/>
+
+		<h2><u>Images</u></h2>
+		<img src="car.jpg" height="80" width="150" border="0" align="middle"> This is an image of a car</img>
+
+		<h2><u>Links</u></h2>
+		<a href="http://www.altavista.com">altavista external</a><br/>
+		<a href="#down">down internal link</a>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<a name="down">down target</a>
+
+		<h2><u>Tables</u></h2>
+		<table border="1" width="300" height="300" bgcolor="yellow">
+			<tr>
+				<td rowspan="2">One</td>
+				<td>Two</td>
+				<td>Three</td>
+			</tr>
+			<tr>
+				<td colspan="2">Four</td>
+			</tr>
+		</table>
+
+		<h2><u>Frames</u></h2>
+		This is an example of an iframe which points to google
+		<iframe src="http://www.google.com" align="left" width="60%" height="30%"/>
+
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<h2><u>Forms</u></h2>
+		<table align="left">
+			<tr>
+				<td>
+					<form method="post" action="myServlet" name="myForm">
+						<input type="text" name="txt1" value="This is a regular text box" maxlength="5"><br/>
+						<input type="password" name="pass1" title="This is a password text box" value="This is a password text box">
+						<br/>
+						<input type="hidden" name="hidd1" title="This is a hidden text box" value="This is a hidden text box">
+						<br/>
+						<input type="button" name="btn1" value="My Button">
+						<br/>
+						<input type="submit" name="btn2" value="This is a submit button">
+						<br/>
+						<input type="reset" name="btn3" value="This is a reset button">
+						<br/>
+
+						<textarea name="txt2" rows="3">This is some free text inside a text area</textarea>
+						<br/>
+
+						<h4>Radio Buttons</h4>
+						<input type="radio" name="rdb1" state="checked">Java</input>
+						<input type="radio" name="rdb1">C++</input>
+						<input type="radio" name="rdb1">C#</input>
+						<br/>
+
+						<h4>Checkbox Buttons</h4>
+						<input type="checkbox" name="cb1" state="checked">Java
+						<input type="checkbox" name="cb1">C++
+						<input type="checkbox" name="cb1" state="checked">C#
+						<br/>
+
+						<h4>Select lists</h4>
+						<select name="lst1" size="4" state="multiple">
+							<option value="sport">item 1</option>
+							<option value="music" state="selected">item 2</option>
+							<option value="fun">item 3</option>
+							<option value="books">item 4</option>
+						</select>
+
+						<select name="lst1" size="3">
+							<option value="sport">item 1</option>
+							<option value="music" state="selected">item 2</option>
+							<option value="fun">item 3</option>
+							<option value="books">item 4</option>
+						</select>
+
+						<select name="cmb1">
+							<option value="sport">item 1</option>
+							<option value="music" state="selected">item 2</option>
+							<option value="fun">item 3</option>
+						</select>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

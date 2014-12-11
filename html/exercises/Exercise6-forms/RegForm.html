@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Registration form</title>
+</head>
+
+<body>
+	<h1>Registration Form</h1>
+	<p>Please enter your details below:</p>
+	<form action="mailto:rank@interbit.co.il" method=POST>
+		<table border=0>
+			<tr><td><b>First Name</td><td colspan=2><input type="Text" name="fName"></td></tr>
+			<tr><td><b>Last Name</td><td colspan=2><input type="Text" name="lName"></td></tr>
+			<tr><td><b>Selected password</td><td colspan=2><input type="password" name="pass" maxlength="8" size=8><font size=2> (maximum 8 characters)</font></td></tr>
+			<tr><td><b>ID</td><td colspan=2><input type="Text" name="id" size=12></td></tr>
+			<tr><td><b>Gender</td><td colspan=2><input type="radio" name="gender" checked>Male<input type="radio" name="gender">Female<input type="radio" name="gender">Unknown</td></tr>
+			<tr><td><b>Age Group</td><td colspan=2><select><option value=1>0-20<option value=2>20-40<option value=3>40-60<option value=4>60+</select> Years</td></tr>
+			<tr><td valign=top><b>Intrests</td>
+			<td>
+			<input type="checkbox" name="i_sports">Sports<br>
+			<input type="checkbox" name="i_movies">Movies<br>
+			<input type="checkbox" name="i_comp">Computers<br>
+			<input type="checkbox" name="i_shop">Shopping<br></td>
+			<td>
+			<input type="checkbox" name="i_finance">Finance<br>
+			<input type="checkbox" name="i_tv">Television<br>
+			<input type="checkbox" name="i_read">Reading<br>
+			<br></td>			
+			</tr>
+			<tr><td valign=top><b>Comments</td><td colspan=2><textarea name=comments rows="5" cols=30>Enter your comments here
+thanks.</textarea></td>
+						
+		</table>
+		<input type=submit value=send>&nbsp;<input type=reset>
+	</form> 
+
+
+</body>
+</html>
