@@ -29,7 +29,7 @@ packs=[
 	'libjs-yui3-doc',
 	'libjs-yui3-full',
 	'libjs-yui3-min',
-	'yui-builder',
+	#'yui-builder',
 	'yui-compressor',
 	'libjs-backbone',
 	'libjs-mootools',
