@@ -1,4 +1,5 @@
 var http = require('http');
+var url=require('url');
 
 data=[
 	{
@@ -20,14 +21,43 @@ data=[
 		"storage":"10"
 	}
 ]
+
+mypage=" \
+<html>\
+	<head>\
+		<script src='Model.js'></script>\
+		<script src='View.js'></script>\
+		<script src='TableView.js'></script>\
+	</head>\
+	<body>\
+		Store is:\
+		<div id=\"1\"/>\
+		Shopping cart is:\
+		<div id=\"2\"/>\
+	</body>\
+</html>\
+"
  
 http.createServer(
 	function (request, response) {
-		response.writeHead(200, {'Content-Type': 'text/plain'});
-		for(var i=0;i<data.length;i++) {
-			data[i]["price"]=""+Math.floor(Math.random()*30)
+		var pathname=url.parse(request.url).pathname;
+		switch(pathname) {
+			case '/mypage':
+				response.writeHead(200, {'Content-Type': 'text/html'});
+				response.end(mypage);
+				break;
+			case '/data':
+				response.writeHead(200, {'Content-Type': 'text/plain'});
+				for(var i=0;i<data.length;i++) {
+					data[i]["price"]=""+Math.floor(Math.random()*30)
+				}
+				response.end(JSON.stringify(data));
+				break;
+			default:
+				response.writeHead(200, {'Content-Type': 'text/plain'});
+				response.end('uhu?!?');
+				break;
 		}
-		response.end(JSON.stringify(data));
 	}
 ).listen(8000);
 	 
