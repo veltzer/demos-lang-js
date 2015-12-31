@@ -3,8 +3,8 @@ Write a general MVVM framework in Javascript
 Phase I - write the general framework
 - Write a general API for a model.
 	The model should have an API similar to this one:
-	- init() - initalize the model 
-	- getcolumns -> returns column names of the model
+	- setcolumns() -> set the column names.
+	- getcolumns() -> returns column names of the model
 	- getvalueat(row, columnname) -> return specific value.
 	- setvalueat(rwo, columnname, newvalue) -> set value
 	- deleterwo(row)
@@ -13,9 +13,9 @@ Phase I - write the general framework
 	* each model should store a list of views built on top of it.
 - Write a general API for a view.
 	The view should have an API similar to this one:
-	- init(m) - initalize the view with a reference to a model
-	- update_model() - update the model with your internal state.
-	- refresh() - refresh the view from the model.
+	- View(m) - initalize the view with a reference to a model
+	- updateFromModel() - update the view from the model.
+	- updateModel() - update the model with your state.
 
 Phase 2 - Implement the models
 - Implment a model of a store which is stored on the server side
@@ -26,7 +26,7 @@ Phase 2 - Implement the models
 	- itemcount (int) - how much of this do we have in stock.:
 - Implement the model as a shopping cart which is stored on
 	the client side.
-	It should have two columns:
+	It should have three columns:
 	- itemid (int) - id of item I want to buy
 	- itemprice (float)
 	- amount (int) - number of items of this type that I want to buy. 
