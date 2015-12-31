@@ -4,6 +4,10 @@ function Model() {
 	this.rows=0
 	this.views={}
 };
+// this method empties the model
+Model.prototype.empty=function(v) {
+	this.data={}
+};
 Model.prototype.addView=function(v) {
 	this.views[v]=0
 	this.updateViews()
