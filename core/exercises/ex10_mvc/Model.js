@@ -18,6 +18,9 @@ Model.prototype.deleteView=function(v) {
 Model.prototype.getColumns=function() {
 	return this.columns
 };
+Model.prototype.setColumns=function(c) {
+	this.columns=c
+};
 Model.prototype.getRow=function(row) {
 	return data[row]
 };
@@ -29,9 +32,12 @@ Model.prototype.setData=function(row, column, val) {
 	this.updateViews()
 };
 Model.prototype.addRow=function(row) {
-	data[this.rows]=row
+	this.data[this.rows]=row
 	this.rows++
 	this.updateViews()
+};
+Model.prototype.getRows=function() {
+	return this.rows
 };
 Model.prototype.deleteRow=function(row) {
 	data[row]=data[this.rows-1]
@@ -40,7 +46,7 @@ Model.prototype.deleteRow=function(row) {
 	this.updateViews()
 };
 Model.prototype.updateViews=function() {
-	if(view in this.views) {
+	if(var view in this.views) {
 		view.updateFromModel()
 	}
 };

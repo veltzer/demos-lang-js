@@ -14,7 +14,7 @@ TableView.prototype.create=function(id) {
 	var d_table=document.createElement('table');
 	var d_body=document.createElement('body');
 	var d_tr=document.createElement('tr');
-	var columns=this.m.getColumns()
+	var columns=this.model.getColumns()
 	for(var i=0;i<columns.length;i++) {
 		var cur_col=columns[i]
 		var d_td=document.createElement('td');
@@ -23,11 +23,11 @@ TableView.prototype.create=function(id) {
 		d_tr.appendChild(d_td);
 	}
 	d_body.appendChild(d_tr);
-	for(var j=0;j<this.m.getRows();j++) {
+	for(var j=0;j<this.model.getRows();j++) {
 		var d_tr=document.createElement('tr');
 		for(var i=0;i<columns.length;i++) {
 			var cur_col=columns[i]
-			var data=this.m.getData(j, cur_col)
+			var data=this.model.getData(j, cur_col)
 			var d_td=document.createElement('td');
 			var d_text=document.createTextNode(cur_col);
 			d_td.appendChild(d_text);

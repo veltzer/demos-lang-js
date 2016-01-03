@@ -28,6 +28,7 @@ mypage=" \
 		<script src='Model.js'></script>\
 		<script src='View.js'></script>\
 		<script src='TableView.js'></script>\
+		<script src='onload.js'></script>\
 	</head>\
 	<body>\
 		Store is:\
