@@ -1,0 +1,27 @@
+<!--
+	An example showing the .apply method of functions.
+	Remmember: .apply is suitable when you don't know the number of arguments in advance.
+	The first argument to apply is passed here as null since it is an object in an object
+	oriended context and this example is not in object oriented context.
+
+	Mark Veltzer <mark@veltzer.net>
+-->
+<html>
+	<head>
+		<script>
+			console.log("foo" in window);
+			console.log("x" in window);
+			function foo() {
+				console.log("in foo");
+			}
+			x=foo();
+			function foo() {
+				console.log("in foo2");
+			}
+			foo=function() {
+				console.log("in foo3");
+			}
+			foo();
+		</script>
+	</head>
+</html>
