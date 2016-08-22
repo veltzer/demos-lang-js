@@ -1,0 +1,32 @@
+---
+packages:
+        # libraries
+        - name: libjs-jquery
+        - name: libjs-jquery-mobile
+        - name: libjs-prototype
+        - name: libjs-json
+        - name: libjs-raphael
+        - name: libjs-jquery-ui
+        - name: libjs-jquery-ui-docs
+        - name: libjs-jquery-ui-theme-ui-lightness
+        - name: libjs-dojo-core
+        - name: libjs-dojo-dijit
+        - name: libjs-dojo-dojox
+        - name: libjs-extjs
+        - name: libjs-extjs-doc
+        - name: libjs-yui
+        - name: libjs-yui-doc
+        - name: libjs-yui3-common
+        - name: libjs-yui3-debug
+        - name: libjs-yui3-doc
+        - name: libjs-yui3-full
+        - name: libjs-yui3-min
+        - name: libjs-backbone
+        - name: libjs-mootools
+        - name: libjs-scriptaculous
+        # tools
+        - name: yui-compressor
+        - name: slimit
+        - name: shrinksafe
+        - name: closure-linter
+        # yui-builder

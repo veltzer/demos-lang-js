@@ -3,14 +3,17 @@
 ##############
 # do you want to show the commands executed ?
 DO_MKDBG:=0
+# do you want to use tools?
+DO_TOOLS:=1
+
+########
+# code #
+########
 FOLDERS_GREP:=jquery core jquery_controls extjs
 FOLDERS_CHECK:=jquery core jquery_controls
 SOURCES_GREP:=$(shell find $(FOLDERS_GREP) -name "*.html" -or -name "*.js")
 SOURCES_CHECK:=$(shell find $(FOLDERS_CHECK) -name "*.html" -or -name "*.js")
 
-###############
-# definitions #
-###############
 # silent stuff
 ifeq ($(DO_MKDBG),1)
 Q:=
@@ -20,9 +23,25 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
+# tools
+ifeq ($(DO_TOOLS),1)
+ALL_DEP+=tools.stamp
+endif # DO_TOOLS
+
+ALL:=
+
 #########
 # rules #
 #########
+.PHONY: all
+all: $(ALL) $(ALL_DEP)
+	@true
+
+tools.stamp: apt.yaml
+	$(info doing [$@])
+	$(Q)templar_cmd install_deps
+	$(Q)make_helper touch-mkdir $@
+
 .PHONY: check_lint
 check_lint:
 	$(info doing [$@])
