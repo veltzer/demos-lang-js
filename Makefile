@@ -45,7 +45,7 @@ tools.stamp: apt.yaml
 .PHONY: check_lint
 check_lint:
 	$(info doing [$@])
-	$(Q)~/install/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(SOURCES_CHECK)
+	$(Q)tools/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(SOURCES_CHECK)
 
 .PHONY: check_grep 
 check_grep:
