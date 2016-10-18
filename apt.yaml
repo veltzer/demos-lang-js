@@ -14,8 +14,6 @@ packages:
         - name: libjs-dojo-dojox
         - name: libjs-extjs
         - name: libjs-extjs-doc
-        - name: libjs-yui
-        - name: libjs-yui-doc
         - name: libjs-yui3-common
         - name: libjs-yui3-debug
         - name: libjs-yui3-doc
