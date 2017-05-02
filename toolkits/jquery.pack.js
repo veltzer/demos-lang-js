@@ -1,1 +1,0 @@
-/usr/share/javascript/jquery/jquery.pack.js
