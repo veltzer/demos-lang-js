@@ -5,13 +5,14 @@
 -->
 <html>
 	<head>
-		<script src='../../toolkits/jquery.js'></script>
+		<meta charset="utf-8"/>
+		<script src='/jquery.js'></script>
 		<script>
 			$(document).ready(function() {
 				$('#mybutton').click(function() {
 					$.get(
 						'ajax.json',
-						'{key:value}',
+						{ "key": "value" },
 						function(data) { console.log(data.name); },
 						'json'
 					);
