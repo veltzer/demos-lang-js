@@ -15,3 +15,6 @@ in your html?
 
 - config your web server to send "Content-type" -> "utf-8" in the http headers
 	it is sending.
+
+References:
+- https://www.w3.org/International/questions/qa-html-encoding-declarations
