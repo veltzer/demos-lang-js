@@ -4,7 +4,7 @@
 # do you want to show the commands executed ?
 DO_MKDBG:=0
 # do you want to use tools?
-DO_TOOLS:=1
+DO_TOOLS:=0
 
 ########
 # code #
