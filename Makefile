@@ -37,7 +37,7 @@ ALL:=
 all: $(ALL) $(ALL_DEP)
 	@true
 
-tools.stamp: templardefs/deps.py
+tools.stamp: config/deps.py
 	$(info doing [$@])
 	$(Q)templar install_deps
 	$(Q)make_helper touch-mkdir $@

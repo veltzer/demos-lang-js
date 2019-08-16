@@ -4,3 +4,9 @@
 - add demos of require.js.
 - add demo of "use strict";
 	see http://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it 
+
+- implement compression using yui-compressor this way:
+	$(OBJ): $(OUT_DIR)%: $(SRC_DIR)%
+		$(info doing [$@])
+		-@mkdir $(dir $@) 2> /dev/null || exit 0
+		@yui-compressor $< -o $@
