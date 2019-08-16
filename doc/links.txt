@@ -8,3 +8,10 @@ the bind function in JavaScript
 	https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function/bind
 Brendan Eich on proxies in JavaScript:
 	http://jsconf.eu/2010/speaker/be_proxy_objects.html
+
+
+dates:
+	https://flaviocopes.com/javascript-dates/
+	https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+	https://momentjs.com/
