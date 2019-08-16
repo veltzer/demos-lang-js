@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 """
 Web server for develpment purposes, light weight with some features.
@@ -23,6 +23,7 @@ import threading
 import time
 import http.server
 import mimetypes
+import daemon
 
 class StoppableHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     """http request handler with QUIT stopping the server"""
@@ -179,5 +180,5 @@ def main():
         server.server_close()
         # server.socket.close()
 
-
-main()
+with daemon.DaemonContext():
+    main()
