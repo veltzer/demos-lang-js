@@ -6,9 +6,11 @@ Web server for develpment purposes, light weight with some features.
     Mark Veltzer
 
 TODO:
-- make the server re-attach to init and log to system
-    instead of to screen.
-    make this optional.
+- call this project dws.
+- fix the logging of the web server to go to .dws_logs
+- fix it so the cwd of the web server will not change to /.
+- fix it so if there is a problem with the web server I will print the error
+    to the screen.
 - self.path has parameters in it. strip them.
 - /favicon.ico return 500 and should return 404.
 - make the search path much more elaborate so that I can easy searching for files inside
