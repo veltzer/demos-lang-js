@@ -1,0 +1,17 @@
+How to make the browser stop screaming at you for not declaring content type (usually UTF-8)
+in your html?
+
+- in your html (first way)
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta charset="utf-8"/>
+
+- in your html (second way)
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+- config your web server to send "Content-type" -> "utf-8" in the http headers
+	it is sending.

@@ -24,7 +24,16 @@ import time
 import http.server
 import mimetypes
 
-class MyHandler(http.server.BaseHTTPRequestHandler):
+class StoppableHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
+    """http request handler with QUIT stopping the server"""
+
+    def do_QUIT(self):
+        """send 200 OK response, and set server.stop to True"""
+        self.send_response(200)
+        self.end_headers()
+        self.server.stop = True
+
+class MyHandler(StoppableHttpRequestHandler):
     def __init__(self, *args):
         # order is important here and base class is fucked up
         self.encoding = "utf8"
@@ -145,12 +154,22 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         """
         return super().log_message(format, *args)
 
+
+class StoppableHttpServer(http.server.HTTPServer):
+    """http server that reacts to self.stop flag"""
+
+    def serve_forever(self):
+        """Handle one request at a time until stopped."""
+        self.stop = False
+        while not self.stop:
+            self.handle_request()
+
 def main():
     host = 'localhost'
     port = 8001
     url = 'http://{}:{}'.format(host, port)
     try:
-        server = http.server.HTTPServer((host, port), MyHandler)
+        server = StoppableHttpServer((host, port), MyHandler)
         print('contact me at [{}]'.format(url))
         server.serve_forever()
     except KeyboardInterrupt:
