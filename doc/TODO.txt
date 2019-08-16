@@ -1,3 +1,9 @@
+- do a demo of moments.js
+	https://momentjs.com/
+
+- do a demo of mdbootstrp:
+	https://mdbootstrap.com/products/react-ui-kit/
+
 - fix the demo of google maps (I'm missing an API key)
 	https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=maps_js&utm_medium=degraded&utm_campaign=keyless#api-key-and-billing-errors
 
