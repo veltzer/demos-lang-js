@@ -1,3 +1,8 @@
+- split off:
+	demos-css
+	demos-jquery
+	demos-html
+
 - do a demo of moments.js
 	https://momentjs.com/
 
