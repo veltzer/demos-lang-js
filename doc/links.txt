@@ -8,6 +8,8 @@ the bind function in JavaScript
 	https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function/bind
 Brendan Eich on proxies in JavaScript:
 	http://jsconf.eu/2010/speaker/be_proxy_objects.html
+Planting markings in code for performances testing:
+	https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark
 
 
 dates:
