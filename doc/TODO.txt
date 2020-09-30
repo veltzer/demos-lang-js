@@ -3,6 +3,10 @@
 	demos-jquery
 	demos-html
 
+- do demo of how to prevent a user closing a page.
+	Can it be done using an XHR? Sync or async?
+	https://stackoverflow.com/questions/2229942/how-to-block-users-from-closing-a-window-in-javascript
+
 - do a demo of moments.js
 	https://momentjs.com/
 
