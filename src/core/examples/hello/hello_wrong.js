@@ -2,7 +2,7 @@
 /*
 	This shows that if you call the file.js then most browsers will not render it's content correctly
 
-	Mark Veltzer <mark@veltzer.net>
+	Mark Veltzer <mark.veltzer@gmail.com>
 */
 <html>
 	<head>
