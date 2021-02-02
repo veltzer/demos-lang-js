@@ -42,10 +42,15 @@ tools.stamp: config/deps.py
 	$(Q)templar install_deps
 	$(Q)pymakehelper touch_mkdir $@
 
-.PHONY: check_lint
-check_lint:
+.PHONY: check_jsl
+check_jsl:
 	$(info doing [$@])
 	$(Q)tools/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(SOURCES_CHECK)
+
+.PHONY: check_eslint
+check_eslint:
+	$(info doing [$@])
+	$(Q)node_modules/.bin/eslint $(SOURCES_CHECK)
 
 .PHONY: check_grep 
 check_grep:
