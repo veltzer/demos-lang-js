@@ -9,10 +9,8 @@ DO_TOOLS:=0
 ########
 # code #
 ########
-FOLDERS_GREP:=src/jquery src/core src/jquery_controls src/extjs
-FOLDERS_CHECK:=src/jquery src/core src/jquery_controls
-SOURCES_GREP:=$(shell find $(FOLDERS_GREP) -name "*.html" -or -name "*.js")
-SOURCES_CHECK:=$(shell find $(FOLDERS_CHECK) -name "*.html" -or -name "*.js")
+FOLDERS_SRC:=src
+SOURCES:=$(shell find $(FOLDERS_SRC) -name "*.html" -or -name "*.js")
 
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -45,27 +43,27 @@ tools.stamp: config/deps.py
 .PHONY: check_jsl
 check_jsl:
 	$(info doing [$@])
-	$(Q)tools/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(SOURCES_CHECK)
+	$(Q)tools/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(SOURCES)
 
 .PHONY: check_eslint
 check_eslint:
 	$(info doing [$@])
-	$(Q)node_modules/.bin/eslint $(SOURCES_CHECK)
+	$(Q)node_modules/.bin/eslint $(SOURCES)
 
 .PHONY: check_grep 
 check_grep:
 	$(info doing [$@])
-	$(Q)-git grep "<br>" -- $(FOLDERS_GREP)
-	$(Q)-git grep "type=\"text/javascript" -- $(FOLDERS_GREP)
-	$(Q)-git grep "\"" -- $(SOURCES_GREP) | grep -v JSON
-	$(Q)-git grep "DOCTYPE" -- $(SOURCES_GREP)
-	$(Q)-git grep "  " -- $(SOURCES_GREP)
-	$(Q)-git grep " + " -- $(SOURCES_GREP)
-	$(Q)-git grep " = " -- $(SOURCES_GREP)
-	$(Q)-git grep " - " -- $(SOURCES_GREP)
-	$(Q)-git grep " > " -- $(SOURCES_GREP)
-	$(Q)-git grep " < " -- $(SOURCES_GREP)
-	$(Q)-git grep " $$" -- $(SOURCES_GREP)
+	$(Q)-git grep "<br>" -- $(FOLDERS_SRC)
+	$(Q)-git grep "type=\"text/javascript" -- $(FOLDERS_SRC)
+	$(Q)-git grep "\"" -- $(SOURCES) | grep -v JSON
+	$(Q)-git grep "DOCTYPE" -- $(SOURCES)
+	$(Q)-git grep "  " -- $(SOURCES)
+	$(Q)-git grep " + " -- $(SOURCES)
+	$(Q)-git grep " = " -- $(SOURCES)
+	$(Q)-git grep " - " -- $(SOURCES)
+	$(Q)-git grep " > " -- $(SOURCES)
+	$(Q)-git grep " < " -- $(SOURCES)
+	$(Q)-git grep " $$" -- $(SOURCES)
 
 .PHONY: count
 count:
@@ -80,10 +78,10 @@ show:
 .PHONY: find_weird_files
 find_weird_files:
 	$(info doing [$@])
-	$(Q)find . -name toolkits -prune -o -type f -and -not -name "*.js" -and -not -name "*.html" -and -not -name "*.php" -and -not -name "*.txt" -and -not -name "*.json" -and -not -name "Makefile" -and -not -name "*.ajax" -and -not -name "*.ppt" -and -not -name "*.css" -and -not -name "*.pdf" -and -not -name "*.jpg" -and -not -name "*.png" -and -not -name ".gitignore" -and -not -name "*.odp" -and -not -name "*.htaccess" -and -not -name "*.pptx" -and -not -name "*.pps" -and -not -name "*.gif" -and -not -name "*.swf" -and -not -name "*.xml" -and -not -name "*.sh"
+	$(Q)find src -type f -and -not -name "*.html" -and -not -name "*.js" -and -not -name "*.css"
+#	$(Q)find . -name toolkits -prune -o -type f -and -not -name "*.js" -and -not -name "*.html" -and -not -name "*.php" -and -not -name "*.txt" -and -not -name "*.json" -and -not -name "Makefile" -and -not -name "*.ajax" -and -not -name "*.ppt" -and -not -name "*.css" -and -not -name "*.pdf" -and -not -name "*.jpg" -and -not -name "*.png" -and -not -name ".gitignore" -and -not -name "*.odp" -and -not -name "*.htaccess" -and -not -name "*.pptx" -and -not -name "*.pps" -and -not -name "*.gif" -and -not -name "*.swf" -and -not -name "*.xml" -and -not -name "*.sh"
 
 .PHONY: debug
 debug:
 	$(info doing [$@])
-	$(info SOURCES_GREP is $(SOURCES_GREP))
-	$(info SOURCES_CHECK is $(SOURCES_CHECK))
+	$(info SOURCES is $(SOURCES))
