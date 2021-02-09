@@ -5,7 +5,7 @@ dojo.require("dojo.data.ItemFileReadStore");
 var startPoint = 0;
 var store;
 function initialization() {
-	store = new dojo.data.ItemFileReadStore({url: "data.ajax"});
+	store = new dojo.data.ItemFileReadStore({url: "data.json"});
 	getData();
 }
 function getData() {

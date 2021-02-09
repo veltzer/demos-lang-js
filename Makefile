@@ -3,8 +3,6 @@
 ##############
 # do you want to show the commands executed ?
 DO_MKDBG:=0
-# do you want to use tools?
-DO_TOOLS:=0
 
 ########
 # code #
@@ -21,11 +19,6 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-# tools
-ifeq ($(DO_TOOLS),1)
-ALL_DEP+=tools.stamp
-endif # DO_TOOLS
-
 ALL:=
 
 #########
@@ -34,11 +27,6 @@ ALL:=
 .PHONY: all
 all: $(ALL) $(ALL_DEP)
 	@true
-
-tools.stamp: config/deps.py
-	$(info doing [$@])
-	$(Q)templar install_deps
-	$(Q)pymakehelper touch_mkdir $@
 
 .PHONY: check_jsl
 check_jsl:
