@@ -9,6 +9,7 @@ DO_MKDBG:=0
 ########
 FOLDERS_SRC:=src
 SOURCES:=$(shell find $(FOLDERS_SRC) -name "*.html" -or -name "*.js")
+SOURCES_JS:=$(shell find $(FOLDERS_SRC) -name "*.js")
 
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -36,7 +37,7 @@ check_jsl:
 .PHONY: check_eslint
 check_eslint:
 	$(info doing [$@])
-	$(Q)eslint $(SOURCES)
+	$(Q)eslint $(SOURCES_JS)
 
 .PHONY: check_grep 
 check_grep:
