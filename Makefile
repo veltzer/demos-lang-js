@@ -36,7 +36,7 @@ check_jsl:
 .PHONY: check_eslint
 check_eslint:
 	$(info doing [$@])
-	$(Q)node_modules/.bin/eslint $(SOURCES)
+	$(Q)eslint $(SOURCES)
 
 .PHONY: check_grep 
 check_grep:
