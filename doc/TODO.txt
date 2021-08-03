@@ -1,3 +1,5 @@
+- make a simple way to install jsl, eslint
+
 - split off:
 	demos-css
 	demos-jquery

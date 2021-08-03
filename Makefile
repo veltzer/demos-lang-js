@@ -73,3 +73,8 @@ find_weird_files:
 debug:
 	$(info doing [$@])
 	$(info SOURCES is $(SOURCES))
+
+.PHONY: clean_hard
+clean_hard:
+	$(info doing [$@])
+	$(Q)git clean -qffxd
