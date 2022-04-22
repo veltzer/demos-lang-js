@@ -3,10 +3,13 @@
 ##############
 # do you want to show the commands executed ?
 DO_MKDBG:=0
+# do you want dependency on the Makefile itself ?
+DO_ALLDEP:=1
 
 ########
 # code #
 ########
+ALL:=
 FOLDERS_SRC:=src
 SOURCES:=$(shell find $(FOLDERS_SRC) -name "*.html" -or -name "*.js")
 SOURCES_JS:=$(shell find $(FOLDERS_SRC) -name "*.js")
@@ -20,25 +23,25 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-ALL:=
+# dependency on the makefile itself
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif
 
 #########
 # rules #
 #########
 .PHONY: all
-all: $(ALL) $(ALL_DEP)
+all: $(ALL)
 	@true
-
 .PHONY: check_jsl
 check_jsl:
 	$(info doing [$@])
 	$(Q)tools/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(SOURCES)
-
 .PHONY: check_eslint
 check_eslint:
 	$(info doing [$@])
 	$(Q)eslint $(SOURCES_JS)
-
 .PHONY: check_grep 
 check_grep:
 	$(info doing [$@])
@@ -53,28 +56,23 @@ check_grep:
 	$(Q)-git grep " > " -- $(SOURCES)
 	$(Q)-git grep " < " -- $(SOURCES)
 	$(Q)-git grep " $$" -- $(SOURCES)
-
 .PHONY: count
 count:
 	$(info doing [$@])
 	$(Q)find . -name toolkits -prune -o -type f -and -name "*.js" -or -name "*.html" | wc -l
-
 .PHONY: show
 show:
 	$(info doing [$@])
 	$(Q)find . -name toolkits -prune -o -type f -and -name "*.js" -or -name "*.html"
-
 .PHONY: find_weird_files
 find_weird_files:
 	$(info doing [$@])
 	$(Q)find src -type f -and -not -name "*.html" -and -not -name "*.js" -and -not -name "*.css"
 #	$(Q)find . -name toolkits -prune -o -type f -and -not -name "*.js" -and -not -name "*.html" -and -not -name "*.php" -and -not -name "*.txt" -and -not -name "*.json" -and -not -name "Makefile" -and -not -name "*.ajax" -and -not -name "*.ppt" -and -not -name "*.css" -and -not -name "*.pdf" -and -not -name "*.jpg" -and -not -name "*.png" -and -not -name ".gitignore" -and -not -name "*.odp" -and -not -name "*.htaccess" -and -not -name "*.pptx" -and -not -name "*.pps" -and -not -name "*.gif" -and -not -name "*.swf" -and -not -name "*.xml" -and -not -name "*.sh"
-
 .PHONY: debug
 debug:
 	$(info doing [$@])
 	$(info SOURCES is $(SOURCES))
-
 .PHONY: clean_hard
 clean_hard:
 	$(info doing [$@])
