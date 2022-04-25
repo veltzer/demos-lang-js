@@ -1,7 +1,4 @@
-tools=[
-    'jsl',
-]
-packs=[
+packages=[
     # libraries
     'libjs-jquery',
     'libjs-jquery-mobile',
@@ -30,4 +27,7 @@ packs=[
     'shrinksafe',
     'closure-linter',
     #'yui-builder',
+]
+tools=[
+    'jsl',
 ]
