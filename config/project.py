@@ -13,5 +13,5 @@ project_short_description = project_long_description
 # keywords to put on html pages or for search, dont put the name of the project or my details
 # as they will be added automatically...
 project_license = "GPL3"
-project_year_started = "2013"
+project_year_started = 2013
 project_description = project_long_description
