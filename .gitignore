@@ -1,9 +1,8 @@
 /download
-/tools.stamp
-/tools
 __pycache__
 *.pyo
 *.pyc
 /.venv
 /.pydmt
 /node_modules
+*.stamp
