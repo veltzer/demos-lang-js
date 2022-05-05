@@ -11,8 +11,9 @@ packages=[
     'libjs-dojo-core',
     'libjs-dojo-dijit',
     'libjs-dojo-dojox',
-    'libjs-extjs',
-    'libjs-extjs-doc',
+    # no longer there
+    #'libjs-extjs',
+    #'libjs-extjs-doc',
     'libjs-yui3-common',
     'libjs-yui3-debug',
     'libjs-yui3-doc',
@@ -25,7 +26,6 @@ packages=[
     'yui-compressor',
     'slimit',
     'shrinksafe',
-    'closure-linter',
     #'yui-builder',
 ]
 tools=[
