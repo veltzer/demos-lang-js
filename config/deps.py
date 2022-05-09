@@ -11,14 +11,18 @@ packages=[
     'libjs-dojo-core',
     'libjs-dojo-dijit',
     'libjs-dojo-dojox',
-    # no longer there
+
+    # extjs is no longer a part of ubuntu
     #'libjs-extjs',
     #'libjs-extjs-doc',
-    'libjs-yui3-common',
-    'libjs-yui3-debug',
-    'libjs-yui3-doc',
-    'libjs-yui3-full',
-    'libjs-yui3-min',
+
+    # yui3 is no longer a part of ubuntu
+    # 'libjs-yui3-common',
+    # 'libjs-yui3-debug',
+    # 'libjs-yui3-doc',
+    # 'libjs-yui3-full',
+    # 'libjs-yui3-min',
+
     'libjs-backbone',
     'libjs-mootools',
     'libjs-scriptaculous',
