@@ -1,1 +1,1 @@
-license = "GPL3"
+license_type = "GPLV3"
