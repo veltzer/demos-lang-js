@@ -19,17 +19,17 @@ first time when you run.
 <html>
 	<head>
 		<title>Ext.require basic demo</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			// the function passed on the next line will only be executed
 			// after the Ext.Window is loaded. Mind you, the loading of Ext.Window
 			// triggers the loading of other classes which are need by it...
 			// You can see it all in your debugger...
 			Ext.onReady(function() {
-				Ext.require('Ext.Window',function() {
+				Ext.require("Ext.Window",function() {
 					new Ext.Window({
-						title : 'Loaded Dynamically!',
+						title : "Loaded Dynamically!",
 						width : 200,
 						height: 100,
 					}).show();

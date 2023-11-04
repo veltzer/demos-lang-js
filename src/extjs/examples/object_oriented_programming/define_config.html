@@ -3,36 +3,36 @@ An example showing how to use config type constructors in ExtJs OO.
 The idea is that you can have a builtin config for each object which
 can be seen from the outside for all kinds of purposes (documentation?!?)
 and that a user may override by passing a JavaScript object to the constructor.
-To make it work you have to call 'this.initConfig(config)' (see below...).
+To make it work you have to call "this.initConfig(config)" (see below...).
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>
 		<title>Ext.define config feature</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.define('Person',{
+				Ext.define("Person",{
 					config: {
-						name: 'Unknown',
+						name: "Unknown",
 					},
 					constructor: function(config) {
 						this.initConfig(config);
 					},
 					eat: function(foodType) {
-						console.log(this.name+' is eating a '+foodType);
+						console.log(this.name+" is eating a "+foodType);
 					},
 					applyName: function(newname) {
-						console.log('name is being changed to '+newname);
+						console.log("name is being changed to "+newname);
 						return newname+newname;
 					},
 				});
-				var aaron=new Person({ name: 'Aaron' });
-				aaron.eat('Sandwich');
+				var aaron=new Person({ name: "Aaron" });
+				aaron.eat("Sandwich");
 				console.log(aaron.getName());
-				aaron.setName('Mark');
+				aaron.setName("Mark");
 				console.log(aaron.getName());
 				console.log(Person);
 				console.log(aaron instanceof Person);

@@ -6,27 +6,27 @@ This example explores how one defines a constructor using Ext.define.
 <html>
 	<head>
 		<title>Ext.define constructor</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.define('Person', {
+				Ext.define("Person", {
 					// A property
-					name: 'Unknown',
+					name: "Unknown",
 					// A constructor
 					constructor: function(name) {
-						console.log('in the constructor');
+						console.log("in the constructor");
 						if(name) {
 							this.name=name;
 						}
 					},
 					// A method
 					eat: function(foodType) {
-						console.log(this.name+' is eating a '+foodType);
+						console.log(this.name+" is eating a "+foodType);
 					}
 				});
-				var aaron=new Person('Aaron');
-				aaron.eat('Sandwich');
+				var aaron=new Person("Aaron");
+				aaron.eat("Sandwich");
 				console.log(aaron);
 				console.log(Person);
 				console.log(aaron instanceof Person);

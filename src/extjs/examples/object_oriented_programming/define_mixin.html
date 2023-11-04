@@ -7,58 +7,58 @@ This example was shamelessly stolen from the Ext.ClassManager documentation.
 <html>
 	<head>
 		<title>Ext.define mixin example</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.define('Person', {
+				Ext.define("Person", {
 					// A property
-					name: 'Unknown',
+					name: "Unknown",
 					// A method
 					eat: function(foodType) {
-						console.log(this.name+' is eating a '+foodType);
+						console.log(this.name+" is eating a "+foodType);
 					}
 				});
-				Ext.define('CanPlayGuitar', {
+				Ext.define("CanPlayGuitar", {
 					playGuitar: function() {
-						console.log('F#...G...D...A');
+						console.log("F#...G...D...A");
 					},
 				});
-				Ext.define('CanComposeSongs', {
+				Ext.define("CanComposeSongs", {
 					composeSongs: function() {
 					},
 				});
-				Ext.define('CanSing', {
+				Ext.define("CanSing", {
 					sing: function() {
-						console.log('I'm on the highway to hell...')
+						console.log("Im on the highway to hell...")
 					},
 				});
-				Ext.define('Musician', {
-					extend: 'Person',
+				Ext.define("Musician", {
+					extend: "Person",
 					mixins: {
-						canPlayGuitar: 'CanPlayGuitar',
-						canComposeSongs: 'CanComposeSongs',
-						canSing: 'CanSing',
+						canPlayGuitar: "CanPlayGuitar",
+						canComposeSongs: "CanComposeSongs",
+						canSing: "CanSing",
 					},
 				});
-				Ext.define('CoolPerson', {
-					extend: 'Person',
+				Ext.define("CoolPerson", {
+					extend: "Person",
 					mixins: {
-						canPlayGuitar: 'CanPlayGuitar',
-						canSing: 'CanSing'
+						canPlayGuitar: "CanPlayGuitar",
+						canSing: "CanSing"
 					},
 					sing: function() {
-						console.log('Ahem....');
+						console.log("Ahem....");
 						this.mixins.canSing.sing.call(this);
-						console.log('[Playing guitar at the same time...]');
+						console.log("[Playing guitar at the same time...]");
 						this.playGuitar();
 					},
 				});
-				var me=new CoolPerson('Jacky');
-				me.sing(); // console.log('Ahem...');
-				// console.log('I'm on the highway to hell...');
-				// console.log('[Playing guitar at the same time...]');
-				// console.log('F#...G...D...A');
+				var me=new CoolPerson("Jacky");
+				me.sing(); // console.log("Ahem...");
+				// console.log("Im on the highway to hell...");
+				// console.log("[Playing guitar at the same time...]");
+				// console.log("F#...G...D...A");
 			});
 		</script>
 	</head>
