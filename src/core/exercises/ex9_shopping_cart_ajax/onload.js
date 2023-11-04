@@ -1,5 +1,7 @@
 /*jsl:import inventory.js*/
 /*jsl:import cart.js*/
+import { Cart } from "cart.js";
+import { Inventory, InventoryItem } from "inventory.js";
 window.onload=function() {
 	// lets add items to the inventory
 	var i=Inventory.getInstance();

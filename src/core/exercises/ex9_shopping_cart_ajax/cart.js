@@ -1,4 +1,5 @@
 /*jsl:import inventory.js*/
+import { Inventory } from "inventory.js";
 // here comes the cart...
 function Cart() {
 	this.tbid=undefined;
