@@ -25,8 +25,8 @@ Cart.prototype.sellItemById=function(id,amount) {
 	var i=Inventory.getInstance();
 	i.verifyItemInInventory(id);
 	this.verifyBuyingItem(id);
-	var amount_in_cart=this.buyMap[id];
-	if(amount_in_cart<amount) {
+	var amountInCart=this.buyMap[id];
+	if(amountInCart<amount) {
 		throw 'too many items sold '+amount;
 	}
 	this.buyMap[id]-=amount;

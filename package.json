@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "eslint": "latest",
-    "htmlhint": "latest"
+    "htmlhint": "latest",
+    "standard": "latest"
   }
 }
