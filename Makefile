@@ -53,7 +53,7 @@ ALL+=$(ALL_JSLINT)
 endif # DO_JSLINT
 
 ifeq ($(DO_CHECK_HTML),1)
-ALL+=check_html
+ALL+=out/html.stamp
 endif # DO_CHECK_HTML
 
 # dependency on the makefile itself
@@ -89,12 +89,6 @@ check_grep:
 	$(Q)-git grep " > " -- $(ALL_HTML) $(ALL_JS)
 	$(Q)-git grep " < " -- $(ALL_HTML) $(ALL_JS)
 	$(Q)-git grep " $$" -- $(ALL_HTML) $(ALL_JS)
-.PHONY: check_html
-check_html:
-	$(info doing [$@])
-	$(Q)git grep -l "'" -- "*.html" || true
-	$(Q)git grep -l " $$" -- "*.html" || true
-	$(Q)git grep -l "  " -- "*.html" || true
 .PHONY: count
 count:
 	$(info doing [$@])
@@ -124,6 +118,12 @@ clean:
 clean_hard:
 	$(info doing [$@])
 	$(Q)git clean -qffxd
+out/html.stamp: $(ALL_HTML)
+	$(info doing [$@])
+	$(Q)git grep -l "'" -- "*.html" || true
+	$(Q)git grep -l " $$" -- "*.html" || true
+	$(Q)git grep -l "  " -- "*.html" || true
+	$(Q)pymakehelper touch_mkdir $@
 
 ############
 # patterns #
