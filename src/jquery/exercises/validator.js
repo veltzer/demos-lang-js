@@ -1,6 +1,6 @@
 function Validator(id_for_append,name,submitName,validator,errorMsg) {
 	// this holds whether I am validated or not.
-	// 0: not validated, 1: validated, -1: don't know
+	// 0: not validated, 1: validated, -1: dont know
 	this.state=-1;
 	this.listeners=[];
 	this.id_for_append=id_for_append;

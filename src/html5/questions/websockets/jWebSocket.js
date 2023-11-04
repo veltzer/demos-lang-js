@@ -368,8 +368,8 @@ jws.oop.addPlugIn = function( aClass, aPlugIn ) {
 	aClass.fPlugIns.push( aPlugIn );
 	// clone all methods of the plug-in to the class
 	for( var lField in aPlugIn ) {
-		// don't overwrite existing methods of class with plug-in methods
-		// ensure that native jWebSocket methods don't get overwritten!
+		// dont overwrite existing methods of class with plug-in methods
+		// ensure that native jWebSocket methods dont get overwritten!
 		if( !aClass.prototype[ lField ] ) {
 			aClass.prototype[ lField ] = aPlugIn[ lField ];
 			// var lObj = aClass.prototype[ lField ];
@@ -600,7 +600,7 @@ jws.oop.declareClass( "jws", "jWebSocketBaseClient", null, {
 
 //	---------------------------------------------------------------------------
 //  jWebSocket token client (this is an abstract class)
-//  don't create direct instances of jWebSocketTokenClient
+//  dont create direct instances of jWebSocketTokenClient
 //	---------------------------------------------------------------------------
 
 //:package:*:jws

@@ -69,6 +69,10 @@ check_grep:
 	$(Q)-git grep " > " -- $(ALL_HTML) $(ALL_JS)
 	$(Q)-git grep " < " -- $(ALL_HTML) $(ALL_JS)
 	$(Q)-git grep " $$" -- $(ALL_HTML) $(ALL_JS)
+.PHONY: check_html
+check_html:
+	$(info doing [$@])
+	$(Q)-git grep -l "'" -- "*.html"
 .PHONY: count
 count:
 	$(info doing [$@])

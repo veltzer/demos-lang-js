@@ -2,7 +2,7 @@
 <!--
 	An example of an observable pattern in Java.
 	The observable object is written with observation in mind.
-	That is why it is called 'active'.
+	That is why it is called "active".
 
 	A naive implementation of this would use a javascript object
 	as a hash table but that would be wrong since javascript
@@ -56,19 +56,19 @@
 				this.name=name;
 			}
 			Listener.prototype.notify=function(newname) {
-				document.write(this.name+' received event about name change to '+newname+'</br>');
+				document.write(this.name+" received event about name change to "+newname+"</br>");
 			};
 			Listener.prototype.toString=function() {
 				return this.name;
 			};
-			var p=new Person('mark',435);
-			var l1=new Listener('first listener');
-			var l2=new Listener('second listener');
+			var p=new Person("mark",435);
+			var l1=new Listener("first listener");
+			var l2=new Listener("second listener");
 			p.addListener(l1);
 			p.addListener(l2);
-			p.setName('shay');
+			p.setName("shay");
 			p.removeListener(l1);
-			p.setName('doron');
+			p.setName("doron");
 		</script>
 	</head>
 </html>

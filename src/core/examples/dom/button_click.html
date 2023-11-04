@@ -4,7 +4,7 @@
 	Notes:
 	- if you register the event using mybutton.onclick=function() {...}
 	then only the last one is actually registered and eventually executed.
-	- if you register the event using mybutton.addEventListener('click',function() {
+	- if you register the event using mybutton.addEventListener("click",function() {
 		...}) then you can register as many events as you like.
 	- there is no return type to .addEventListener to enable deregistration.
 
@@ -13,33 +13,33 @@
 <html>
 	<head>
 		<script>
-			window.addEventListener('load',function() {
-				var mybutton=document.getElementById('mybutton');
+			window.addEventListener("load",function() {
+				var mybutton=document.getElementById("mybutton");
 				var i=0;
 				mybutton.onclick=function() {
-					console.log('click1 '+i);
+					console.log("click1 "+i);
 					i++;
 				};
 				mybutton.onclick=function() {
-					console.log('click2 '+i);
+					console.log("click2 "+i);
 					i++;
 				};
 				function click5() {
-					console.log('click5');
+					console.log("click5");
 				}
-				mybutton.addEventListener('click',function() {
-					console.log('click3');
+				mybutton.addEventListener("click",function() {
+					console.log("click3");
 				});
-				var t=mybutton.addEventListener('click',function() {
-					console.log('click4');
+				var t=mybutton.addEventListener("click",function() {
+					console.log("click4");
 				});
-				mybutton.addEventListener('click',click5);
-				mybutton.addEventListener('click',click5);
+				mybutton.addEventListener("click",click5);
+				mybutton.addEventListener("click",click5);
 				console.log(t);
 			});
 		</script>
 	</head>
 	<body>
-		<button id='mybutton'>Click me!</button>
+		<button id="mybutton">Click me!</button>
 	</body>
 </html>

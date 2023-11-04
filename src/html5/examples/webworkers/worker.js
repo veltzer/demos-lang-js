@@ -37,7 +37,7 @@ function myonmessage(e) {
 		}
 		return;
 	}
-	// this is for regular messages that don't have a special meaning
+	// this is for regular messages that dont have a special meaning
 	postMessage(id+' got '+e.data);
 }
 function myonerror() {

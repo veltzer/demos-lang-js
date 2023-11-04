@@ -4,9 +4,9 @@
 
 	Why is this so ugly?
 	- firefox before 4 could show what ever string you returned from the function
-	bound to the 'onbeforeunload' event. Firefox 4 and onward refuses this.
+	bound to the "onbeforeunload" event. Firefox 4 and onward refuses this.
 	- that what this hack is for.
-	- I haven't tested this on other (chrome, chromium, IE, opera) browsers...
+	- I haven"t tested this on other (chrome, chromium, IE, opera) browsers...
 
 	Resources:
 	http://stackoverflow.com/questions/5398772/firefox-4-onbeforeunload-custom-message
@@ -34,7 +34,7 @@
 			window.onbeforeunload = function() {
 				console.log("what?!?")
 				return true
-				return confirm("You're leaving the site.");
+				return confirm("Youre leaving the site.");
 			};
 			*/
 		</script>

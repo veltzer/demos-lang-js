@@ -7,15 +7,15 @@
 	<head>
 		<script>
 			window.onload=function() {
-				var element=document.getElementById('mydiv');
-				var e_add=document.createElement('button');
-				var e_add_t=document.createTextNode('create buttons');
+				var element=document.getElementById("mydiv");
+				var e_add=document.createElement("button");
+				var e_add_t=document.createTextNode("create buttons");
 				e_add.appendChild(e_add_t);
 				element.appendChild(e_add);
 				var i=0;
 				e_add.onclick=function() {
-					var w_e_add=document.createElement('button');
-					var w_e_add_t=document.createTextNode('I am button '+i);
+					var w_e_add=document.createElement("button");
+					var w_e_add_t=document.createTextNode("I am button "+i);
 					w_e_add.appendChild(w_e_add_t);
 					element.appendChild(w_e_add);
 					console.log(i);
@@ -27,8 +27,8 @@
 	</head>
 	<body>
 		Hello and welcome!
-		<div id='mydiv'>
+		<div id="mydiv">
 		</div>
-		<!--input type='text'></input-->
+		<!--input type="text"></input-->
 	</body>
 </html>

@@ -456,7 +456,7 @@ jQuery.extend({
 	isPlainObject: function( obj ) {
 		// Must be an Object.
 		// Because of IE, we also have to check the presence of the constructor property.
-		// Make sure that DOM nodes and window objects don't pass through, as well
+		// Make sure that DOM nodes and window objects dont pass through, as well
 		if ( !obj || toString.call(obj) !== "[object Object]" || obj.nodeType || obj.setInterval ) {
 			return false;
 		}
@@ -1334,7 +1334,7 @@ jQuery.fn.extend({
 							// Get the specifc value for the option
 							value = jQuery(option).val();
 
-							// We don't need an array for one selects
+							// We dont need an array for one selects
 							if ( one ) {
 								return value;
 							}
@@ -1414,7 +1414,7 @@ jQuery.extend({
 	},
 		
 	attr: function( elem, name, value, pass ) {
-		// don't set attributes on text and comment nodes
+		// dont set attributes on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 ) {
 			return undefined;
 		}
@@ -1633,7 +1633,7 @@ jQuery.event = {
 
 	// Detach an event or set of events from an element
 	remove: function( elem, types, handler ) {
-		// don't do events on text and comment nodes
+		// dont do events on text and comment nodes
 		if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
 			return;
 		}
@@ -1757,7 +1757,7 @@ jQuery.event = {
 
 			// Handle triggering a single element
 
-			// don't do events on text and comment nodes
+			// dont do events on text and comment nodes
 			if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 ) {
 				return undefined;
 			}
@@ -1911,7 +1911,7 @@ jQuery.event = {
 		}
 
 		// Add which for click: 1 === left; 2 === middle; 3 === right
-		// Note: button is not normalized, so don't use it
+		// Note: button is not normalized, so dont use it
 		if ( !event.which && event.button !== undefined ) {
 			event.which = (event.button & 1 ? 1 : ( event.button & 2 ? 3 : ( event.button & 4 ? 2 : 0 ) ));
 		}
@@ -3352,7 +3352,7 @@ if ( document.querySelectorAll ) {
 			context = context || document;
 
 			// Only use querySelectorAll on non-XML documents
-			// (ID selectors don't work in non-HTML documents)
+			// (ID selectors dont work in non-HTML documents)
 			if ( !seed && context.nodeType === 9 && !isXML(context) ) {
 				try {
 					return makeArray( context.querySelectorAll(query), extra );
@@ -4329,7 +4329,7 @@ jQuery.fn.css = function( name, value ) {
 
 jQuery.extend({
 	style: function( elem, name, value ) {
-		// don't set styles on text and comment nodes
+		// dont set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 ) {
 			return undefined;
 		}

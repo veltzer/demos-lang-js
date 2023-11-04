@@ -4,7 +4,7 @@ here starts the paginated table...
 
 TODO:
 - grey the 'prev' and 'next' buttons according to limits of data.
-- don't do 'alert' on errors in ajax and instead show the errors in some
+- dont do 'alert' on errors in ajax and instead show the errors in some
 nice place on the screen or in the console or both.
 */
 function PaginatedTable(options) {

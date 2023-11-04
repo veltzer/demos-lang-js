@@ -7,13 +7,13 @@
 	<head>
 		<script>
 			function create() {
-				var numElems=Number(document.getElementById('myinput').value);
+				var numElems=Number(document.getElementById("myinput").value);
 				if(numElems===0) {
-					alert('put a number in man!');
+					alert("put a number in man!");
 				}
-				var mydiv=document.getElementById('mydiv');
+				var mydiv=document.getElementById("mydiv");
 				for(var i=0;i<numElems;i++) {
-					mydiv.innerHTML=mydiv.innerHTML+'<button>button'+(create.cnt+i)+'</button>';
+					mydiv.innerHTML=mydiv.innerHTML+"<button>button"+(create.cnt+i)+"</button>";
 				}
 				create.cnt+=numElems;
 			}
@@ -21,9 +21,9 @@
 		</script>
 	</head>
 	<body>
-		<input id='myinput'></input>
-		<button onclick='create()'>click me to create more buttons!</button>
+		<input id="myinput"></input>
+		<button onclick="create()">click me to create more buttons!</button>
 		<br/>
-		<div id='mydiv'></div>
+		<div id="mydiv"/>
 	</body>
 </html>
