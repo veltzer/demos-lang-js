@@ -39,12 +39,12 @@
 
 			// VERSION 1
 			// most common version. works ok but requires an instance of the parent class
-			// (weird). 'instanceof' and '.construcotr' work well.
+			// (weird). "instanceof" and ".construcotr" work well.
 			Sub.prototype=new Base();
 			Sub.prototype.constructor=Sub;
 
 			// VERSION 2
-			// lets copy from parent. breaks the 'instanceof' operator.
+			// lets copy from parent. breaks the "instanceof" operator.
 			/*
 			var b=new Base();
 			for(var key in b) {
@@ -57,22 +57,22 @@
 			//Sub.prototype=Base.prototype;
 
 			// VERSION 4
-			// this one fucks up both the '.constructor' property and the instanceof operator
+			// this one fucks up both the ".constructor" property and the instanceof operator
 			//Sub.prototype=Base;
 
 			// VERSION 5
 			// this one almost works well without constructing an object but breaks
-			// the 'instanceof' operator
+			// the "instanceof" operator
 			//Sub.prototype.prototype=Base.prototype;
 
 			// VERSION 6
-			// still breaks 'instanceof'
+			// still breaks "instanceof"
 			//Sub.prototype.prototype=new Base();
 
 			// this overrides the parents method
 			Sub.prototype.getName=function() {
 				// this calls the parents method
-				return Base.prototype.getName.call(this)+' sub';
+				return Base.prototype.getName.call(this)+" sub";
 			};
 			// child only methods
 			Sub.prototype.getFname=function() {
@@ -86,18 +86,18 @@
 
 			// here is some code to demo it...
 
-			var base=new Base('base name');
-			var sub=new Sub('sub name','more data');
-			document.write('base.getName(): '+base.getName()+'<br/>');
-			document.write('sub.getName(): '+sub.getName()+'<br/>');
-			document.write('sub.getFname(): '+sub.getFname()+'<br/>');
-			document.write('sub instanceof Sub: '+(sub instanceof Sub)+'<br/>');
-			document.write('sub instanceof Base: '+(sub instanceof Base)+'<br/>');
-			document.write('base instanceof Sub: '+(base instanceof Sub)+'<br/>');
-			document.write('base instanceof Base: '+(base instanceof Base)+'<br/>');
+			var base=new Base("base name");
+			var sub=new Sub("sub name","more data");
+			document.write("base.getName(): "+base.getName()+"<br/>");
+			document.write("sub.getName(): "+sub.getName()+"<br/>");
+			document.write("sub.getFname(): "+sub.getFname()+"<br/>");
+			document.write("sub instanceof Sub: "+(sub instanceof Sub)+"<br/>");
+			document.write("sub instanceof Base: "+(sub instanceof Base)+"<br/>");
+			document.write("base instanceof Sub: "+(base instanceof Sub)+"<br/>");
+			document.write("base instanceof Base: "+(base instanceof Base)+"<br/>");
 			// this is confusing, do not use the constructor attribute
-			document.write('sub.constructor: '+sub.constructor+'<br/>');
-			document.write('base.constructor: '+base.constructor+'<br/>');
+			document.write("sub.constructor: "+sub.constructor+"<br/>");
+			document.write("base.constructor: "+base.constructor+"<br/>");
 		</script>
 	</head>
 </html>

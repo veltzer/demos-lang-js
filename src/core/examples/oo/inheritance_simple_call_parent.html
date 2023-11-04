@@ -24,7 +24,7 @@
 				return this.name;
 			};
 			Person.prototype.oper=function(data) {
-				document.write('parent part done '+this.name+','+data+'<br/>');
+				document.write("parent part done "+this.name+","+data+"<br/>");
 			};
 			/// here ends the parent ///
 
@@ -42,30 +42,30 @@
 				this.salary=salary;
 			};
 			Employee.prototype.toString=function() {
-				return this.name+' '+this.salary;
+				return this.name+" "+this.salary;
 			};
 			Employee.prototype.oper=function(data) {
 				Person.prototype.oper.call(this,data);
-				document.write('child part done '+this.salary+','+data+'<br/>');
+				document.write("child part done "+this.salary+","+data+"<br/>");
 			};
 			/// here ends the child ///
 
 			// This is the client code
-			var p=new Person('Bilbo');
-			var e=new Employee('Frodo',111);
-			document.write('e instance of Person: '+(e instanceof Person)+'<br/>');
-			document.write('e instance of Employee: '+(e instanceof Employee)+'<br/>');
-			document.write('p instance of Person: '+(p instanceof Person)+'<br/>');
-			document.write('p instance of Employee: '+(p instanceof Employee)+'<br/>');
-			document.write('e: '+e+'<br/>');
-			document.write('p: '+p+'<br/>');
-			document.write('e.constructor.name: '+e.constructor.name+'<br/>');
-			document.write('p.constructor.name: '+p.constructor.name+'<br/>');
+			var p=new Person("Bilbo");
+			var e=new Employee("Frodo",111);
+			document.write("e instance of Person: "+(e instanceof Person)+"<br/>");
+			document.write("e instance of Employee: "+(e instanceof Employee)+"<br/>");
+			document.write("p instance of Person: "+(p instanceof Person)+"<br/>");
+			document.write("p instance of Employee: "+(p instanceof Employee)+"<br/>");
+			document.write("e: "+e+"<br/>");
+			document.write("p: "+p+"<br/>");
+			document.write("e.constructor.name: "+e.constructor.name+"<br/>");
+			document.write("p.constructor.name: "+p.constructor.name+"<br/>");
 			// lets see that we can access the parents method through the child
-			document.write('e.getName(): '+e.getName()+'<br/>');
-			document.write('p.getName(): '+p.getName()+'<br/>');
+			document.write("e.getName(): "+e.getName()+"<br/>");
+			document.write("p.getName(): "+p.getName()+"<br/>");
 			// lets see that the child calls the parents method
-			e.oper('somedata');
+			e.oper("somedata");
 		</script>
 	</head>
 </html>

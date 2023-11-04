@@ -8,12 +8,12 @@
 		<title>InnerHTML Example</title>
 		<script>
 			function doit() {
-				var s="<ul><li onclick='alert(\"foo\")'>this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
-				document.getElementById('mydiv').innerHTML=s;
+				var s="<ul><li onclick="alert(\"foo\")">this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
+				document.getElementById("mydiv").innerHTML=s;
 			}
 			function doit_safe() {
-				var s="<ul><li onclick='alert(\"foo\")'>this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
-				document.getElementById('mysafediv').childNodes[0].nodeValue=s;
+				var s="<ul><li onclick="alert(\"foo\")">this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
+				document.getElementById("mysafediv").childNodes[0].nodeValue=s;
 			}
 			function eval_is_evil() {
 				eval("alert(\"hi there\")");
@@ -21,12 +21,12 @@
 		</script>
 	</head>
 	<body>
-		<button onclick='doit()'>Click me to inject</button>
-		<div id='mydiv'>
+		<button onclick="doit()">Click me to inject</button>
+		<div id="mydiv">
 		</div>
-		<button onclick='doit_safe()'>Click me to put data safely</button>
-		<div id='mysafediv'>
+		<button onclick="doit_safe()">Click me to put data safely</button>
+		<div id="mysafediv">
 		</div>
-		<button onclick='eval_is_evil()'>Click me to use eval</button>
+		<button onclick="eval_is_evil()">Click me to use eval</button>
 	</body>
 </html>

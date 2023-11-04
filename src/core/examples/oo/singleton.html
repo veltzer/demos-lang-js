@@ -18,10 +18,10 @@
 				this.name=newName;
 			};
 			Person.prototype.toString=function() {
-				return this.name+' '+this.age;
+				return this.name+" "+this.age;
 			};
 			// and now for the singleton pattern...
-			Person.instance=new Person('firstname','lastname');
+			Person.instance=new Person("firstname","lastname");
 			Person.getInstance=function() {
 				return Person.instance;
 			};

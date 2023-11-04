@@ -8,7 +8,7 @@ var g_setName=function(iname) {
 	this.name=iname;
 };
 var g_getFullName=function() {
-	return this.name+' '+this.age;
+	return this.name+" "+this.age;
 };
 var g_printSelf=function() {
 	document.write(this.getFullName());
@@ -24,10 +24,10 @@ function createPerson(iname,iage) {
 		printSelf: g_printSelf
 	};
 }
-var p1=createPerson('Bilbo',111);
-var p2=createPerson('Frodo',33);
+var p1=createPerson("Bilbo",111);
+var p2=createPerson("Frodo",33);
 p1.printSelf();
-document.write('<br/>');
+document.write("<br/>");
 p2.printSelf();
 </script>
 </html>

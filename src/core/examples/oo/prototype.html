@@ -1,5 +1,5 @@
 <!--
-	JavaScript object using the 'prototype' features of the JavaScript language.
+	JavaScript object using the "prototype" features of the JavaScript language.
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
@@ -21,18 +21,18 @@
 			};
 
 			function addProperty(obj,propname) {
-				obj['set'+propname]=function(nval) {
+				obj["set"+propname]=function(nval) {
 					this[propname]=nval;	
 				};
-				obj['get'+propname]=function() {
+				obj["get"+propname]=function() {
 					return this[propname];	
 				};
 			}
-			addProperty(Person.prototype,'Name');
-			addProperty(Person.prototype,'Lastname');
-			addProperty(Person.prototype,'Children');
+			addProperty(Person.prototype,"Name");
+			addProperty(Person.prototype,"Lastname");
+			addProperty(Person.prototype,"Children");
 			Person.prototype.toString=function() {
-				return this.Name+' '+this.Lastname;
+				return this.Name+" "+this.Lastname;
 			};
 			Person.prototype.addChild=function(child) {
 				this.Children[this.Children.length]=child;
@@ -43,26 +43,26 @@
 			Object.prototype.printAllProps=function() {
 				for(var x in this) {
 					// do not iterate functions
-					if(typeof(this[x])!='function') {
-						document.write(x+', '+this[x]+', '+typeof(this[x])+'<br/>');
+					if(typeof(this[x])!="function") {
+						document.write(x+", "+this[x]+", "+typeof(this[x])+"<br/>");
 					}
 				}
 			};
 
 			// Lets use all the stuff that we defined
 
-			var person_child=new Person('jane','jones');
-			var person_parent=new Person('james','jones',person_child);
+			var person_child=new Person("jane","jones");
+			var person_parent=new Person("james","jones",person_child);
 			// standard method call
-			document.write(person_parent.getName()+'<br/>');
+			document.write(person_parent.getName()+"<br/>");
 			// this works with toString
-			document.write(person_parent+'<br/>');
+			document.write(person_parent+"<br/>");
 			// static method call
-			document.write(Person.getCounter()+'<br/>');
+			document.write(Person.getCounter()+"<br/>");
 			// call the method from Object
 			person_parent.printAllProps();
 			// using toString again
-			document.write(person_parent.getChild(0)+'<br/>');
+			document.write(person_parent.getChild(0)+"<br/>");
 		</script>
 	</head>
 </html>

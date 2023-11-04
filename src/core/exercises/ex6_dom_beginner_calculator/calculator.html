@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 Basic solution to the exercise. Notice that binding the click event
-is done via the 'onclick' property of the 'button' element...
+is done via the "onclick" property of the "button" element...
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
@@ -10,16 +10,16 @@ is done via the 'onclick' property of the 'button' element...
 		<title>calculator</title>
 		<script>
 			function init() {
-				var e_a=document.getElementById('a');
-				var e_b=document.getElementById('b');
+				var e_a=document.getElementById("a");
+				var e_b=document.getElementById("b");
 				e_a.value=0;
 				e_b.value=0;
 			}
 			window.onload=init;
 			function calc() {
-				var e_a=document.getElementById('a');
-				var e_b=document.getElementById('b');
-				var e_result=document.getElementById('result');
+				var e_a=document.getElementById("a");
+				var e_b=document.getElementById("b");
+				var e_result=document.getElementById("result");
 				e_result.value=Number(e_a.value)+Number(e_b.value);
 			}
 		</script>

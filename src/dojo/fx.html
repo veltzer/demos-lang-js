@@ -19,10 +19,10 @@
 			// this is the function that triggers the animation
 			function slideIt(amt) {
 				var slideArgs={
-					'node':"basicNode",
-					'top':(dojo.coords("basicNode").t).toString(),
-					'left':(dojo.coords("basicNode").l+amt).toString(),
-					'unit':"px"
+					"node":"basicNode",
+					"top":(dojo.coords("basicNode").t).toString(),
+					"left":(dojo.coords("basicNode").l+amt).toString(),
+					"unit":"px"
 				};
 				dojo.fx.slideTo(slideArgs).play();
 			}

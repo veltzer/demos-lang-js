@@ -29,32 +29,32 @@
 			if (items.length<3)
 			{
 				alert("no more data");
-				dijit.byId("nextButton").attr('disabled',true);
+				dijit.byId("nextButton").attr("disabled",true);
 				return
 			}
 			if (items.length>=1)
 			{
 				var firstItem = items[0];
-				dijit.byId("dataOne").attr('value',firstItem.name);
+				dijit.byId("dataOne").attr("value",firstItem.name);
 			}
 			if (items.length>=2)
 			{
 				var secondItem = items[1];
-				dijit.byId("dataTwo").attr('value',secondItem.name);
+				dijit.byId("dataTwo").attr("value",secondItem.name);
 			}
 			if (items.length>=3)
 			{
 				var thirdItem = items[2];
-				dijit.byId("dataThree").attr('value',thirdItem.name);
+				dijit.byId("dataThree").attr("value",thirdItem.name);
 			}
 			if (items.length==3)
-				dijit.byId("nextButton").attr('disabled',false);
+				dijit.byId("nextButton").attr("disabled",false);
 			
 		}
 		function next()
 		{
 			if (startPoint==0)
-				dijit.byId("prevButton").attr('disabled',false);
+				dijit.byId("prevButton").attr("disabled",false);
 			startPoint+=1;
 			getData();
 		}
@@ -63,7 +63,7 @@
 			startPoint-=1;
 			getData();
 			if (startPoint==0)
-				dijit.byId("prevButton").attr('disabled',true);
+				dijit.byId("prevButton").attr("disabled",true);
 		}
 	</script>
 </head>

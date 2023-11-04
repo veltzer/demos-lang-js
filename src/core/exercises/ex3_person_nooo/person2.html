@@ -12,17 +12,17 @@ function createPerson(iname,iage) {
 			this.name=iiname;
 		},
 		getFullName: function() {
-			return this.name+' '+this.age;
+			return this.name+" "+this.age;
 		},
 		printSelf: function() {
 			document.write(this.getFullName());
 		}
 	};
 }
-var p1=createPerson('Bilbo',111);
-var p2=createPerson('Frodo',33);
+var p1=createPerson("Bilbo",111);
+var p2=createPerson("Frodo",33);
 p1.printSelf();
-document.write('<br/>');
+document.write("<br/>");
 p2.printSelf();
 </script>
 </html>

@@ -9,23 +9,23 @@
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
-			dojo.require('dijit.form.Button');
-			dojo.require('dijit.layout.TabContainer');
-			dojo.require('dijit.layout.ContentPane');
+			dojo.require("dijit.form.Button");
+			dojo.require("dijit.layout.TabContainer");
+			dojo.require("dijit.layout.ContentPane");
 			var i=0;
 			function connectedClick() {
-				alert('it appears that the connection worked well...');
+				alert("it appears that the connection worked well...");
 			}
 			function addTab() {
 				i++;
-				var container=dijit.byId('tabcontainer');
-				var mynewtab=new dijit.layout.ContentPane({title: 'tab '+i});
+				var container=dijit.byId("tabcontainer");
+				var mynewtab=new dijit.layout.ContentPane({title: "tab "+i});
 				mynewtab.startup();
 				container.addChild(mynewtab);
-				var elem=document.createElement('div');
+				var elem=document.createElement("div");
 				mynewtab.setContent(elem);
 				dojo.xhrGet({
-					url:'parser3.ajax',
+					url:"parser3.ajax",
 					load:function(data){
 						elem.innerHTML = data;
 						dojo.parser.parse(elem);
@@ -34,10 +34,10 @@
 			}
 		</script>
 	</head>
-	<body class='tundra'>
-		<div id='tabcontainer' dojoType='dijit.layout.TabContainer' style='width: 400px; height: 200px'>
+	<body class="tundra">
+		<div id="tabcontainer" dojoType="dijit.layout.TabContainer" style="width: 400px; height: 200px">
 		</div>
-		<div dojoType='dijit.form.Button' onClick='addTab'>
+		<div dojoType="dijit.form.Button" onClick="addTab">
 			Click on me to add a tab!
 		</div>
 	</body>

@@ -15,7 +15,7 @@
 			function do_click(item,node) {
 				var w_tree=dijit.byId("tree");
 				var w_textbox=dijit.byId("textbox");
-				w_textbox.attr('value',w_tree.store.getLabel(item));
+				w_textbox.attr("value",w_tree.store.getLabel(item));
 			}
 			function do_sub(e) {
 				// e.item is the item which is involved in the event.
@@ -27,7 +27,7 @@
 				}
 				*/
 				var w_textbox=dijit.byId("textbox2");
-				w_textbox.attr('value',e.tree.store.getLabel(e.item));
+				w_textbox.attr("value",e.tree.store.getLabel(e.item));
 			}
 			function do_init() {
 				// note that we subscribe on the ID of the tree in question...

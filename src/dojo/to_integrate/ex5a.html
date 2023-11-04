@@ -18,14 +18,14 @@
 			}
 			function do_connect() {
 				handle=dojo.connect(w_click,"onClick",do_alert);
-				w_connect.attr('disabled',true)
-				w_disconnect.attr('disabled',false)
+				w_connect.attr("disabled",true)
+				w_disconnect.attr("disabled",false)
 			}
 			function do_disconnect() {
 				dojo.disconnect(handle);
 
-				w_connect.attr('disabled',false)
-				w_disconnect.attr('disabled',true)
+				w_connect.attr("disabled",false)
+				w_disconnect.attr("disabled",true)
 			}
 			dojo.addOnLoad(setup)
 		</script>

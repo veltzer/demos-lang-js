@@ -6,12 +6,12 @@ A demo showing how to attach listeners while extending widgets.
 <html>
 	<head>
 		<title>Demo for attaching listeners when extending widgets</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.define('MyPkg.Button', {
-					extend: 'Ext.button.Button',
+				Ext.define("MyPkg.Button", {
+					extend: "Ext.button.Button",
 					listeners: {
 						click: function(btn,e,eOpts) {
 							// event handling here
@@ -19,8 +19,8 @@ A demo showing how to attach listeners while extending widgets.
 						},
 					},
 				});
-				Ext.create('MyPkg.Button',{
-					text: 'Test button',
+				Ext.create("MyPkg.Button",{
+					text: "Test button",
 					renderTo: Ext.getBody(),
 				});
 			});

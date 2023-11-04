@@ -24,15 +24,15 @@
 				return this.name;
 			};
 			// end of the Person class
-			var p=new Person('mark','37');
-			document.write(p.getName()+'<br/>');
+			var p=new Person("mark","37");
+			document.write(p.getName()+"<br/>");
 			var o={};
 			o[p]=undefined;
 			// this next loop would produce an error because
 			// the toString is what really gets saved inside
 			// the class
 			for(var i in o) {
-				document.write(i.getName()+'<br/>');
+				document.write(i.getName()+"<br/>");
 			}
 		</script>
 	</head>

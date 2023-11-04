@@ -6,21 +6,21 @@ Just a simple custom ExtJs button.
 <html>
 	<head>
 		<title>Hello, custom components</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.define('MyButton', {
-					extend: 'Ext.Button',
+				Ext.define("MyButton", {
+					extend: "Ext.Button",
 					times:0,
 					listeners: {
 						click: function() {
 							this.times+=1
-							this.setText('I was clicked '+this.times+' times');
+							this.setText("I was clicked "+this.times+" times");
 						},
 					},
 				});
-				Ext.create('MyButton',{
+				Ext.create("MyButton",{
 					renderTo: Ext.getBody()
 				});
 			});

@@ -10,7 +10,7 @@ This is a self rewriting solution to the exercise.
 		// check if this is the first time we are called
 		// could also be done using newalert.cnt=0 after
 		// the function declaration.
-		//if(!('cnt' in newalert)) {
+		//if(!("cnt" in newalert)) {
 		//	newalert.cnt=0;
 		//}
 		if(newalert.cnt<3) {
@@ -35,11 +35,11 @@ This is a self rewriting solution to the exercise.
 	}
 	newalert.cnt=0;
 	for(var i=0;i<10;i++) {
-		newalert('message '+i);
+		newalert("message "+i);
 	}
-	document.write('This is the now installed version of alert<br/>');
+	document.write("This is the now installed version of alert<br/>");
 	document.write(newalert);
-	document.write('These are the messages that we missed<br/>');
+	document.write("These are the messages that we missed<br/>");
 	document.write(newalert.a);
 </script>
 </html>

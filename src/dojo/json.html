@@ -21,7 +21,7 @@
 			}
 			// convert a string (that came from AJAX?!?) to a simple object
 			function click2() {
-				var json='{"a":"one","b":3,"c":true}';
+				var json="{\"a\":\"one\",\"b\":3,\"c\":true}";
 				var obj=dojo.fromJson(json);
 				console.log(obj.a,obj.b,obj.c);
 			}

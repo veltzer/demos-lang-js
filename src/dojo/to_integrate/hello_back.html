@@ -13,12 +13,12 @@
 	
 		function sumNumbers(){
 			var w_sum = dijit.byId("id_sum");
-			var v_sum = parseInt(w_sum.attr('value'));
+			var v_sum = parseInt(w_sum.attr("value"));
 
 			var w_num = dijit.byId("id_val");
-			var v_num = parseInt(w_num.attr('value'));
+			var v_num = parseInt(w_num.attr("value"));
 			v_sum=v_sum+v_num;
-			w_sum.attr('value',v_sum);
+			w_sum.attr("value",v_sum);
 			var s=new MyState(v_sum,v_num);
 			dojo.back.addToHistory(s);
 		}
@@ -28,9 +28,9 @@
 		}
 		MyState.prototype.restoreState=function() {
 			var w_sum=dijit.byId("id_sum");
-			w_sum.attr('value',this.p_sum);
+			w_sum.attr("value",this.p_sum);
 			var w_val=dijit.byId("id_val");
-			w_val.attr('value',this.p_val);
+			w_val.attr("value",this.p_val);
 		}
 		MyState.prototype.back=MyState.prototype.restoreState;
 		MyState.prototype.forward=MyState.prototype.restoreState;

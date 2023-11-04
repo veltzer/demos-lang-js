@@ -8,16 +8,16 @@ Compare this example to nocss_scope.html.
 <html>
 	<head>
 		<title>Nocss, standard</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.create('Ext.Button', {
-					text: 'Click me',
+				Ext.create("Ext.Button", {
+					text: "Click me",
 					renderTo: Ext.getBody(),
 					handler: function() {
-						Ext.MessageBox.alert('Status', 'You clicked me', function() {
-							console.log('button was clicked');
+						Ext.MessageBox.alert("Status", "You clicked me", function() {
+							console.log("button was clicked");
 						});
 					},
 				});

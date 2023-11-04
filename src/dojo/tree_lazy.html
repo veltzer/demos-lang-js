@@ -21,13 +21,13 @@
 						mypath = root;
 					}
 					else {
-						mypath = this.store.getValue(parentItem, 'path');
+						mypath = this.store.getValue(parentItem, "path");
 					}
 					this.store.fetch({ query: {path: mypath+root},
 						onComplete: complete_cb,
 						onError: error_cb
 					});
-					// Call superclasses' getChildren
+					// Call superclasses" getChildren
 					return this.inherited(arguments);
 				}
 			});
@@ -42,7 +42,7 @@
 			store="treeStore"
 			rootId="/"
 			rootLabel="/"
-			query="{ path: '/' }"
+			query="{ path: \"/\" }"
 			childrenAttrs="children"
 			jsId="treeModel">
 		</div>
@@ -51,7 +51,7 @@
 			jsId="itemTree"
 			persist="false">
 			<script type="dojo/method" event="onClick" args="item">
-				alert('you clicked: ' + treeStore.getLabel(item));
+				alert("you clicked: " + treeStore.getLabel(item));
 			</script>
 		</div>
 	</body>

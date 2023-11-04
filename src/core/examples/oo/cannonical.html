@@ -1,4 +1,4 @@
-<!--
+n!--
 	Clean Javascript OO example...
 
 	Mark Veltzer <mark.veltzer@gmail.com>
@@ -30,17 +30,17 @@
 				this.lastname=newName;
 			};
 			Person.prototype.toString=function() {
-				return this.name+' '+this.lastname;
+				return this.name+" "+this.lastname;
 			};
 			// now lets use the object...
-			var p1=new Person('James','Bond');
+			var p1=new Person("James","Bond");
 			document.write(p1 instanceof Person);
-			document.write('<br/>');
+			document.write("<br/>");
 			document.write(p1.getName());
-			document.write('<br/>');
-			p1.setName('Fubar');
+			document.write("<br/>");
+			p1.setName("Fubar");
 			document.write(p1.getName());
-			document.write('<br/>');
+			document.write("<br/>");
 		</script>
 	</head>
 </html>

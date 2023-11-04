@@ -16,12 +16,12 @@
 			function do_check() {
 				var w_re=dijit.byId("re")
 				var w_text=dijit.byId("text")
-				var v_re=w_re.attr('value')
-				var v_text=w_text.attr('value')
+				var v_re=w_re.attr("value")
+				var v_text=w_text.attr("value")
 				var re=new RegExp(v_re)
 				var res=re.test(v_text)
 				var w_result=dijit.byId("result")
-				w_result.attr('value',res)
+				w_result.attr("value",res)
 			}
 		</script>
 	</head>

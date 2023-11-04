@@ -6,19 +6,19 @@ Simple button with custom event
 <html>
 	<head>
 		<title>Simple button with custom event</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				var myButton=Ext.create('Ext.button.Button',{
-					text: 'Test button',
+				var myButton=Ext.create("Ext.button.Button",{
+					text: "Test button",
 					renderTo: Ext.getBody()
 				});
-				myButton.addEvents('buy');
-				myButton.on('click',function() {
-					myButton.fireEvent('buy',42);
+				myButton.addEvents("buy");
+				myButton.on("click",function() {
+					myButton.fireEvent("buy",42);
 				});
-				myButton.on('buy',function(data,e) {
+				myButton.on("buy",function(data,e) {
 					console.log(this,data,e);
 				});
 			});

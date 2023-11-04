@@ -16,21 +16,21 @@
 			dojo.require("dojox.form.PasswordValidator");
 			dojo.require("dijit.form.Form");
 			function imchange(newval) {
-				var cb=dijit.byId('imId');
-				cb.attr('disabled',newval=='None');
+				var cb=dijit.byId("imId");
+				cb.attr("disabled",newval=="None");
 			}
 			function formstatechange(newstate) {
-				dijit.byId('submitid').attr('disabled',!newstate);
+				dijit.byId("submitid").attr("disabled",!newstate);
 			}
 			function init() {
 				store=new dojo.data.ItemFileReadStore({url:"login.ajax"});
-				var cb=dijit.byId('im');
-				cb.attr('store',store);
-				cb.attr('searchAttr','imname');
+				var cb=dijit.byId("im");
+				cb.attr("store",store);
+				cb.attr("searchAttr","imname");
 				dojo.connect(cb,"onChange",imchange);
 
-				var form=dijit.byId('formid');
-				dojo.connect(form,'onValidStateChange',formstatechange);
+				var form=dijit.byId("formid");
+				dojo.connect(form,"onValidStateChange",formstatechange);
 			}
 			dojo.addOnLoad(init);
 			function register() {
@@ -38,12 +38,12 @@
 			}
 			function pwCheck(val) {
 				//alert("in pwCheck "+val);
-				return val=='password';
+				return val=="password";
 			}
 		</script>
 	</head>
 	<body class="tundra">
-		<form id='formid' dojoType="dijit.form.Form">
+		<form id="formid" dojoType="dijit.form.Form">
 		First Name<div type="text"
 			id="firstName"
 			name="firstName"
@@ -92,7 +92,7 @@
 			trim="true"
 		></div>
 		<br/>
-		<div id='submitid' dojoType="dijit.form.Button" title="click to see an alert" onclick="register" disabled="true">Register to this website</div>
+		<div id="submitid" dojoType="dijit.form.Button" title="click to see an alert" onclick="register" disabled="true">Register to this website</div>
 		</form>
 	</body>
 </html>

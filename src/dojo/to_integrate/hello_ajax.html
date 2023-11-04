@@ -12,26 +12,26 @@
 			dojo.require("dijit.form.TextBox");
 			function onDataGet(response,ioArgs) {
 				var w_textarea=dijit.byId("textarea");
-				w_textarea.attr('value',response);
+				w_textarea.attr("value",response);
 				var w_status=dijit.byId("statustextbox");
-				w_status.attr('value',"HTTP status code: "+ioArgs.xhr.status);
+				w_status.attr("value","HTTP status code: "+ioArgs.xhr.status);
 			}
 			function onError(response, ioArgs) {
 				console.error("HTTP status code: ",ioArgs.xhr.status);
 				var w_status=dijit.byId("statustextbox");
-				w_status.attr('value',"HTTP status code: "+ioArgs.xhr.status);
+				w_status.attr("value","HTTP status code: "+ioArgs.xhr.status);
 				var w_textarea=dijit.byId("textarea");
-				w_textarea.attr('value',"not showing text because of error from server");
+				w_textarea.attr("value","not showing text because of error from server");
 			}
 			function do_get() {
 				var w_textfield=dijit.byId("textbox");
-				var v_url=w_textfield.attr('value');
+				var v_url=w_textfield.attr("value");
 				dojo.xhrGet({
-					'url': v_url,
-					'handleAs': "text",
-					'timeout': 5000,
-					'load': onDataGet,
-					'error': onError,
+					"url": v_url,
+					"handleAs": "text",
+					"timeout": 5000,
+					"load": onDataGet,
+					"error": onError,
 				});
 			}
 		</script>

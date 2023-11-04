@@ -2,7 +2,7 @@
 <html>
 <!--
 this is a solution to the exercise with the added value of
-correctly substituting the native 'alert' call with our own version.
+correctly substituting the native "alert" call with our own version.
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
@@ -10,11 +10,11 @@ correctly substituting the native 'alert' call with our own version.
 	function newalert(message) {
 		// I do not use this and instead initialize after
 		// the function definition
-		//if(!('cnt' in newalert)) {
+		//if(!("cnt" in newalert)) {
 		//	newalert.cnt=0;
 		//}
 		if(newalert.cnt<3) {
-			// why the second version and not the next line? Think OO and 'this'...
+			// why the second version and not the next line? Think OO and "this"...
 			//newalert.origalert(message);
 			var f=newalert.origalert;
 			f(message);
@@ -46,11 +46,11 @@ correctly substituting the native 'alert' call with our own version.
 
 	// here is the client code
 	for(var i=0;i<10;i++) {
-		alert('message '+i);
+		alert("message "+i);
 	}
 	// to show that we have the new function (rewritten one)...
-	document.write(newalert+'<br/>');
+	document.write(newalert+"<br/>");
 	// to show all the messages that we have missed and have been accumulated...
-	document.write(newalert.a+'<br/>');
+	document.write(newalert.a+"<br/>");
 </script>
 </html>
