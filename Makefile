@@ -11,8 +11,10 @@ DO_HTMLHINT:=0
 DO_ESLINT:=0
 # do you want to run standard?
 DO_STANDARD:=0
-# od you want to do jslint?
+# do you want to do jslint?
 DO_JSLINT:=0
+# do check_html?
+DO_CHECK_HTML:=1
 
 ########
 # code #
@@ -49,6 +51,10 @@ endif # DO_STANDARD
 ifeq ($(DO_JSLINT),1)
 ALL+=$(ALL_JSLINT)
 endif # DO_JSLINT
+
+ifeq ($(DO_CHECK_HTML),1)
+ALL+=check_html
+endif # DO_CHECK_HTML
 
 # dependency on the makefile itself
 ifeq ($(DO_ALLDEP),1)
