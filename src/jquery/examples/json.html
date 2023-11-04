@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 	This is a demo of using the jQuery API for parsing JSON.
 	This API wraps the HTML5 API for JSON (window.JSON) on browsers
@@ -8,18 +9,18 @@
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#goodjson').click(function() {
-					var obj=$.parseJSON('{name:"John"}');
-					$('#result_name').text(obj.name);
-					$('#result_type').text(typeof(obj));
+				$("#goodjson").click(function() {
+					var obj=$.parseJSON("{name:"John"}");
+					$("#result_name").text(obj.name);
+					$("#result_type").text(typeof(obj));
 				});
-				$('#badjson').click(function() {
+				$("#badjson").click(function() {
 					// there is a bug in the JSON string on purpose...
 					try {
-						$.parseJSON('{name:"John"');
+						$.parseJSON("{name:"John"");
 					}
 					catch(err) {
 						console.log(err);
@@ -29,9 +30,9 @@
 		</script>
 	</head>
 	<body>
-		<button id='goodjson'>Push me to parse good JSON</button>
-		<button id='badjson'>Push me to parse bad JSON!</button>
-		<div id='result_name'></div>
-		<div id='result_type'></div>
+		<button id="goodjson">Push me to parse good JSON</button>
+		<button id="badjson">Push me to parse bad JSON!</button>
+		<div id="result_name"></div>
+		<div id="result_type"></div>
 	</body>
 </html>

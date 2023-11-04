@@ -1,25 +1,25 @@
 <html>
 	<head>
-		<script src='../../../toolkits/jquery.js'></script>
+		<script src="../../../toolkits/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
 				function myonmessage(e) {
-					var msg='ui thread got message: '+e.data;
+					var msg="ui thread got message: "+e.data;
 					console.log(msg);
-					$('#mydiv').html($('#mydiv').html()+'<br/>'+msg);
+					$("#mydiv").html($("#mydiv").html()+"<br/>"+msg);
 				}
 				function myonerror(e) {
-					var msg='got error: '+e.message;
+					var msg="got error: "+e.message;
 					console.log(msg);
-					$('#mydiv').html($('#mydiv').html()+'<br/>'+msg);
+					$("#mydiv").html($("#mydiv").html()+"<br/>"+msg);
 				}
 				function myonclose() {
-					console.log('myonclose');
+					console.log("myonclose");
 				}
 				// all of the workers
 				var workers=[];
 				function createWorker() {
-					var w=new Worker('worker.js');
+					var w=new Worker("worker.js");
 					w.onmessage=myonmessage;
 					w.onerror=myonerror;
 					w.onclose=myonclose;
@@ -27,46 +27,46 @@
 					w.postMessage(id);
 					workers.push(w);
 				}
-				$('#mysend').click(function() {
-					var data=$('#mymessage').val();
-					var threads=$('#mythreads').val();
-					var ids=threads.split(',');
+				$("#mysend").click(function() {
+					var data=$("#mymessage").val();
+					var threads=$("#mythreads").val();
+					var ids=threads.split(",");
 					for(seq in ids) {
 						var sid=ids[seq];
 						if(/\d+/.test(sid)) {
 							var id=Number(sid);
-							console.log('sending: '+data+' to '+id);
+							console.log("sending: "+data+" to "+id);
 							workers[id].postMessage(data);
 						}
 					}
 				});
-				$('#myterminate').click(function() {
-					var threads=$('#mythreads').val();
-					var ids=threads.split(',');
+				$("#myterminate").click(function() {
+					var threads=$("#mythreads").val();
+					var ids=threads.split(",");
 					for(seq in ids) {
 						var sid=ids[seq];
 						if(/\d+/.test(sid)) {
 							var id=Number(sid);
-							console.log('terminating '+id);
+							console.log("terminating "+id);
 							workers[id].terminate();
 						}
 					}
 				});
-				$('#mysendall').click(function() {
-					var data=$('#mymessage').val();
+				$("#mysendall").click(function() {
+					var data=$("#mymessage").val();
 					for(var id in workers) {
-						console.log('sending: '+data+' to '+id);
+						console.log("sending: "+data+" to "+id);
 						workers[id].postMessage(data);
 					}
 				});
-				$('#create').click(function() {
+				$("#create").click(function() {
 					createWorker();
 				});
 			});
 		</script>
 	</head>
 	<body>
-		<input id="mymessage" type="text" value='message text'></input>
+		<input id="mymessage" type="text" value="message text"></input>
 		<br/>
 		<input id="mythreads" type="text"></input>
 		<br/>

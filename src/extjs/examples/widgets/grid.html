@@ -6,27 +6,27 @@ A simple grid which also saves its state using cookies on the client side.
 <html>
 	<head>
 		<title>Hello, Grid only</title>
-		<link rel='stylesheet' href='../../../toolkits/extjs/resources/css/ext-all.css'/>
-		<script src='../../../toolkits/extjs/ext-all.js'></script>
+		<link rel="stylesheet" href="../../../toolkits/extjs/resources/css/ext-all.css"/>
+		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
-				Ext.create('Ext.grid.Panel', {
+				Ext.state.Manager.setProvider(Ext.create("Ext.state.CookieProvider"));
+				Ext.create("Ext.grid.Panel", {
 					stateful: true,
-					stateId: 'stateGrid',
+					stateId: "stateGrid",
 					columns: [
 						{
-							text:'Company',
+							text:"Company",
 							flex:1,
 							sortable:false,
-							dataIndex:'company'
+							dataIndex:"company"
 						},
 						{
-							text:'Price',
+							text:"Price",
 							flex:1,
 							sortable:true,
-							renderer:'usMoney',
-							dataIndex:'price'
+							renderer:"usMoney",
+							dataIndex:"price"
 						}
 					],
 					renderTo: Ext.getBody()

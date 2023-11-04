@@ -6,12 +6,12 @@
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#mybutton').click(function() {
+				$("#mybutton").click(function() {
 					$.each([1,2,3],function(index,element) {
-						$('#li'+index).text($('#li'+index).text()+', ('+index+','+element+')');
+						$("#li"+index).text($("#li"+index).text()+", ("+index+","+element+")");
 					});
 				});
 			});
@@ -19,11 +19,11 @@
 	</head>
 	<body>
 		<ul>
-			<li id='li0'>results for 0:</li>
-			<li id='li1'>results for 1:</li>
-			<li id='li2'>results for 2:</li>
+			<li id="li0">results for 0:</li>
+			<li id="li1">results for 1:</li>
+			<li id="li2">results for 2:</li>
 		</ul>
-		<button id='mybutton'>Push me to iterate an array....</button>
-		<div id='result'></div>
+		<button id="mybutton">Push me to iterate an array....</button>
+		<div id="result"></div>
 	</body>
 </html>

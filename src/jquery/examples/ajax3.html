@@ -5,15 +5,15 @@
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#mybutton').click(function() {
+				$("#mybutton").click(function() {
 					$.ajax(
-						'ajax.json',
+						"ajax.json",
 						{ "key": "value" },
 						function(data, textStatus, jqXHR) {
-							console.log([data,textStatus,jqXHR,this].join(','));
+							console.log([data,textStatus,jqXHR,this].join(","));
 						}
 					);
 				});
@@ -21,6 +21,6 @@
 		</script>
 	</head>
 	<body>
-		<button id='mybutton'>Push me!</button>
+		<button id="mybutton">Push me!</button>
 	</body>
 </html>

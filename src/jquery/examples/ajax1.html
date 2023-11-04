@@ -6,21 +6,21 @@ A simple HTTP GET request using the jQuery Ajax API.
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#mybutton').click(function() {
+				$("#mybutton").click(function() {
 					$.get(
-						'ajax.json',
+						"ajax.json",
 						{ "key": "value" },
 						function(data) { console.log(data.name); },
-						'json'
+						"json"
 					);
 				});
 			});
 		</script>
 	</head>
 	<body>
-		<button id='mybutton'>Push me!</button>
+		<button id="mybutton">Push me!</button>
 	</body>
 </html>

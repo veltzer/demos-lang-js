@@ -6,8 +6,8 @@
 -->
 <html>
 	<head>
-		<script type='text/javascript' src='../../toolkits/prototype.js'></script>
-		<script type='text/javascript'>
+		<script type="text/javascript" src="../../toolkits/prototype.js"></script>
+		<script type="text/javascript">
 			/** new, preferred syntax **/
 			// properties are directly passed to `create` method
 			var Person = Class.create({
@@ -15,7 +15,7 @@
 					this.name = name;
 				},
 				say: function(message) {
-					return this.name + ': ' + message;
+					return this.name + ": " + message;
 				}
 			});
 
@@ -24,15 +24,15 @@
 				// redefine the speak method
 				initialize: function($super, name) {
 					$super(name);
-					this.name='errr '+this.name;
+					this.name="errr "+this.name;
 				},
 				say: function($super, message) {
-					return $super(message) + ', yarr!';
+					return $super(message) + ", yarr!";
 				}
 			});
 
-			var john=new Pirate('Long John');
-			document.write(john.say('ahoy matey')); // -> "Long John: ahoy matey, yarr!"
+			var john=new Pirate("Long John");
+			document.write(john.say("ahoy matey")); // -> "Long John: ahoy matey, yarr!"
 		</script>
 	</head>
 	<body>

@@ -79,7 +79,9 @@ check_grep:
 .PHONY: check_html
 check_html:
 	$(info doing [$@])
-	$(Q)-git grep -l "'" -- "*.html"
+	$(Q)git grep -l "'" -- "*.html" || true
+	$(Q)git grep -l " $$" -- "*.html" || true
+	$(Q)git grep -l "  " -- "*.html" || true
 .PHONY: count
 count:
 	$(info doing [$@])

@@ -5,15 +5,15 @@ A simple HTTP GET request using the jQuery Ajax API.
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#mybutton').click(function() {
+				$("#mybutton").click(function() {
 					$.getJSON(
-						'ajax.json',
+						"ajax.json",
 						{ "key": "value" },
 						function(data, textStatus, jqXHR) {
-							console.log([data,textStatus,jqXHR,this].join(','));
+							console.log([data,textStatus,jqXHR,this].join(","));
 						}
 					);
 				});
@@ -21,6 +21,6 @@ A simple HTTP GET request using the jQuery Ajax API.
 		</script>
 	</head>
 	<body>
-		<button id='mybutton'>Push me!</button>
+		<button id="mybutton">Push me!</button>
 	</body>
 </html>

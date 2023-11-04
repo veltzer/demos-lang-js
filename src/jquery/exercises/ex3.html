@@ -2,31 +2,31 @@
 -->
 <html>
 	<head>
-		<script src='../../toolkits/jquery.js'></script>
+		<script src="../../toolkits/jquery.js"></script>
 		<style>
-			@import 'ex3.css';
+			@import "ex3.css";
 		</style>
-		<script src='ex3.js'></script>
+		<script src="ex3.js"></script>
 		<script>
 			$(document).ready(function() {
 				var tab;
-				$('#mybutton').click(function() {
+				$("#mybutton").click(function() {
 					tab=new PaginatedTable({
-						id:'#mytable',
+						id:"#mytable",
 						rows:5,
 						cols:5,
 						create_buttons:1,
-						dataurl:'ex3.php',
-						httpmethod:'GET'
+						dataurl:"ex3.php",
+						httpmethod:"GET"
 					});
 				});
-				$('#myprev').click(function() {
+				$("#myprev").click(function() {
 					tab.prev();
 				});
-				$('#mynext').click(function() {
+				$("#mynext").click(function() {
 					tab.next();
 				});
-				$('#myrandomize').click(function() {
+				$("#myrandomize").click(function() {
 					for(var i=0;i<tab.getRows();i++) {
 						for(var j=0;j<tab.getCols();j++) {
 							tab.setData(i,j,Math.random());
@@ -37,10 +37,10 @@
 		</script>
 	</head>
 	<body>
-		<button id='mybutton'>Create table</button>
-		<button id='myprev'>Call prev from outside</button>
-		<button id='mynext'>Call next from outside</button>
-		<button id='myrandomize'>Put random data into the table</button>
-		<div id='mytable'></div>
+		<button id="mybutton">Create table</button>
+		<button id="myprev">Call prev from outside</button>
+		<button id="mynext">Call next from outside</button>
+		<button id="myrandomize">Put random data into the table</button>
+		<div id="mytable"></div>
 	</body>
 </html>

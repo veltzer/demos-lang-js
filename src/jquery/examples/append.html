@@ -6,21 +6,21 @@ And yes, jQuery can handle it.
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
 				// appending plain text...
-				$('#mydiv').append('yes!');
+				$("#mydiv").append("yes!");
 				// appending of any html...
-				var elem_html=$('<p>this is some text</p>');
-				$('#mydiv').append(elem_html);
+				var elem_html=$("<p>this is some text</p>");
+				$("#mydiv").append(elem_html);
 				// this is more efficient than the above
-				var elem_jquery=$('<p/>').text('this is more text');
-				$('#mydiv').append(elem_jquery);
+				var elem_jquery=$("<p/>").text("this is more text");
+				$("#mydiv").append(elem_jquery);
 			});
 		</script>
 	</head>
 	<body>
-		<div id='mydiv'>This is my text...</div>
+		<div id="mydiv">This is my text...</div>
 	</body>
 </html>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 	This example investigates the $.ready jQuery function.
 
@@ -8,7 +9,7 @@
 	are loaded you can attach to their load event via $.load.
 	- notice the many ways by which you can bind to the ready function.
 	- the recommended way is the first one: $(document).ready(function).
-	- notice that you can still bind method to 'ready' even if you are
+	- notice that you can still bind method to "ready" even if you are
 	within a ready handler.
 	- notice that .bind events get called after regular .ready handlers.
 
@@ -16,28 +17,28 @@
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function() {
-				console.log('first bounded');
+				console.log("first bounded");
 				$(document).ready(function() {
-					console.log('ready-bounded late');
+					console.log("ready-bounded late");
 				});
-				$(document).bind('ready', function() {
-					console.log('bind-bounded late');
+				$(document).bind("ready", function() {
+					console.log("bind-bounded late");
 				});
 			});
 			$().ready(function() {
-				console.log('second bounded');
-				$(document).bind('ready', function() {
-					console.log('bind-bounded later');
+				console.log("second bounded");
+				$(document).bind("ready", function() {
+					console.log("bind-bounded later");
 				});
 			});
 			$(function() {
-				console.log('third bounded');
+				console.log("third bounded");
 			});
-			$(document).bind('ready', function() {
-				console.log('bind-bounded early');
+			$(document).bind("ready", function() {
+				console.log("bind-bounded early");
 			});
 		</script>
 	</head>

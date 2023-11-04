@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 	This example investigates the $.ready jQuery function further.
 
@@ -5,24 +6,24 @@
 	- the argument you get in the .ready handler is jQuery itself!
 	- you can use that to rename jQuery.
 	- or you can use that as a substitute name for $/jQuery.
-	- the 'this' automatic variable that you get in .ready is the document
+	- the "this" automatic variable that you get in .ready is the document
 	- you can use that to bind more .ready functions as demonstrated.
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>
-		<script src='/jquery.js'></script>
+		<script src="/jquery.js"></script>
 		<script>
 			$(document).ready(function(doc) {
 				$(this).ready(function() {
-					console.log('using this');
+					console.log("using this");
 				});
 				// doc is now an alias to $/jQuery...
 				doc(this).ready(function() {
-					console.log('using parameter');
+					console.log("using parameter");
 				});
-				console.log('global');
+				console.log("global");
 			});
 		</script>
 	</head>
