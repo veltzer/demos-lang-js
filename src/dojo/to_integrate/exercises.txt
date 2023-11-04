@@ -120,13 +120,13 @@ are more items to be fetched.
 ============================================
 Phase 1
 =======
-Take the dijit.form.Button widget and modify it's template to have
+Take the dijit.form.Button widget and modify its template to have
 another element in it. First use a standard HTML tag and then
 use another dojo widget.
 
 Phase 2
 =======
-Create a new widget based on a button which reverses it's
+Create a new widget based on a button which reverses its
 title. For example <div dojoType="dojox.widget.YourWidget" label="ABCD"></div> will cause a button with "DCBA" to appear.
 
 Phase 3

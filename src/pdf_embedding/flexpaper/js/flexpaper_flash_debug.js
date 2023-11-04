@@ -275,7 +275,7 @@ function onDocumentPrinted(){
 
 			opts = extend({}, opts);
 			
-			/******* OBJECT tag and it's attributes *******/
+			/******* OBJECT tag and its attributes *******/
 			var html = '<object width="' + opts.width + 
 				'" height="' + opts.height + 
 				'" id="' + opts.id + 

@@ -1,7 +1,7 @@
 var first=true;
 var id=undefined;
 // this next line causes an exception even though chrome has a console tab
-// in it's debugger...
+// in its debugger...
 //console.log('hello');
 function myonmessage(e) {
 	if(first) {

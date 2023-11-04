@@ -207,7 +207,7 @@ jws.tools = {
 			+ ( lTZO >= 0 ? "+" : "-" )
 			+ this.zerofill( lAbsTZO / 60, 2 )
 			+ this.zerofill( lAbsTZO % 60, 2 )
-			// trailing Z means it's UTC
+			// trailing Z means its UTC
 			+ "Z";
 		return lRes;
 	},

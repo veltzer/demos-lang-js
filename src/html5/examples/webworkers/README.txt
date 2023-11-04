@@ -4,8 +4,8 @@ There are three ways a worker may stay alive:
 - keep timers around.
 
 A thread can die by:
-- not registering 'onmessage' and timers and ending it's code.
-- deregistering from both 'onmessage' and timers and ending it's code.
+- not registering 'onmessage' and timers and ending its code.
+- deregistering from both 'onmessage' and timers and ending its code.
 - calling close() explicitly.
 - the parent calling worker.terminate() (bad practice although not that
 	bad in javascript since there is no data to be left in unstable
@@ -16,7 +16,7 @@ A few facts about workers:
 - 'console.log' is not available in workers.
 - it looks like onclose inside the worker does not work although some documentation
 	says otherwise.
-- a worker can catch it's own errors using onerror
+- a worker can catch its own errors using onerror
 - both chorme and firebug have nice interfaces to debug workers.
 
 References:

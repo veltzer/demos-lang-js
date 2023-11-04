@@ -26,7 +26,7 @@ design your code better
 - Separate visuals into css and only refer to class names from your code.
 - Create methods that allow one to call "next" and "prev" functionality from afar
 	(outside your object)
-- Put the 'Table Widget' into it's own file.
+- Put the 'Table Widget' into its own file.
 - Use the prototype feature to write methods for this widget.
 - Use a map(object) to initialize all attributes of the widget.
 - Allow one to specify only the attributes that are different from default.
@@ -36,7 +36,7 @@ Ex3 - based on Ex2
 ==================
 Add paramters to the constructor specifying the source url for the data on the server
 and the HTTP method (GET/POST).
-Make the PaginatedTable object "know" it's position from within the source of the data.
+Make the PaginatedTable object "know" its position from within the source of the data.
 Do ajax via the jQuery.ajax function.
 Send to the server the rows that you need.
 Get the results from the server.
@@ -60,4 +60,4 @@ Three publish/subscribe issues:
 - Make the table subscribe to 'next' and 'prev' events so that next and prev could
 	be triggered via 'publish' without an explicit handle to the table.
 	Show this works by publishing 'next' and 'prev' events and showing that
-	the table updates it's data.
+	the table updates its data.

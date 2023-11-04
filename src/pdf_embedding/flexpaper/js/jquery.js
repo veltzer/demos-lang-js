@@ -99,7 +99,7 @@ jQuery.fn = jQuery.prototype = {
 				if ( match[1] ) {
 					doc = (context ? context.ownerDocument || context : document);
 
-					// If a single string is passed in and it's a single tag
+					// If a single string is passed in and its a single tag
 					// just do a createElement and skip the rest
 					ret = rsingleTag.exec( selector );
 
@@ -860,7 +860,7 @@ function now() {
 		checkOn: div.getElementsByTagName("input")[0].value === "on",
 
 		// Make sure that a selected-by-default option has a working selected property.
-		// (WebKit defaults to false instead of true, IE too, if it's in an optgroup)
+		// (WebKit defaults to false instead of true, IE too, if its in an optgroup)
 		optSelected: document.createElement("select").appendChild( document.createElement("option") ).selected,
 
 		// Will be defined later
@@ -1033,7 +1033,7 @@ jQuery.extend({
 				delete elem[ expando ];
 			} catch( e ) {
 				// IE has trouble directly removing the expando
-				// but it's ok with using removeAttribute
+				// but its ok with using removeAttribute
 				if ( elem.removeAttribute ) {
 					elem.removeAttribute( expando );
 				}
@@ -1705,7 +1705,7 @@ jQuery.event = {
 				}
 			}
 
-			// Remove the expando if it's no longer used
+			// Remove the expando if its no longer used
 			for ( ret in events ) {
 				break;
 			}
@@ -4554,9 +4554,9 @@ jQuery.fn.extend({
 
 		// If the second parameter was provided
 		if ( params ) {
-			// If it's a function
+			// If its a function
 			if ( jQuery.isFunction( params ) ) {
-				// We assume that it's the callback
+				// We assume that its the callback
 				callback = params;
 				params = null;
 
@@ -4882,8 +4882,8 @@ jQuery.extend({
 				}
 			}
 
-			// Set header so the called script knows that it's an XMLHttpRequest
-			// Only send the header if it's not a remote XHR
+			// Set header so the called script knows that its an XMLHttpRequest
+			// Only send the header if its not a remote XHR
 			if ( !remote ) {
 				xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 			}
