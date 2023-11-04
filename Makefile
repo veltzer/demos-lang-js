@@ -8,7 +8,7 @@ DO_ALLDEP:=1
 # do you want to do eslint?
 DO_ESLINT:=0
 # do you want to do htmlhint?
-DO_HTMLHINT:=1
+DO_HTMLHINT:=0
 
 ########
 # code #
