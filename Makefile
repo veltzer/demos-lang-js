@@ -5,12 +5,14 @@
 DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
-# do you want to do eslint?
-DO_ESLINT:=0
 # do you want to do htmlhint?
 DO_HTMLHINT:=0
+# do you want to do eslint?
+DO_ESLINT:=0
 # do you want to run standard?
 DO_STANDARD:=0
+# od you want to do jslint?
+DO_JSLINT:=0
 
 ########
 # code #
@@ -18,9 +20,10 @@ DO_STANDARD:=0
 ALL:=
 ALL_HTML:=$(shell find src -name "*.html")
 ALL_JS:=$(shell find src -name "*.js")
-ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
+ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
 ALL_STANDARD:=$(addprefix out/,$(addsuffix .standard, $(basename $(ALL_JS))))
+ALL_JSLINT:=$(addprefix out/,$(addsuffix .jslint, $(basename $(ALL_JS))))
 
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -31,17 +34,21 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-ifeq ($(DO_ESLINT),1)
-ALL+=$(ALL_ESLINT)
-endif # DO_ESLINT
-
 ifeq ($(DO_HTMLHINT),1)
 ALL+=$(ALL_HTMLHINT)
 endif # DO_HTMLHTINT
 
+ifeq ($(DO_ESLINT),1)
+ALL+=$(ALL_ESLINT)
+endif # DO_ESLINT
+
 ifeq ($(DO_STANDARD),1)
 ALL+=$(ALL_STANDARD)
 endif # DO_STANDARD
+
+ifeq ($(DO_JSLINT),1)
+ALL+=$(ALL_JSLINT)
+endif # DO_JSLINT
 
 # dependency on the makefile itself
 ifeq ($(DO_ALLDEP),1)
@@ -100,9 +107,10 @@ debug:
 	$(info doing [$@])
 	$(info ALL_HTML is $(ALL_HTML))
 	$(info ALL_JS is $(ALL_JS))
-	$(info ALL_ESLINT is $(ALL_ESLINT))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
+	$(info ALL_ESLINT is $(ALL_ESLINT))
 	$(info ALL_STANDARD is $(ALL_STANDARD))
+	$(info ALL_JSLINT is $(ALL_JSLINT))
 .PHONY: clean
 clean:
 	$(Q)rm -f $(ALL)
@@ -114,6 +122,10 @@ clean_hard:
 ############
 # patterns #
 ############
+$(ALL_HTMLHINT): out/%.htmlhint: %.html
+	$(info doing [$@])
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
+	$(Q)pymakehelper touch_mkdir $@
 $(ALL_ESLINT): out/%.eslint: %.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/eslint $<
@@ -122,7 +134,7 @@ $(ALL_STANDARD): out/%.standard: %.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/standard --fix $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_HTMLHINT): out/%.htmlhint: %.html
+$(ALL_JSLINT): out/%.jslint: %.js
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
+	$(Q)node_modules/.bin/jslint $<
 	$(Q)pymakehelper touch_mkdir $@

@@ -2,6 +2,7 @@
   "dependencies": {
     "eslint": "latest",
     "htmlhint": "latest",
+    "jslint": "latest",
     "standard": "latest"
   }
 }
