@@ -30,8 +30,7 @@ packages=[
     "yui-compressor",
     "slimit",
     "shrinksafe",
+    # "jsl",
+    "eslint",
     #"yui-builder",
-]
-tools=[
-    "jsl",
 ]
