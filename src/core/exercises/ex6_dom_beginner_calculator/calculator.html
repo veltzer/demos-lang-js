@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 Basic solution to the exercise. Notice that binding the click event
 is done via the 'onclick' property of the 'button' element...
@@ -6,6 +7,7 @@ is done via the 'onclick' property of the 'button' element...
 -->
 <html>
 	<head>
+		<title>calculator</title>
 		<script>
 			function init() {
 				var e_a=document.getElementById('a');
@@ -24,9 +26,9 @@ is done via the 'onclick' property of the 'button' element...
 	</head>
 	<body>
 		Please enter a value in a and b and then press calculate...<br/>
-		<input id='a'></input><br/>
-		<input id='b'></input><br/>
-		<button onclick='calc()'>Calculate!</button><br/>
-		<input id='result' readonly='readonly'></input><br/>
+		<input id="a"/><br/>
+		<input id="b"/><br/>
+		<button onclick="calc()">Calculate!</button><br/>
+		<input id="result" readonly="readonly"/><br/>
 	</body>
 </html>

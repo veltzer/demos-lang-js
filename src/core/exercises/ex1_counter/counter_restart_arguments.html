@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <script>
 	function make_iterator(start,step,stop) {
 		var value=start-step;
@@ -8,7 +10,7 @@
 			} else {
 				value+=step;
 				if(value>stop) {
-					throw 'wow man! too much for me...';
+					throw "wow man! too much for me...";
 				} else {
 					return value;
 				}
@@ -16,13 +18,14 @@
 		};
 	}
 	var iter=make_iterator(5,2,17);
-	document.write(iter()+'<br/>');
-	document.write(iter()+'<br/>');
-	document.write(iter()+'<br/>');
-	document.write(iter()+'<br/>');
+	document.write(iter()+"<br/>");
+	document.write(iter()+"<br/>");
+	document.write(iter()+"<br/>");
+	document.write(iter()+"<br/>");
 	iter(null);
-	document.write(iter()+'<br/>');
-	document.write(iter()+'<br/>');
-	document.write(iter()+'<br/>');
-	document.write(iter()+'<br/>');
+	document.write(iter()+"<br/>");
+	document.write(iter()+"<br/>");
+	document.write(iter()+"<br/>");
+	document.write(iter()+"<br/>");
 </script>
+</html>

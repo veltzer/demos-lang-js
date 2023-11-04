@@ -1,6 +1,6 @@
 /*jsl:ignore*/
 /*
-	This shows that if you call the file.js then most browsers will not render it's content correctly
+	This shows that if you call the file.js then most browsers will not render its content correctly
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 */

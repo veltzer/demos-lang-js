@@ -1,0 +1,4 @@
+we use double quotes
+	this is the HTML standard
+	this is the google standard
+	this is the standard in most languages

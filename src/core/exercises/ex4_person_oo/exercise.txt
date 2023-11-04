@@ -5,4 +5,4 @@ Make all methods be shared via a prototype, add toString.
 
 Create an Employee class which inherits from Person.
 
-Demostrate it's use.
+Demostrate its use.

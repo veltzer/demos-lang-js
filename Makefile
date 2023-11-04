@@ -5,16 +5,19 @@
 DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
-# do you want to do linting?
-DO_LINT:=0
+# do you want to do eslint?
+DO_ESLINT:=0
+# do you want to do htmlhint?
+DO_HTMLHINT:=1
 
 ########
 # code #
 ########
 ALL:=
-ALL_HTML:=$(shell find src -name "*.html" -or -name "*.js")
+ALL_HTML:=$(shell find src -name "*.html")
 ALL_JS:=$(shell find src -name "*.js")
-ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_JS))))
+ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
+ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
 
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -25,9 +28,13 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-ifeq ($(DO_LINT),1)
-ALL+=$(ALL_LINT)
-endif # DO_LINT
+ifeq ($(DO_ESLINT),1)
+ALL+=$(ALL_ESLINT)
+endif # DO_ESLINT
+
+ifeq ($(DO_HTMLHINT),1)
+ALL+=$(ALL_HTMLHINT)
+endif # DO_HTMLHTINT
 
 # dependency on the makefile itself
 ifeq ($(DO_ALLDEP),1)
@@ -80,7 +87,11 @@ debug:
 	$(info doing [$@])
 	$(info ALL_HTML is $(ALL_HTML))
 	$(info ALL_JS is $(ALL_JS))
-	$(info ALL_LINT is $(ALL_LINT))
+	$(info ALL_ESLINT is $(ALL_ESLINT))
+	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
+.PHONY: clean
+clean:
+	$(Q)rm -f $(ALL)
 .PHONY: clean_hard
 clean_hard:
 	$(info doing [$@])
@@ -89,7 +100,11 @@ clean_hard:
 ############
 # patterns #
 ############
-$(ALL_LINT): out/%.lint: %.js
+$(ALL_ESLINT): out/%.eslint: %.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/eslint $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_HTMLHINT): out/%.htmlhint: %.html
+	$(info doing [$@])
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
 	$(Q)pymakehelper touch_mkdir $@

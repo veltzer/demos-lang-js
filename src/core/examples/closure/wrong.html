@@ -1,8 +1,8 @@
 <!--
 	This demo shows problem with closures...
-	The reason why the wrong version doesn't work is that i is a primitive and therefore
-	each closure get a reference to the 'i' variable that exists ONLY ONCE in the wrapper
-	function. Therefor, we only 5 printed which is the value of i when the 'wrong_wrapper'
+	The reason why the wrong version doesnt work is that i is a primitive and therefore
+	each closure get a reference to the "i" variable that exists ONLY ONCE in the wrapper
+	function. Therefor, we only 5 printed which is the value of i when the "wrong_wrapper"
 	function exists.
 
 	Mark Veltzer <mark.veltzer@gmail.com>
@@ -15,7 +15,7 @@
 				var arr=[];
 				for(var i=0;i<5;i++) {
 					arr.push(function() {
-						document.write(i+'<br/>');
+						document.write(i+"<br/>");
 					});
 				}
 				return arr;
@@ -27,7 +27,7 @@
 				for(var i=0;i<5;i++) {
 					obj.value=i;
 					arr.push(function() {
-						document.write(obj.value+'<br/>');
+						document.write(obj.value+"<br/>");
 					});
 				}
 				return arr;
@@ -40,7 +40,7 @@
 					obj.value=i;
 					arr.push(function(o) {
 						return function() {
-							document.write(o.value+'<br/>');
+							document.write(o.value+"<br/>");
 						};
 					}(obj));
 				}
@@ -52,7 +52,7 @@
 				for(var i=0;i<5;i++) {
 					arr.push(function(j) {
 						return function() {
-							document.write(j+'<br/>');
+							document.write(j+"<br/>");
 						};
 					}(i));
 				}
