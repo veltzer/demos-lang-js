@@ -1,20 +1,22 @@
+<!DOCTYPE html>
 <html>
 	<head>
+		<title>Title</title>
 		<script>
-		function foo() {
-			return 7;
-		}
-		
-		var tmp=foo
-		foo=function() {
-			alert("before foo");
-			var ret=tmp()
-			alert("after foo");
-			return ret
-		}
-		foo()
-		foo=tmp
-		foo()
+			function foo() {
+				return 7;
+			}
+			
+			var tmp=foo
+			foo=function() {
+				alert("before foo");
+				var ret=tmp()
+				alert("after foo");
+				return ret
+			}
+			foo()
+			foo=tmp
+			foo()
 		</script>
 	</head>
 </html>

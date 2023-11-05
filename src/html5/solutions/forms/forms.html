@@ -23,7 +23,7 @@
 			</header>
 <!-- Modify Form Here -->
 
-			<form action="forms.html" action="post">
+			<form action="forms.html" method="post">
 				<table>
 					<tr><th>First Name:</th><td><input type="text" name="firstName" value="Harry"/></td></tr>
 					<tr><th>Last Name:</th><td><input type="text" name="lastName" value="Potter"/></td></tr>
@@ -32,7 +32,7 @@
 					<tr><th>Web Site:</th><td><input type="url" name="website" value="http://"/></td></tr>
 					<tr><th>Age:</th>
 					<td>
-						<input type="range" name="age" min="18" max="150" value="18" onchange="document.getElementById("ageDisplay").innerHTML = this.value;"/>
+						<input type="range" name="age" min="18" max="150" value="18" onchange="document.getElementById('ageDisplay').innerHTML = this.value;"/>
 						<span id="ageDisplay">18</span>
 					</td>
 					</tr>

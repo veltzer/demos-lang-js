@@ -12,5 +12,4 @@ statusOnline.jpg
 
 #FALLBACK:
 # When we can't find the server's time, we'll fall back and approximate it with locally managed time
-date.jsp	date.html
-
+date.jsp	date.html_frag

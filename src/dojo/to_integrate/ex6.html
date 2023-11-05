@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Hello, World!</title>
@@ -15,7 +16,6 @@
 			dojo.require("dijit.form.DateTextBox");
 			dojo.require("dijit.form.NumberTextBox");
 			function checkState() {
-
 				var valid = dijit.byId("firstName").isValid() && dijit.byId("age").isValid() && dijit.byId("hobby").isValid() && dijit.byId("bd").isValid();
 				dijit.byId("go").attr("disabled",!valid);
 			}
@@ -23,18 +23,18 @@
 	</head>
 
 	<body class="tundra">
-		<div data-dojo-type="dojo.data.ItemFileReadStore" jsId="hobbies" url="ex6.ajax"/>
-		Name : <div data-dojo-type="dijit.form.ValidationTextBox" id="firstName" regExp="^[a-zA-Z ]+$" required="true" invalidMessage="Must be alpha." onBlur="checkState"></div>
+		<div data-dojo-type="dojo.data.ItemFileReadStore" js-id="hobbies" url="ex6.ajax"/>
+		Name : <div data-dojo-type="dijit.form.ValidationTextBox" id="firstName" reg-exp="^[a-zA-Z ]+$" required="true" invalid-message="Must be alpha." onBlur="checkState"></div>
 		<br/>
-		Age : <div data-dojo-type="dijit.form.NumberTextBox" id="age" invalidMessage="Must be numeric." onBlur="checkState"></div>
+		Age : <div data-dojo-type="dijit.form.NumberTextBox" id="age" invalid-message="Must be numeric." onBlur="checkState"></div>
 		<br/>
-		Hobby : <div data-dojo-type="dijit.form.FilteringSelect" autocomplete="true" id="hobby" value="Enter your hobby" store="hobbies" searchAttr="hobby" onBlur="checkState"></div>
+		Hobby : <div data-dojo-type="dijit.form.FilteringSelect" autocomplete="true" id="hobby" value="Enter your hobby" store="hobbies" search-attr="hobby" onBlur="checkState"></div>
 		<br/>
 		Birth Date : <div data-dojo-type="dijit.form.DateTextBox" id="bd" onBlur="checkState"></div>
 		<br/>
-		Password : <input type="password" data-dojo-type="dijit.form.TextBox" id="password" onBlur="checkState"></input>
+		Password : <input type="password" data-dojo-type="dijit.form.TextBox" id="password" onBlur="checkState"/>
 		<br/>
-		<div data-dojo-type="dijit.form.Button" id="go" onClick="alert(\"Boom!\")" disabled>Go!</div>
+		<div data-dojo-type="dijit.form.Button" id="go" onClick="alert('Boom!')" disabled>Go!</div>
 
 	</body>
 </html>
