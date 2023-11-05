@@ -7,3 +7,8 @@ file names
 	html files -> .html (this is the standard and the preferred)
 	js file -> .js (this is the standard)
 	html fragment files -> .html_frag (don't know of any standard for that).
+
+tag names inside html
+	should all be lower case
+when a tag does not have content, it should have an early close:
+	<button/>
