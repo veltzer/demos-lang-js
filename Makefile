@@ -15,6 +15,8 @@ DO_STANDARD:=0
 DO_JSLINT:=0
 # do check_html?
 DO_CHECK_HTML:=1
+# are we in a dev enviornment?
+DEV:=1
 
 ########
 # code #
@@ -124,6 +126,9 @@ out/html.stamp: $(ALL_HTML)
 	$(Q)git grep -l " $$" -- "*.html" || true
 	$(Q)git grep -l "  " -- "*.html" || true
 	$(Q)pymakehelper touch_mkdir $@
+.PHONY:
+all_htmlhint: $(ALL_HTML)
+	$(Q)node_modules/.bin/htmlhint src
 
 ############
 # patterns #
