@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <table id="applicationStatus">
 	<tr><th>Email Address:</th><td id="tdEmail"></td></tr>
 	<tr><th>Online Status:</th><td id="tdOnline"></td></tr>

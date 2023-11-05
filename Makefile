@@ -23,8 +23,9 @@ DEV:=1
 ########
 ALL:=
 ALL_HTML:=$(shell find src -name "*.html")
+ALL_HTML_FRAG:=$(shell find src -name "*.html_frag")
 ALL_JS:=$(shell find src -name "*.js")
-ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
+ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML) $(ALL_HTML_FRAG))))
 ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
 ALL_STANDARD:=$(addprefix out/,$(addsuffix .standard, $(basename $(ALL_JS))))
 ALL_JSLINT:=$(addprefix out/,$(addsuffix .jslint, $(basename $(ALL_JS))))

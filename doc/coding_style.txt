@@ -6,3 +6,4 @@ we use double quotes
 file names
 	html files -> .html (this is the standard and the preferred)
 	js file -> .js (this is the standard)
+	html fragment files -> .html_frag (don't know of any standard for that).
