@@ -6,7 +6,9 @@ DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
 # do you want to do htmlhint?
-DO_HTMLHINT:=1
+DO_HTMLHINT:=0
+# do you want to use tidy?
+DO_TIDY:=1
 # do you want to do eslint?
 DO_ESLINT:=0
 # do you want to run standard?
@@ -28,6 +30,7 @@ ALL_HTML:=$(shell find src -name "*.html")
 ALL_HTML_FRAG:=$(shell find src -name "*.html_frag")
 ALL_JS:=$(shell find src -name "*.js")
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML) $(ALL_HTML_FRAG))))
+ALL_TIDY:=$(addprefix out/,$(addsuffix .tidy, $(basename $(ALL_HTML) $(ALL_HTML_FRAG))))
 ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
 ALL_STANDARD:=$(addprefix out/,$(addsuffix .standard, $(basename $(ALL_JS))))
 ALL_JSLINT:=$(addprefix out/,$(addsuffix .jslint, $(basename $(ALL_JS))))
@@ -45,6 +48,10 @@ endif # DO_MKDBG
 ifeq ($(DO_HTMLHINT),1)
 ALL+=$(ALL_HTMLHINT)
 endif # DO_HTMLHTINT
+
+ifeq ($(DO_TIDY),1)
+ALL+=$(ALL_TIDY)
+endif # DO_TIDY
 
 ifeq ($(DO_ESLINT),1)
 ALL+=$(ALL_ESLINT)
@@ -118,6 +125,7 @@ debug:
 	$(info ALL_HTML is $(ALL_HTML))
 	$(info ALL_JS is $(ALL_JS))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
+	$(info ALL_TIDY is $(ALL_TIDY))
 	$(info ALL_ESLINT is $(ALL_ESLINT))
 	$(info ALL_STANDARD is $(ALL_STANDARD))
 	$(info ALL_JSLINT is $(ALL_JSLINT))
@@ -145,6 +153,10 @@ all_htmlhint: $(ALL_HTML)
 $(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_TIDY): out/%.tidy: %.html
+	$(info doing [$@])
+	$(Q)tidy -errors -q $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_ESLINT): out/%.eslint: %.js
 	$(info doing [$@])
