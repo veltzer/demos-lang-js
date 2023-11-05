@@ -13,6 +13,8 @@ DO_ESLINT:=0
 DO_STANDARD:=0
 # do you want to do jslint?
 DO_JSLINT:=0
+# do you want to do jshint?
+DO_JSHINT:=0
 # do check_html?
 DO_CHECK_HTML:=1
 # are we in a dev enviornment?
@@ -29,6 +31,7 @@ ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML) $(A
 ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
 ALL_STANDARD:=$(addprefix out/,$(addsuffix .standard, $(basename $(ALL_JS))))
 ALL_JSLINT:=$(addprefix out/,$(addsuffix .jslint, $(basename $(ALL_JS))))
+ALL_JSHINT:=$(addprefix out/,$(addsuffix .jshint, $(basename $(ALL_JS))))
 
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -54,6 +57,10 @@ endif # DO_STANDARD
 ifeq ($(DO_JSLINT),1)
 ALL+=$(ALL_JSLINT)
 endif # DO_JSLINT
+
+ifeq ($(DO_JSHINT),1)
+ALL+=$(ALL_JSHINT)
+endif # DO_JSHINT
 
 ifeq ($(DO_CHECK_HTML),1)
 ALL+=out/html.stamp
@@ -114,6 +121,7 @@ debug:
 	$(info ALL_ESLINT is $(ALL_ESLINT))
 	$(info ALL_STANDARD is $(ALL_STANDARD))
 	$(info ALL_JSLINT is $(ALL_JSLINT))
+	$(info ALL_JSHINT is $(ALL_JSHINT))
 .PHONY: clean
 clean:
 	$(Q)rm -f $(ALL)
@@ -149,4 +157,8 @@ $(ALL_STANDARD): out/%.standard: %.js
 $(ALL_JSLINT): out/%.jslint: %.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/jslint $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_JSHINT): out/%.jshint: %.js
+	$(info doing [$@])
+	$(Q)node_modules/.bin/jshint $<
 	$(Q)pymakehelper touch_mkdir $@
