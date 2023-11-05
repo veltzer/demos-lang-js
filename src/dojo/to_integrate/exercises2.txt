@@ -85,7 +85,7 @@ use another dojo widget.
 Phase 2
 =======
 Create a new widget based on a button which reverses its
-title. For example <div dojoType="dojox.widget.YourWidget" label="ABCD"></div> will cause a button with "DCBA" to appear.
+title. For example <div data-dojo-type="dojox.widget.YourWidget" label="ABCD"></div> will cause a button with "DCBA" to appear.
 
 Phase 3
 =======

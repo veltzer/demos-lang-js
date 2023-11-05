@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Hello, Roller</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true, modulePaths: {\"extend\": \"../../../dojo/extend\"}"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true, modulePaths: {\"extend\": \"../../../dojo/extend\"}"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -14,7 +14,7 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="extend.Roller" initVal="50" incVal="5" decVal="8" maxVal="100"></div>
-		<div dojoType="extend.Roller" initVal="5" incVal="1" decVal="1" maxVal="10"></div>
+		<div data-dojo-type="extend.Roller" initVal="50" incVal="5" decVal="8" maxVal="100"></div>
+		<div data-dojo-type="extend.Roller" initVal="5" incVal="1" decVal="1" maxVal="10"></div>
 	</body>
 </html>

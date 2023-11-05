@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Login page exercise</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -42,11 +42,11 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<form id="formid" dojoType="dijit.form.Form">
+		<form id="formid" data-dojo-type="dijit.form.Form">
 		First Name<div type="text"
 			id="firstName"
 			name="firstName"
-			dojoType="dijit.form.ValidationTextBox"
+			data-dojo-type="dijit.form.ValidationTextBox"
 			required="true"
 			propercase="true"
 			regExp="^[a-zA-Z]+$"
@@ -59,7 +59,7 @@
 		Last Name<div type="text"
 			id="lastName"
 			name="lastName"
-			dojoType="dijit.form.ValidationTextBox"
+			data-dojo-type="dijit.form.ValidationTextBox"
 			required="true"
 			propercase="true"
 			regExp="^[a-zA-Z]+$"
@@ -69,19 +69,19 @@
 			trim="true"
 		></div>
 		<br/>
-		<div dojoType="dojox.form.PasswordValidator" name="pwValidate" pwCheck="pwCheck">
+		<div data-dojo-type="dojox.form.PasswordValidator" name="pwValidate" pwCheck="pwCheck">
 			<!--
 			Old password<input type="password" pwType="old"/><br/>
 			-->
 			New password<input type="password" pwType="new"/><br/>
 			Verify new password<input type="password" pwType="verify"/><br/>
 		</div>
-		<div dojoType="dijit.form.ComboBox" id="im" value="Enter your IM system"></div>
+		<div data-dojo-type="dijit.form.ComboBox" id="im" value="Enter your IM system"></div>
 		<br/>
 		IM id<div type="text"
 			id="imId"
 			name="IMid"
-			dojoType="dijit.form.ValidationTextBox"
+			data-dojo-type="dijit.form.ValidationTextBox"
 			required="true"
 			propercase="true"
 			regExp="^[0-9a-zA-Z]+$"
@@ -91,7 +91,7 @@
 			trim="true"
 		></div>
 		<br/>
-		<div id="submitid" dojoType="dijit.form.Button" title="click to see an alert" onclick="register" disabled="true">Register to this website</div>
+		<div id="submitid" data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="register" disabled="true">Register to this website</div>
 		</form>
 	</body>
 </html>

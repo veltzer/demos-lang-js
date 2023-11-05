@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<title>Solution to the dojo.back exercise</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true,preventBackButtonFix:false"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true,preventBackButtonFix:false"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -52,10 +52,10 @@
 		<script>
 			dojo.back.init()
 		</script>
-		<div id="id_sum" readonly="true" dojoType="dijit.form.NumberTextBox">
+		<div id="id_sum" readonly="true" data-dojo-type="dijit.form.NumberTextBox">
 		</div>
-		<div id="id_val" dojoType="dijit.form.NumberTextBox">
+		<div id="id_val" data-dojo-type="dijit.form.NumberTextBox">
 		</div>
-		<div dojoType="dijit.form.Button" onClick="sumNumbers">Add</div>
+		<div data-dojo-type="dijit.form.Button" onClick="sumNumbers">Add</div>
 	</body>
 </html>

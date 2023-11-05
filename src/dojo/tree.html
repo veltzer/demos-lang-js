@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Hello, Tree!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -36,19 +36,19 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="dojo.data.ItemFileReadStore"
+		<div data-dojo-type="dojo.data.ItemFileReadStore"
 			id="store"
 			url="tree.ajax"
 			jsid="popStore"
 		/>
 
-		<div dojoType="dijit.Tree"
+		<div data-dojo-type="dijit.Tree"
 			store="popStore"
 			id="tree"
 			onClick="do_click"
 			label="Pop Tarts">
 		</div>
-		<div dojoType="dijit.form.TextBox" id="textbox" disabled="true" title="selection"></div>
-		<div dojoType="dijit.form.TextBox" id="textbox2" disabled="true" title="selection"></div>
+		<div data-dojo-type="dijit.form.TextBox" id="textbox" disabled="true" title="selection"></div>
+		<div data-dojo-type="dijit.form.TextBox" id="textbox2" disabled="true" title="selection"></div>
 	</body>
 </html>

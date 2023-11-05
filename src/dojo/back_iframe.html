@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>example of a page going back and forward for iframes</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true,preventBackButtonFix:false"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true,preventBackButtonFix:false"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script src="back_iframe.js"></script>
@@ -16,9 +16,9 @@
 		</script>
 		<div id="mydiv"></div>
 		<br/>
-		<div id="id_url" dojoType="dijit.form.TextBox"></div>
+		<div id="id_url" data-dojo-type="dijit.form.TextBox"></div>
 		<br/>
-		<div dojoType="dijit.form.Button" onClick="go">go</div>
+		<div data-dojo-type="dijit.form.Button" onClick="go">go</div>
 		<br/>
 	</body>
 </html>

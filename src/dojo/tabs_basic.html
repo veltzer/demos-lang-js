@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Hello, tabs!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -14,11 +14,11 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="dijit.layout.TabContainer" style="width: 200px; height: 200px;">
-			<div dojoType="dijit.layout.ContentPane" title="title 1">
+		<div data-dojo-type="dijit.layout.TabContainer" style="width: 200px; height: 200px;">
+			<div data-dojo-type="dijit.layout.ContentPane" title="title 1">
 				This is some text 1
 			</div>
-			<div dojoType="dijit.layout.ContentPane" title="title 2">
+			<div data-dojo-type="dijit.layout.ContentPane" title="title 2">
 				This is some text 2
 			</div>
 		</div>

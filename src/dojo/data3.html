@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <!--
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>
 		<title>Connecting dojo.data programatically...</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -26,7 +27,7 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="dijit.form.ComboBox" id="hobby" value="Enter your hobby"></div>
-		<div dojoType="dijit.form.Button" id="showSelected" onClick="showSelected">show selected value</div>
+		<div data-dojo-type="dijit.form.ComboBox" id="hobby" value="Enter your hobby"></div>
+		<div data-dojo-type="dijit.form.Button" id="showSelected" onClick="showSelected">show selected value</div>
 	</body>
 </html>

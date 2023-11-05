@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <!--
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>
 		<title>Hello, Tabs (in the programmatic style)!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -28,9 +29,9 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div id="tabcontainer" dojoType="dijit.layout.TabContainer" style="width: 400px; height: 200px">
+		<div id="tabcontainer" data-dojo-type="dijit.layout.TabContainer" style="width: 400px; height: 200px">
 		</div>
-		<div dojoType="dijit.form.Button" onClick="addTab">
+		<div data-dojo-type="dijit.form.Button" onClick="addTab">
 			Click on me to add a tab!
 		</div>
 	</body>

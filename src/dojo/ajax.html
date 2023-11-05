@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>Hello, Ajax world!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -38,9 +38,9 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="dijit.form.Button" title="get it from server" onClick="do_get">Get it from server!</div>
-		<div dojoType="dijit.form.TextBox" id="textbox" title="selection"></div>
-		<div dojoType="dijit.form.TextBox" id="statustextbox" title="status" disabled="true">no status yet</div>
-		<div dojoType="dijit.form.Textarea" id="textarea" title="This is the text from the server" style="height: 500px">No text from server yet</div>
+		<div data-dojo-type="dijit.form.Button" title="get it from server" onClick="do_get">Get it from server!</div>
+		<div data-dojo-type="dijit.form.TextBox" id="textbox" title="selection"></div>
+		<div data-dojo-type="dijit.form.TextBox" id="statustextbox" title="status" disabled="true">no status yet</div>
+		<div data-dojo-type="dijit.form.Textarea" id="textarea" title="This is the text from the server" style="height: 500px">No text from server yet</div>
 	</body>
 </html>

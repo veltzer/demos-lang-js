@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Hello, Tabs (in the programmatic style)!</title>
-		<script src="dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<style>
 			@import "dojo/dijit/themes/tundra/tundra.css";
 			@import "dojo/dojo/resources/dojo.css";
@@ -31,9 +31,9 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div id="tabcontainer" dojoType="dijit.layout.TabContainer" style="width: 400px; height: 200px">
+		<div id="tabcontainer" data-dojo-type="dijit.layout.TabContainer" style="width: 400px; height: 200px">
 		</div>
-		<div dojoType="dijit.form.Button" onClick="addTab">
+		<div data-dojo-type="dijit.form.Button" onClick="addTab">
 			Click on me to add a tab!
 		</div>
 	</body>

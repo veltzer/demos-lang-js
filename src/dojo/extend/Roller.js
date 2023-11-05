@@ -23,7 +23,7 @@ if(!dojo._hasResource["extend.Roller"]){
 		"extend.Roller",
 		[dijit._Widget,dijit._Templated,dijit._Container],
 		{
-			templateString:'<div><div dojoType=\'dijit.form.Button\' dojoAttachEvent=\'onClick:_onDec\'>dec</div><div dojoType=\'dijit.form.TextBox\' dojoAttachPoint=\'textbox\'></div><div dojoType=\'dijit.form.Button\' dojoAttachEvent=\'onClick:_onInc\'>inc</div></div>',
+			templateString:'<div><div data-dojo-type=\'dijit.form.Button\' dojoAttachEvent=\'onClick:_onDec\'>dec</div><div data-dojo-type=\'dijit.form.TextBox\' dojoAttachPoint=\'textbox\'></div><div data-dojo-type=\'dijit.form.Button\' dojoAttachEvent=\'onClick:_onInc\'>inc</div></div>',
 			widgetsInTemplate:true,
 			initVal:"5",
 			incVal:"2",

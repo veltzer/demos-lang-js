@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Hello, DataGrid world!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojox/grid/resources/Grid.css"/>
@@ -14,8 +14,8 @@
 		<script src="datagrid2.js"></script>
 	</head>
 	<body class="tundra">
-		<div id="mydatastore" dojoType="dojo.data.ItemFileWriteStore" jsId="mystore" url="datagrid2.ajax"></div>
-		<table id="grid" dojoType="dojox.grid.DataGrid" store="mystore">
+		<div id="mydatastore" data-dojo-type="dojo.data.ItemFileWriteStore" jsId="mystore" url="datagrid2.ajax"></div>
+		<table id="grid" data-dojo-type="dojox.grid.DataGrid" store="mystore">
 			<thead>
 				<tr>
 					<th name="product">Product</th>
@@ -23,14 +23,14 @@
 				</tr>
 			</thead>
 		</table>
-		<table id="grid2" dojoType="dojox.grid.DataGrid" store="mystore">
+		<table id="grid2" data-dojo-type="dojox.grid.DataGrid" store="mystore">
 			<thead>
 				<tr>
 					<th name="price">Price</th>
 				</tr>
 			</thead>
 		</table>
-		<div id="button" dojoType="dijit.form.Button" onClick="do_click">Modify Data</div>
-		<div id="button2" dojoType="dijit.form.Button" onClick="do_populate">Populate</div>
+		<div id="button" data-dojo-type="dijit.form.Button" onClick="do_click">Modify Data</div>
+		<div id="button2" data-dojo-type="dijit.form.Button" onClick="do_populate">Populate</div>
 	</body>
 </html>

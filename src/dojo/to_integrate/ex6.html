@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Hello, World!</title>
-		<script src="dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<style>
 			@import "dojo/dijit/themes/tundra/tundra.css";
 			@import "dojo/dojo/resources/dojo.css";
@@ -23,18 +23,18 @@
 	</head>
 
 	<body class="tundra">
-		<div dojoType="dojo.data.ItemFileReadStore" jsId="hobbies" url="ex6.ajax"/>
-		Name : <div dojoType="dijit.form.ValidationTextBox" id="firstName" regExp="^[a-zA-Z ]+$" required="true" invalidMessage="Must be alpha." onBlur="checkState"></div>
+		<div data-dojo-type="dojo.data.ItemFileReadStore" jsId="hobbies" url="ex6.ajax"/>
+		Name : <div data-dojo-type="dijit.form.ValidationTextBox" id="firstName" regExp="^[a-zA-Z ]+$" required="true" invalidMessage="Must be alpha." onBlur="checkState"></div>
 		<br/>
-		Age : <div dojoType="dijit.form.NumberTextBox" id="age" invalidMessage="Must be numeric." onBlur="checkState"></div>
+		Age : <div data-dojo-type="dijit.form.NumberTextBox" id="age" invalidMessage="Must be numeric." onBlur="checkState"></div>
 		<br/>
-		Hobby : <div dojoType="dijit.form.FilteringSelect" autocomplete="true" id="hobby" value="Enter your hobby" store="hobbies" searchAttr="hobby" onBlur="checkState"></div>
+		Hobby : <div data-dojo-type="dijit.form.FilteringSelect" autocomplete="true" id="hobby" value="Enter your hobby" store="hobbies" searchAttr="hobby" onBlur="checkState"></div>
 		<br/>
-		Birth Date : <div dojoType="dijit.form.DateTextBox" id="bd" onBlur="checkState"></div>
+		Birth Date : <div data-dojo-type="dijit.form.DateTextBox" id="bd" onBlur="checkState"></div>
 		<br/>
-		Password : <input type="password" dojoType="dijit.form.TextBox" id="password" onBlur="checkState"></input>
+		Password : <input type="password" data-dojo-type="dijit.form.TextBox" id="password" onBlur="checkState"></input>
 		<br/>
-		<div dojoType="dijit.form.Button" id="go" onClick="alert(\"Boom!\")" disabled>Go!</div>
+		<div data-dojo-type="dijit.form.Button" id="go" onClick="alert(\"Boom!\")" disabled>Go!</div>
 
 	</body>
 </html>

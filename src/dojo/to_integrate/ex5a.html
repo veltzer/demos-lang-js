@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Hello, dojo.connect</title>
-		<script src="dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<style type="text/css">
 			@import "dojo/dijit/themes/tundra/tundra.css";
 			@import "dojo/dojo/resources/dojo.css";
@@ -31,8 +31,8 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="dijit.form.Button" id="connect" title="connect the event" onclick="do_connect">Connect</div>
-		<div dojoType="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="do_disconnect" disabled="true">Disconnect</div>
-		<div dojoType="dijit.form.Button" id="click" title="click me">Click</div>
+		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="do_connect">Connect</div>
+		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="do_disconnect" disabled="true">Disconnect</div>
+		<div data-dojo-type="dijit.form.Button" id="click" title="click me">Click</div>
 	</body>
 </html>

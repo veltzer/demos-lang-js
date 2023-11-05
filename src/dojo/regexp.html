@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Hello, Regular expression!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -25,19 +25,19 @@
 		</script>
 	</head>
 	<body class="tundra">
-		Regexp: <div dojoType="dijit.form.TextBox" id="re">
+		Regexp: <div data-dojo-type="dijit.form.TextBox" id="re">
 			regexp
 		</div>
 		<br/>
-		Text: <div dojoType="dijit.form.TextBox" id="text">
+		Text: <div data-dojo-type="dijit.form.TextBox" id="text">
 			text
 		</div>
 		<br/>
-		Result: <div dojoType="dijit.form.TextBox" id="result">
+		Result: <div data-dojo-type="dijit.form.TextBox" id="result">
 			result
 		</div>
 		<br/>
-		<div dojoType="dijit.form.Button" onClick="do_check">
+		<div data-dojo-type="dijit.form.Button" onClick="do_check">
 			Check if they match!
 		</div>
 	</body>

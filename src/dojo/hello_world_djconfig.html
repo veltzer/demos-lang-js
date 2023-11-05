@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<title>Hello, World! via djConfig</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" djConfig="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<!--
@@ -28,6 +28,6 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div dojoType="dijit.form.Button" title="click to see an alert" onclick="click">Lets see if this works</div>
+		<div data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="click">Lets see if this works</div>
 	</body>
 </html>
