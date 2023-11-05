@@ -32,5 +32,6 @@ packages=[
     "shrinksafe",
     # "jsl",
     "eslint",
+    "tidy",
     #"yui-builder",
 ]

@@ -16,7 +16,7 @@ DO_JSLINT:=0
 # do you want to do jshint?
 DO_JSHINT:=0
 # do check_html?
-DO_CHECK_HTML:=1
+DO_CHECK_HTML:=0
 # are we in a dev enviornment?
 DEV:=1
 
