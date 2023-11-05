@@ -123,9 +123,9 @@ clean_hard:
 	$(Q)git clean -qffxd
 out/html.stamp: $(ALL_HTML)
 	$(info doing [$@])
-	$(Q)git grep -l "'" -- "*.html" || true
-	$(Q)git grep -l " $$" -- "*.html" || true
-	$(Q)git grep -l "  " -- "*.html" || true
+	$(Q)pymakehelper error_on_print git grep -l "'" -- "*.html"
+	$(Q)pymakehelper error_on_print git grep -l " $$" -- "*.html"
+	$(Q)pymakehelper error_on_print git grep -l "  " -- "*.html"
 	$(Q)pymakehelper touch_mkdir $@
 .PHONY:
 all_htmlhint: $(ALL_HTML)
