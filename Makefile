@@ -6,7 +6,7 @@ DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
 # do you want to do htmlhint?
-DO_HTMLHINT:=0
+DO_HTMLHINT:=1
 # do you want to do eslint?
 DO_ESLINT:=0
 # do you want to run standard?
@@ -128,7 +128,7 @@ out/html.stamp: $(ALL_HTML)
 ############
 # patterns #
 ############
-$(ALL_HTMLHINT): out/%.htmlhint: %.html
+$(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
 	$(Q)pymakehelper touch_mkdir $@

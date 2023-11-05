@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 	This is an example of making the browser "keep" the user
 	on the page when you want him to.
@@ -15,6 +16,7 @@
 -->
 <html>
 	<head>
+		<title>Title</title>
 		<script>
 			window.onbeforeunload=function() {
 				if(/Firefox[\/\s](\d+)/.test(window.navigator.userAgent) && new Number(RegExp.$1) >= 4) {
