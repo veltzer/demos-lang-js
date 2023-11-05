@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
@@ -35,19 +36,19 @@
 	<body class="tundra">
 		<div data-dojo-type="dojox.data.QueryReadStore"
 			url="tree_lazy.php"
-			jsId="treeStore">
+			js-id="treeStore">
 		</div>
 		<div data-dojo-type="my.ForestStoreModel"
 			store="treeStore"
-			rootId="/"
-			rootLabel="/"
-			query="{ path: \"/\" }"
-			childrenAttrs="children"
-			jsId="treeModel">
+			root-id="/"
+			root-label="/"
+			query="{ path: '/' }"
+			children-attrs="children"
+			js-id="treeModel">
 		</div>
 		<div data-dojo-type="dijit.Tree"
 			model="treeModel"
-			jsId="itemTree"
+			js-id="itemTree"
 			persist="false">
 			<script type="dojo/method" event="onClick" args="item">
 				alert("you clicked: " + treeStore.getLabel(item));

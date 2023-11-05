@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
@@ -49,10 +50,10 @@
 			data-dojo-type="dijit.form.ValidationTextBox"
 			required="true"
 			propercase="true"
-			regExp="^[a-zA-Z]+$"
+			reg-exp="^[a-zA-Z]+$"
 			maxlength="10"
-			promptMessage="Enter your first name"
-			invalidMessage="First name is required"
+			prompt-message="Enter your first name"
+			invalid-message="First name is required"
 			trim="true"
 		></div>
 		<br/>
@@ -62,19 +63,19 @@
 			data-dojo-type="dijit.form.ValidationTextBox"
 			required="true"
 			propercase="true"
-			regExp="^[a-zA-Z]+$"
+			reg-exp="^[a-zA-Z]+$"
 			maxlength="10"
-			promptMessage="Enter your last name"
-			invalidMessage="Last name is required"
+			prompt-message="Enter your last name"
+			invalid-message="Last name is required"
 			trim="true"
 		></div>
 		<br/>
-		<div data-dojo-type="dojox.form.PasswordValidator" name="pwValidate" pwCheck="pwCheck">
+		<div data-dojo-type="dojox.form.PasswordValidator" name="pwValidate" pw-check="pwCheck">
 			<!--
-			Old password<input type="password" pwType="old"/><br/>
+			Old password<input type="password" pw-type="old"/><br/>
 			-->
-			New password<input type="password" pwType="new"/><br/>
-			Verify new password<input type="password" pwType="verify"/><br/>
+			New password<input type="password" pw-type="new"/><br/>
+			Verify new password<input type="password" pw-type="verify"/><br/>
 		</div>
 		<div data-dojo-type="dijit.form.ComboBox" id="im" value="Enter your IM system"></div>
 		<br/>
@@ -84,10 +85,10 @@
 			data-dojo-type="dijit.form.ValidationTextBox"
 			required="true"
 			propercase="true"
-			regExp="^[0-9a-zA-Z]+$"
+			reg-exp="^[0-9a-zA-Z]+$"
 			maxlength="10"
-			promptMessage="Enter your IM id"
-			invalidMessage="IM id is required"
+			prompt-message="Enter your IM id"
+			invalid-message="IM id is required"
 			trim="true"
 		></div>
 		<br/>
