@@ -6,9 +6,9 @@ DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
 # do you want to do htmlhint?
-DO_HTMLHINT:=0
+DO_HTMLHINT:=1
 # do you want to use tidy?
-DO_TIDY:=1
+DO_TIDY:=0
 # do you want to do eslint?
 DO_ESLINT:=0
 # do you want to run standard?
@@ -156,7 +156,7 @@ $(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_TIDY): out/%.tidy: %.html
 	$(info doing [$@])
-	$(Q)tidy -errors -q $<
+	$(Q)tidy -errors -quiet $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_ESLINT): out/%.eslint: %.js
 	$(info doing [$@])
