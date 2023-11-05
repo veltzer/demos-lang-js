@@ -111,7 +111,7 @@ this.onload = function(event) {
 			cameOnline(null);
 		}
 	};
-	xhrStatus.open("GET", "status.html", true);
+	xhrStatus.open("GET", "status.html_frag", true);
 	xhrStatus.send(null);
 	
 	var xhr = getXhr();
