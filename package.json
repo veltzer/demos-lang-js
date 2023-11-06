@@ -1,9 +1,12 @@
 {
   "dependencies": {
-    "eslint": "latest",
+    "eslint-plugin-html": "latest",
     "htmlhint": "latest",
     "jshint": "latest",
     "jslint": "latest",
     "standard": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0"
   }
 }
