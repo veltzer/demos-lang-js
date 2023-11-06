@@ -154,9 +154,9 @@ $(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_TIDY): out/%.tidy: %.html
+$(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py
 	$(info doing [$@])
-	$(Q)tidy -errors -quiet $<
+	$(Q)scripts/run_tidy.py $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_ESLINT): out/%.eslint: %.js
 	$(info doing [$@])
