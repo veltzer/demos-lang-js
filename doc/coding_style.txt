@@ -12,3 +12,10 @@ tag names inside html
 	should all be lower case
 when a tag does not have content, it should have an early close:
 	<button/>
+
+js file will have the first line:
+	#!/usr/bin/env node
+	and will be chmodded +x
+
+Js content
+	priting will only be done via console.log
