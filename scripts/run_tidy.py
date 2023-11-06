@@ -36,6 +36,8 @@ def main():
         "tidy",
         "-errors",
         "-quiet",
+        "-config",
+        ".tidy.config",
         filename,
     ])
 
