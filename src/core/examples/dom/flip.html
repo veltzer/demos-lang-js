@@ -9,16 +9,16 @@
 		<title>Title</title>
 		<script>
 			function flip() {
-				var node=document.getElementById("x1");
-				if(node.color=="red") // read
-					node.color="blue"; // write
+				var node=document.getElementById("element_id");
+				if(node.style.color=="red") // read
+					node.style.color="blue"; // write
 				else
-					node.color="red"; // write
+					node.style.color="red"; // write
 			}
 		</script>
 	</head>
 	<body>
-		<font onclick="flip()">Click me to change his color</font>
-		<font id="x1" color="red">Hey, thats me</font>
+		<button onclick="flip()">Click me to change his color</button>
+		<div id="element_id" style="color: red">Hey, thats me</div>
 	</body>
 </html>
