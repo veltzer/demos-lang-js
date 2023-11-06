@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
 <!--
 This is the most simple solution to the exercise. The function in this solution
 does not rewrite itself.
 
 	Mark Veltzer <mark.veltzer@gmail.com>
 -->
-<script>
-	function newalert(message) {
-		if(newalert.cnt<3) {
-			alert(message);
-			newalert.cnt++;
-		} else {
-			newalert.a.push(message);
-		}
-	}
-	newalert.cnt=0;
-	newalert.a=[];
-	// now the user code
-	for(var i=0;i<10;i++) {
-		newalert("message "+i);
-	}
-	document.write("These are the messages that we missed<br/>");
-	document.write(newalert.a);
-</script>
+<html>
+	<head>
+		<title>Title</title>
+		<script>
+			function newalert(message) {
+				if(newalert.cnt<3) {
+					alert(message);
+					newalert.cnt++;
+				} else {
+					newalert.a.push(message);
+				}
+			}
+			newalert.cnt=0;
+			newalert.a=[];
+			// now the user code
+			for(var i=0;i<10;i++) {
+				newalert("message "+i);
+			}
+			document.write("These are the messages that we missed<br/>");
+			document.write(newalert.a);
+		</script>
+	</head>
+	<body>
+	</body>
 </html>
