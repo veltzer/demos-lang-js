@@ -8,7 +8,7 @@ DO_ALLDEP:=1
 # do you want to do htmlhint?
 DO_HTMLHINT:=1
 # do you want to use tidy?
-DO_TIDY:=1
+DO_TIDY:=0
 # do you want to do eslint?
 DO_ESLINT:=0
 # do you want to run standard?
