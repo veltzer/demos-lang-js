@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<script>
+#!/usr/bin/env node
 var g_getName=function() {
 	return this.name;
 };
@@ -11,7 +9,7 @@ var g_getFullName=function() {
 	return this.name+" "+this.age;
 };
 var g_printSelf=function() {
-	document.write(this.getFullName());
+	console.log(this.getFullName());
 };
 
 function createPerson(iname,iage) {
@@ -27,7 +25,4 @@ function createPerson(iname,iage) {
 var p1=createPerson("Bilbo",111);
 var p2=createPerson("Frodo",33);
 p1.printSelf();
-document.write("<br/>");
 p2.printSelf();
-</script>
-</html>

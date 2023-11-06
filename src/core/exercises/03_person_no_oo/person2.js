@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<script>
+#!/usr/bin/env node
 function createPerson(iname,iage) {
 	return {
 		name: iname,
@@ -15,14 +13,11 @@ function createPerson(iname,iage) {
 			return this.name+" "+this.age;
 		},
 		printSelf: function() {
-			document.write(this.getFullName());
+			console.log(this.getFullName());
 		}
 	};
 }
 var p1=createPerson("Bilbo",111);
 var p2=createPerson("Frodo",33);
 p1.printSelf();
-document.write("<br/>");
 p2.printSelf();
-</script>
-</html>

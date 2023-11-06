@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-<script>
-
+#!/usr/bin/env node
 function createPerson(iname,iage) {
 	return {
 		name: iname,
@@ -23,13 +20,13 @@ createPerson.getFullName=function() {
 	return this.name+" "+this.age;
 };
 createPerson.printSelf=function() {
-	document.write(this.getFullName());
+	console.log(this.getFullName());
 };
 createPerson.toString=function() {
 	var s="";
 	for(var key in this) {
 		if(typeof(this[key])!="function") {
-			s+=key+": "+this[key]+"<br/>";
+			s+=key+": "+this[key]+"\n";
 		}
 	}
 	return s;
@@ -38,6 +35,5 @@ createPerson.toString=function() {
 // This is the client code
 var p1=createPerson("Bilbo",111);
 var p2=createPerson("Frodo",33);
-document.write(p1+"<br/>"+p2);
-</script>
-</html>
+console.log(""+p1);
+console.log(""+p2);

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<script>
+#!/usr/bin/env node
 var person1={
 	name: "Bilbo",
 	age: 111,
@@ -14,7 +12,7 @@ var person1={
 		return this.name+" "+this.age;
 	},
 	printSelf: function() {
-		document.write(this.getFullName());
+		console.log(this.getFullName());
 	}
 };
 var person2={
@@ -30,11 +28,8 @@ var person2={
 		return this.name+" "+this.age;
 	},
 	printSelf: function() {
-		document.write(this.getFullName());
+		console.log(this.getFullName());
 	}
 };
 person1.printSelf();
-document.write("<br/>");
 person2.printSelf();
-</script>
-</html>
