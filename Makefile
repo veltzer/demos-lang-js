@@ -10,7 +10,7 @@ DO_HTMLHINT:=1
 # do you want to use tidy?
 DO_TIDY:=1
 # do you want to do eslint?
-DO_ESLINT:=0
+DO_ESLINT:=1
 # do you want to run standard?
 DO_STANDARD:=0
 # do you want to do jslint?
