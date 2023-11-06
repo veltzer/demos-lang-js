@@ -20,3 +20,5 @@ js file will have the first line:
 Js content
 	priting will only be done via console.log
 	it will not use "<br/>".
+	it will not use docuent.write
+	it will not use alert
