@@ -3,9 +3,9 @@
 	<head>
 		<title>my first html page</title>
 	</head>
-	<body bgcolor="ffffff" text="000000">
+	<body>
 		<h2><u>Basic Syntax</u></h2>
-		<font size="13" face="Arial">Hello World</font>
+		Hello World
 		<hr/>
 
 		<b><i>This is a bold text</i></b>
@@ -20,21 +20,21 @@
 		<br/>
 		This regular text, and <sub>This is subscript</sub>
 		<br/>
-		<tt>This is a tt text bla blabl </tt>
-		<ol type="a" start="4">
-			<lh>My first OL list</lh>
+		<div>This is a tt text bla blabl </div>
+		<ol start="4">
+			<div>My first OL list</div>
 			<li>item 1</li>
 			<li>item 2</li>
 			<li>item 3</li>
 		</ol>
 		<ol style="list-style-position:inside;list-style-type:lower-greek">
-			<lh>My second OL list</lh>
+			<div>My second OL list</div>
 			<li>item 1</li>
 			<li>item 2</li>
 			<li>item 3</li>
 		</ol>
-		<ul type="circle">
-			<lh>My first UL list</lh>
+		<ul>
+			<div>My first UL list</div>
 			<li>item 1</li>
 			<li>item 2</li>
 			<li>item 3</li>
@@ -51,16 +51,16 @@
 		<br/>
 
 		<h2><u>Images</u></h2>
-		<img src="car.jpg" height="80" width="150" border="0" align="middle"/> This is an image of a car
+		<img src="car.jpg" alt="foo" height="80" width="150"/> This is an image of a car
 
 		<h2><u>Links</u></h2>
 		<a href="http://www.altavista.com">altavista external</a><br/>
 		<a href="#down">down internal link</a>
 		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-		<a name="down">down target</a>
+		<a id="down">down target</a>
 
 		<h2><u>Tables</u></h2>
-		<table border="1" width="300" height="300" bgcolor="yellow">
+		<table border="1">
 			<tr>
 				<td rowspan="2">One</td>
 				<td>Two</td>
@@ -73,7 +73,7 @@
 
 		<h2><u>Frames</u></h2>
 		This is an example of an iframe which points to google
-		<iframe src="http://www.google.com" align="left" width="60%" height="30%"/>
+		<iframe src="http://www.google.com" width="60%" height="30%"/>
 
 		<br/>
 		<br/>
@@ -89,7 +89,7 @@
 		<br/>
 		<br/>
 		<h2><u>Forms</u></h2>
-		<table align="left">
+		<table>
 			<tr>
 				<td>
 					<form method="post" action="myServlet" name="myForm">
@@ -109,35 +109,35 @@
 						<br/>
 
 						<h4>Radio Buttons</h4>
-						<input type="radio" name="rdb1" state="checked">Java
+						<input type="radio" name="rdb1">Java
 						<input type="radio" name="rdb1">C++
 						<input type="radio" name="rdb1">C#
 						<br/>
 
 						<h4>Checkbox Buttons</h4>
-						<input type="checkbox" name="cb1" state="checked">Java
+						<input type="checkbox" name="cb1">Java
 						<input type="checkbox" name="cb1">C++
-						<input type="checkbox" name="cb1" state="checked">C#
+						<input type="checkbox" name="cb1">C#
 						<br/>
 
 						<h4>Select lists</h4>
-						<select name="lst1" size="4" state="multiple">
+						<select name="lst1" size="4">
 							<option value="sport">item 1</option>
-							<option value="music" state="selected">item 2</option>
+							<option value="music">item 2</option>
 							<option value="fun">item 3</option>
 							<option value="books">item 4</option>
 						</select>
 
 						<select name="lst1" size="3">
 							<option value="sport">item 1</option>
-							<option value="music" state="selected">item 2</option>
+							<option value="music">item 2</option>
 							<option value="fun">item 3</option>
 							<option value="books">item 4</option>
 						</select>
 
 						<select name="cmb1">
 							<option value="sport">item 1</option>
-							<option value="music" state="selected">item 2</option>
+							<option value="music">item 2</option>
 							<option value="fun">item 3</option>
 						</select>
 					</form>
