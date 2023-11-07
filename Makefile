@@ -7,6 +7,8 @@ DO_MKDBG:=0
 DO_ALLDEP:=1
 # do you want to do htmlhint?
 DO_HTMLHINT:=1
+# do you want to do htmllint?
+DO_HTMLLINT:=1
 # do you want to use tidy?
 DO_TIDY:=1
 # do you want to do eslint on javascript files?
@@ -32,6 +34,7 @@ ALL_HTML:=$(shell find src -name "*.html")
 ALL_HTML_FRAG:=$(shell find src -name "*.html_frag")
 ALL_JS:=$(shell find src -name "*.js")
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
+ALL_HTMLLINT:=$(addprefix out/,$(addsuffix .htmllint, $(basename $(ALL_HTML))))
 ALL_TIDY:=$(addprefix out/,$(addsuffix .tidy, $(basename $(ALL_HTML))))
 ALL_ESLINT_JS:=$(addprefix out/,$(addsuffix .eslint_js, $(basename $(ALL_JS))))
 ALL_ESLINT_HTML:=$(addprefix out/,$(addsuffix .eslint_html, $(basename $(ALL_HTML))))
@@ -50,7 +53,11 @@ endif # DO_MKDBG
 
 ifeq ($(DO_HTMLHINT),1)
 ALL+=$(ALL_HTMLHINT)
-endif # DO_HTMLHTINT
+endif # DO_HTMLHINT
+
+ifeq ($(DO_HTMLLINT),1)
+ALL+=$(ALL_HTMLLINT)
+endif # DO_HTMLLINT
 
 ifeq ($(DO_TIDY),1)
 ALL+=$(ALL_TIDY)
@@ -132,6 +139,7 @@ debug:
 	$(info ALL_HTML is $(ALL_HTML))
 	$(info ALL_JS is $(ALL_JS))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
+	$(info ALL_HTMLLINT is $(ALL_HTMLLINT))
 	$(info ALL_TIDY is $(ALL_TIDY))
 	$(info ALL_ESLINT_JS is $(ALL_ESLINT_JS))
 	$(info ALL_ESLINT_HTML is $(ALL_ESLINT_HTML))
@@ -165,6 +173,10 @@ all_eslint_html: $(ALL_ESLINT_HTML)
 $(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_HTMLLINT): out/%.htmllint: %.html .htmllintrc
+	$(info doing [$@])
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmllint $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py
 	$(info doing [$@])
