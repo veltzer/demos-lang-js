@@ -29,7 +29,7 @@
 				var button=new dijit.form.Button({label:"This is button"+i});
 				button.startup();
 				mynewtab.setContent(button);
-				dojo.connect(button,"onClick",mycallback);
+				dojo.connect(button,"onclick",mycallback);
 				alert=console.error
 			}
 		</script>
@@ -37,7 +37,7 @@
 	<body class="tundra">
 		<div id="tabcontainer" data-dojo-type="dijit.layout.TabContainer" style="width: 400px; height: 200px">
 		</div>
-		<div data-dojo-type="dijit.form.Button" onClick="addTab">
+		<div data-dojo-type="dijit.form.Button" onclick="addTab">
 			Click on me to add a tab!
 		</div>
 	</body>

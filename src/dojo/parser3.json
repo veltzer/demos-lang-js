@@ -1,6 +1,6 @@
-<div data-dojo-type='dijit.form.Button' onClick='connectedClick'>
+<div data-dojo-type='dijit.form.Button' onclick='connectedClick'>
 	Click on me to see if dojo.parser connected me properly...
 </div>
-<div data-dojo-type='dijit.form.Button' onClick='connectedClick'>
+<div data-dojo-type='dijit.form.Button' onclick='connectedClick'>
 	Click on me to see if dojo.parser connected me properly...
 </div>

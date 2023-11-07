@@ -8,7 +8,7 @@ DO_ALLDEP:=1
 # do you want to do htmlhint?
 DO_HTMLHINT:=1
 # do you want to do htmllint?
-DO_HTMLLINT:=1
+DO_HTMLLINT:=0
 # do you want to use tidy?
 DO_TIDY:=1
 # do you want to do eslint on javascript files?

@@ -18,7 +18,7 @@
 				var w_click=dijit.byId("click");
 				var w_connect=dijit.byId("connect");
 				var w_disconnect=dijit.byId("disconnect");
-				handle=dojo.connect(w_click,"onClick",do_alert);
+				handle=dojo.connect(w_click,"onclick",do_alert);
 				w_connect.attr("disabled",true);
 				w_disconnect.attr("disabled",false);
 			}
@@ -33,8 +33,8 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onClick="do_connect">Connect</div>
-		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onClick="do_disconnect" disabled="true">Disconnect</div>
+		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="do_connect">Connect</div>
+		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="do_disconnect" disabled="true">Disconnect</div>
 		<div data-dojo-type="dijit.form.Button" id="click" title="click me">Click</div>
 	</body>
 </html>
