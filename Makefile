@@ -9,8 +9,10 @@ DO_ALLDEP:=1
 DO_HTMLHINT:=1
 # do you want to use tidy?
 DO_TIDY:=1
-# do you want to do eslint?
-DO_ESLINT:=0
+# do you want to do eslint on javascript files?
+DO_ESLINT_JS:=0
+# do you want to do eslint on html files?
+DO_ESLINT_HTML:=0
 # do you want to run standard?
 DO_STANDARD:=0
 # do you want to do jslint?
@@ -31,7 +33,8 @@ ALL_HTML_FRAG:=$(shell find src -name "*.html_frag")
 ALL_JS:=$(shell find src -name "*.js")
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
 ALL_TIDY:=$(addprefix out/,$(addsuffix .tidy, $(basename $(ALL_HTML))))
-ALL_ESLINT:=$(addprefix out/,$(addsuffix .eslint, $(basename $(ALL_JS))))
+ALL_ESLINT_JS:=$(addprefix out/,$(addsuffix .eslint_js, $(basename $(ALL_JS))))
+ALL_ESLINT_HTML:=$(addprefix out/,$(addsuffix .eslint_html, $(basename $(ALL_HTML))))
 ALL_STANDARD:=$(addprefix out/,$(addsuffix .standard, $(basename $(ALL_JS))))
 ALL_JSLINT:=$(addprefix out/,$(addsuffix .jslint, $(basename $(ALL_JS))))
 ALL_JSHINT:=$(addprefix out/,$(addsuffix .jshint, $(basename $(ALL_JS))))
@@ -53,9 +56,13 @@ ifeq ($(DO_TIDY),1)
 ALL+=$(ALL_TIDY)
 endif # DO_TIDY
 
-ifeq ($(DO_ESLINT),1)
-ALL+=$(ALL_ESLINT)
-endif # DO_ESLINT
+ifeq ($(DO_ESLINT_JS),1)
+ALL+=$(ALL_ESLINT_JS)
+endif # DO_ESLINT_JS
+
+ifeq ($(DO_ESLINT_HTML),1)
+ALL+=$(ALL_ESLINT_HTML)
+endif # DO_ESLINT_HTML
 
 ifeq ($(DO_STANDARD),1)
 ALL+=$(ALL_STANDARD)
@@ -126,7 +133,8 @@ debug:
 	$(info ALL_JS is $(ALL_JS))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
 	$(info ALL_TIDY is $(ALL_TIDY))
-	$(info ALL_ESLINT is $(ALL_ESLINT))
+	$(info ALL_ESLINT_JS is $(ALL_ESLINT_JS))
+	$(info ALL_ESLINT_HTML is $(ALL_ESLINT_HTML))
 	$(info ALL_STANDARD is $(ALL_STANDARD))
 	$(info ALL_JSLINT is $(ALL_JSLINT))
 	$(info ALL_JSHINT is $(ALL_JSHINT))
@@ -146,6 +154,10 @@ out/html.stamp: $(ALL_HTML)
 .PHONY:
 all_htmlhint: $(ALL_HTML)
 	$(Q)node_modules/.bin/htmlhint src
+.PHONY: all_eslint_js
+all_eslint_js: $(ALL_ESLINT_JS)
+.PHONY: all_eslint_html
+all_eslint_html: $(ALL_ESLINT_HTML)
 
 ############
 # patterns #
@@ -158,7 +170,11 @@ $(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py
 	$(info doing [$@])
 	$(Q)scripts/run_tidy.py $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_ESLINT): out/%.eslint: %.js
+$(ALL_ESLINT_JS): out/%.eslint_js: %.js .eslintrc.js
+	$(info doing [$@])
+	$(Q)node_modules/.bin/eslint $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_ESLINT_HTML): out/%.eslint_html: %.html .eslintrc.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/eslint $<
 	$(Q)pymakehelper touch_mkdir $@

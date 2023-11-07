@@ -2,8 +2,10 @@
   "dependencies": {
     "eslint-plugin-html": "latest",
     "htmlhint": "latest",
+    "htmllint-cli": "latest",
     "jshint": "latest",
     "jslint": "latest",
+    "prettier": "latest",
     "standard": "latest"
   },
   "devDependencies": {
