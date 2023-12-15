@@ -9,7 +9,7 @@ DO_ALLDEP:=1
 DO_HTMLHINT:=1
 # do you want to do htmllint?
 DO_HTMLLINT:=0
-# do you want to use tidy?
+# do you want to use tidy to check HTML files?
 DO_TIDY:=1
 # do you want to do eslint on javascript files?
 DO_ESLINT_JS:=0
@@ -21,7 +21,7 @@ DO_STANDARD:=0
 DO_JSLINT:=0
 # do you want to do jshint?
 DO_JSHINT:=0
-# do check_html?
+# do you want to check html with simple makefile rules?
 DO_CHECK_HTML:=0
 # are we in a dev enviornment?
 DEV:=1
