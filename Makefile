@@ -23,8 +23,6 @@ DO_JSLINT:=0
 DO_JSHINT:=0
 # do you want to check html with simple makefile rules?
 DO_CHECK_HTML:=0
-# are we in a dev enviornment?
-DEV:=1
 
 ########
 # code #
