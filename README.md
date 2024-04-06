@@ -15,7 +15,7 @@ website: https://veltzer.github.io/demos-javascript
 
 chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/veltzer/mark.veltzer)
 
-## number of examples 
+## Number of examples
 
 Currently there are 540 examples in this repo.
 150 javascript files.
