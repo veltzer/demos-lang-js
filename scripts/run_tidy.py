@@ -14,7 +14,7 @@ import sys
 import subprocess
 
 
-def get_flags(filename: str):
+def get_flags(filename: str) -> set[str]:
     """ read the content of a file and get all the flags declared in it """
     flags = set()
     with open(filename, encoding="utf-8") as stream:
