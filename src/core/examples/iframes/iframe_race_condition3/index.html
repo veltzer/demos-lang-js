@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>demo</title>
+		<script>
+			var counter=0;
+			var interval_id;
+			function do_interval() {
+				if(counter == 200) {
+					clearInterval(interval_id);
+				}
+				console.log("interval "+counter);
+				var xhr = new XMLHttpRequest();
+				var copy = counter;
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == XMLHttpRequest.DONE) {
+						console.log("request "+copy+" finished");
+					}
+				}
+				xhr.open('GET', '/interval_request', true);
+				xhr.send(null);
+				counter+=1;
+			}
+			function destroy_iframe() {
+				console.log("destroying iframe");
+				var elem = document.getElementById("iframe_id");
+				elem.parentNode.removeChild(elem);
+				// elem.style.visibility = "hidden";
+			}
+			function receive() {
+				console.log("received");
+				// natigate to /away.html
+				// window.location.href = "/away";
+				interval_id = setInterval(do_interval, 50);
+				setTimeout(destroy_iframe, 2000);
+			}
+			function init() {
+				window.onmessage = receive;
+			}
+			window.onload = init;
+		</script>
+	</head>
+	<body>
+		This is index.html
+		<iframe id="iframe_id" src="iframe.html"/>
+	</body>
+</html>

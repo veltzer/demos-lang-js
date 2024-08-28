@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>demo</title>
+		<script>
+			function receive() {
+				// natigate to /away.html
+				console.log("received");
+				window.location.href = "/away";
+			}
+			function init() {
+				window.onmessage = receive;
+			}
+			window.onload = init;
+		</script>
+	</head>
+	<body>
+		This is index.html
+		<iframe src="iframe.html"/>
+	</body>
+</html>

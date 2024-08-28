@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>demo</title>
+		<script>
+			function click() {
+				window.top.postMessage("navigate")
+				/*
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == XMLHttpRequest.DONE) {
+						console.log("iframe finished call to server");
+					}
+				}
+				xhr.open('GET', '/doit', true);
+				xhr.send(null);
+				*/
+			}
+			function unload_hook() {
+				console.log("in unload");
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == XMLHttpRequest.DONE) {
+						console.log("iframe finished call to unload");
+					}
+				}
+				xhr.open('GET', '/unload', true);
+				xhr.send(null);
+			}
+			function init() {
+				button = document.getElementById("button_id");
+				button.onclick = click;
+				window.addEventListener('unload', unload_hook);
+			}
+			window.onload = init;
+		</script>
+	</head>
+	<body>
+		This is iframe.html
+		<button id="button_id">Tell parent to navigate away</button>
+	</body>
+</html>
