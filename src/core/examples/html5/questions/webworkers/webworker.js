@@ -1,18 +1,18 @@
+/*global mapCanvas,divStatus*/
 
-function init() {
+function init() { // eslint-disable-line no-unused-vars
 }
 
-
-function processSubmit() {
+function processSubmit() { // eslint-disable-line no-unused-vars
 }
 
-function messageHandler(event) {
+function messageHandler(event) { // eslint-disable-line no-unused-vars
 }
 
-function errorHandler(event) {
+function errorHandler(event) { // eslint-disable-line no-unused-vars
 }
 
-function drawResults(resultsArray) {
+function drawResults(resultsArray) { // eslint-disable-line no-unused-vars
 	var colors = ["#ff0000", "#00ff00", "#ffff00", "#ff00ff", "#00ffff", "#0000ff", "#f0f0f0", "#f0000f", "#f0f000", "#00ff0f"];
 	drawGrid(mapCanvas, 20);
 	var context = mapCanvas.getContext("2d");
@@ -50,7 +50,7 @@ function drawGrid(canvas, gridSize) {
 	context.moveTo(canvas.width, 0);
 	context.lineTo(canvas.width, canvas.height);
 	context.stroke();
-	for (var i = 0 ; i < canvas.height; i+=gridSize) {
+	for (i = 0 ; i < canvas.height; i+=gridSize) {
 		context.beginPath();
 		context.moveTo(0, i);
 		context.lineTo(canvas.width, i);
@@ -61,7 +61,7 @@ function drawGrid(canvas, gridSize) {
 	context.stroke();
 }
 
-function getBrowserInfo() {
+function getBrowserInfo() { // eslint-disable-line no-unused-vars
 	var browserInfo = new Object();
 	var agent = navigator.userAgent;
 	if (agent.match(/Chrome/)) {
@@ -78,14 +78,12 @@ function getBrowserInfo() {
 	return browserInfo;
 }
 
-function setStatus(status) {
+function setStatus(status) { // eslint-disable-line no-unused-vars
 	divStatus.innerHTML = status;
 }
 
-function addStatus(status) {
+function addStatus(status) { // eslint-disable-line no-unused-vars
 	divStatus.innerHTML += "<br>" + status;
 }
 
 window.onload = init;
-
-
