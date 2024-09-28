@@ -17,5 +17,10 @@ module.exports = {
     plugins: ["html"],
     "rules": {
 	// "html/indent": ["error", 2],
+	"no-unused-vars": ["error", {
+		"argsIgnorePattern": "^_",
+		"varsIgnorePattern": "^_",
+		"caughtErrorsIgnorePattern": "^_"
+	}]
     }
 };

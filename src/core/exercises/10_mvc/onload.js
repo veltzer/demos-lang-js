@@ -1,3 +1,5 @@
+/*global Model,TableView*/
+
 window.onload=function() {
 	var m=new Model();
 	m.setColumns([

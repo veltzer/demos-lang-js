@@ -3,9 +3,9 @@ function Model() {
 	this.columnNames=[] // only names, not data
 	this.rows=0
 	this.views={}
-};
+}
 // this method empties the model
-Model.prototype.empty=function(v) {
+Model.prototype.empty=function(_v) {
 	this.data={}
 };
 Model.prototype.addView=function(v) {
@@ -22,13 +22,13 @@ Model.prototype.setColumns=function(c) {
 	this.columns=c
 };
 Model.prototype.getRow=function(row) {
-	return data[row]
+	return this.data[row]
 };
 Model.prototype.getData=function(row, column) {
-	return data[row][column]
+	return this.data[row][column]
 };
 Model.prototype.setData=function(row, column, val) {
-	data[row][column]=val
+	this.data[row][column]=val
 	this.updateViews()
 };
 Model.prototype.addRow=function(row) {
@@ -40,13 +40,14 @@ Model.prototype.getRows=function() {
 	return this.rows
 };
 Model.prototype.deleteRow=function(row) {
-	data[row]=data[this.rows-1]
-	delete data[this.rows-1]
+	this.data[row]=this.data[this.rows-1]
+	delete this.data[this.rows-1]
 	this.rows--
 	this.updateViews()
 };
 Model.prototype.updateViews=function() {
-	if(var view in this.views) {
+	var view;
+	if(view in this.views) {
 		view.updateFromModel()
 	}
 };
