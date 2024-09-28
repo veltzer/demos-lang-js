@@ -1,6 +1,6 @@
 function View(m) {
 	this.model=m
-};
+}
 View.prototype.getModel=function() {
 	return this.model
 };

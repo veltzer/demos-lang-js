@@ -1,5 +1,6 @@
 /*jsl:import inventory.js*/
 /*jsl:import cart.js*/
+/*global Inventory,InventoryItem,Cart*/
 window.onload=function() {
 	// lets add items to the inventory
 	var i=Inventory.getInstance();

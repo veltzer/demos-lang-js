@@ -1,7 +1,7 @@
 var http = require('http');
 var url=require('url');
 
-data=[
+var data=[
 	{
 		"id": "14",
 		"name":"Bicycle",
@@ -22,7 +22,7 @@ data=[
 	}
 ]
 
-mypage=" \
+var mypage=" \
 <html>\
 	<head>\
 		<script src='Model.js'></script>\
@@ -61,5 +61,5 @@ http.createServer(
 		}
 	}
 ).listen(8000);
-	 
+ 
 console.log('Server running at http://localhost:8000/');

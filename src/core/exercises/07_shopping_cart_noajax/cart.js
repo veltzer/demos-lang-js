@@ -1,4 +1,5 @@
 /*jsl:import inventory.js*/
+/*global Inventory*/
 // cart object
 function Cart() {
 	// key: item id, value: amount to buy

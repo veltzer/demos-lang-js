@@ -2,7 +2,7 @@
 /* jsl:import cart.js */
 /* import { Cart } from "cart.js" */
 /* import { Inventory, InventoryItem } from "inventory.js" */
-/*global window*/
+/*global Inventory,InventoryItem,Cart*/
 window.onload = function () {
   // lets add items to the inventory
   const i = Inventory.getInstance()
