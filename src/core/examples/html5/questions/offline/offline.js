@@ -9,7 +9,7 @@ function init() {
 	if (window.localStorage) {
 		try {
 			mapData = JSON.parse(window.localStorage.getItem("mapData"));
-		} catch (e) {
+		} catch(e) {
 		}
 		if (mapData == "undefined" || mapData == null) {
 			mapData = new Array();

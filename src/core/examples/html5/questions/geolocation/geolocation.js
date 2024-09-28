@@ -5,27 +5,24 @@ function init() {
 	btnStop.onclick = stopWatchingLocation;
 }
 
-/* Enter global variables here */
-
-function processSubmit() {
+function processSubmit() { // eslint-disable-line no-unused-vars
 	/* Enter GeoLocation Code Here */
 }
 
-function stopWatchingLocation() {
+function stopWatchingLocation() { // eslint-disable-line no-unused-vars
 	/* Enter Stop Watching Code here */
 }
 
-function updatePosition(position) {
+function updatePosition(position) { // eslint-disable-line no-unused-vars
 	/* Enter Position Update Code here */
 }
 
-function errorPosition(error) {
+function errorPosition(error) { // eslint-disable-line no-unused-vars
 	/* Enter Position Error Code here */
 }
 
-function optionsPosition() {
+function optionsPosition() { // eslint-disable-line no-unused-vars
 	/* Enter Position Options Code here */
 }
 
 window.onload = init;
-

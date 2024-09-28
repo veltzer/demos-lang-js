@@ -4,7 +4,7 @@ function init() {
 	btnPressMe.onclick = processSubmit;
 	btnStop.onclick = stopWatchingLocation;
 	geostatus = document.getElementById("geostatus");
-	map = document.getElementById("map");
+	// var map = document.getElementById("map");
 	
 	// Insert Web Storage code here.
 	

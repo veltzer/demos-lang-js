@@ -34,7 +34,7 @@ Set.prototype.toString=function() {
 	for(var x in this.items) {
 		a.push(x);
 	}
-	return a.join(',');
+	return a.join(",");
 };
 Set.prototype.foreach=function(func) {
 	for(var x in this.items) {

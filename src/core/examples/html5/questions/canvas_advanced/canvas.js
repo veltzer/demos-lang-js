@@ -3,7 +3,7 @@ function init() {
 	btnPresMe.onclick = processSubmit;
 }
 
-function degreesToRadians(degrees) {
+function degreesToRadians(degrees) { // eslint-disable-line no-unused-vars
 	return degrees / 360 * Math.PI * 2;
 }
 
@@ -30,7 +30,7 @@ function drawRainbow(context) {
 
 	context.strokeStyle = gradient;
 
-	var arc = context.arc(300, 300, 250, Math.PI, 0, false);
+	context.arc(300, 300, 250, Math.PI, 0, false);
 	context.lineWidth = 80;
 	context.stroke();
 

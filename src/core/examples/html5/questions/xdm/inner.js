@@ -1,19 +1,15 @@
-var btnPressMe;
-
-window.onload = init;
-
 function init() {
-	btnPressMe = document.getElementById("pressMe");
+	// var btnPressMe = document.getElementById("pressMe");
 }
 
-function setStatus(status) {
+function setStatus(status) { // eslint-disable-line no-unused-vars
+	var divStatus = document.getElementById("divStatus");
 	divStatus.innerHTML = status;
 }
 
-function addStatus(status) {
+function addStatus(status) { // eslint-disable-line no-unused-vars
+	var divStatus = document.getElementById("divStatus");
 	divStatus.innerHTML += status + "<br>";
 }
 
-
-
-
+window.onload = init;

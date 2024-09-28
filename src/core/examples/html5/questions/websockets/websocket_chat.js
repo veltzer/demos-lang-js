@@ -1,11 +1,10 @@
-
+/*global jws*/
 var taMessage;
 var txtUserName;
 var divChatMessages;
 var divStatus;
 var btnPressMe;
 var jWebSocketClient;
-var txtMessageTo;
 var cbPrivate;
 var users;
 //var lastProcessedUsId;
@@ -13,9 +12,9 @@ var users;
 function init() {
 	btnPressMe = document.getElementById("pressMe");
 	btnPressMe.onclick = processSubmit;
-	taMessage =  document.getElementById("message");
+	taMessage = document.getElementById("message");
 	txtUserName = document.getElementById("userName");
-	txtMessageTo = document.getElementById("messageTo");
+	//var txtMessageTo = document.getElementById("messageTo");
 	cbPrivate = document.getElementById("private");
 	divChatMessages = document.getElementById("chat-messages");
 	divStatus = document.getElementById("status");
@@ -29,18 +28,16 @@ function init() {
 	
 	users = new Array();
 	
-	if( jws.browserSupportsWebSockets() ) {
-		  jWebSocketClient = new jws.jWebSocketJSONClient();
-
-          var logonResult = jWebSocketClient.logon( url, chatUsername, password, {
-              // OnOpen callback
-              OnOpen: connectionOpened,
-              // OnMessage callback
-              OnMessage: processMessage,
-              // OnClose callback
-              OnClose: connectionClosed
-            });
-
+	if(jws.browserSupportsWebSockets()) {
+		jWebSocketClient = new jws.jWebSocketJSONClient();
+		var _logonResult = jWebSocketClient.logon( url, chatUsername, password, {
+			// OnOpen callback
+			OnOpen: connectionOpened,
+			// OnMessage callback
+			OnMessage: processMessage,
+			// OnClose callback
+			OnClose: connectionClosed
+		});
 	} else {
 		setStatus("Web Sockets NOT supported!");
 		btnPressMe.disabled = true;
@@ -90,10 +87,10 @@ function connectionOpened(wsEvent) {
 }
 
 function connectionClosed(wsEvent) {
-        if( jWebSocketClient ) {
-                jWebSocketClient.close();
-        }
-        setStatus("Connection closed: " + wsEvent.data);
+	if( jWebSocketClient ) {
+		jWebSocketClient.close();
+	}
+	setStatus("Connection closed: " + wsEvent.data);
 }
 
 
@@ -103,8 +100,8 @@ function processSubmit() {
 	var userName = txtUserName.value;
 
 	var messageToken = {
-			  ns: "nextgened.chat",
-			  messageType: "chatMessage"
+		ns: "nextgened.chat",
+		messageType: "chatMessage"
 	};
 	messageToken.message = message;
 	messageToken.user = new Object();
@@ -115,13 +112,13 @@ function processSubmit() {
 		return;
 	} else {
 		jWebSocketClient.broadcastToken( messageToken, {
-			  OnResponse: function( responseToken ) {
-			    setStatus("Server responded: "
-			      + "vendor: " + responseToken.vendor
-			      + ", version: " + responseToken.version
-			    );
-			    processMessage(null, responseToken);
-			  }
+			OnResponse: function( responseToken ) {
+				setStatus("Server responded: "
+					+ "vendor: " + responseToken.vendor
+					+ ", version: " + responseToken.version
+				);
+				processMessage(null, responseToken);
+			}
 		});
 		setStatus("Message sent: " + JSON.stringify(messageToken));
 	}
