@@ -28,13 +28,13 @@
 
 			var p1=new Person("James","Bond");
 			var p2=new Person("Mark","Veltzer");
-			document.write(p1.toString()+"<br/>");
-			document.write(p2.toString()+"<br/>");
+			document.write(p1.toString()+"<br></br>");
+			document.write(p2.toString()+"<br></br>");
 			p1.toString=function() {
 				return this.lastname+", "+this.name+" "+this.lastname;
 			};
-			document.write(p1.toString()+"<br/>");
-			document.write(p2.toString()+"<br/>");
+			document.write(p1.toString()+"<br></br>");
+			document.write(p2.toString()+"<br></br>");
 		</script>
 	</head>
 	<body>

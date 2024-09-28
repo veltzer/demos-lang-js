@@ -4,8 +4,6 @@
 	The disadvantage is in the constructor property which is a magic property of the prototype
 	We will show this later.
 	which is not set correctly.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>
@@ -28,16 +26,16 @@
 			};
 
 			var person=new Person("james",27);
-			document.write(person+"<br/>");
+			document.write(person+"<br></br>");
 			person.setName("mark");
-			document.write(person+"<br/>");
-			document.write("\"prototype\" in person: "+("prototype" in person)+"<br/>");
-			document.write("\"prototype\" in Person: "+("prototype" in Person)+"<br/>");
-			document.write(Person.prototype.constructor+"<br/>");
-			document.write("is this object an instance of Person: "+(person instanceof Person)+"<br/>");
-			document.write("is this object an instance of Object: "+(person instanceof Object)+"<br/>");
-			document.write("the constructor of this object: "+person.constructor+"<br/>");
-			document.write("is this objects constructor Person: "+(person.constructor==Person)+"<br/>");
+			document.write(person+"<br></br>");
+			document.write("\"prototype\" in person: "+("prototype" in person)+"<br></br>");
+			document.write("\"prototype\" in Person: "+("prototype" in Person)+"<br></br>");
+			document.write(Person.prototype.constructor+"<br></br>");
+			document.write("is this object an instance of Person: "+(person instanceof Person)+"<br></br>");
+			document.write("is this object an instance of Object: "+(person instanceof Object)+"<br></br>");
+			document.write("the constructor of this object: "+person.constructor+"<br></br>");
+			document.write("is this objects constructor Person: "+(person.constructor==Person)+"<br></br>");
 		</script>
 	</head>
 	<body>
