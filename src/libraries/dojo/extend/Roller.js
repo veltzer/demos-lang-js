@@ -7,8 +7,6 @@ Pushing button 2 decrements the value in the box by a certain amount.
 
 the user can override the default value, the increment value, the decrement value
 and the max value which causes a wrap around.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 
 if(!dojo._hasResource["extend.Roller"]){

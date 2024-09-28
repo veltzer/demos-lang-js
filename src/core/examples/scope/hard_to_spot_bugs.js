@@ -2,8 +2,6 @@
 /*
 	This example shows that dynamic languages like JavaScript can
 	produce very hard to spot bugs...
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 /*jsl:ignore*/
 function plusOneOf(myFirstArgument) {
