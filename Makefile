@@ -172,6 +172,8 @@ all_htmlhint: $(ALL_HTML)
 all_eslint_js: $(ALL_ESLINT_JS)
 .PHONY: all_eslint_html
 all_eslint_html: $(ALL_ESLINT_HTML)
+.PHONY: all_tidy
+all_tidy: $(ALL_TIDY)
 
 ############
 # patterns #
