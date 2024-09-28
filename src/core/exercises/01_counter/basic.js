@@ -11,6 +11,6 @@ function make_iterator(start,step,stop) {
 	};
 }
 var iter=make_iterator(5,2,17);
-while(true) {
+while(true) { // eslint-disable-line no-constant-condition
 	console.log(iter());
 }

@@ -1,4 +1,5 @@
 /*jsl:import inventory.js*/
+/*global Inventory*/
 // here comes the cart...
 function Cart() {
 	this.tbid=undefined;
