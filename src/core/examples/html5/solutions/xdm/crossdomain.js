@@ -9,7 +9,7 @@ window.onload = init;
 function init() {
 	btnPressMe = document.getElementById("pressMe");
 	btnPressMe.onclick = sendMessage;
-	divChatMessages = document.getElementById("chatMessages");
+	divChatMessages = document.getElementById("chat-messages");
 	ifFeedback = document.getElementById("feedback");
 	divStatus = document.getElementById("status");
 	window.onmessage = receiveMessage;
