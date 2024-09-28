@@ -7,8 +7,6 @@
 	- java script keys of objects are STRINGS and not general
 	objects. Avoid using the key part extensivly to get out
 	of trouble.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 // start of the Person class
 function Person(name,age) {

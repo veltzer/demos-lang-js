@@ -16,7 +16,7 @@ DO_TIDY:=1
 # do you want to do eslint on javascript files?
 DO_ESLINT_JS:=1
 # do you want to do eslint on html files?
-DO_ESLINT_HTML:=0
+DO_ESLINT_HTML:=1
 # do you want to run standard?
 DO_STANDARD:=0
 # do you want to do jslint?

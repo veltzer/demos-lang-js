@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 /*
 	Exploration of global and local variable interaction in JavaScript.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 /*jsl:ignore*/
 var i=7;

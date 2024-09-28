@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 /*
 	Clean Javascript OO example...
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 /*
 Alternate syntax:
