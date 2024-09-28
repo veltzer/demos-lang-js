@@ -25,6 +25,8 @@ DO_JSLINT:=0
 DO_JSHINT:=0
 # do you want to check html with simple makefile rules?
 DO_CHECK_HTML:=0
+# do you want to lint css?
+DO_STYLELINT:=1
 
 ########
 # code #
@@ -33,6 +35,7 @@ ALL:=
 ALL_HTML:=$(shell find src -name "*.html")
 ALL_HTML_FRAG:=$(shell find src -name "*.html_frag")
 ALL_JS:=$(shell find src -name "*.js")
+ALL_CSS:=$(shell find src -name "*.css")
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
 ALL_HTMLLINT:=$(addprefix out/,$(addsuffix .htmllint, $(basename $(ALL_HTML))))
 ALL_VALIDATEHTML:=$(addprefix out/,$(addsuffix .vhtml, $(basename $(ALL_HTML))))
@@ -42,6 +45,7 @@ ALL_ESLINT_HTML:=$(addprefix out/,$(addsuffix .eslint_html, $(basename $(ALL_HTM
 ALL_STANDARD:=$(addprefix out/,$(addsuffix .standard, $(basename $(ALL_JS))))
 ALL_JSLINT:=$(addprefix out/,$(addsuffix .jslint, $(basename $(ALL_JS))))
 ALL_JSHINT:=$(addprefix out/,$(addsuffix .jshint, $(basename $(ALL_JS))))
+ALL_STYLELINT:=$(addprefix out/,$(addsuffix .stylelint, $(basename $(ALL_CSS))))
 
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -87,6 +91,10 @@ endif # DO_JSLINT
 ifeq ($(DO_JSHINT),1)
 ALL+=$(ALL_JSHINT)
 endif # DO_JSHINT
+
+ifeq ($(DO_STYLELINT),1)
+ALL+=$(ALL_STYLELINT)
+endif # DO_STYLELINT
 
 ifeq ($(DO_CHECK_HTML),1)
 ALL+=out/html.stamp
@@ -152,6 +160,7 @@ debug:
 	$(info ALL_STANDARD is $(ALL_STANDARD))
 	$(info ALL_JSLINT is $(ALL_JSLINT))
 	$(info ALL_JSHINT is $(ALL_JSHINT))
+	$(info ALL_STYLELINT is $(ALL_STYLELINT))
 .PHONY: clean
 clean:
 	$(Q)rm -f $(ALL)
@@ -213,4 +222,8 @@ $(ALL_JSLINT): out/%.jslint: %.js
 $(ALL_JSHINT): out/%.jshint: %.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/jshint $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_STYLELINT): out/%.stylelint: %.css
+	$(info doing [$@])
+	$(Q)pymakehelper only_print_on_error node_modules/.bin/stylelint $<
 	$(Q)pymakehelper touch_mkdir $@
