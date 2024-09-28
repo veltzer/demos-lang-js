@@ -1,7 +1,5 @@
 /*
-An example of auto complete...
-
-	Mark Veltzer <mark.veltzer@gmail.com>
+	An example of auto complete...
 */
 function min(a,b) {
 	if(a<b) {
