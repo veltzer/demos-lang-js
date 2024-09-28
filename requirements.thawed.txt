@@ -2,3 +2,4 @@
 pymakehelper
 pydmt
 pyclassifiers
+pycmdtools
