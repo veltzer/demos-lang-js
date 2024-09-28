@@ -40,7 +40,7 @@ function f4() {
 async function double_sleep() {
 	// the following two lines are exactly the same
 	return sleep(3000).then(() => sleep(3000));
-	return sleep(3000).then(function() { return sleep(3000); });
+	// return sleep(3000).then(function() { return sleep(3000); });
 }
 function f5() {
 	double_sleep().then(() => { console.log("bar"); });

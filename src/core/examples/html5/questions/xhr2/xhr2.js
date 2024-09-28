@@ -1,11 +1,10 @@
-var divResults;
+var divResults; // eslint-disable-line no-unused-vars
 
 function init() {
 	var btnPresMe = document.getElementById("pressMe");
 	divResults = document.getElementById("results");
 	btnPresMe.onclick = processSubmit;
 }
-
 
 function processSubmit() {
 	/* Enter XHR2 Code Here */
@@ -14,4 +13,3 @@ function processSubmit() {
 }
 
 window.onload = init;
-

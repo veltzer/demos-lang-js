@@ -1,5 +1,5 @@
 var btnPressMe;
-var video;
+var video; // eslint-disable-line no-unused-vars
 
 function init() {
 	btnPressMe = document.getElementById("pressMe");
