@@ -1,7 +1,5 @@
 <!--
 	But if you call the file .php it may render it...:)
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>

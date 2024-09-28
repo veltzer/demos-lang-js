@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
 	This fragment shows how to push elements to an array.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>

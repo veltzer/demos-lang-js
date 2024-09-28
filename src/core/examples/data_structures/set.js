@@ -3,8 +3,6 @@
 
 	References:
 	http://www.javascriptexamples.org/2011/01/17/how-to-implement-a-set-in-javascript/
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 var Set=function() {
 	this.items={};

@@ -2,8 +2,6 @@
 /*
 	This is a demo of how to use associative arrays.
 	Note that there is no way to know how many elements an associative array has
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 */
 function doWork(obj,name) {
 	console.log("analysis of "+name);
