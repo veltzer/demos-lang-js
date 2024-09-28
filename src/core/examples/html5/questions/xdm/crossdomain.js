@@ -11,11 +11,11 @@ function setStatus(status) {
 }
 
 function addStatus(status) {
-	divStatus.innerHTML += status + "<br/>";
+	divStatus.innerHTML += status + "<br>";
 }
 
 function addMessage(message) {
-	divChatMessages.innerHTML += "Inner Frame says: " + message + "<br/>";
+	divChatMessages.innerHTML += "Inner Frame says: " + message + "<br>";
 }
 
 

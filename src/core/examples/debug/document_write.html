@@ -6,9 +6,6 @@
 	- document.write writes to where the piece of code calling it
 	is within the document.
 	- you can use document.write to add html to the body.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
-
 	FLAGS: NOTIDY
 -->
 <html>
@@ -20,9 +17,9 @@
 	</head>
 	<body>
 		This is some html content
+		<script>
+			document.write("This is some more text");
+			document.write("<h1>this is a header</h1><p>This is a paragraph</p>");
+		</script>
 	</body>
-	<script>
-		document.write("This is some more text");
-		document.write("<h1>this is a header</h1><p>This is a paragraph</p>");
-	</script>
 </html>

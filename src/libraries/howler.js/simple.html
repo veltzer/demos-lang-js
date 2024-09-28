@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Howler.js Demo (No MP3)</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-</head>
-<body>
-
-  <button id="playSoundButton">Play Beep</button>
-
-  <script>
-    let audioContext;
-    let sound;
-
-    document.getElementById('playSoundButton').addEventListener('click', () => {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-
-      // Create a new oscillator and gain node each time the button is clicked
-      const oscillator = audioContext.createOscillator(); 
-      oscillator.type = 'sine';
-      oscillator.frequency.value = 440;
-
-      const gainNode = audioContext.createGain();
-      gainNode.gain.value = 0.5;
-
-      // Connect the nodes
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-
-      // Create Howl object
-      sound = new Howl({
-        src: [oscillator, gainNode],
-        html5: true
-      });
-
-      // Start the oscillator and play the sound
-      oscillator.start();
-      sound.play();
-
-      // Stop the oscillator after a short duration
-      setTimeout(() => {
-        oscillator.stop();
-      }, 200);
-    });
-  </script>
-
-</body>
+	<head>
+		<title>Howler.js Demo (No MP3)</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+	</head>
+	<body>
+		<button id="playSoundButton">Play Beep</button>
+		<script>
+			let audioContext;
+			let sound;
+			document.getElementById('playSoundButton').addEventListener('click', () => {
+				if (!audioContext) {
+					audioContext = new (window.AudioContext || window.webkitAudioContext)();
+				}
+				// Create a new oscillator and gain node each time the button is clicked
+				const oscillator = audioContext.createOscillator();
+				oscillator.type = 'sine';
+				oscillator.frequency.value = 440;
+				const gainNode = audioContext.createGain();
+				gainNode.gain.value = 0.5;
+				// Connect the nodes
+				oscillator.connect(gainNode);
+				gainNode.connect(audioContext.destination);
+				// Create Howl object
+				sound = new Howl({
+					src: [oscillator, gainNode],
+					html5: true
+				});
+				// Start the oscillator and play the sound
+				oscillator.start();
+				sound.play();
+				// Stop the oscillator after a short duration
+				setTimeout(() => {
+					oscillator.stop();
+				}, 200);
+			});
+		</script>
+	</body>
 </html>

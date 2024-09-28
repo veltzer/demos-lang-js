@@ -8,12 +8,12 @@
 				function myonmessage(e) {
 					var msg="ui thread got message: "+e.data;
 					console.log(msg);
-					$("#mydiv").html($("#mydiv").html()+"<br/>"+msg);
+					$("#mydiv").html($("#mydiv").html()+"<br>"+msg);
 				}
 				function myonerror(e) {
 					var msg="got error: "+e.message;
 					console.log(msg);
-					$("#mydiv").html($("#mydiv").html()+"<br/>"+msg);
+					$("#mydiv").html($("#mydiv").html()+"<br>"+msg);
 				}
 				function myonclose() {
 					console.log("myonclose");
@@ -68,18 +68,18 @@
 		</script>
 	</head>
 	<body>
-		<input id="mymessage" type="text" value="message text"/>
-		<br/>
-		<input id="mythreads" type="text"/>
-		<br/>
+		<input id="mymessage" type="text" value="message text">
+		<br>
+		<input id="mythreads" type="text">
+		<br>
 		<button id="mysend">Send</button>
-		<br/>
+		<br>
 		<button id="myterminate">Terminate (not very nice)</button>
-		<br/>
+		<br>
 		<button id="mysendall">Send all</button>
-		<br/>
+		<br>
 		<button id="create">Create another worker</button>
-		<br/>
-		<div id="mydiv"/>
+		<br>
+		<div id="mydiv"></div>
 	</body>
 </html>

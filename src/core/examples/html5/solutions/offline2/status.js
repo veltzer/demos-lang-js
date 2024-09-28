@@ -141,7 +141,7 @@ function cacheProgress(event) {
 	setCacheStatus(window.applicationCache.status);
 }
 function cacheError(event) {
-	divStatus.innerHTML += "Error: " + event + "<br/>";
+	divStatus.innerHTML += "Error: " + event + "<br>";
 }
 function cacheNoUpdate(event) {
 	divStatus.innerHTML += "NoUpdate";

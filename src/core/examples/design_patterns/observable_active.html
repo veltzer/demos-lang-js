@@ -7,9 +7,6 @@
 	A naive implementation of this would use a javascript object
 	as a hash table but that would be wrong since javascript
 	objects store only strings as keys and not any object...
-
-	Mark Veltzer <mark.veltzer@gmail.com>
-
 -->
 <html>
 	<head>
@@ -56,7 +53,7 @@
 				this.name=name;
 			}
 			Listener.prototype.notify=function(newname) {
-				document.write(this.name+" received event about name change to "+newname+"</br>");
+				document.write(this.name+" received event about name change to "+newname+"<br>");
 			};
 			Listener.prototype.toString=function() {
 				return this.name;

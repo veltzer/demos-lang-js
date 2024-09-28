@@ -83,7 +83,7 @@ function setStatus(status) {
 }
 
 function addStatus(status) {
-	divStatus.innerHTML += "<br/>" + status;
+	divStatus.innerHTML += "<br>" + status;
 }
 
 window.onload = init;

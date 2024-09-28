@@ -56,7 +56,7 @@ function addStatus(status) {
 }
 
 function addMessage(chatMessage) {
-	divChatMessages.innerHTML += chatMessage.user.userName + ": " + chatMessage.message + "<br/>";
+	divChatMessages.innerHTML += chatMessage.user.userName + ": " + chatMessage.message + "<br>";
 }
 
 function processMessage(wsEvent, wsToken) {

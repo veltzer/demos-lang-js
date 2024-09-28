@@ -12,13 +12,13 @@
 			arr.push("one");
 			arr.push("two");
 			arr.push("three");
-			document.write("length(arr)="+arr.length+"<br/>");
+			document.write("length(arr)="+arr.length+"<br>");
 			for(var x in arr) {
-				document.write(x+" ---> "+arr[x]+"<br/>");
+				document.write(x+" ---> "+arr[x]+"<br>");
 			}
 			arr.pop(1);
 			for(var x2 in arr) {
-				document.write(x2+" ---> "+arr[x2]+"<br/>");
+				document.write(x2+" ---> "+arr[x2]+"<br>");
 			}
 		</script>
 	</head>

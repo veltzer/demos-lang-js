@@ -12,7 +12,7 @@
 		<script>
 			function func() {
 				var internal=function() {
-					document.write("i is "+arguments.callee.caller.name+"<br/>");
+					document.write("i is "+arguments.callee.caller.name+"<br>");
 				};
 				return internal;
 			}

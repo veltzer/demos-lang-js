@@ -27,7 +27,7 @@
 					var tmp=classname.prototype[x];
 					classname.prototype[x]=function() {
 						var result=tmp(arguments);
-						document.write("something was changed "+arguments[0]+","+x+","+classname+"<br/>");
+						document.write("something was changed "+arguments[0]+","+x+","+classname+"<br>");
 						return result;
 					};
 				}

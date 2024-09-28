@@ -32,18 +32,18 @@
 				};
 			}
 			var my_object=createSomeProtectedVal(5);
-			document.write(my_object.get()+"<br/>");
+			document.write(my_object.get()+"<br>");
 			my_object.set(7);
-			document.write(my_object.get()+"<br/>");
+			document.write(my_object.get()+"<br>");
 			try {
 				my_object.set(8);
 			} catch(e) {
-				document.write("yes, I got an exception<br/>");
+				document.write("yes, I got an exception<br>");
 			}
 			try {
 				var my_object_2=createSomeProtectedVal(4);
 			} catch(e) {
-				document.write("yes, I got an exception<br/>");
+				document.write("yes, I got an exception<br>");
 			}
 		</script>
 	</head>

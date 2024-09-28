@@ -17,7 +17,7 @@
 				var arr=[];
 				for(var i=0;i<5;i++) {
 					arr.push(function() {
-						document.write(i+"<br/>");
+						document.write(i+"<br>");
 					});
 				}
 				return arr;
@@ -29,7 +29,7 @@
 				for(var i=0;i<5;i++) {
 					obj.value=i;
 					arr.push(function() {
-						document.write(obj.value+"<br/>");
+						document.write(obj.value+"<br>");
 					});
 				}
 				return arr;
@@ -42,7 +42,7 @@
 					obj.value=i;
 					arr.push(function(o) {
 						return function() {
-							document.write(o.value+"<br/>");
+							document.write(o.value+"<br>");
 						};
 					}(obj));
 				}
@@ -54,7 +54,7 @@
 				for(var i=0;i<5;i++) {
 					arr.push(function(j) {
 						return function() {
-							document.write(j+"<br/>");
+							document.write(j+"<br>");
 						};
 					}(i));
 				}

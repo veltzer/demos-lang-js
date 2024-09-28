@@ -184,9 +184,9 @@ $(ALL_HTMLLINT): out/%.htmllint: %.html .htmllintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmllint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_VALIDATEHTML): out/%.vhtml: %.html
+$(ALL_VALIDATEHTML): out/%.vhtml: %.html scripts/run_validate_html.py
 	$(info doing [$@])
-	$(Q)pycmdtools validate_html $<
+	$(Q)scripts/run_validate_html.py $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py
 	$(info doing [$@])

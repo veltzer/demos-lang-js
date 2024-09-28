@@ -9,7 +9,7 @@ body {
 	max-width:900px;
 	border:solid;
 	border-color:#FFFFFF;
-} 
+}
 
 header {
 	background-color: #fa2542;
@@ -18,21 +18,21 @@ header {
 	text-align:center;
 }
 
-header h2 { 
+header h2 {
 	margin: 0px;
-} 
+}
 
 h1 {
 	font-size: 72px;
 	margin: 0px;
-} 
+}
 
 h2 {
 	font-size: 24px;
 	margin: 0px;
 	text-align:center;
 	color: #fa2542;
-} 
+}
 
 h3 {
 	font-size: 18px;
@@ -47,7 +47,7 @@ nav {
 	float:left;
 }
 
-nav a:link, nav a:visited { 
+nav a:link, nav a:visited {
 	display: block;
 	border-bottom: 3px solid #ffffff;
 	padding: 10px;
@@ -56,23 +56,23 @@ nav a:link, nav a:visited {
 	margin: 5px;
 }
 
-nav a:hover { 
+nav a:hover {
 	color: #ffffff;
 	background-color: #fa2542;
 }
 
-nav h3 { 
+nav h3 {
 	margin: 15px;
 	color: #ffffff;
 }
 
-section { 
+section {
 	display:block;
 	width:50%;
 	float:left;
 }
 
-article { 
+article {
 	background-color: #eeeeee;
 	display:block;
 	margin: 10px;
@@ -84,23 +84,23 @@ article {
 	-webkit-box-shadow: 2px 2px 20px #888888;
 	-moz-box-shadow: 2px 2px 20px #888888;
 	-o-box-shadow: 2px 2px 20px #888888;
-} 
+}
 
-article header { 
+article header {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	padding: 5px;
-} 
+}
 
-article footer { 
+article footer {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	padding: 5px;
-} 
+}
 
-article h2 { 
+article h2 {
 	color: #ffffff;
 	font-size: 18px;
 }
@@ -137,18 +137,18 @@ footer h2 { font-size: 14px;
 	color: #ffffff;
 }
 
-/* links */ 
+/* links */
 nav a {
 	color: #fa2542;
 }
-nav a:hover { 
+nav a:hover {
 	text-decoration: underline;
 }
 
 footer a {
 	color: #ffffff;
 }
-footer a:hover { 
+footer a:hover {
 	text-decoration: underline;
 }
 

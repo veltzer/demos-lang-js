@@ -43,7 +43,7 @@ function processSubmit() {
 
 function updateStatus(statusMessage) {
 	if (formStatus != null) {
-		formStatus.innerHTML += statusMessage + "<br/>";
+		formStatus.innerHTML += statusMessage + "<br>";
 	}
 }
 

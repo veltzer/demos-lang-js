@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
 	Do it your own type of JavaScript inheritance.
-
-	Mark Veltzer <mark.veltzer@gmail.com>
 -->
 <html>
 	<head>
@@ -28,7 +26,7 @@
 				var s="";
 				for(var key in this) {
 					if(typeof(this[key])!="function") {
-						s+=key+": "+this[key]+"<br></br>";
+						s+=key+": "+this[key]+"<br>";
 					}
 				}
 				return s;
@@ -53,10 +51,10 @@
 
 			// This is the client code
 			var e=new Employee("Bilbo",111,200);
-			document.write("e instance of Person: "+(e instanceof Person)+"<br></br>");
-			document.write("e instance of Employee: "+(e instanceof Employee)+"<br></br>");
-			document.write(e+"<br></br>");
-			document.write(e.getFullName()+"<br></br>");
+			document.write("e instance of Person: "+(e instanceof Person)+"<br>");
+			document.write("e instance of Employee: "+(e instanceof Employee)+"<br>");
+			document.write(e+"<br>");
+			document.write(e.getFullName()+"<br>");
 		</script>
 	</head>
 	<body>
