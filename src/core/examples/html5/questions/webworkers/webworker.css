@@ -1,7 +1,5 @@
 #chatMessages {
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
 	padding: 5px;
 	margin-top: 10px;
 	background-color:#CCC;
@@ -86,24 +84,15 @@ article {
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 20px #888;
-	box-shadow: 2px 2px 20px #888;
 	box-shadow: 2px 2px 20px #888;
 }
 
 article header {
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
 	padding: 5px;
 }
 
 article footer {
-	border-radius: 10px;
-	border-radius: 10px;
 	border-radius: 10px;
 	padding: 5px;
 }
