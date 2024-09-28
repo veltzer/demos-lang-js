@@ -38,15 +38,9 @@ h3 {
 }
 
 
-/* #diag matches id="diag" */
 #diag {
 	color: #fa2542;
 	background-color: #ffffff;
-	/*
-		Experimental features have to be prefaced with -webkit (Safari,Chrome,Konquerer), -moz (Firefox), -o (Opera), -ie (Internet Explorer).
-		Features will have to be duplicated for all supporting browsers.
-		The following creates a diagonal box in the lower right hand corner.
-	*/
 	-webkit-box-shadow: 2px 2px 20px #888888;
 	-webkit-transform: rotate(-45deg);
 	-moz-box-shadow: 2px 2px 20px #888888;
@@ -108,7 +102,6 @@ article {
 	-o-transform: rotate(15deg);
 }
 
-/* .rotateLeft matches class="rotateLeft" */
 .rotateLeft {
 	-webkit-box-shadow: 2px 2px 20px #888888;
 	-webkit-transform: rotate(-15deg);
@@ -169,7 +162,6 @@ footer h2 { font-size: 14px;
 	color: #ffffff;
 }
 
-/* links */
 a {
 	color: #fa2542;
 }
