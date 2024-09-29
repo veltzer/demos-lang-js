@@ -16,17 +16,7 @@
 		<button>this is text 3</button><br>
 	</div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 	<button id="btnScreenShot">Get Screen Shot</button>
 	<canvas id="canvas2">
 		No screenshots yet.
@@ -35,7 +25,7 @@
 		function takeScreenShot() {
 			alert("taking screenshot");
 			var canvas1 = document.getElementById("canvas1");
-			var context1 = canvas1.getContext("2d");
+			// var context1 = canvas1.getContext("2d");
 			var src = canvas1.toDataURL("image/png"); // cache the image data source
 			var img = document.createElement("img"); // create a Image Element
 			img.src = src;

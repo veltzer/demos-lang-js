@@ -14,7 +14,7 @@
 		dojo.require("dijit.form.Button");
 		dojo.require("dijit.form.TextBox");
 		dojo.require("dojo.data.ItemFileReadStore");
-		
+
 		var startPoint = 0;
 		var store;
 		function initialization()
@@ -24,10 +24,9 @@
 		}
 		function getData()
 		{
-			var request = store.fetch({ start: startPoint , count: 3, onComplete: showCurrent})		
+			var request = store.fetch({ start: startPoint , count: 3, onComplete: showCurrent})
 		}
 		dojo.addOnLoad(initialization);
-		
 		function showCurrent(items,request)
 		{
 			if (items.length<3)
@@ -53,7 +52,6 @@
 			}
 			if (items.length==3)
 				dijit.byId("nextButton").attr("disabled",false);
-			
 		}
 		function next()
 		{
@@ -70,12 +68,12 @@
 				dijit.byId("prevButton").attr("disabled",true);
 		}
 	</script>
-</head>
-<body class="tundra">
-	<div data-dojo-type="dijit.form.Button" id="prevButton" onclick="prev" disabled="true">	Prev</div>
-	<div data-dojo-type="dijit.form.TextBox" id="dataOne" disabled="true">	</div>
-	<div data-dojo-type="dijit.form.TextBox" id="dataTwo" disabled="true">	</div>
-	<div data-dojo-type="dijit.form.TextBox" id="dataThree" disabled="true">	</div>
-	<div data-dojo-type="dijit.form.Button" id="nextButton" onclick="next" disabled="true">	Next</div>
-</body>
+	</head>
+	<body class="tundra">
+		<div data-dojo-type="dijit.form.Button" id="prevButton" onclick="prev" disabled="true">	Prev</div>
+		<div data-dojo-type="dijit.form.TextBox" id="dataOne" disabled="true">	</div>
+		<div data-dojo-type="dijit.form.TextBox" id="dataTwo" disabled="true">	</div>
+		<div data-dojo-type="dijit.form.TextBox" id="dataThree" disabled="true">	</div>
+		<div data-dojo-type="dijit.form.Button" id="nextButton" onclick="next" disabled="true">	Next</div>
+	</body>
 </html>

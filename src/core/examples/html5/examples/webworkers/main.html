@@ -25,7 +25,7 @@
 					w.onmessage=myonmessage;
 					w.onerror=myonerror;
 					w.onclose=myonclose;
-					id=workers.length;
+					var id=workers.length;
 					w.postMessage(id);
 					workers.push(w);
 				}
@@ -33,7 +33,7 @@
 					var data=$("#mymessage").val();
 					var threads=$("#mythreads").val();
 					var ids=threads.split(",");
-					for(seq in ids) {
+					for(var seq in ids) {
 						var sid=ids[seq];
 						if(/\d+/.test(sid)) {
 							var id=Number(sid);
@@ -45,7 +45,7 @@
 				$("#myterminate").click(function() {
 					var threads=$("#mythreads").val();
 					var ids=threads.split(",");
-					for(seq in ids) {
+					for(var seq in ids) {
 						var sid=ids[seq];
 						if(/\d+/.test(sid)) {
 							var id=Number(sid);

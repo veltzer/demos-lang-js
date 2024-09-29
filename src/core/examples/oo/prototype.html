@@ -22,10 +22,10 @@
 
 			function addProperty(obj,propname) {
 				obj["set"+propname]=function(nval) {
-					this[propname]=nval;	
+					this[propname]=nval;
 				};
 				obj["get"+propname]=function() {
-					return this[propname];	
+					return this[propname];
 				};
 			}
 			addProperty(Person.prototype,"Name");

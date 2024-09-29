@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--
 	This examples explores the JavaScript "with" keyword and language feature.
+	FLAGS: NOESLINT
 -->
 <html>
 	<head>
 		<title>Title</title>
 		<script>
-			/*jsl:ignore*/
 			var obj={ name: "john", age: 27 };
 			with(obj) {
 				name="new name";
@@ -15,11 +15,10 @@
 				obj.newfield="newval";
 			}
 			for(var field in obj) {
-				document.write(field+" is "+obj[field]+"<br/>");
+				console.write(`field is {obj[field]}`);
 			}
-			document.write(whatisthis+"<br/>");
-			document.write(tt+"<br/>");
-			/*jsl:end*/
+			console.write(whatisthis);
+			console.write(tt);
 		</script>
 	</head>
 	<body>

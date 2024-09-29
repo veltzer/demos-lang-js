@@ -201,17 +201,17 @@ $(ALL_VALIDATEHTML): out/%.vhtml: %.html scripts/run_validate_html.py
 	$(info doing [$@])
 	$(Q)scripts/run_validate_html.py $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py
+$(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py .tidy.config
 	$(info doing [$@])
 	$(Q)scripts/run_tidy.py $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_ESLINT_JS): out/%.eslint_js: %.js .eslintrc.js
+$(ALL_ESLINT_JS): out/%.eslint_js: %.js scripts/run_eslint.py .eslintrc.js
 	$(info doing [$@])
-	$(Q)node_modules/.bin/eslint $<
+	$(Q)scripts/run_eslint.py $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_ESLINT_HTML): out/%.eslint_html: %.html .eslintrc.js
+$(ALL_ESLINT_HTML): out/%.eslint_html: %.html scripts/run_eslint.py .eslintrc.js
 	$(info doing [$@])
-	$(Q)node_modules/.bin/eslint $<
+	$(Q)scripts/run_eslint.py $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_STANDARD): out/%.standard: %.js
 	$(info doing [$@])
