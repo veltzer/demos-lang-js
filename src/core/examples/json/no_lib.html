@@ -10,21 +10,21 @@
 			// this demos executing code with eval
 			var x="for(var i=0;i<10;i++) { document.write(i+\"<br/>\") }";
 			var e1=eval(x);
-			console.write(`e1 is ${e1}`);
+			console.log(`e1 is ${e1}`);
 
 			// how about a simple varialbe assignment ?
 			var e2=eval("var a=13");
-			console.write(`e2 is ${e2}`);
-			console.write(`a is ${a}`); // eslint-disable-line no-undef
+			console.log(`e2 is ${e2}`);
+			console.log(`a is ${a}`); // eslint-disable-line no-undef
 
 			// a variable assignment from a string of any data? yes!
 			// this is the basis of JSON
 			var someString="[1,2,3]";
 			var e3=eval("var b="+someString);
-			console.write(`e3 is ${e3}`);
-			console.write(`b is ${b}`); // eslint-disable-line no-undef
-			console.write(`typeof(b) is ${typeof(b)}`); // eslint-disable-line no-undef
-			console.write(`b.length is ${b.length}`); // eslint-disable-line no-undef
+			console.log(`e3 is ${e3}`);
+			console.log(`b is ${b}`); // eslint-disable-line no-undef
+			console.log(`typeof(b) is ${typeof(b)}`); // eslint-disable-line no-undef
+			console.log(`b.length is ${b.length}`); // eslint-disable-line no-undef
 		</script>
 	</head>
 	<body>
