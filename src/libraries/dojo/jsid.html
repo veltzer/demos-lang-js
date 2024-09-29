@@ -20,12 +20,13 @@
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
 			dojo.require("dijit.form.Button");
-			function click() {
+			var myJSId;
+			function _do_click() {
 				console.debug(myJSId);
 			}
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" js-id="myJSId" title="click to see an alert" onclick="click">Lets see if this works</div>
+		<div data-dojo-type="dijit.form.Button" js-id="myJSId" title="click to see an alert" onclick="_do_click">Lets see if this works</div>
 	</body>
 </html>

@@ -13,7 +13,7 @@
 			dojo.require("dijit.layout.TabContainer");
 			dojo.require("dijit.layout.ContentPane");
 			var i=2;
-			function addPane() {
+			function _do_add_pane() {
 				i++;
 				var ncp=new dijit.layout.ContentPane({title:"title "+i});
 				ncp.startup();
@@ -21,7 +21,7 @@
 				tab.addChild(ncp);
 				var newdiv=document.createElement("div");
 				ncp.setContent(newdiv);
-				var newbutton=new dijit.form.Button({label: "label "+i},newdiv);
+				var _newbutton=new dijit.form.Button({label: "label "+i},newdiv);
 			}
 		</script>
 	</head>
@@ -29,7 +29,7 @@
 		<div id="mytab" data-dojo-type="dijit.layout.TabContainer" style="width: 200px; height: 200px;">
 			<div data-dojo-type="dijit.layout.ContentPane" title="title 1">
 				This is some text 1
-				<div data-dojo-type="dijit.form.Button" title="This is some baloon help" onclick="addPane">
+				<div data-dojo-type="dijit.form.Button" title="This is some baloon help" onclick="_do_add_pane">
 					Click me to add a content pane
 				</div>
 			</div>

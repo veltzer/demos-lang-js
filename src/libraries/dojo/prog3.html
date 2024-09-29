@@ -11,7 +11,7 @@
 		<script>
 			dojo.require("dijit.form.Button");
 			var i=0;
-			function createButton() {
+			function _do_create_button() {
 				var parentDiv = dojo.byId("parent");
 				var newDiv = document.createElement("div");
 				i++;
@@ -27,7 +27,7 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" widget-id="helloButton" onclick="createButton">
+		<div data-dojo-type="dijit.form.Button" widget-id="helloButton" onclick="_do_create_button">
 			Create button...
 		</div>
 		<div id="parent">

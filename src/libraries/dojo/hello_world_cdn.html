@@ -21,12 +21,12 @@
 			require(["dijit/form/Button","dojo/parser"],function() {
 				dojo.parser.parse();
 			});
-			function click() {
+			function _click() {
 				alert("wow! it works!");
 			}
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="click">Lets see if this works</div>
+		<div data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="_click">Lets see if this works</div>
 	</body>
 </html>

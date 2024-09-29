@@ -13,7 +13,7 @@
 		<script>
 			dojo.require("dijit.form.Button");
 			dojo.require("dijit.form.TextBox");
-			function do_check() {
+			function _do_check() {
 				var w_re=dijit.byId("re")
 				var w_text=dijit.byId("text")
 				var v_re=w_re.attr("value")
@@ -38,7 +38,7 @@
 			result
 		</div>
 		<br/>
-		<div data-dojo-type="dijit.form.Button" onclick="do_check">
+		<div data-dojo-type="dijit.form.Button" onclick="_do_check">
 			Check if they match!
 		</div>
 	</body>

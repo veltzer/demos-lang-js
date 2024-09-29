@@ -13,9 +13,10 @@
 				},
 				parseOnLoad: true,
 				// look for a locale=xx query string param, else default to "en-us"
-				locale: location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en-us",
+				//locale: location.search.match(/locale=([\w-]+)/) ? RegExp.$1 : "en-us",
 				locale: "zh",
 			};
+			console.log(dojoConfig);
 		</script>
 		<script src="../toolkits/dojo/dojo/dojo.js"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>

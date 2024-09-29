@@ -11,19 +11,19 @@
 			f();
 		}
 		function create_greeters(i) {
-			ret1=function() {
+			var ret1=function() {
 				alert("hello "+i);
 			}
-			ret2=function() {
+			var ret2=function() {
 				alert("goodbye "+i);
 			}
-			ret3=function(g) {
+			var ret3=function(g) {
 				i=g
 			}
 			return {"hello":ret1,"goodbye":ret2,"set":ret3};
 		}
-		gr1=create_greeters(1)
-		gr2=create_greeters(2)
+		var gr1=create_greeters(1)
+		var _gr2=create_greeters(2)
 		activate(gr1.hello);
 		gr1.set(7);
 		activate(gr1.hello);
