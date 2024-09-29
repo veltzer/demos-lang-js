@@ -25,10 +25,11 @@
 			function myclick() {
 				xmlhttp("ajax.php");
 			}
+			document.getElementById("button").addEventListener("click", myclick);
 		</script>
 	</head>
 	<body>
-		<button type="button" onclick="myclick()">Push me!</button>
+		<button id="button">Push me!</button>
 		<div id="result"></div>
 	</body>
 </html>
