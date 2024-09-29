@@ -11,7 +11,8 @@
 				// raphael code
 				var size=600
 				var square=size/8
-				var paper = Raphael("myid",size,size,function() {
+				/*global Raphael*/
+				var _paper = Raphael("myid",size,size,function() {
 					for(var x=0;x<8;x++) {
 						for(var y=0;y<8;y++) {
 							// Creates circle at x = 50, y = 40, with radius 10

@@ -12,13 +12,18 @@
 		</style>
 		<script>
 			function grow() {
-				document.getElementById("growBox").style.webkitTransform = "scale(1.5)";
-				document.getElementById("growBox").innerText="Nicely done!";
+				document.getElementById("div_id").style.webkitTransform = "scale(1.5)";
+				// document.getElementById("grow_text").innerText="Nicely done!";
 			}
+			function init() {
+				const button = document.getElementById("div_id");
+				button.addEventListener("click", grow);
+			}
+			window.onload=init;
 		</script>
 	</head>
 	<body>
-		<div id="growBox" onclick="window.grow()">
+		<div id="div_id">
 			<p id="growText">Click or tap to grow.</p>
 		</div>
 	</body>

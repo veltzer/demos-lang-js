@@ -14,14 +14,14 @@
 		</style>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<script>
-			var map;
+			/*global google*/
 			function initialize() {
 				var myOptions = {
 					zoom: 8,
 					center: new google.maps.LatLng(32.397, 30 ),
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};
-				map = new google.maps.Map(document.getElementById("map_canvas"),
+				var _map = new google.maps.Map(document.getElementById("map_canvas"),
 						myOptions);
 			}
 

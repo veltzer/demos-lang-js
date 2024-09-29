@@ -14,7 +14,8 @@
 		<div style="position:absolute;left:10px;top:10px;">
 			<a id="viewerPlaceHolder" style="width:730px;height:480px;display:block"></a>
 			<script>
-				var fp = new FlexPaperViewer(
+				/*global FlexPaperViewer*/
+				var _fp = new FlexPaperViewer(
 					"FlexPaperViewer",
 					"viewerPlaceHolder", { config : {
 						SwfFile : "Paper.swf",

@@ -14,41 +14,53 @@
 		</style>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<script>
-			var map;
+			/*global google*/
+			function move(x,y) {
+				console.log("in move");
+				window.map.panBy(x,y);
+			}
+			function go() {
+				var e_lat=document.getElementById("lat");
+				var e_long=document.getElementById("long");
+				var v_lat=e_lat.value;
+				var v_long=e_long.value;
+				var latlong=new google.maps.LatLng(v_lat,v_long);
+				window.map.panTo(latlong);
+			}
 			function initialize() {
 				var myOptions = {
 					zoom: 10,
 					center: new google.maps.LatLng(32,34.7),
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};
-				map = new google.maps.Map(document.getElementById("map_canvas"),
-						myOptions);
+				window.map = new google.maps.Map(
+					document.getElementById("map_canvas"),
+					myOptions
+				);
+				document.getElementById("button_right_id").addEventListener("click",
+					function() { move(-50,0) });
+				document.getElementById("button_left_id").addEventListener("click",
+					function() { move(50,0) });
+				document.getElementById("button_down_id").addEventListener("click",
+					function() { move(0,50) });
+				document.getElementById("button_up_id").addEventListener("click",
+					function() { move(0,-50) });
+
+				document.getElementById("go_id").addEventListener("click", go);
 			}
-	function move(x,y) {
-		//alert("in move");
-		map.panBy(x,y);
-	}
-	function go() {
-		var e_lat=document.getElementById("lat");
-		var e_long=document.getElementById("long");
-		var v_lat=e_lat.value;
-		var v_long=e_long.value;
-		var latlong=new google.maps.LatLng(v_lat,v_long);
-		map.panTo(latlong);
-	}
 			google.maps.event.addDomListener(window, "load", initialize);
 		</script>
 	</head>
 	<body>
-			<div>
-			<button onclick="move(-50,0)">right</button>
-			<button onclick="move(50,0)">left</button>
-			<button onclick="move(0,50)">down</button>
-			<button onclick="move(0,-50)">up</button>
+		<div>
+			<button id="button_right_id">right</button>
+			<button id="button_left_id">left</button>
+			<button id="button_down_id">down</button>
+			<button id="button_up_id">up</button>
 			<br/>
 			<input id="lat"/>
 			<input id="long"/>
-			<button onclick="go()">Go</button>
+			<button id="go_id">Go</button>
 			<br/>
 		</div>
 		<div id="map_canvas"></div>
