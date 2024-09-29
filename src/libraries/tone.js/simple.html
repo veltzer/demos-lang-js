@@ -44,6 +44,7 @@
 			debugElement.innerHTML += message + '<br>';
 		}
 
+		/*global Tone*/
 		const synth = new Tone.Synth().toDestination();
 
 		async function initAudio() {

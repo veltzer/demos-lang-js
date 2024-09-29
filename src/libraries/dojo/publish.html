@@ -17,46 +17,46 @@
 			function do_alert(p) {
 				alert(p);
 			}
-			function do_sub1() {
-				handle1=dojo.subscribe("/myevent",do_console);
+			function _do_sub1() {
+				window.handle1=dojo.subscribe("/myevent",do_console);
 				var w_sub=dijit.byId("sub1");
 				var w_unsub=dijit.byId("unsub1");
 				w_sub.set("disabled",true);
 				w_unsub.set("disabled",false);
 			}
-			function do_unsub1() {
-				dojo.unsubscribe(handle1);
+			function _do_unsub1() {
+				dojo.unsubscribe(window.handle1);
 				var w_sub=dijit.byId("sub1");
 				var w_unsub=dijit.byId("unsub1");
 				w_sub.set("disabled",false);
 				w_unsub.set("disabled",true);
 			}
-			function do_sub2() {
-				handle2=dojo.subscribe("/myevent",do_alert);
+			function _do_sub2() {
+				window.handle2=dojo.subscribe("/myevent",do_alert);
 				var w_sub=dijit.byId("sub2");
 				var w_unsub=dijit.byId("unsub2");
 				w_sub.set("disabled",true);
 				w_unsub.set("disabled",false);
 			}
-			function do_unsub2() {
-				dojo.unsubscribe(handle2);
+			function _do_unsub2() {
+				dojo.unsubscribe(window.handle2);
 				var w_sub=dijit.byId("sub2");
 				var w_unsub=dijit.byId("unsub2");
 				w_sub.set("disabled",false);
 				w_unsub.set("disabled",true);
 			}
-			function do_publish() {
-				w_textbox=dijit.byId("textbox");
+			function _do_publish() {
+				var w_textbox=dijit.byId("textbox");
 				dojo.publish("/myevent",[ w_textbox.get("value") ]);
 			}
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" id="sub1" title="sub1" onclick="do_sub1">sub1</div>
-		<div data-dojo-type="dijit.form.Button" id="unsub1" title="unsub1" onclick="do_unsub1" disabled="true">unsub1</div>
-		<div data-dojo-type="dijit.form.Button" id="sub2" title="sub2" onclick="do_sub2">sub2</div>
-		<div data-dojo-type="dijit.form.Button" id="unsub2" title="unsub2" onclick="do_unsub2" disabled="true">unsub2</div>
-		<div data-dojo-type="dijit.form.Button" id="pub" title="publish" onclick="do_publish">publish</div>
+		<div data-dojo-type="dijit.form.Button" id="sub1" title="sub1" onclick="_do_sub1">sub1</div>
+		<div data-dojo-type="dijit.form.Button" id="unsub1" title="unsub1" onclick="_do_unsub1" disabled="true">unsub1</div>
+		<div data-dojo-type="dijit.form.Button" id="sub2" title="sub2" onclick="_do_sub2">sub2</div>
+		<div data-dojo-type="dijit.form.Button" id="unsub2" title="unsub2" onclick="_do_unsub2" disabled="true">unsub2</div>
+		<div data-dojo-type="dijit.form.Button" id="pub" title="publish" onclick="_do_publish">publish</div>
 		<div data-dojo-type="dijit.form.TextBox" id="textbox" title="This is the value to publish"></div>
 	</body>
 </html>

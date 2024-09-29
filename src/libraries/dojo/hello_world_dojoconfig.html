@@ -10,18 +10,19 @@
 			var dojoConfig={
 				parseOnLoad:true,
 			}
+			console.log(dojoConfig);
 		</script>
 		<script src="../toolkits/dojo/dojo/dojo.js"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
 			dojo.require("dijit.form.Button");
-			function click() {
+			function _do_click() {
 				alert("wow! it works!");
 			}
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="click">Lets see if this works</div>
+		<div data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="_do_click">Lets see if this works</div>
 	</body>
 </html>
