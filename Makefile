@@ -183,6 +183,8 @@ all_eslint_js: $(ALL_ESLINT_JS)
 all_eslint_html: $(ALL_ESLINT_HTML)
 .PHONY: all_tidy
 all_tidy: $(ALL_TIDY)
+.PHONY: all_jslint
+all_jslint: $(ALL_JSLINT)
 
 ############
 # patterns #
