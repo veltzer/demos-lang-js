@@ -7,25 +7,30 @@
 		<title>InnerHTML Example</title>
 		<script>
 			function doit() {
-				var s="<ul><li onclick="alert(\"foo\")">this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
-				document.getElementById("mydiv").innerHTML=s;
+				var code="alert(\"foo\")";
+				var s=`&ltul&gt&ltli onclick="${code}"&gtthis is the first item&lt/li&gt&ltli&gtthis is the second item</li></ul>&ltscript&gt${code}&ltscript&gt`;
+				document.getElementById("div_doit").innerHTML=s;
 			}
 			function doit_safe() {
-				var s="<ul><li onclick="alert(\"foo\")">this is the first item</li><li>this is the second item</li></ul><script>alert(\"hi there\")\<\/script>";
-				document.getElementById("mysafediv").childNodes[0].nodeValue=s;
+				var code="alert(\"foo\")";
+				var s=`&ltul&gt<li onclick="${code}">this is the first item</li><li>this is the second item</li></ul><script>${code}&lt/script&gt`;
+				document.getElementById("div_doit_safe").childNodes[0].nodeValue=s;
 			}
 			function eval_is_evil() {
 				eval("alert(\"hi there\")");
 			}
+			document.getElementById("button_doit").addEventListener("click", doit);
+			document.getElementById("button_doit_safg").addEventListener("click", doit_safe);
+			document.getElementById("button_eval").addEventListener("click", eval_is_evil);
 		</script>
 	</head>
 	<body>
-		<button onclick="doit()">Click me to inject</button>
-		<div id="mydiv">
+		<button id="button_doit">Click me to inject</button>
+		<div id="dit_doit">
 		</div>
-		<button onclick="doit_safe()">Click me to put data safely</button>
-		<div id="mysafediv">
+		<button id="button_doit_safe">Click me to put data safely</button>
+		<div id="div_doit_safe">
 		</div>
-		<button onclick="eval_is_evil()">Click me to use eval</button>
+		<button id="button_eval">Click me to use eval</button>
 	</body>
 </html>

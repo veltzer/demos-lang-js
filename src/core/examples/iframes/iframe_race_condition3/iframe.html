@@ -32,7 +32,7 @@
 				console.log("beacon status is "+status);
 			}
 			function init() {
-				button = document.getElementById("button_id");
+				var button = document.getElementById("button_id");
 				button.onclick = click;
 				window.addEventListener('unload', unload_hook);
 			}

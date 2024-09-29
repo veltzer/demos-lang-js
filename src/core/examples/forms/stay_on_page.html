@@ -17,7 +17,7 @@
 		<title>Title</title>
 		<script>
 			window.onbeforeunload=function() {
-				if(/Firefox[\/\s](\d+)/.test(window.navigator.userAgent) && new Number(RegExp.$1) >= 4) {
+				if(/Firefox[/\s](\d+)/.test(window.navigator.userAgent) && new Number(RegExp.$1) >= 4) {
 					if(window.confirm("Are you Sure do you want to leave this wonderful demo?")) {
 						window.history.go();
 					} else {

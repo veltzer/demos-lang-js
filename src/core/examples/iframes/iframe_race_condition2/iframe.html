@@ -12,7 +12,7 @@
 						console.log("iframe finished call to server");
 					}
 				}
-				xhr.open('GET', '/doit', true);
+				xhr.open("GET", "/doit", true);
 				xhr.send(null);
 				*/
 			}
@@ -24,13 +24,13 @@
 						console.log("iframe finished call to unload");
 					}
 				}
-				xhr.open('GET', '/unload', true);
+				xhr.open("GET", "/unload", true);
 				xhr.send(null);
 			}
 			function init() {
-				button = document.getElementById("button_id");
+				var button = document.getElementById("button_id");
 				button.onclick = click;
-				window.addEventListener('unload', unload_hook);
+				window.addEventListener("unload", unload_hook);
 			}
 			window.onload = init;
 		</script>

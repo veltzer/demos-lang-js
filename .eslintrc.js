@@ -23,5 +23,8 @@ module.exports = {
 		"caughtErrorsIgnorePattern": "^_"
 	}],
 	"no-empty": ["error", { "allowEmptyCatch": true }]
+    },
+    globals: {
+	    $: 'readonly' // Define $ as a read-only global variable
     }
 };

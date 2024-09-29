@@ -7,11 +7,12 @@
 		<title>Title</title>
 	</head>
 	<body>
-		<button onclick="do_write()">Press me</button>
+		<button id="id">Press me</button>
 		<script>
 			function do_write() {
 				document.write("<b>hello there<b/>");
 			}
+			document.getElementById("id").addEventListener("click", do_write);
 		</script>
 	</body>
 </html>

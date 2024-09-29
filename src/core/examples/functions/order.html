@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--
-	An example showing the .apply method of functions.
-	Remmember: .apply is suitable when you dont know the number of arguments in advance.
-	The first argument to apply is passed here as null since it is an object in an object
-	oriended context and this example is not in object oriented context.
+	This example shows how do you can redefine functions
 -->
 <html>
 	<head>
@@ -14,14 +11,18 @@
 			function foo() {
 				console.log("in foo");
 			}
-			x=foo();
+			var x=foo();
+			/*
+			This definition is illegal
 			function foo() {
 				console.log("in foo2");
 			}
-			foo=function() {
+			*/
+			foo=function() { // eslint-disable-line no-func-assign
 				console.log("in foo3");
 			}
 			foo();
+			console.log(`x is ${x}`);
 		</script>
 	</head>
 	<body>

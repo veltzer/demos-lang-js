@@ -23,11 +23,11 @@
 					// not to lose the reference to the original alert because of the
 					// function rewriting itself...
 					var tmp=newalert.origalert;
-					newalert=function(msg) {
+					newalert=function(msg) { // eslint-disable-line no-func-assign
 						newalert.a.push(msg);
 					};
 					// lets rewrite the real alert too...
-					alert=newalert;
+					alert=newalert; // eslint-disable-line no-global-assign
 					// lets save the original alert (we are not really using it in this exercise).
 					newalert.origalert=tmp;
 					// there a two options:
@@ -42,7 +42,7 @@
 			}
 			newalert.cnt=0;
 			newalert.origalert=alert;
-			alert=newalert;
+			alert=newalert; // eslint-disable-line no-global-assign
 
 			// here is the client code
 			for(var i=0;i<10;i++) {
