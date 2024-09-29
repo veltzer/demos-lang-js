@@ -24,10 +24,10 @@
 		}
 		function getData()
 		{
-			var request = store.fetch({ start: startPoint , count: 3, onComplete: showCurrent})
+			var _request = store.fetch({ start: startPoint , count: 3, onComplete: showCurrent})
 		}
 		dojo.addOnLoad(initialization);
-		function showCurrent(items,request)
+		function showCurrent(items,_request)
 		{
 			if (items.length<3)
 			{
@@ -53,14 +53,14 @@
 			if (items.length==3)
 				dijit.byId("nextButton").attr("disabled",false);
 		}
-		function next()
+		function _do_next()
 		{
 			if (startPoint==0)
 				dijit.byId("prevButton").attr("disabled",false);
 			startPoint+=1;
 			getData();
 		}
-		function prev()
+		function _do_prev()
 		{
 			startPoint-=1;
 			getData();
@@ -70,10 +70,10 @@
 	</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" id="prevButton" onclick="prev" disabled="true">	Prev</div>
+		<div data-dojo-type="dijit.form.Button" id="prevButton" onclick="_do_prev" disabled="true">Prev</div>
 		<div data-dojo-type="dijit.form.TextBox" id="dataOne" disabled="true">	</div>
 		<div data-dojo-type="dijit.form.TextBox" id="dataTwo" disabled="true">	</div>
 		<div data-dojo-type="dijit.form.TextBox" id="dataThree" disabled="true">	</div>
-		<div data-dojo-type="dijit.form.Button" id="nextButton" onclick="next" disabled="true">	Next</div>
+		<div data-dojo-type="dijit.form.Button" id="nextButton" onclick="_do_next" disabled="true">Next</div>
 	</body>
 </html>

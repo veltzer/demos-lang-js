@@ -14,15 +14,15 @@
 			dojo.require("dojo.data.ItemFileReadStore");
 			dojo.require("dijit.Tree");
 			dojo.require("dijit.form.TextBox");
-			function do_click(item,node) {
+			function _do_click(item,_node) {
 				var w_tree=dijit.byId("tree");
 				var w_textbox=dijit.byId("textbox");
 				w_textbox.attr("value",w_tree.store.getLabel(item));
 			}
 			function do_sub(e) {
 				// e.item is the item which is involved in the event.
-				for(x in e) {
-					console.debug(x+": "+e[x]);
+				for(var x in e) {
+					console.debug(`x = ${x}`);
 				}
 				var w_textbox=dijit.byId("textbox2");
 				w_textbox.attr("value",e.tree.store.getLabel(e.item));
@@ -43,7 +43,7 @@
 		<div data-dojo-type="dijit.Tree"
 			store="popStore"
 			id="tree"
-			onclick="do_click"
+			onclick="_do_click"
 			label="Pop Tarts">
 		</div>
 		<div data-dojo-type="dijit.form.TextBox" id="textbox" disabled="true" title="selection"></div>

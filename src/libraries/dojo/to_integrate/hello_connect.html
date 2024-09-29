@@ -15,27 +15,26 @@
 			function do_alert() {
 				alert("wow!");
 			}
-			function do_connect() {
+			function _do_connect() {
 				var w_click=dijit.byId("click");
 				var w_connect=dijit.byId("connect");
 				var w_disconnect=dijit.byId("disconnect");
-				handle=dojo.connect(w_click,"onClick",do_alert);
+				window.handle=dojo.connect(w_click,"onClick",do_alert);
 				w_connect.setDisabled(true);
 				w_disconnect.setDisabled(false);
 			}
-			function do_disconnect() {
-				var w_click=dijit.byId("click");
+			function _do_disconnect() {
 				var w_connect=dijit.byId("connect");
 				var w_disconnect=dijit.byId("disconnect");
-				dojo.disconnect(handle);
+				dojo.disconnect(window.handle);
 				w_connect.setDisabled(false);
 				w_disconnect.setDisabled(true);
 			}
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="do_connect">Connect</div>
-		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="do_disconnect" disabled="true">Disconnect</div>
+		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="_do_connect">Connect</div>
+		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="_do_disconnect" disabled="true">Disconnect</div>
 		<div data-dojo-type="dijit.form.Button" id="click" title="click me">Click</div>
 	</body>
 </html>

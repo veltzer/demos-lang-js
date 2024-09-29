@@ -15,7 +15,7 @@
 		dojo.require("dijit.form.NumberTextBox");
 		dojo.require("dojo.back");
 
-		function sumNumbers(){
+		function _do_sum_numbers(){
 			var w_sum = dijit.byId("id_sum");
 			var v_sum = parseInt(w_sum.attr("value"));
 
@@ -44,10 +44,10 @@
 			s.restoreState();
 		}
 		dojo.addOnLoad(myinit);
-		function do_back() {
+		function _do_back() {
 			dojo.back.goBack();
 		}
-		function do_forward() {
+		function _do_forward() {
 			dojo.back.goForward();
 		}
 </script>
@@ -61,8 +61,8 @@
 	</div>
 	<div id="id_val" data-dojo-type="dijit.form.NumberTextBox">
 	</div>
-	<div data-dojo-type="dijit.form.Button" onclick="sumNumbers">Add</div>
-	<div data-dojo-type="dijit.form.Button" onclick="do_back">Back</div>
-	<div data-dojo-type="dijit.form.Button" onclick="do_forward">Forward</div>
+	<div data-dojo-type="dijit.form.Button" onclick="_do_sum_numbers">Add</div>
+	<div data-dojo-type="dijit.form.Button" onclick="_do_back">Back</div>
+	<div data-dojo-type="dijit.form.Button" onclick="_do_forward">Forward</div>
 	</body>
 </html>

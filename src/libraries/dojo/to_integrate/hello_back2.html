@@ -15,7 +15,7 @@
 		dojo.require("dijit.form.NumberTextBox");
 		dojo.require("dojo.back");
 
-		function sumNumbers(){
+		function _do_sum_numbers(){
 			var w_sum = dijit.byId("id_sum");
 			var v_sum = parseInt(w_sum.attr("value"));
 
@@ -55,6 +55,6 @@
 	</div>
 	<div id="id_val" data-dojo-type="dijit.form.NumberTextBox">
 	</div>
-	<div data-dojo-type="dijit.form.Button" onclick="sumNumbers">Add</div>
+	<div data-dojo-type="dijit.form.Button" onclick="_do_sum_numbers">Add</div>
 	</body>
 </html>

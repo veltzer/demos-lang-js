@@ -11,14 +11,14 @@
 			}
 
 			var tmp=foo
-			foo=function() {
+			foo=function() { // eslint-disable-line no-func-assign
 				alert("before foo");
 				var ret=tmp()
 				alert("after foo");
 				return ret
 			}
 			foo()
-			foo=tmp
+			foo=tmp // eslint-disable-line no-func-assign
 			foo()
 		</script>
 	</head>

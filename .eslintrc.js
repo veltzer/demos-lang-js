@@ -25,6 +25,8 @@ module.exports = {
 	"no-empty": ["error", { "allowEmptyCatch": true }]
     },
     globals: {
-	    $: "readonly",
+	    "$": "readonly",
+	    "dojo": "readonly",
+	    "dijit": "readonly"
     }
 };

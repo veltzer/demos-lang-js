@@ -23,17 +23,17 @@
 			function init() {
 				// load some data
 			}
-			function do_click() {
+			function _do_click() {
 				var w=dijit.byId("grid");
 				var store=w.store;
-				for(i=0;i<w.rowCount;i++) {
+				for(var i=0;i<w.rowCount;i++) {
 					var item=w.getItem(i);
 					var old_price=store.getValue(item,"price");
 					var new_price=old_price*1.15;
 					store.setValue(item,"price",new_price);
 				}
 			}
-			function do_populate() {
+			function _do_populate() {
 				// create some data
 			}
 			dojo.addOnLoad(init);
@@ -53,7 +53,7 @@
 				<th name="price">Price</th>
 			</tr></thead>
 		</table>
-		<div id="button" data-dojo-type="dijit.form.Button" onclick="do_click">Modify Data</div>
-		<div id="button2" data-dojo-type="dijit.form.Button" onclick="do_populate">Populate</div>
+		<div id="button" data-dojo-type="dijit.form.Button" onclick="_do_click">Modify Data</div>
+		<div id="button2" data-dojo-type="dijit.form.Button" onclick="_do_populate">Populate</div>
 	</body>
 </html>
