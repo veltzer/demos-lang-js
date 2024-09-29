@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
+			/*global dojo*/
 			dojo.require("dijit.form.Button");
 			dojo.require("dojo.i18n");
 			// this is for dojo 1.7
@@ -26,7 +27,7 @@
 			*/
 			// this is for dojo less than 1.7
 			dojo.requireLocalization("myi18n","symbols");
-			function click() {
+			function _click() {
 				var msg=dojo.i18n.getLocalization("myi18n","symbols");
 				//console.log(msg);
 				console.log(msg.invalidMessage);
@@ -34,6 +35,6 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" title="click and watch the console" onclick="click">click and watch the console</div>
+		<div data-dojo-type="dijit.form.Button" title="click and watch the console" onclick="_click">click and watch the console</div>
 	</body>
 </html>

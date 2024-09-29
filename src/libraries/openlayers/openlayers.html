@@ -12,7 +12,8 @@
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 		<script>
 			function init() {
-				map = new OpenLayers.Map("basicMap");
+				/*global OpenLayers*/
+				var map = new OpenLayers.Map("map_id");
 				var mapnik = new OpenLayers.Layer.OSM();
 				map.addLayer(mapnik);
 				map.setCenter(new OpenLayers.LonLat(13.41,52.52) // Center of the map
@@ -22,9 +23,10 @@
 					), 15 // Zoom level
 				);
 			}
+			window.onload=init;
 		</script>
 	</head>
-	<body onload="init();">
-		<div id="basicMap"></div>
+	<body>
+		<div id="map_id"></div>
 	</body>
 </html>

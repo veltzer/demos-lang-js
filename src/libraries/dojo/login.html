@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
+			/*global dojo,dijit*/
 			dojo.require("dijit.form.ValidationTextBox");
 			dojo.require("dijit.form.Button");
 			dojo.require("dojo.data.ItemFileReadStore");
@@ -23,7 +24,7 @@
 				dijit.byId("submitid").attr("disabled",!newstate);
 			}
 			function init() {
-				store=new dojo.data.ItemFileReadStore({url:"login.ajax"});
+				var store=new dojo.data.ItemFileReadStore({url:"login.ajax"});
 				var cb=dijit.byId("im");
 				cb.attr("store",store);
 				cb.attr("searchAttr","imname");
@@ -33,10 +34,10 @@
 				dojo.connect(form,"onValidStateChange",formstatechange);
 			}
 			dojo.addOnLoad(init);
-			function register() {
+			function _register() {
 				dojo.xhrGet();
 			}
-			function pwCheck(val) {
+			function _pwCheck(val) {
 				//alert("in pwCheck "+val);
 				return val=="password";
 			}
@@ -70,7 +71,7 @@
 			trim="true"
 		></div>
 		<br/>
-		<div data-dojo-type="dojox.form.PasswordValidator" name="pwValidate" pw-check="pwCheck">
+		<div data-dojo-type="dojox.form.PasswordValidator" name="pwValidate" pw-check="_pwCheck">
 			<!--
 			Old password<input type="password" pw-type="old"/><br/>
 			-->
@@ -92,7 +93,7 @@
 			trim="true"
 		></div>
 		<br/>
-		<div id="submitid" data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="register" disabled="true">Register to this website</div>
+		<div id="submitid" data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="_register" disabled="true">Register to this website</div>
 		</form>
 	</body>
 </html>
