@@ -8,15 +8,24 @@
 		<script>
 			function flip() {
 				var node=document.getElementById("element_id");
-				if(node.style.color=="red") // read
-					node.style.color="blue"; // write
-				else
-					node.style.color="red"; // write
+				if(node.style.color=="red") {
+					console.log("setting to blue");
+					node.style.color="blue";
+				} else {
+					node.style.color="red";
+					console.log("setting to red");
+				}
 			}
+			function init() {
+				console.log("in init");
+				const button = document.getElementById("button_id");
+				button.addEventListener("click", flip);
+			}
+			window.onload=init;
 		</script>
 	</head>
 	<body>
-		<button onclick="flip()">Click me to change his color</button>
+		<button id="button_id">Click me to change his color</button>
 		<div id="element_id" style="color: red">Hey, thats me</div>
 	</body>
 </html>

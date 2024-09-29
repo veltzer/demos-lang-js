@@ -23,7 +23,7 @@
 				//target.parentNode.insertBefore(button, target)
 				get_last_elem().parentNode.appendChild(content);
 			}
-			function create_button(title) {
+			function create_button(title) { // eslint-disable-line no-unused-vars
 				var button=document.createElement("button");
 				var content=document.createTextNode(title);
 				button.appendChild(content);
@@ -35,14 +35,14 @@
 		<p>
 			This is some text
 			<script>
-				create_button("this is the first paragraph");
+				window.create_button("this is the first paragraph");
 			</script>
 			This is more text
 		</p>
 		<p>
 			This is some text
 			<script>
-				create_button("this is the second paragraph");
+				window.create_button("this is the second paragraph");
 			</script>
 			This is more text
 		</p>

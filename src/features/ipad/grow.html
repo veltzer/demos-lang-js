@@ -10,15 +10,15 @@
 				-webkit-transition: -webkit-transform 1.5s;
 			}
 		</style>
-		<script type="text/javascript">
-		function grow() {
-			document.getElementById("growBox").style.webkitTransform = "scale(1.5)";
-			document.getElementById("growBox").innerText="Nicely done!";
-		}
+		<script>
+			function grow() {
+				document.getElementById("growBox").style.webkitTransform = "scale(1.5)";
+				document.getElementById("growBox").innerText="Nicely done!";
+			}
 		</script>
 	</head>
 	<body>
-		<div id="growBox" onclick="grow();">
+		<div id="growBox" onclick="window.grow()">
 			<p id="growText">Click or tap to grow.</p>
 		</div>
 	</body>
