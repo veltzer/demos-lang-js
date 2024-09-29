@@ -11,32 +11,32 @@
 			@import "dojo/dojo/resources/dojo.css";
 		</style>
 		<script>
+			/*global dojo,dijit*/
 			dojo.require("dijit.form.Button");
 			function do_alert() {
 				alert("wow!");
 			}
 			function setup() {
-				w_click=dijit.byId("click");
-				w_connect=dijit.byId("connect");
-				w_disconnect=dijit.byId("disconnect");
+				window.w_click=dijit.byId("click");
+				window.w_connect=dijit.byId("connect");
+				window.w_disconnect=dijit.byId("disconnect");
 			}
-			function do_connect() {
-				handle=dojo.connect(w_click,"onClick",do_alert);
-				w_connect.attr("disabled",true)
-				w_disconnect.attr("disabled",false)
+			function _do_connect() {
+				window.handle=dojo.connect(window.w_click,"onClick",do_alert);
+				window.w_connect.attr("disabled",true)
+				window.w_disconnect.attr("disabled",false)
 			}
-			function do_disconnect() {
-				dojo.disconnect(handle);
-
-				w_connect.attr("disabled",false)
-				w_disconnect.attr("disabled",true)
+			function _do_disconnect() {
+				dojo.disconnect(window.handle);
+				window.w_connect.attr("disabled",false)
+				window.w_disconnect.attr("disabled",true)
 			}
 			dojo.addOnLoad(setup)
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="do_connect">Connect</div>
-		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="do_disconnect" disabled="true">Disconnect</div>
+		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="_do_connect">Connect</div>
+		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="_do_disconnect" disabled="true">Disconnect</div>
 		<div data-dojo-type="dijit.form.Button" id="click" title="click me">Click</div>
 	</body>
 </html>
