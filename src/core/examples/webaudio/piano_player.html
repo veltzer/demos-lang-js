@@ -9,11 +9,11 @@
 		.key { width: 50px; height: 200px; border: 1px solid black; margin: 0 2px; background-color: white; cursor: pointer; }
 		.key.black { background-color: black; color: white; height: 120px; width: 30px; margin-left: -15px; margin-right: -15px; z-index: 2; }
 		#debug { margin-top: 20px; padding: 10px; background-color: #f0f0f0; border: 1px solid #ccc; }
-		#startButton { font-size: 18px; padding: 10px 20px; margin: 20px 0; }
+		#start_button_id { font-size: 18px; padding: 10px 20px; margin: 20px 0; }
 	</style>
 	</head>
 	<body>
-	<button id="startButton">Click to Enable Audio</button>
+	<button id="start_buttom_id">Click to Enable Audio</button>
 	<div class="piano">
 		<div class="key" data-note="C4">C4</div>
 		<div class="key black" data-note="C#4">C#4</div>
@@ -32,7 +32,7 @@
 
 	<script>
 		const debugElement = document.getElementById("debug");
-		const startButton = document.getElementById("startButton");
+		const startButton = document.getElementById("start_button_id");
 		function log(message) {
 			console.log(message);
 			debugElement.innerHTML += message + "<br>";

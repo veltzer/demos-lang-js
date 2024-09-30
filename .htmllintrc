@@ -13,18 +13,18 @@
         "marginwidth",
         "marginheight",
         "scrolling",
-        "style",
-        "width"
+        "style-removed",
+        "width-removed"
     ],
     "indent-delta": false,
     "indent-style": "nonmixed",
     "indent-width": 4,
     "indent-width-cont": false,
-    "spec-char-escape": true,
+    "spec-char-escape": false,
     "text-ignore-regex": false,
     "tag-bans": [
-        "style",
-        "b",
+        "style-removed",
+        "b-removed",
         "i"
     ],
     "tag-close": true,

@@ -1,7 +1,7 @@
 var divResults; // eslint-disable-line no-unused-vars
 
 function init() {
-	var btnPresMe = document.getElementById("pressMe");
+	var btnPresMe = document.getElementById("press_me");
 	divResults = document.getElementById("results");
 	btnPresMe.onclick = processSubmit;
 }

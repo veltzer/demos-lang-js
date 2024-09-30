@@ -8,7 +8,7 @@ DO_ALLDEP:=1
 # do you want to do htmlhint?
 DO_HTMLHINT:=1
 # do you want to do htmllint?
-DO_HTMLLINT:=0
+DO_HTMLLINT:=1
 # do you want to do validate_html
 DO_VALIDATEHTML:=1
 # do you want to use tidy to check HTML files?
@@ -17,7 +17,7 @@ DO_TIDY:=1
 DO_ESLINT_JS:=0 # INPROGRESS
 # do you want to do eslint on html files?
 DO_ESLINT_HTML:=1
-# do you want to run standard?
+# do you want to run standard? (I don't use it because it is too restrictive).
 DO_STANDARD:=0
 # do you want to do jslint?
 DO_JSLINT:=0
@@ -228,7 +228,7 @@ $(ALL_ESLINT_HTML): out/%.eslint_html: %.html scripts/run_eslint.py .eslintrc.js
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_STANDARD): out/%.standard: %.js
 	$(info doing [$@])
-	$(Q)node_modules/.bin/standard --fix $<
+	$(Q)node_modules/.bin/standard $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_JSLINT): out/%.jslint: %.js
 	$(info doing [$@])

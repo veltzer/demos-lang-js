@@ -32,9 +32,9 @@ var mypage=" \
 	</head>\
 	<body>\
 		Store is:\
-		<div id=\"1\"/>\
+		<div id=\"store\"/>\
 		Shopping cart is:\
-		<div id=\"2\"/>\
+		<div id=\"cart\"/>\
 	</body>\
 </html>\
 "

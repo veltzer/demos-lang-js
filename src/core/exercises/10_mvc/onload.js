@@ -26,6 +26,6 @@ window.onload=function() {
 		"price":"1.99",
 		"storage":"10"
 	});
-	var v=new TableView(m,"1");
+	var v=new TableView(m,"store");
 	v.create()
 };

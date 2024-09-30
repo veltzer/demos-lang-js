@@ -13,7 +13,7 @@
 				//if(!("cnt" in newalert)) {
 				//	newalert.cnt=0;
 				//}
-				if(newalert.cnt<3) {
+				if(newalert.cnt < 3) {
 					// why the second version and not the next line? Think OO and "this"...
 					//newalert.origalert(message);
 					var f=newalert.origalert;
@@ -45,7 +45,7 @@
 			alert=newalert; // eslint-disable-line no-global-assign
 
 			// here is the client code
-			for(var i=0;i<10;i++) {
+			for(var i=0;i < 10;i++) {
 				alert("message "+i);
 			}
 			// to show that we have the new function (rewritten one)...

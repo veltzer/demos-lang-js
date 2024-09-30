@@ -17,7 +17,7 @@
 	</div>
 	</div>
 	<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-	<button id="btnScreenShot">Get Screen Shot</button>
+	<button id="button_screen_shot">Get Screen Shot</button>
 	<canvas id="canvas2">
 		No screenshots yet.
 	</canvas>
@@ -35,7 +35,7 @@
 			context2.drawImage(img, 0, 0);
 		}
 		window.onload = function() {
-			var btnScreenShot = document.getElementById("btnScreenShot");
+			var btnScreenShot = document.getElementById("button_screen_shot");
 			btnScreenShot.onclick = takeScreenShot;
 			var canvas1 = document.getElementById("canvas1");
 			var context1 = canvas1.getContext("2d");
