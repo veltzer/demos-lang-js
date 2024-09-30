@@ -1,12 +1,12 @@
 /*
-This is a roller widget.
+	This is a roller widget.
 
-It consists of two buttons and a text input box.
-Pushing button 1 increments the value in the box by a certain amount.
-Pushing button 2 decrements the value in the box by a certain amount.
+	It consists of two buttons and a text input box.
+	Pushing button 1 increments the value in the box by a certain amount.
+	Pushing button 2 decrements the value in the box by a certain amount.
 
-the user can override the default value, the increment value, the decrement value
-and the max value which causes a wrap around.
+	the user can override the default value, the increment value, the decrement value
+	and the max value which causes a wrap around.
 */
 
 if(!dojo._hasResource["extend.Roller"]){
@@ -21,7 +21,7 @@ if(!dojo._hasResource["extend.Roller"]){
 		"extend.Roller",
 		[dijit._Widget,dijit._Templated,dijit._Container],
 		{
-			templateString:'<div><div data-dojo-type=\'dijit.form.Button\' dojoAttachEvent=\'onClick:_onDec\'>dec</div><div data-dojo-type=\'dijit.form.TextBox\' dojoAttachPoint=\'textbox\'></div><div data-dojo-type=\'dijit.form.Button\' dojoAttachEvent=\'onClick:_onInc\'>inc</div></div>',
+			templateString:"<div><div data-dojo-type=\"dijit.form.Button\" dojoAttachEvent=\"onClick:_onDec\">dec</div><div data-dojo-type=\"dijit.form.TextBox\" dojoAttachPoint=\"textbox\"></div><div data-dojo-type=\"dijit.form.Button\" dojoAttachEvent=\"onClick:_onInc\">inc</div></div>",
 			widgetsInTemplate:true,
 			initVal:"5",
 			incVal:"2",
@@ -32,7 +32,7 @@ if(!dojo._hasResource["extend.Roller"]){
 				this.inherited(arguments);
 				console.debug("In startup");
 				console.dir(this);
-				this.textbox.attr('value',this.initVal);
+				this.textbox.attr("value",this.initVal);
 			},
 			_onDec:function() {
 				var iinitVal=parseInt(this.initVal);
@@ -40,7 +40,7 @@ if(!dojo._hasResource["extend.Roller"]){
 				var imaxVal=parseInt(this.maxVal);
 				iinitVal-=idecVal;
 				iinitVal%=imaxVal;
-				this.textbox.attr('value',iinitVal);
+				this.textbox.attr("value",iinitVal);
 				this.initVal=iinitVal;
 				console.dir(this.arr);
 			},
@@ -50,7 +50,7 @@ if(!dojo._hasResource["extend.Roller"]){
 				var imaxVal=parseInt(this.maxVal);
 				iinitVal+=iincVal;
 				iinitVal%=imaxVal;
-				this.textbox.attr('value',iinitVal);
+				this.textbox.attr("value",iinitVal);
 				this.initVal=iinitVal;
 				this.arr.push(iinitVal);
 				console.dir(this.arr);

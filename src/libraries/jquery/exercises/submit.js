@@ -1,12 +1,12 @@
 function Submit(id_for_append,mytext) {
 	this.id_for_append=id_for_append;
 	this.mytext=mytext;
-	this.jq_button=$('<button/>').text(this.mytext).addClass('submitButton');
+	this.jq_button=$("<button/>").text(this.mytext).addClass("submitButton");
 	$(id_for_append).append(this.jq_button);
 	this.numberOfInvalid=0;
 	this.fields=[];
 	var widget=this;
-	this.jq_button.bind('click',function() {
+	this.jq_button.bind("click",function() {
 		widget.click();
 	});
 }
@@ -15,27 +15,27 @@ Submit.prototype.click=function() {
 		var field=this.fields[i];
 		field.animate();
 	}
-	var s='{';
+	var s="{";
 	for(var i2 in this.fields) {
 		var field2=this.fields[i2];
 		//console.log(field.getSubmitName());
 		//console.log(field.getValue());
-		s+=field2.getSubmitName()+':"'+field2.getValue()+'",';//JSON
+		s+=field2.getSubmitName()+":""+field2.getValue()+"",";//JSON
 	}
-	s+='}';
+	s+="}";
 	var data={};
 	data.payload=s;
 	//console.log(s);
 	$.ajax({
-		type:'POST',
-		url:'submit.php',
-		dataType:'text',
+		type:"POST",
+		url:"submit.php",
+		dataType:"text",
 		data: data,
 		success:function(mydata,textStatus,XMLHttpRequest) {
-			console.log('success data is ['+mydata+']',textStatus,XMLHttpRequest);
+			console.log("success data is ["+mydata+"]",textStatus,XMLHttpRequest);
 		},
 		error:function(XMLHttpRequest,textStatus,errorThrown) {
-			console.log('error',XMLHttpRequest,textStatus,errorThrown);
+			console.log("error",XMLHttpRequest,textStatus,errorThrown);
 		}
 	});
 };
@@ -51,8 +51,8 @@ Submit.prototype.notify=function(valid) {
 	}
 	//console.log(this.numberOfInvalid);
 	if(this.numberOfInvalid===0) {
-		this.jq_button.attr('disabled',false);
+		this.jq_button.attr("disabled",false);
 	} else {
-		this.jq_button.attr('disabled',true);
+		this.jq_button.attr("disabled",true);
 	}
 };

@@ -24,18 +24,18 @@ If you are unsure which license is appropriate for your use, please contact the 
  * @alias plugin.preview
  * @ptype preview
  */
-Ext.define('Ext.ux.PreviewPlugin', {
-	extend: 'Ext.AbstractPlugin',
-	alias: 'plugin.preview',
-	requires: ['Ext.grid.feature.RowBody', 'Ext.grid.feature.RowWrap'],
+Ext.define("Ext.ux.PreviewPlugin", {
+	extend: "Ext.AbstractPlugin",
+	alias: "plugin.preview",
+	requires: ["Ext.grid.feature.RowBody", "Ext.grid.feature.RowWrap"],
 	// private, css class to use to hide the body
-	hideBodyCls: 'x-grid-row-body-hidden',
+	hideBodyCls: "x-grid-row-body-hidden",
 	/**
 	* @cfg {String} bodyField
 	* Field to display in the preview. Must me a field within the Model definition
 	* that the store is using.
 	*/
-	bodyField: '',
+	bodyField: "",
 	/**
 	* @cfg {Boolean} previewExpanded
 	*/
@@ -46,17 +46,17 @@ Ext.define('Ext.ux.PreviewPlugin', {
 		hideBodyCls=this.hideBodyCls,
 		section=this.getCmp(),
 		features=[{
-			ftype: 'rowbody',
+			ftype: "rowbody",
 			getAdditionalData: function(data, idx, record, orig, view) {
 				var o=Ext.grid.feature.RowBody.prototype.getAdditionalData.apply(this, arguments);
 				Ext.apply(o, {
 					rowBody: data[bodyField],
-					rowBodyCls: section.previewExpanded ? '' : hideBodyCls
+					rowBodyCls: section.previewExpanded ? "" : hideBodyCls
 				});
 				return o;
 			}
 			},{
-				ftype: 'rowwrap'
+				ftype: "rowwrap"
 			}
 		];
 		section.previewExpanded=this.previewExpanded;

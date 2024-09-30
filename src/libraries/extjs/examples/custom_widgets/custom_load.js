@@ -1,9 +1,9 @@
 Ext.Loader.setConfig({
 	enabled: true
 });
-Ext.Loader.setPath('Verint','');
+Ext.Loader.setPath("Verint","");
 Ext.onReady(function() {
-	Ext.create('Verint.MyButton',{
+	Ext.create("Verint.MyButton",{
 		renderTo: Ext.getBody()
 	});
 });

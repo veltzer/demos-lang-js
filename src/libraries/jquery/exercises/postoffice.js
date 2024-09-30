@@ -12,7 +12,7 @@ TODO:
 */
 function PostOffice() {
 	if(PostOffice.instance) {
-		throw String('contructing a postoffice twice ?!?');
+		throw String("contructing a postoffice twice ?!?");
 	} else {
 		this.subscribers={};
 		PostOffice.instance=this;

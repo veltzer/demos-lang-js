@@ -8,17 +8,17 @@ function Validator(id_for_append,name,submitName,validator,errorMsg) {
 	this.submitName=submitName;
 	this.validator=validator;
 	this.errorMsg=errorMsg;
-	this.div=$('<div/>');
-	this.jq_span=$('<span/>').text(this.name).addClass('fieldTitle');
-	this.jq_input=$('<input/>').addClass('validatorInputField');
-	this.jq_err=$('<span/>').text(this.errorMsg).addClass('errorMessages');
+	this.div=$("<div/>");
+	this.jq_span=$("<span/>").text(this.name).addClass("fieldTitle");
+	this.jq_input=$("<input/>").addClass("validatorInputField");
+	this.jq_err=$("<span/>").text(this.errorMsg).addClass("errorMessages");
 	this.div.append(this.jq_span);
 	this.div.append(this.jq_input);
 	this.div.append(this.jq_err);
 	$(id_for_append).append(this.div);
 	// lets hook up methods...
 	var widget=this;
-	this.jq_input.bind('keyup',function() {
+	this.jq_input.bind("keyup",function() {
 		widget.validate();
 	});
 	this.validate();
@@ -52,11 +52,11 @@ Validator.prototype.getValue=function() {
 };
 Validator.prototype.animate=function() {
 	this.div.css({
-		position:'absolute'
-		//'left': this.div.()
+		position:"absolute"
+		//"left": this.div.()
 	});
 	this.div.animate(
-		{ left:'+=1000px' },
-		'slow'
+		{ left:"+=1000px" },
+		"slow"
 	);
 };

@@ -1,20 +1,20 @@
 Ext.onReady(function() {
-	Ext.define('MyPanel', {
-		extend: 'Ext.Panel',
-		layout: 'fit',
+	Ext.define("MyPanel", {
+		extend: "Ext.Panel",
+		layout: "fit",
 		my_prop: 7,
 		initComponent: function() {
 			this.callParent(arguments);
-			var b_cancel=Ext.create('Ext.Button',{
-				text: 'Cancel',
-				itemId: 'b_cancel',
+			var b_cancel=Ext.create("Ext.Button",{
+				text: "Cancel",
+				itemId: "b_cancel",
 			});
-			var b_ok=Ext.create('Ext.Button',{
-				text: 'OK',
-				itemId: 'b_ok',
+			var b_ok=Ext.create("Ext.Button",{
+				text: "OK",
+				itemId: "b_ok",
 				listeners: {
 					click:function() {
-						this.ownerCt.getComponent('b_cancel').setText('bye');
+						this.ownerCt.getComponent("b_cancel").setText("bye");
 					},
 				},
 			});
@@ -22,7 +22,7 @@ Ext.onReady(function() {
 			this.add(b_ok);
 		},
 	});
-	Ext.create('MyPanel',{
+	Ext.create("MyPanel",{
 		renderTo: Ext.getBody()
 	});
 });

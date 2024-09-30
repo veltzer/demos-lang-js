@@ -17,10 +17,10 @@ If you are unsure which license is appropriate for your use, please contact the 
  * @extends Ext.Panel
  * @author Shea Frederick
  */
-Ext.define('Ext.ux.GMapPanel', {
-	extend: 'Ext.Panel',
-	alias: 'widget.gmappanel',
-	requires: ['Ext.window.MessageBox'],
+Ext.define("Ext.ux.GMapPanel", {
+	extend: "Ext.Panel",
+	alias: "widget.gmappanel",
+	requires: ["Ext.window.MessageBox"],
 	initComponent: function() {
 		var defConfig={
 			plain: true,
@@ -28,7 +28,7 @@ Ext.define('Ext.ux.GMapPanel', {
 			yaw: 180,
 			pitch: 0,
 			zoom: 0,
-			gmapType: 'map',
+			gmapType: "map",
 			border: false
 		};
 		Ext.applyIf(this,defConfig);
@@ -39,32 +39,32 @@ Ext.define('Ext.ux.GMapPanel', {
 		Ext.applyIf(this, wh);
 		this.callParent();
 
-		if(this.gmapType === 'map') {
+		if(this.gmapType === "map") {
 			this.gmap=new GMap2(this.body.dom);
 		}
-		if(this.gmapType === 'panorama') {
+		if(this.gmapType === "panorama") {
 			this.gmap=new GStreetviewPanorama(this.body.dom);
 		}
-		if(typeof this.addControl == 'object' && this.gmapType === 'map') {
+		if(typeof this.addControl == "object" && this.gmapType === "map") {
 			this.gmap.addControl(this.addControl);
 		}
-		if(typeof this.setCenter === 'object') {
-			if(typeof this.setCenter.geoCodeAddr === 'string') {
+		if(typeof this.setCenter === "object") {
+			if(typeof this.setCenter.geoCodeAddr === "string") {
 				this.geoCodeLookup(this.setCenter.geoCodeAddr);
 			} else {
-				if (this.gmapType === 'map') {
+				if (this.gmapType === "map") {
 					point=new GLatLng(this.setCenter.lat,this.setCenter.lng);
 					this.gmap.setCenter(point, this.zoomLevel);
 				}
-				if (typeof this.setCenter.marker === 'object' && typeof point === 'object') {
+				if (typeof this.setCenter.marker === "object" && typeof point === "object") {
 					this.addMarker(point,this.setCenter.marker,this.setCenter.marker.clear);
 				}
 			}
-			if (this.gmapType === 'panorama'){
+			if (this.gmapType === "panorama"){
 				this.gmap.setLocationAndPOV(new GLatLng(this.setCenter.lat,this.setCenter.lng), {yaw: this.yaw, pitch: this.pitch, zoom: this.zoom});
 			}
 		}
-		GEvent.bind(this.gmap, 'load', this, function() {
+		GEvent.bind(this.gmap, "load", this, function() {
 			this.onMapReady();
 		});
 	},
@@ -74,13 +74,13 @@ Ext.define('Ext.ux.GMapPanel', {
 		this.addOptions();
 	},
 	afterComponentLayout : function(w, h){
-		if (typeof this.getMap() == 'object') {
+		if (typeof this.getMap() == "object") {
 			this.gmap.checkResize();
 		}
 		this.callParent(arguments);
 	},
 	setSize : function(width, height, animate){
-		if (typeof this.getMap() == 'object') {
+		if (typeof this.getMap() == "object") {
 			this.gmap.checkResize();
 		}
 		this.callParent(arguments);
@@ -113,7 +113,7 @@ Ext.define('Ext.ux.GMapPanel', {
 			this.getMap().setCenter(point, this.zoomLevel);
 		}
 		var mark=new GMarker(point,marker);
-		if (typeof listeners === 'object'){
+		if (typeof listeners === "object"){
 			for (evt in listeners) {
 				if(!listeners.hasOwnProperty(evt)) {
 					continue;
@@ -124,21 +124,21 @@ Ext.define('Ext.ux.GMapPanel', {
 		this.getMap().addOverlay(mark);
 	},
 	addMapControls: function(){
-		if (this.gmapType === 'map') {
+		if (this.gmapType === "map") {
 			if (Ext.isArray(this.mapControls)) {
 				for(var i=0;i<this.mapControls.length;i++){
 					this.addMapControl(this.mapControls[i]);
 				}
-			}else if(typeof this.mapControls === 'string'){
+			}else if(typeof this.mapControls === "string"){
 				this.addMapControl(this.mapControls);
-			}else if(typeof this.mapControls === 'object'){
+			}else if(typeof this.mapControls === "object"){
 				this.getMap().addControl(this.mapControls);
 			}
 		}
 	},
 	addMapControl : function(mc){
 		var mcf=window[mc];
-		if (typeof mcf === 'function') {
+		if (typeof mcf === "function") {
 			this.getMap().addControl(new mcf());
 		}
 	},
@@ -147,13 +147,13 @@ Ext.define('Ext.ux.GMapPanel', {
 			for(var i=0;i<this.mapConfOpts.length;i++){
 				this.addOption(this.mapConfOpts[i]);
 			}
-		} else if(typeof this.mapConfOpts === 'string') {
+		} else if(typeof this.mapConfOpts === "string") {
 			this.addOption(this.mapConfOpts);
 		}
 	},
 	addOption: function(mc){
 		var mcf=this.getMap()[mc];
-		if (typeof mcf === 'function') {
+		if (typeof mcf === "function") {
 			this.getMap()[mc]();
 		}
 	},
@@ -164,19 +164,19 @@ Ext.define('Ext.ux.GMapPanel', {
 	addAddressToMap: function(response) {
 		var place, addressinfo, accuracy, point;
 		if (!response || response.Status.code != 200) {
-			Ext.MessageBox.alert('Error', 'Code '+response.Status.code+' Error Returned');
+			Ext.MessageBox.alert("Error", "Code "+response.Status.code+" Error Returned");
 		} else {
 			place=response.Placemark[0];
 			addressinfo=place.AddressDetails;
 			accuracy=addressinfo.Accuracy;
 			if (accuracy === 0) {
-				Ext.MessageBox.alert('Unable to Locate Address', 'Unable to Locate the Address you provided');
+				Ext.MessageBox.alert("Unable to Locate Address", "Unable to Locate the Address you provided");
 			}else{
 				if (accuracy<7) {
-					Ext.MessageBox.alert('Address Accuracy', 'The address provided has a low accuracy.<br><br>Level '+accuracy+' Accuracy (8=Exact Match, 1=Vague Match)');
+					Ext.MessageBox.alert("Address Accuracy", "The address provided has a low accuracy.<br><br>Level "+accuracy+" Accuracy (8=Exact Match, 1=Vague Match)");
 				}else{
 					point=new GLatLng(place.Point.coordinates[1], place.Point.coordinates[0]);
-					if (typeof this.setCenter.marker === 'object' && typeof point === 'object'){
+					if (typeof this.setCenter.marker === "object" && typeof point === "object"){
 						this.addMarker(point,this.setCenter.marker,this.setCenter.marker.clear,true, this.setCenter.listeners);
 					}
 				}

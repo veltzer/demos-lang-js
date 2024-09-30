@@ -1,4 +1,4 @@
-Ext.require(['Ext.data.*']);
+Ext.require(["Ext.data.*"]);
 
 Ext.onReady(function() {
 
@@ -50,24 +50,24 @@ Ext.onReady(function() {
         return data;
     };
 
-    window.store1 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+    window.store1 = Ext.create("Ext.data.JsonStore", {
+        fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
         data: generateData()
     });
-    window.storeNegatives = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+    window.storeNegatives = Ext.create("Ext.data.JsonStore", {
+        fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
         data: generateDataNegative()
     });
-    window.store3 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+    window.store3 = Ext.create("Ext.data.JsonStore", {
+        fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
         data: generateData()
     });
-    window.store4 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+    window.store4 = Ext.create("Ext.data.JsonStore", {
+        fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
         data: generateData()
     });
-    window.store5 = Ext.create('Ext.data.JsonStore', {
-        fields: ['name', 'data1', 'data2', 'data3', 'data4', 'data5', 'data6', 'data7', 'data9', 'data9'],
+    window.store5 = Ext.create("Ext.data.JsonStore", {
+        fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
         data: generateData()
     });    
     

@@ -3,20 +3,20 @@
 here starts the paginated table...
 
 TODO:
-- grey the 'prev' and 'next' buttons according to limits of data.
-- dont do 'alert' on errors in ajax and instead show the errors in some
+- grey the "prev" and "next" buttons according to limits of data.
+- dont do "alert" on errors in ajax and instead show the errors in some
 nice place on the screen or in the console or both.
 */
 function PaginatedTable(options) {
 	/*
-	if('id' in options) {
-		throw String('must pass id');
+	if("id" in options) {
+		throw String("must pass id");
 	}
-	if('dataurl' in options) {
-		throw String('must pass data url');
+	if("dataurl" in options) {
+		throw String("must pass data url");
 	}
 	*/
-	this.httpmethod=options.httpmethod || 'GET';
+	this.httpmethod=options.httpmethod || "GET";
 	this.debug_position=options.debug_position || 0;
 	this.position=options.position || 0;
 	this.dataurl=options.dataurl;
@@ -26,32 +26,32 @@ function PaginatedTable(options) {
 	this.create_buttons=options.create_buttons || 1;
 	this.put_dummy_data=options.put_dummy_data || 0;
 	this.id=options.id;
-	this.tab=$('<table>');
-	this.tab.addClass('PaginatedTable');
+	this.tab=$("<table>");
+	this.tab.addClass("PaginatedTable");
 	this.data=new Array();
 	for(var i=0;i<this.rows;i++) {
-		var tr=$('<tr>');
-		tr.attr('rowNumber',i);
+		var tr=$("<tr>");
+		tr.attr("rowNumber",i);
 		tr.click(function() {
-			PostOffice.getInstance().publish('/rowClicked',[$(this).attr('rowNumber')]);
+			PostOffice.getInstance().publish("/rowClicked",[$(this).attr("rowNumber")]);
 		});
-		tr.addClass('PaginatedRows');
+		tr.addClass("PaginatedRows");
 		this.data[i]=new Array();
 		for(var j=0;j<this.cols;j++) {
-			var td=$('<td>');
-			td.addClass('PaginatedTableCells');
+			var td=$("<td>");
+			td.addClass("PaginatedTableCells");
 			if(i%2===0) {
-				td.addClass('PaginatedTableCellsOdd');
+				td.addClass("PaginatedTableCellsOdd");
 			} else {
-				td.addClass('PaginatedTableCellsEven');
+				td.addClass("PaginatedTableCellsEven");
 			}
 			if(this.put_dummy_data) {
-				td.text(i+','+j);
+				td.text(i+","+j);
 			}
-			td.attr('rowNumber',i);
-			td.attr('colNumber',j);
+			td.attr("rowNumber",i);
+			td.attr("colNumber",j);
 			td.click(function() {
-				PostOffice.getInstance().publish('/cellClicked',[$(this).attr('rowNumber'),$(this).attr('colNumber')]);
+				PostOffice.getInstance().publish("/cellClicked",[$(this).attr("rowNumber"),$(this).attr("colNumber")]);
 			});
 			this.data[i][j]=td;
 			tr.append(td);
@@ -59,10 +59,10 @@ function PaginatedTable(options) {
 		this.tab.append(tr);
 	}
 	if(this.create_buttons) {
-		var prev=$('<button>');
-		var next=$('<button>');
-		prev.text('prev');
-		next.text('next');
+		var prev=$("<button>");
+		var next=$("<button>");
+		prev.text("prev");
+		next.text("next");
 		var my_object=this;
 		prev.click(function() {
 			my_object.prev();
@@ -72,7 +72,7 @@ function PaginatedTable(options) {
 		});
 	}
 	if(this.debug_position) {
-		this.d=$('<div>');
+		this.d=$("<div>");
 		$(this.id).append(this.d);
 		this.updatePosition();
 	}
@@ -82,9 +82,9 @@ function PaginatedTable(options) {
 		$(this.id).append(next);
 	}
 	this.fetch();
-	// lets subscribe to outside 'next' and 'prev' requests...
-	PostOffice.getInstance().subscribe('/next',this,'next');
-	PostOffice.getInstance().subscribe('/prev',this,'prev');
+	// lets subscribe to outside "next" and "prev" requests...
+	PostOffice.getInstance().subscribe("/next",this,"next");
+	PostOffice.getInstance().subscribe("/prev",this,"prev");
 }
 // bring over data via ajax...
 PaginatedTable.prototype.populate=function(data, textStatus, jqXHR) {
@@ -97,16 +97,16 @@ PaginatedTable.prototype.populate=function(data, textStatus, jqXHR) {
 	}
 };
 PaginatedTable.prototype.error=function(jqXHR, textStatus, errorThrown) {
-	alert('error in ajax request (either server did not respond, url not found, server error or parse error of the return value',jqXHR,textStatus,errorThrown);
+	alert("error in ajax request (either server did not respond, url not found, server error or parse error of the return value",jqXHR,textStatus,errorThrown);
 };
 PaginatedTable.prototype.fetch=function() {
-	// notice the use of the 'context' property that makes 'this' in the response
+	// notice the use of the "context" property that makes "this" in the response
 	// function be the PaginatedTable object itself...
 	// the cache: false is not strictly needed since we are going to different urls because of
-	// the 'data' that we pass. But in the debugging phase it is better to have that here...
+	// the "data" that we pass. But in the debugging phase it is better to have that here...
 	// In any case it could be that the server is not deterministic, meanining, that for the same
 	// position in the table it sometimes returns different data...
-	// there is no need for the 'cache' thing if the server is configured properly...
+	// there is no need for the "cache" thing if the server is configured properly...
 	$.ajax({
 		url: this.dataurl,
 		context: this,
@@ -116,7 +116,7 @@ PaginatedTable.prototype.fetch=function() {
 			rows: this.rows,
 			cols: this.cols
 		},
-		dataType: 'json',
+		dataType: "json",
 		method: this.httpmethod,
 		success: PaginatedTable.prototype.populate,
 		error: PaginatedTable.prototype.error
@@ -133,13 +133,13 @@ PaginatedTable.prototype.prev=function() {
 		this.updatePosition();
 		this.fetch();
 	}
-	PostOffice.getInstance().publish('/doingPrev',[]);
+	PostOffice.getInstance().publish("/doingPrev",[]);
 };
 PaginatedTable.prototype.next=function() {
 	this.position+=this.rows;
 	this.updatePosition();
 	this.fetch();
-	PostOffice.getInstance().publish('/doingNext',[]);
+	PostOffice.getInstance().publish("/doingNext",[]);
 };
 PaginatedTable.prototype.getData=function(x,y) {
 	return this.data[x][y].text();
