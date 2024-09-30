@@ -5,7 +5,7 @@ function init() {
 
 function processSubmit() {
 	/* Enter Canvas Code Here */
-	var cnvMyCanvas = document.getElementById("myCanvas");
+	var cnvMyCanvas = document.getElementById("my_canvas");
 	var context = cnvMyCanvas.getContext("2d");
 
 /*

@@ -20,11 +20,11 @@
 				<h2>Customer Entry</h2>
 			</header>
 <!-- Insert Forms Here -->
-			<div id="formStatus"></div>
+			<div id="form_status"></div>
 			<form action="post">
 				<script>
 					function _changeData() {
-						document.getElementById("ageDisplay").innerHTML = this.value;
+						document.getElementById("age_display").innerHTML = this.value;
 					}
 				</script>
 				<table>
@@ -36,7 +36,7 @@
 					<tr><th>Age:</th>
 					<td>
 					<input type="range" name="age" min="18" max="150" value="18" onchange="_changeData"/>
-					<span id="ageDisplay">18</span>
+					<span id="age_display">18</span>
 					</td>
 					</tr>
 					<tr><th>Birth Date:</th><td><input type="date" name="birthDate"/></td></tr>

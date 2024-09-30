@@ -1,12 +1,12 @@
 function init() {
 	var btnPresMe = document.getElementById("press_me");
 	btnPresMe.onclick = processSubmit;
-	var btnPresMeBack = document.getElementById("press_meBack");
+	var btnPresMeBack = document.getElementById("press_me_back");
 	btnPresMeBack.onclick = processSubmitBack;
 }
 function processSubmitBack() {
 	/* Enter Canvas Code Here */
-	var cnvMyCanvas = document.getElementById("myCanvas");
+	var cnvMyCanvas = document.getElementById("my_canvas");
 	var context = cnvMyCanvas.getContext("2d");
 	drawBackGround(context, cnvMyCanvas);
 	drawGrid(context, cnvMyCanvas);
@@ -14,7 +14,7 @@ function processSubmitBack() {
 
 function processSubmit() {
 	/* Enter Canvas Code Here */
-	var cnvMyCanvas = document.getElementById("myCanvas");
+	var cnvMyCanvas = document.getElementById("my_canvas");
 	var context = cnvMyCanvas.getContext("2d");
 
 /*

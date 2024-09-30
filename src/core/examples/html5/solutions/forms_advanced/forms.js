@@ -6,7 +6,7 @@ function init() {
 	form = document.forms[0];
 	//form.onsubmit=processSubmit(form);
 	form.onsubmit=processSubmit;
-	formStatus = document.getElementById("formStatus");
+	formStatus = document.getElementById("form_status");
 	btnPressMe.onclick = processSubmit;
 	prepFieldsForFeedback();
 }

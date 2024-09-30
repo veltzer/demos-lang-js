@@ -3,7 +3,7 @@ var video;
 function init() {
 	btnPressMe=document.getElementById("press_me");
 	btnPressMe.onclick=processSubmit;
-	video=document.getElementById("myVideo");
+	video=document.getElementById("my_video");
 }
 function processSubmit() {
 	/* Enter Video Code Here */

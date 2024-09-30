@@ -13,8 +13,8 @@ function init() {
 	btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = processSubmit;
 	taMessage = document.getElementById("message");
-	txtUserName = document.getElementById("userName");
-	//var txtMessageTo = document.getElementById("messageTo");
+	txtUserName = document.getElementById("user_name");
+	//var txtMessageTo = document.getElementById("message_to");
 	cbPrivate = document.getElementById("private");
 	divChatMessages = document.getElementById("chat_messages");
 	divStatus = document.getElementById("status");
@@ -53,7 +53,7 @@ function addStatus(status) {
 }
 
 function addMessage(chatMessage) {
-	divChatMessages.innerHTML += chatMessage.user.userName + ": " + chatMessage.message + "<br>";
+	divChatMessages.innerHTML += chatMessage.user.user_name + ": " + chatMessage.message + "<br>";
 }
 
 function processMessage(wsEvent, wsToken) {
@@ -66,7 +66,7 @@ function processMessage(wsEvent, wsToken) {
 //	lastProcessedUsId = wsEvent.timeStamp;
 	var chatMessage = wsToken;
 	if (chatMessage.user) {
-		users[wsToken.sourceId] = chatMessage.user.userName	;
+		users[wsToken.sourceId] = chatMessage.user.user_name	;
 		addMessage(chatMessage);
 	} else {
 		if (wsToken.reqType && wsToken.reqType == "login") {
@@ -97,21 +97,21 @@ function connectionClosed(wsEvent) {
 function processSubmit() {
 	/* Enter WebSocket Code Here */
 	var message = taMessage.value;
-	var userName = txtUserName.value;
+	var user_name = txtUserName.value;
 
-	var messageToken = {
+	var message_token = {
 		ns: "nextgened.chat",
 		messageType: "chatMessage"
 	};
-	messageToken.message = message;
-	messageToken.user = new Object();
-	messageToken.user.userName = userName;
+	message_token.message = message;
+	message_token.user = new Object();
+	message_token.user.user_name = user_name;
 
 	if (cbPrivate.checked) {
 		setStatus("Private Messages not supported yet!");
 		return;
 	} else {
-		jWebSocketClient.broadcastToken( messageToken, {
+		jWebSocketClient.broadcastToken( message_token, {
 			OnResponse: function( responseToken ) {
 				setStatus("Server responded: "
 					+ "vendor: " + responseToken.vendor
@@ -120,7 +120,7 @@ function processSubmit() {
 				processMessage(null, responseToken);
 			}
 		});
-		setStatus("Message sent: " + JSON.stringify(messageToken));
+		setStatus("Message sent: " + JSON.stringify(message_token));
 	}
 	return false; // Prevent actual form submission
 }

@@ -60,7 +60,7 @@ public class ChatServerListener implements WebSocketServerTokenListener {
 		ChatMessage chatMessage = new ChatMessage();
 		User user = new User();
 		try {
-			user.setUserName(json.getString("user.userName"));
+			user.setUserName(json.getString("user.user_name"));
 		} catch (JSONException e) {
 			return null;
 		}

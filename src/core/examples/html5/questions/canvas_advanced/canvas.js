@@ -9,8 +9,8 @@ function degreesToRadians(degrees) { // eslint-disable-line no-unused-vars
 
 function processSubmit() {
 	/* Enter Canvas Code Here */
-	var myCanvas = document.getElementById("myCanvas");
-	var context = myCanvas.getContext("2d");
+	var my_canvas = document.getElementById("my_canvas");
+	var context = my_canvas.getContext("2d");
 	drawRainbow(context);
 	drawStonePath(context);
 	return false; // Prevent actual form submission

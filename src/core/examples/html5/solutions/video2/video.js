@@ -7,11 +7,11 @@ function init() {
 	btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = processSubmit;
 
-	btnScreenShot = document.getElementById("btnScreenShot");
+	btnScreenShot = document.getElementById("button_screen_shot");
 	btnScreenShot.onclick = takeScreenShot;
 
-	video = document.getElementById("myVideo");
-	canvas = document.getElementById("myCanvas");
+	video = document.getElementById("my_video");
+	canvas = document.getElementById("my_canvas");
 	context = canvas.getContext("2d");
 }
 
