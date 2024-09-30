@@ -5,14 +5,18 @@
 <html>
 	<head>
 		<title>InnerHTML Example</title>
+		<script>
+			function _setInnerDiv() {
+				this.innerHTML="Thanks a lot";
+			}
+			function _setInnerSpan() {
+				document.getElementById("message").innerHTML="Bye!";
+			}
+		</script>
 	</head>
 	<body>
-		<div onclick="this.innerHTML='Thanks a lot'">
-			Please click me.
-		</div>
+		<div onclick="_setInnerDiv">Please click me.</div>
 		<b id="message">Hello!</b><br/>
-		<span onclick="getElementById('message').innerHTML='Bye!'">
-			Click here.
-		</span>
+		<span onclick="_setInnerSpan">Click here.</span>
 	</body>
 </html>

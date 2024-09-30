@@ -10,7 +10,15 @@
 <html>
 	<head>
 		<title>Hello, Ebutton</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true, modulePaths: {'extend': '../../../dojo/extend'}"></script>
+		<script>
+			window.dojoConfig={
+				parseOnLoad:true,
+				modulePaths: {
+					"extend": "../../../dojo/extend"
+				}
+			};
+		</script>
+		<script src="../toolkits/dojo/dojo/dojo.js"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>

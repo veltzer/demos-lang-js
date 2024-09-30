@@ -9,13 +9,13 @@
 		<script>
 			let audioContext;
 			let sound;
-			document.getElementById('playSoundButton').addEventListener('click', () => {
+			document.getElementById("playSoundButton").addEventListener("click", () => {
 				if (!audioContext) {
 					audioContext = new (window.AudioContext || window.webkitAudioContext)();
 				}
 				// Create a new oscillator and gain node each time the button is clicked
 				const oscillator = audioContext.createOscillator();
-				oscillator.type = 'sine';
+				oscillator.type = "sine";
 				oscillator.frequency.value = 440;
 				const gainNode = audioContext.createGain();
 				gainNode.gain.value = 0.5;

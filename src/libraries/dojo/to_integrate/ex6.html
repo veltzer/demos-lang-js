@@ -22,6 +22,9 @@
 				var valid = dijit.byId("firstName").isValid() && dijit.byId("age").isValid() && dijit.byId("hobby").isValid() && dijit.byId("bd").isValid();
 				dijit.byId("go").attr("disabled",!valid);
 			}
+			function _do_alert() {
+				alert("Boom!");
+			}
 		</script>
 	</head>
 
@@ -37,7 +40,7 @@
 		<br/>
 		Password : <input type="password" data-dojo-type="dijit.form.TextBox" id="password" onBlur="_do_check_state"/>
 		<br/>
-		<div data-dojo-type="dijit.form.Button" id="go" onclick="alert('Boom!')" disabled>Go!</div>
+		<div data-dojo-type="dijit.form.Button" id="go" onclick="_do_alert" disabled>Go!</div>
 
 	</body>
 </html>
