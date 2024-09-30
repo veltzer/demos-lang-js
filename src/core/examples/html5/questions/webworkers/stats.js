@@ -1,4 +1,4 @@
-function messageHandler(event) { // eslint-disable-line no-unused-vars 
+function messageHandler(event) { // eslint-disable-line no-unused-vars
 }
 
 function errorHandler(event) { // eslint-disable-line no-unused-vars

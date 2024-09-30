@@ -35,14 +35,14 @@ function receiveMessage(e) {
 		// It came from the inner frame as an acknowledgement
 //		A JSON.parse with a type reviver:
 //		serviceMessages = JSON.parse(e.data, function (key, value) {
-//		    var type;
-//		    if (value && typeof value === "object") {
-//		        type = value.type;
-//		        if (typeof type === "string" && typeof window[type] === "function") {
-//		            return new (window[type])(value);
-//		        }
-//		    }
-//		    return value;
+//			var type;
+//			if (value && typeof value === "object") {
+//				type = value.type;
+//				if (typeof type === "string" && typeof window[type] === "function") {
+//					return new (window[type])(value);
+//				}
+//			}
+//			return value;
 //		});
 		serviceMessages = JSON.parse(e.data);
 		addMessage("dev2: " + serviceMessages.message);

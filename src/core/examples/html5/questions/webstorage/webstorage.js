@@ -45,9 +45,9 @@ function stopWatchingLocation() {
 function updatePosition(position) {
 	/* Enter Position Update Code here */
 	geostatus.innerHTML = "Position returned";
-	txtLatitude.value  = position.coords.latitude;
-	txtLongitude.value  = position.coords.longitude;
-	txtAccuracy.value  = position.coords.accuracy;
+	txtLatitude.value = position.coords.latitude;
+	txtLongitude.value = position.coords.longitude;
+	txtAccuracy.value = position.coords.accuracy;
 	
 	// Insert Web Storage code here.
 }

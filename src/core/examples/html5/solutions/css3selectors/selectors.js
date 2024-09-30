@@ -9,7 +9,7 @@ function processSubmit() {
 	articleResults.style.background="#ff0000";
 
 	var lstInputs = document.querySelectorAll("input, textarea");
-	for (var counter = 0; counter <  lstInputs.length; counter++) {
+	for (var counter = 0; counter < lstInputs.length; counter++) {
 		lstInputs[counter].style.background="#ff9942";
 	}
 	

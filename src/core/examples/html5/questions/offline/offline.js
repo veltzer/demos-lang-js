@@ -60,9 +60,9 @@ function stopWatchingLocation() {
 function updatePosition(position) {
 	/* Enter Position Update Code here */
 	geostatus.innerHTML = "Position returned";
-	txtLatitude.value  = position.coords.latitude;
-	txtLongitude.value  = position.coords.longitude;
-	txtAccuracy.value  = position.coords.accuracy;
+	txtLatitude.value = position.coords.latitude;
+	txtLongitude.value = position.coords.longitude;
+	txtAccuracy.value = position.coords.accuracy;
 	map.src = "http://maps.google.com/maps?sll=" + position.coords.latitude + "," + position.coords.longitude;
 	var mapDataLocal = JSON.parse(window.localStorage.getItem("mapData"));
 	var mapDataEntry = {

@@ -38,7 +38,7 @@ var mypage=" \
 	</body>\
 </html>\
 "
- 
+
 http.createServer(
 	function (request, response) {
 		var pathname=url.parse(request.url).pathname;
@@ -61,5 +61,5 @@ http.createServer(
 		}
 	}
 ).listen(8000);
- 
+
 console.log("Server running at http://localhost:8000/");
