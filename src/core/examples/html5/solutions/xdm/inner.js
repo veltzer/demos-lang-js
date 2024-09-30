@@ -5,7 +5,7 @@ var divStatus;
 window.onload = init;
 
 function init() {
-	btnPressMe = document.getElementById("pressMe");
+	btnPressMe = document.getElementById("press_me");
 	divStatus = document.getElementById("status");
 	btnPressMe.onclick = sendMessage;
 	window.onmessage = receiveMessage;

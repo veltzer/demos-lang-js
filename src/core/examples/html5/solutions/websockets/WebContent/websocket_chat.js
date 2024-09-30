@@ -11,7 +11,7 @@ var users;
 //var lastProcessedUsId;
 
 function init() {
-	btnPressMe = document.getElementById("pressMe");
+	btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = processSubmit;
 	taMessage = document.getElementById("message");
 	txtUserName = document.getElementById("userName");

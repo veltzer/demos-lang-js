@@ -1,5 +1,5 @@
 function init() {
-	var btnPressMe = document.getElementById("pressMe");
+	var btnPressMe = document.getElementById("press_me");
 	var btnStop = document.getElementById("stop");
 	btnPressMe.onclick = processSubmit;
 	btnStop.onclick = stopWatchingLocation;

@@ -1,5 +1,5 @@
 function init() {
-	var btnPressMe = document.getElementById("pressMe");
+	var btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = processSubmit;
 }
 
@@ -9,4 +9,3 @@ function processSubmit() {
 }
 
 window.onload = init;
-

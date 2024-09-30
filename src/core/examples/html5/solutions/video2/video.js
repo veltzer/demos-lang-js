@@ -4,7 +4,7 @@ var canvas;
 var context;
 
 function init() {
-	btnPressMe = document.getElementById("pressMe");
+	btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = processSubmit;
 
 	btnScreenShot = document.getElementById("btnScreenShot");

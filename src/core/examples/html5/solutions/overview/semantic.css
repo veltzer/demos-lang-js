@@ -101,7 +101,7 @@ article {
 	transform: rotate(15deg);
 } 
 
-.rotateLeft {
+.rotate_left {
 	box-shadow: 2px 2px 20px #888;
 	transform: rotate(-15deg);
 	box-shadow: 2px 2px 20px #888;

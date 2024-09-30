@@ -1,5 +1,5 @@
 function init() {
-	// var btnPressMe = document.getElementById("pressMe");
+	// var btnPressMe = document.getElementById("press_me");
 }
 
 function setStatus(status) { // eslint-disable-line no-unused-vars

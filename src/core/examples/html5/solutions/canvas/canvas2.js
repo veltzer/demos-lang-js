@@ -1,5 +1,5 @@
 function init() {
-	var btnPresMe = document.getElementById("pressMe");
+	var btnPresMe = document.getElementById("press_me");
 	btnPresMe.onclick = processSubmit;
 }
 

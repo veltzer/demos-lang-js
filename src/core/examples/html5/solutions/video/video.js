@@ -1,7 +1,7 @@
 var btnPressMe;
 var video;
 function init() {
-	btnPressMe=document.getElementById("pressMe");
+	btnPressMe=document.getElementById("press_me");
 	btnPressMe.onclick=processSubmit;
 	video=document.getElementById("myVideo");
 }

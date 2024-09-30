@@ -1,7 +1,7 @@
 function init() {
-	var btnPresMe = document.getElementById("pressMe");
+	var btnPresMe = document.getElementById("press_me");
 	btnPresMe.onclick = processSubmit;
-	var btnPresMeBack = document.getElementById("pressMeBack");
+	var btnPresMeBack = document.getElementById("press_meBack");
 	btnPresMeBack.onclick = processSubmitBack;
 }
 function processSubmitBack() {

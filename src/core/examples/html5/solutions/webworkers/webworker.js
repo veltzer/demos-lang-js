@@ -7,7 +7,7 @@ var paused = true;
 function init() {
 	mapCanvas = document.getElementById("mapCanvas");
 	divStatus = document.getElementById("status");
-	btnPressMe = document.getElementById("pressMe");
+	btnPressMe = document.getElementById("press_me");
 	
 	btnPressMe.onclick = processSubmit;
 	

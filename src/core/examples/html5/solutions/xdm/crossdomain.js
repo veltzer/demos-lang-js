@@ -7,7 +7,7 @@ var ifFeedback;
 window.onload = init;
 
 function init() {
-	btnPressMe = document.getElementById("pressMe");
+	btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = sendMessage;
 	divChatMessages = document.getElementById("chat-messages");
 	ifFeedback = document.getElementById("feedback");

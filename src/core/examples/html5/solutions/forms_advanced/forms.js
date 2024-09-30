@@ -2,7 +2,7 @@ var form;
 var formStatus = null;
 
 function init() {
-	var btnPressMe = document.getElementById("pressMe");
+	var btnPressMe = document.getElementById("press_me");
 	form = document.forms[0];
 	//form.onsubmit=processSubmit(form);
 	form.onsubmit=processSubmit;

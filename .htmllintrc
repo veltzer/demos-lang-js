@@ -7,7 +7,7 @@
         "align",
         "background",
         "bgcolor",
-        "border",
+        "border-removed",
         "frameborder",
         "longdesc",
         "marginwidth",
