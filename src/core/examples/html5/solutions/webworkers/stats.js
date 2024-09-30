@@ -45,13 +45,13 @@ function trigger() {
 		message : "Data Update",
 		timestamp : new Date(),
 		results: [
-		          Math.floor(Math.random() * 351),
-		          Math.floor(Math.random() * 351),
-		          Math.floor(Math.random() * 351),
-		          Math.floor(Math.random() * 351),
-		          Math.floor(Math.random() * 351),
-		          Math.floor(Math.random() * 351)
-		          ]
+			Math.floor(Math.random() * 351),
+			Math.floor(Math.random() * 351),
+			Math.floor(Math.random() * 351),
+			Math.floor(Math.random() * 351),
+			Math.floor(Math.random() * 351),
+			Math.floor(Math.random() * 351)
+		]
 	});
 	timer = setTimeout(trigger, 2000);
 }

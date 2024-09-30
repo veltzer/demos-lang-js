@@ -96,7 +96,7 @@ function drawGrid(canvas, gridSize) {
 	context.moveTo(canvas.width, 0);
 	context.lineTo(canvas.width, canvas.height);
 	context.stroke();
-	for (var i = 0 ; i < canvas.height; i+=gridSize) {
+	for (i = 0 ; i < canvas.height; i+=gridSize) {
 		context.beginPath();
 		context.moveTo(0, i);
 		context.lineTo(canvas.width, i);

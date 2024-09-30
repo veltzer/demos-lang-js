@@ -48,11 +48,11 @@ function setCacheStatus(status) {
 	}
 }
 
-function getCacheStatus() {
+function _getCacheStatus() {
 	return window.applicationCache.status;
 }
 
-function setNeedsUploading(needs) {
+function _setNeedsUploading(needs) {
 	if (needs) {
 		tdNeedsUploading.innerHTML = "Data needs to be uploaded";
 		tdNeedsUploading.style = "#ff0000";
@@ -62,7 +62,7 @@ function setNeedsUploading(needs) {
 	}
 }
 
-function getNeedsUploading() {
+function _getNeedsUploading() {
 	return needsUploading;
 }
 
@@ -82,7 +82,7 @@ function importScript(file) {
 	scr.src = file;
 }
 
-this.onload = function(event) {
+this.onload = function(_event) {
 	addEventListener("online", cameOnline, true);
 	addEventListener("offline", wentOffline, true);
 	addEventListener("obsolete", cacheObsolete, true);
@@ -92,18 +92,15 @@ this.onload = function(event) {
 	addEventListener("downloading", cacheDownloading, true);
 	addEventListener("checking", cacheChecking, true);
 	addEventListener("updateready", cacheUpdateReady, true);
-	this.checking = function(e) {
+	this.checking = function(_e) {
 		alert("F")
 	};
-	
-	importScript("date.js");
-	
-	divStatus = document.getElementById("status");
-	
 
-	
+	importScript("date.js");
+
+	divStatus = document.getElementById("status");
 	var xhrStatus = getXhr();
-	xhrStatus.onreadystatechange = function(e) {
+	xhrStatus.onreadystatechange = function(_e) {
 		if (xhrStatus.readyState == 4) {
 			divStatus.innerHTML += xhrStatus.responseText;
 			initStatus(document);
@@ -113,9 +110,9 @@ this.onload = function(event) {
 	};
 	xhrStatus.open("GET", "status.html_frag", true);
 	xhrStatus.send(null);
-	
+
 	var xhr = getXhr();
-	xhr.onreadystatechange = function(e) {
+	xhr.onreadystatechange = function(_e) {
 		if (xhr.readyState == 4) {
 			tdTimeStamp.innerHTML += xhr.responseText;
 		}
@@ -124,42 +121,41 @@ this.onload = function(event) {
 	xhr.send(null);
 }
 
-function cacheUpdateReady(event) {
+function cacheUpdateReady(_event) {
 	divStatus.innerHTML += "Update Ready...";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheChecking(event) {
+function cacheChecking(_event) {
 	divStatus.innerHTML += "Checking...";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheObsolete(event) {
+function cacheObsolete(_event) {
 	divStatus.innerHTML += "Obsolete";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheProgress(event) {
+function cacheProgress(_event) {
 	divStatus.innerHTML += "Progress";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheError(event) {
+function cacheError(_event) {
 	divStatus.innerHTML += "Error: " + event + "<br>";
 }
-function cacheNoUpdate(event) {
+function cacheNoUpdate(_event) {
 	divStatus.innerHTML += "NoUpdate";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheDownloading(event) {
+function cacheDownloading(_event) {
 	divStatus.innerHTML += "Downloading";
 	setCacheStatus(window.applicationCache.status);
 }
 
-
-function wentOffline(event) {
-	var cds = new ClientDataSource(document.getElementById("current").innerText);
+function wentOffline(_event) {
+	/*global ClientDataSource*/
+	var _cds = new ClientDataSource(document.getElementById("current").innerText);
 	setOnline(false);
 }
 
-function cameOnline(event) {
+function cameOnline(_event) {
 	setOnline(true);
 	setCacheStatus(window.applicationCache.status);
 }
-

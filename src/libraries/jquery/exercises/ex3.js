@@ -1,12 +1,12 @@
 function PaginatedTable(options) {
-	if(typeof(options.id)==='undefined') {
-		throw String('must pass id');
+	if(typeof(options.id)==="undefined") {
+		throw String("must pass id");
 	}
-	if(typeof(options.dataurl)==='undefined') {
-		throw String('must pass data url');
+	if(typeof(options.dataurl)==="undefined") {
+		throw String("must pass data url");
 	}
-	if(typeof(options.httpmethod)==='undefined') {
-		throw String('must pass httpmethod');
+	if(typeof(options.httpmethod)==="undefined") {
+		throw String("must pass httpmethod");
 	}
 	// must have features...
 	this.id=options.id;
@@ -20,20 +20,20 @@ function PaginatedTable(options) {
 	this.create_buttons=options.create_buttons || 1;
 	this.put_dummy_data=options.put_dummy_data || 0;
 
-	this.tab=$('<table>').addClass('PaginatedTable');
+	this.tab=$("<table>").addClass("PaginatedTable");
 	this.data=new Array();
 	for(var i=0;i<this.rows;i++) {
-		var tr=$('<tr>').addClass('PaginatedRows');
+		var tr=$("<tr>").addClass("PaginatedRows");
 		this.data[i]=new Array();
 		for(var j=0;j<this.cols;j++) {
-			var td=$('<td>').addClass('PaginatedTableCells');
+			var td=$("<td>").addClass("PaginatedTableCells");
 			if(i%2===0) {
-				td.addClass('PaginatedTableCellsEven');
+				td.addClass("PaginatedTableCellsEven");
 			} else {
-				td.addClass('PaginatedTableCellsOdd');
+				td.addClass("PaginatedTableCellsOdd");
 			}
 			if(this.put_dummy_data) {
-				td.text(i+','+j);
+				td.text(i+","+j);
 			}
 			this.data[i][j]=td;
 			tr.append(td);
@@ -42,8 +42,8 @@ function PaginatedTable(options) {
 	}
 	$(this.id).append(this.tab);
 	if(this.create_buttons) {
-		var prev=$('<button>').text('prev');
-		var next=$('<button>').text('next');
+		var prev=$("<button>").text("prev");
+		var next=$("<button>").text("next");
 		var widget=this;
 		prev.click(function() {
 			widget.prev();
@@ -55,7 +55,7 @@ function PaginatedTable(options) {
 		$(this.id).append(next);
 	}
 	if(this.debug_position) {
-		this.d=$('<div>');
+		this.d=$("<div>");
 		$(this.id).append(this.d);
 		this.updatePosition();
 	}
@@ -73,13 +73,13 @@ PaginatedTable.prototype.populate=function(data, textStatus, jqXHR) {
 	}
 };
 PaginatedTable.prototype.error=function(jqXHR, textStatus, errorThrown) {
-	alert('error in ajax request (either server did not respond, url not found, server error or parse error of the return value',jqXHR,textStatus,errorThrown);
+	alert("error in ajax request (either server did not respond, url not found, server error or parse error of the return value",jqXHR,textStatus,errorThrown);
 };
 PaginatedTable.prototype.fetch=function() {
-	// notice the use of the 'context' property that makes 'this' in the response
+	// notice the use of the "context" property that makes "this" in the response
 	// function be the PaginatedTable object itself...
 	// the cache: false is not strictly needed since we are going to different urls because of
-	// the 'data' that we pass. But in the debugging phase it is better to have that here...
+	// the "data" that we pass. But in the debugging phase it is better to have that here...
 	// In any case it could be that the server is not deterministic, meanining, that for the same
 	// position in the table it sometimes returns different data...
 	$.ajax({
@@ -91,7 +91,7 @@ PaginatedTable.prototype.fetch=function() {
 			rows: this.rows,
 			cols: this.cols
 		},
-		dataType: 'json',
+		dataType: "json",
 		method: this.httpmethod,
 		success: PaginatedTable.prototype.populate,
 		error: PaginatedTable.prototype.error

@@ -1,6 +1,6 @@
 function Button(text,id_for_append) {
 	this.text=text;
-	this.realButton=$('<button/>').text(this.text);
+	this.realButton=$("<button/>").text(this.text);
 	$(id_for_append).append(this.realButton);
 }
 
@@ -8,4 +8,4 @@ function Button(text,id_for_append) {
 Button.prototype.click=function() {
 	// in this parent class we do nothing...
 	// (let the children inherit...)
-};
+}
