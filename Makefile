@@ -32,10 +32,10 @@ DO_STYLELINT:=1
 # code #
 ########
 ALL:=
-ALL_HTML:=$(shell find src -name "*.html")
-ALL_HTML_FRAG:=$(shell find src -name "*.html_frag")
-ALL_JS:=$(shell find src -name "*.js")
-ALL_CSS:=$(shell find src -name "*.css")
+ALL_HTML:=$(shell find src -type f -and -name "*.html")
+ALL_HTML_FRAG:=$(shell find src -type f -and -name "*.html_frag")
+ALL_JS:=$(shell find src -type f -and -name "*.js")
+ALL_CSS:=$(shell find src -type f -and -name "*.css")
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
 ALL_HTMLLINT:=$(addprefix out/,$(addsuffix .htmllint, $(basename $(ALL_HTML))))
 ALL_VALIDATEHTML:=$(addprefix out/,$(addsuffix .vhtml, $(basename $(ALL_HTML))))

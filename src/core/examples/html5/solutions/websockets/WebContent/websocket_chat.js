@@ -13,7 +13,7 @@ var users;
 function init() {
 	btnPressMe = document.getElementById("pressMe");
 	btnPressMe.onclick = processSubmit;
-	taMessage =  document.getElementById("message");
+	taMessage = document.getElementById("message");
 	txtUserName = document.getElementById("userName");
 	txtMessageTo = document.getElementById("messageTo");
 	cbPrivate = document.getElementById("private");
@@ -30,16 +30,15 @@ function init() {
 	users = new Array();
 	
 	if( jws.browserSupportsWebSockets() ) {
-		  jWebSocketClient = new jws.jWebSocketJSONClient();
-
-          var logonResult = jWebSocketClient.logon( url, chatUsername, password, {
-              // OnOpen callback
-              OnOpen: connectionOpened,
-              // OnMessage callback
-              OnMessage: processMessage,
-              // OnClose callback
-              OnClose: connectionClosed
-            });
+		jWebSocketClient = new jws.jWebSocketJSONClient();
+		var logonResult = jWebSocketClient.logon( url, chatUsername, password, {
+		// OnOpen callback
+		OnOpen: connectionOpened,
+		// OnMessage callback
+		OnMessage: processMessage,
+		// OnClose callback
+		OnClose: connectionClosed
+	});
 
 	} else {
 		setStatus("Web Sockets NOT supported!");
@@ -90,10 +89,10 @@ function connectionOpened(wsEvent) {
 }
 
 function connectionClosed(wsEvent) {
-        if( jWebSocketClient ) {
-                jWebSocketClient.close();
-        }
-        setStatus("Connection closed: " + wsEvent.data);
+	if(jWebSocketClient) {
+		jWebSocketClient.close();
+	}
+	setStatus("Connection closed: " + wsEvent.data);
 }
 
 
@@ -103,8 +102,8 @@ function processSubmit() {
 	var userName = txtUserName.value;
 
 	var messageToken = {
-			  ns: "nextgened.chat",
-			  messageType: "chatMessage"
+		ns: "nextgened.chat",
+		messageType: "chatMessage"
 	};
 	messageToken.message = message;
 	messageToken.user = new Object();
@@ -115,13 +114,12 @@ function processSubmit() {
 		return;
 	} else {
 		jWebSocketClient.broadcastToken( messageToken, {
-			  OnResponse: function( responseToken ) {
-			    setStatus("Server responded: "
-			      + "vendor: " + responseToken.vendor
-			      + ", version: " + responseToken.version
-			    );
-			    processMessage(null, responseToken);
-			  }
+			OnResponse: function( responseToken ) {
+				setStatus("Server responded: " + "vendor: " + responseToken.vendor
+					+ ", version: " + responseToken.version
+				);
+				processMessage(null, responseToken);
+			}
 		});
 		setStatus("Message sent: " + JSON.stringify(messageToken));
 	}

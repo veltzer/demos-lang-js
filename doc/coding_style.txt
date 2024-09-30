@@ -1,4 +1,4 @@
-we use double quotes
+we use double quotes in both .html and .js files
 	this is the HTML standard
 	this is the google standard
 	this is the standard in most languages
@@ -7,18 +7,19 @@ file names
 	html files -> .html (this is the standard and the preferred)
 	js file -> .js (this is the standard)
 	html fragment files -> .html_frag (don't know of any standard for that).
+	no spaces in file names "this_is_a_file_name.html"
 
 tag names inside html
 	should all be lower case
 when a tag does not have content, it should have an early close:
 	<button/>
+	unless it's a tag in HTML that does not need closing (there is a list of about 5 of those).
 
-js file will have the first line:
+js files will have the first line:
 	#!/usr/bin/env node
 	and will be chmodded +x
 
-Js content
-	priting will only be done via console.log
-	it will not use "<br/>".
-	it will not use docuent.write
-	it will not use alert
+Js output
+	printing will only be done via console.log
+	it will not use "<br>" because there is not need to.
+	document.write(...) will only be used when showing how document.write() works.
