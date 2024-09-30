@@ -2,7 +2,7 @@ var btnPressMe;
 var video; // eslint-disable-line no-unused-vars
 
 function init() {
-	btnPressMe = document.getElementById("pressMe");
+	btnPressMe = document.getElementById("press_me");
 	btnPressMe.onclick = processSubmit;
 	video = document.getElementById("myVideo");
 }
@@ -14,4 +14,3 @@ function processSubmit() {
 }
 
 window.onload = init;
-
