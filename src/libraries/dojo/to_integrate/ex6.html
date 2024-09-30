@@ -31,15 +31,15 @@
 	<body class="tundra">
 		<div data-dojo-type="dojo.data.ItemFileReadStore" js-id="hobbies" url="ex6.ajax"></div>
 		Name : <div data-dojo-type="dijit.form.ValidationTextBox" id="firstName" reg-exp="^[a-zA-Z ]+$" required="true" invalid-message="Must be alpha." onBlur="_do_check_state"></div>
-		<br/>
+		<br>
 		Age : <div data-dojo-type="dijit.form.NumberTextBox" id="age" invalid-message="Must be numeric." onBlur="_do_check_state"></div>
-		<br/>
+		<br>
 		Hobby : <div data-dojo-type="dijit.form.FilteringSelect" autocomplete="true" id="hobby" value="Enter your hobby" store="hobbies" search-attr="hobby" onBlur="_do_check_state"></div>
-		<br/>
+		<br>
 		Birth Date : <div data-dojo-type="dijit.form.DateTextBox" id="bd" onBlur="_do_check_state"></div>
-		<br/>
+		<br>
 		Password : <input type="password" data-dojo-type="dijit.form.TextBox" id="password" onBlur="_do_check_state"/>
-		<br/>
+		<br>
 		<div data-dojo-type="dijit.form.Button" id="go" onclick="_do_alert" disabled>Go!</div>
 
 	</body>

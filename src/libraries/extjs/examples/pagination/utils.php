@@ -2,10 +2,10 @@
 
 /* assertion */
 function assert_callcack($file, $line, $expr) {
-	//echo 'assertion failed<br/>';
-	//echo 'file is '.$file.'<br/>';
-	//echo 'line is '.$line.'<br/>';
-	//echo 'message is '.$message.'<br/>';
+	//echo 'assertion failed<br>';
+	//echo 'file is '.$file.'<br>';
+	//echo 'line is '.$line.'<br>';
+	//echo 'message is '.$message.'<br>';
 	print 'Assertion failed in '.$file.' on line '.$line.': '.$expr.'\n';
 	//throw new Exception($file.$line.$message);
 }
@@ -48,7 +48,7 @@ function printDebug($string) {
 	if(isCli()) {
 		echo $string."\n";
 	} else {
-		echo $string.'<br/>';
+		echo $string.'<br>';
 	}
 }
 
@@ -366,7 +366,7 @@ function make_stat($query,$func,$desc) {
 	if($func!=null) {
 		$result=$func($result);
 	}
-	return '<a title="'.$query.'">'.$desc.' = '.$result.'</a><br/>';
+	return '<a title="'.$query.'">'.$desc.' = '.$result.'</a><br>';
 }
 /* generic function to print a table */
 function make_table($query,$desc) {
@@ -393,7 +393,7 @@ function make_table($query,$desc) {
 		$res.='</tr>';
 	}
 	$res.='</tbody></table>';
-	$res.='<br/>';
+	$res.='<br>';
 	my_mysql_free_result($result);
 	return $res;
 }
