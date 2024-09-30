@@ -174,9 +174,6 @@ out/html.stamp: $(ALL_HTML)
 	$(Q)pymakehelper error_on_print git grep -l " $$" -- "src/**/*.html" "src/**/*.js"
 	$(Q)pymakehelper error_on_print git grep -l "  " -- "src/**/*.html" "src/**/*.js"
 	$(Q)pymakehelper touch_mkdir $@
-.PHONY: all_htmlhint_once
-all_htmlhint_once: $(ALL_HTML)
-	$(Q)node_modules/.bin/htmlhint src
 
 .PHONY: all_htmlhint
 all_htmlhint: $(ALL_HTMLHINT)
@@ -202,13 +199,13 @@ all_stylelint: $(ALL_STYLELINT)
 ############
 # patterns #
 ############
-$(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc
+$(ALL_HTMLHINT): out/%.htmlhint: %.html scripts/run_with_ignore.py .htmlhintrc
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmlhint $<
+	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLHINT node_modules/.bin/htmlhint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_HTMLLINT): out/%.htmllint: %.html .htmllintrc
+$(ALL_HTMLLINT): out/%.htmllint: %.html scripts/run_with_ignore.py .htmllintrc
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error node_modules/.bin/htmllint $<
+	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLLINT node_modules/.bin/htmllint $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_VALIDATEHTML): out/%.vhtml: %.html scripts/run_validate_html.py
 	$(info doing [$@])

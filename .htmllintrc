@@ -4,9 +4,9 @@
     "maxerr": false,
     "raw-ignore-regex": false,
     "attr-bans": [
-        "align",
-        "background",
-        "bgcolor",
+        "align-removed",
+        "background-removed",
+        "bgcolor-removed",
         "border-removed",
         "frameborder",
         "longdesc",
@@ -25,7 +25,7 @@
     "tag-bans": [
         "style-removed",
         "b-removed",
-        "i"
+        "i-removed"
     ],
     "tag-close": true,
     "tag-name-lowercase": true,
