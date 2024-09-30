@@ -24,7 +24,7 @@ DO_JSLINT:=0
 # do you want to do jshint?
 DO_JSHINT:=0
 # do you want to check html with simple makefile rules?
-DO_CHECK_HTML:=0
+DO_CHECK_HTML:=1
 # do you want to lint css?
 DO_STYLELINT:=0 # INPROGRESS
 
@@ -170,9 +170,9 @@ clean_hard:
 	$(Q)git clean -qffxd
 out/html.stamp: $(ALL_HTML)
 	$(info doing [$@])
-	$(Q)pymakehelper error_on_print git grep -l "'" -- "*.html"
-	$(Q)pymakehelper error_on_print git grep -l " $$" -- "*.html"
-	$(Q)pymakehelper error_on_print git grep -l "  " -- "*.html"
+	$(Q)pymakehelper error_on_print git grep -l "'" -- "src/**/*.html"
+	$(Q)pymakehelper error_on_print git grep -l " $$" -- "src/**/*.html"
+	$(Q)pymakehelper error_on_print git grep -l "  " -- "src/**/*.html"
 	$(Q)pymakehelper touch_mkdir $@
 .PHONY: all_htmlhint_once
 all_htmlhint_once: $(ALL_HTML)

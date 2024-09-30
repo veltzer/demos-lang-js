@@ -37,11 +37,11 @@
 	<div id="debug"></div>
 
 	<script>
-		const debugElement = document.getElementById('debug');
-		const startButton = document.getElementById('startButton');
+		const debugElement = document.getElementById("debug");
+		const startButton = document.getElementById("startButton");
 		function log(message) {
 			console.log(message);
-			debugElement.innerHTML += message + '<br>';
+			debugElement.innerHTML += message + "<br>";
 		}
 
 		/*global Tone*/
@@ -50,54 +50,54 @@
 		async function initAudio() {
 			try {
 				await Tone.start();
-				log('Tone.js audio context started successfully');
-				startButton.style.display = 'none';
-				log('Audio enabled. You can now play the piano!');
+				log("Tone.js audio context started successfully");
+				startButton.style.display = "none";
+				log("Audio enabled. You can now play the piano!");
 			} catch (e) {
-				log('Failed to start Tone.js audio context: ' + e.message);
+				log("Failed to start Tone.js audio context: " + e.message);
 			}
 		}
 
 		function playNote(note) {
-			if (Tone.context.state !== 'running') {
-				log('Audio not initialized. Please click the start button.');
+			if (Tone.context.state !== "running") {
+				log("Audio not initialized. Please click the start button.");
 				return;
 			}
 			synth.triggerAttackRelease(note, "8n");
 			log(`Playing note: ${note}`);
 		}
 
-		startButton.addEventListener('click', initAudio);
+		startButton.addEventListener("click", initAudio);
 
-		document.querySelectorAll('.key').forEach(key => {
-			key.addEventListener('mousedown', () => {
+		document.querySelectorAll(".key").forEach(key => {
+			key.addEventListener("mousedown", () => {
 				const note = key.dataset.note;
 				playNote(note);
 			});
 		});
 
 		const keyMap = {
-			'a': 'C4', 'w': 'C#4', 's': 'D4', 'e': 'D#4', 'd': 'E4', 'f': 'F4',
-			't': 'F#4', 'g': 'G4', 'y': 'G#4', 'h': 'A4', 'u': 'A#4', 'j': 'B4'
+			"a": "C4", "w": "C#4", "s": "D4", "e": "D#4", "d": "E4", "f": "F4",
+			"t": "F#4", "g": "G4", "y": "G#4", "h": "A4", "u": "A#4", "j": "B4"
 		};
 
-		document.addEventListener('keydown', (event) => {
+		document.addEventListener("keydown", (event) => {
 			const note = keyMap[event.key];
 			if (note) {
 				playNote(note);
-				document.querySelector(`[data-note="${note}"]`).style.backgroundColor = '#ddd';
+				document.querySelector(`[data-note="${note}"]`).style.backgroundColor = "#ddd";
 			}
 		});
 
-		document.addEventListener('keyup', (event) => {
+		document.addEventListener("keyup", (event) => {
 			const note = keyMap[event.key];
 			if (note) {
 				const key = document.querySelector(`[data-note="${note}"]`);
-				key.style.backgroundColor = key.classList.contains('black') ? 'black' : 'white';
+				key.style.backgroundColor = key.classList.contains("black") ? "black" : "white";
 			}
 		});
 
-		log('Page loaded. Click the "Enable Audio" button to start.');
+		log("Page loaded. Click the [Enable Audio] button to start.");
 	</script>
 </body>
 </html>

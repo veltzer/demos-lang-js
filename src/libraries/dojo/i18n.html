@@ -12,7 +12,13 @@
 <html>
 	<head>
 		<title>Hello, I18N!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true, modulePaths: {'myi18n': '../../../dojo/myi18n'}"></script>
+		<script>
+			window.dojoConfig = {
+				parseOnLoad:true,
+				modulePaths: {myi18n: "../../../dojo/myi18n"}
+			};
+		</script>
+		<script src="../toolkits/dojo/dojo/dojo.js"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>

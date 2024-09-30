@@ -21,8 +21,12 @@
 			</header>
 <!-- Insert Forms Here -->
 			<div id="formStatus"></div>
-
 			<form action="post">
+				<script>
+					function _changeData() {
+						document.getElementById("ageDisplay").innerHTML = this.value;
+					}
+				</script>
 				<table>
 					<tr><th>First Name:</th><td><input type="text" name="firstName" value="Harry" required/></td></tr>
 					<tr><th>Last Name:</th><td><input type="text" name="lastName" value="Potter" required/></td></tr>
@@ -30,10 +34,10 @@
 					<tr><th>Email Address:</th><td><input type="email" name="email" value=""/></td></tr>
 					<tr><th>Web Site:</th><td><input type="url" name="website" value="http://"/></td></tr>
 					<tr><th>Age:</th>
-						<td>
-						<input type="range" name="age" min="18" max="150" value="18" onchange="document.getElementById('ageDisplay').innerHTML = this.value;"/>
-						<span id="ageDisplay">18</span>
-						</td>
+					<td>
+					<input type="range" name="age" min="18" max="150" value="18" onchange="_changeData"/>
+					<span id="ageDisplay">18</span>
+					</td>
 					</tr>
 					<tr><th>Birth Date:</th><td><input type="date" name="birthDate"/></td></tr>
 					<tr><th># Dependents:</th><td><input type="number" step="1" placeholder="0" name="dependents" min="0" max="99"/></td></tr>
@@ -41,9 +45,6 @@
 				</table>
 				<input type="submit" id="pressMe" value="Insert Customer"/>
 			</form>
-
-
-
 			<footer>
 				<h6>Sources for First Article</h6>
 			</footer>
