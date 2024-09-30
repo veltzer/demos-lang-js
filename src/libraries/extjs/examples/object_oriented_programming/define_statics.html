@@ -9,6 +9,7 @@
 		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
+				/*global Person*/
 				Ext.define("Person",{
 					statics: {
 						numAllocated:0,
@@ -24,7 +25,7 @@
 					},
 				});
 				console.log(Person.numAllocated);
-				var p1=new Person();
+				var _p1=new Person();
 				var p2=Person.gimmeAPerson();
 				console.log(Person.numAllocated);
 				console.log(p2.numAllocated);

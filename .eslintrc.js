@@ -27,6 +27,8 @@ module.exports = {
     globals: {
 	    "$": "readonly",
 	    "dojo": "readonly",
-	    "dijit": "readonly"
+	    "dijit": "readonly",
+	    "Ext": "readonly",
+	    "Raphael": "readonly"
     }
 };

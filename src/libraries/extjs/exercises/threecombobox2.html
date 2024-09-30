@@ -32,7 +32,7 @@
 					}
 				);
 				function updateText() {
-					store.nextPage({callback: function(records){
+					store.nextPage({callback: function(_records){
 						Ext.getCmp("t1").fireEvent("update");
 						Ext.getCmp("t2").fireEvent("update");
 						Ext.getCmp("t3").fireEvent("update");
@@ -53,7 +53,7 @@
 						Ext.getCmp("next").setDisabled(false);
 					}
 				}
-				var pan=Ext.create("Ext.Panel", {
+				var _pan=Ext.create("Ext.Panel", {
 					width: 500,
 					height: 100,
 					layout: {

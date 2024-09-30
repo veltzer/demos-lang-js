@@ -43,11 +43,12 @@
 						console.log(this.name+" coding in: "+language);
 						this.eat("Bugs");
 					},
-					eat: function(foodType) {
+					eat: function(_foodType) {
 						console.log("Developer is eating...");
 						this.callParent(arguments);
 					}
 				});
+				/*global Person,Developer*/
 				var jacky=new Developer("Jacky",true);
 				jacky.code("JavaScript");
 				jacky.eat("More Bugs");

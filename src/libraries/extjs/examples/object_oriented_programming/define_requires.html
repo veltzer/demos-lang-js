@@ -19,6 +19,7 @@
 				enabled: true
 			});
 			Ext.Loader.setPath("MyPkg","MyAltPkg");
+			/*global MyPkg*/
 			Ext.require("MyPkg.Developer",function() {
 				var jacky=new MyPkg.Developer("Jacky", true);
 				jacky.code("JavaScript");

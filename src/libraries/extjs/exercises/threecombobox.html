@@ -65,11 +65,11 @@
 						this.getDataForSelection(moveForward);
 					},
 					getDataForSelection: function(moveForward) {
-						var range;
+						var _range;
 						if (moveForward) {
-							range=this.store.nextPage({scope:this, callback: this.dataLoaded});
+							_range=this.store.nextPage({scope:this, callback: this.dataLoaded});
 						} else {
-							range=this.store.previousPage({scope:this, callback: this.dataLoaded});
+							_range=this.store.previousPage({scope:this, callback: this.dataLoaded});
 						}
 					},
 					dataLoaded: function() {

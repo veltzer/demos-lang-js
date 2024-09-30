@@ -23,6 +23,7 @@
 				oscillator.connect(gainNode);
 				gainNode.connect(audioContext.destination);
 				// Create Howl object
+				/*global Howl*/
 				sound = new Howl({
 					src: [oscillator, gainNode],
 					html5: true

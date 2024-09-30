@@ -174,17 +174,30 @@ out/html.stamp: $(ALL_HTML)
 	$(Q)pymakehelper error_on_print git grep -l " $$" -- "*.html"
 	$(Q)pymakehelper error_on_print git grep -l "  " -- "*.html"
 	$(Q)pymakehelper touch_mkdir $@
-.PHONY:
-all_htmlhint: $(ALL_HTML)
+.PHONY: all_htmlhint_once
+all_htmlhint_once: $(ALL_HTML)
 	$(Q)node_modules/.bin/htmlhint src
+
+.PHONY: all_htmlhint
+all_htmlhint: $(ALL_HTMLHINT)
+.PHONY: all_htmllint
+all_htmllint: $(ALL_HTMLLINT)
+.PHONY: all_validatehtml
+all_validatehtml: $(ALL_VALIDATEHTML)
+.PHONY: all_tidy
+all_tidy: $(ALL_TIDY)
 .PHONY: all_eslint_js
 all_eslint_js: $(ALL_ESLINT_JS)
 .PHONY: all_eslint_html
 all_eslint_html: $(ALL_ESLINT_HTML)
-.PHONY: all_tidy
-all_tidy: $(ALL_TIDY)
+.PHONY: all_standard
+all_standard: $(ALL_STANDARD)
 .PHONY: all_jslint
 all_jslint: $(ALL_JSLINT)
+.PHONY: all_jshint
+all_jshint: $(ALL_JSHINT)
+.PHONY: all_stylelint
+all_stylelint: $(ALL_STYLELINT)
 
 ############
 # patterns #

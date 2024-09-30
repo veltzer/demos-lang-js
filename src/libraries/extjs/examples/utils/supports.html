@@ -12,7 +12,7 @@
 		<script src="../../../toolkits/extjs/ext-all.js"></script>
 		<script>
 			Ext.onReady(function() {
-				for(x in Ext.supports) {
+				for(var x in Ext.supports) {
 					if(typeof(Ext.supports[x])=="boolean") {
 						console.log(x+": "+Ext.supports[x]);
 					}
