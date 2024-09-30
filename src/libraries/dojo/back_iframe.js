@@ -46,7 +46,7 @@ function myinit() {
 }
 function go() {
 	var w_url = dijit.byId("id_url");
-	var v_url=w_url.attr('value');
+	var v_url=w_url.attr("value");
 	//alert("going to "+v_url);
 	var s=new MyState(v_url);
 	dojo.back.addToHistory(s);

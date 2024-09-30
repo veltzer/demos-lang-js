@@ -11,7 +11,7 @@ function InventoryItem(id,name,price,storage) {
 }
 InventoryItem.prototype.verifyStorage=function(storage) {
 	if(this.storage<storage) {
-		throw 'havent got enough items';
+		throw "havent got enough items";
 	}
 };
 InventoryItem.prototype.changeStorage=function(storage) {
@@ -47,7 +47,7 @@ Inventory.prototype.getItemById=function(id) {
 };
 Inventory.prototype.verifyItemInInventory=function(id) {
 	if(!(id in this.itemMap)) {
-		throw 'no such item with id'+id;
+		throw "no such item with id"+id;
 	}
 };
 Inventory.prototype.load=function(url) {
@@ -74,17 +74,17 @@ Inventory.prototype.changeStorage=function(id,storage) {
 };
 Inventory.prototype.createRow=function(id) {
 	var item=this.itemMap[id];
-	var row=document.createElement('tr');
-	var cell1=document.createElement('td');
-	var cell2=document.createElement('td');
-	var cell3=document.createElement('td');
-	var cell4=document.createElement('td');
-	var cell5=document.createElement('td');
+	var row=document.createElement("tr");
+	var cell1=document.createElement("td");
+	var cell2=document.createElement("td");
+	var cell3=document.createElement("td");
+	var cell4=document.createElement("td");
+	var cell5=document.createElement("td");
 	var inner1=document.createTextNode(item.id);
 	var inner2=document.createTextNode(item.name);
 	var inner3=document.createTextNode(item.price);
 	var inner4=document.createTextNode(item.storage);
-	var inner5=document.createElement('button');
+	var inner5=document.createElement("button");
 	inner5.onclick=(function(iid) {
 		return function() {
 			Cart.getInstance().buyItemById(iid,1);
@@ -97,7 +97,7 @@ Inventory.prototype.createRow=function(id) {
 	}
 	callback.id=id;
 	*/
-	inner5.appendChild(document.createTextNode('+'));
+	inner5.appendChild(document.createTextNode("+"));
 	cell1.appendChild(inner1);
 	cell2.appendChild(inner2);
 	cell3.appendChild(inner3);

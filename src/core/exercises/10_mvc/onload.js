@@ -3,10 +3,10 @@
 window.onload=function() {
 	var m=new Model();
 	m.setColumns([
-		'id',
-		'name',
-		'price',
-		'storage'
+		"id",
+		"name",
+		"price",
+		"storage"
 	])
 	m.addRow({
 		"id": "14",

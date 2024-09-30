@@ -4,10 +4,10 @@ dojo.require("dojo.back");
 
 function sumNumbers(e) {
 	var w_sum = dijit.byId("id_sum");
-	var v_sum = parseInt(w_sum.attr('value'));
+	var v_sum = parseInt(w_sum.attr("value"));
 
 	var w_num = dijit.byId("id_val");
-	var v_num = parseInt(w_num.attr('value'));
+	var v_num = parseInt(w_num.attr("value"));
 	
 	if(v_num%2==1) {
 		// now invalidate all previous states...
@@ -16,7 +16,7 @@ function sumNumbers(e) {
 		}
 	}
 	v_sum=v_sum+v_num;
-	w_sum.attr('value',v_sum);
+	w_sum.attr("value",v_sum);
 	var s=new MyState(v_sum,v_num);
 	dojo.back.addToHistory(s);
 }
@@ -37,9 +37,9 @@ function MyState(p_sum,p_val) {
 MyState.prototype.restoreState=function() {
 	if(this.valid) {
 		var w_sum=dijit.byId("id_sum");
-		w_sum.attr('value',this.p_sum);
+		w_sum.attr("value",this.p_sum);
 		var w_val=dijit.byId("id_val");
-		w_val.attr('value',this.p_val);
+		w_val.attr("value",this.p_val);
 	} else {
 		alert("you can not go back to this state");
 	}

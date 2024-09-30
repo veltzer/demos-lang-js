@@ -1,5 +1,5 @@
-var http = require('http');
-var url=require('url');
+var http = require("http");
+var url=require("url");
 
 var data=[
 	{
@@ -25,10 +25,10 @@ var data=[
 var mypage=" \
 <html>\
 	<head>\
-		<script src='Model.js'></script>\
-		<script src='View.js'></script>\
-		<script src='TableView.js'></script>\
-		<script src='onload.js'></script>\
+		<script src="Model.js"></script>\
+		<script src="View.js"></script>\
+		<script src="TableView.js"></script>\
+		<script src="onload.js"></script>\
 	</head>\
 	<body>\
 		Store is:\
@@ -43,23 +43,23 @@ http.createServer(
 	function (request, response) {
 		var pathname=url.parse(request.url).pathname;
 		switch(pathname) {
-			case '/mypage':
-				response.writeHead(200, {'Content-Type': 'text/html'});
+			case "/mypage":
+				response.writeHead(200, {"Content-Type": "text/html"});
 				response.end(mypage);
 				break;
-			case '/data':
-				response.writeHead(200, {'Content-Type': 'text/plain'});
+			case "/data":
+				response.writeHead(200, {"Content-Type": "text/plain"});
 				for(var i=0;i<data.length;i++) {
 					data[i]["price"]=""+Math.floor(Math.random()*30)
 				}
 				response.end(JSON.stringify(data));
 				break;
 			default:
-				response.writeHead(200, {'Content-Type': 'text/plain'});
-				response.end('uhu?!?');
+				response.writeHead(200, {"Content-Type": "text/plain"});
+				response.end("uhu?!?");
 				break;
 		}
 	}
 ).listen(8000);
  
-console.log('Server running at http://localhost:8000/');
+console.log("Server running at http://localhost:8000/");

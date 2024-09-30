@@ -1,5 +1,5 @@
 /* jsl:import inventory.js */
-import { Inventory } from 'inventory.js'
+import { Inventory } from "inventory.js"
 // here comes the cart...
 function Cart () {
   this.tbid = undefined
@@ -35,7 +35,7 @@ Cart.prototype.buyItemById = function (id, amount) {
 }
 Cart.prototype.verifyBuyingItem = function (id) {
   if (!(id in this.buyMap)) {
-    throw new Error('didnt buy item ' + id)
+    throw new Error("didnt buy item " + id)
   }
 }
 Cart.prototype.sellItemById = function (id, amount) {
@@ -44,7 +44,7 @@ Cart.prototype.sellItemById = function (id, amount) {
   this.verifyBuyingItem(id)
   const amountInCart = this.buyMap[id]
   if (amountInCart < amount) {
-    throw new Error('too many items sold ' + amount)
+    throw new Error("too many items sold " + amount)
   }
   this.buyMap[id] -= amount
   this.domAmountMap[id].nodeValue = this.buyMap[id]
@@ -66,10 +66,10 @@ Cart.prototype.cartPrice = function () {
   return sum
 }
 Cart.prototype.createRow = function (id) {
-  const row = document.createElement('tr')
-  const cell1 = document.createElement('td')
-  const cell2 = document.createElement('td')
-  const cell3 = document.createElement('button')
+  const row = document.createElement("tr")
+  const cell1 = document.createElement("td")
+  const cell2 = document.createElement("td")
+  const cell3 = document.createElement("button")
   cell3.onclick = (function (iid) {
     return function () {
       Cart.getInstance().sellItemById(iid, 1)
@@ -77,7 +77,7 @@ Cart.prototype.createRow = function (id) {
   })(id)
   const text1 = document.createTextNode(id)
   const text2 = document.createTextNode(this.buyMap[id])
-  const text3 = document.createTextNode('-')
+  const text3 = document.createTextNode("-")
   cell1.appendChild(text1)
   cell2.appendChild(text2)
   cell3.appendChild(text3)

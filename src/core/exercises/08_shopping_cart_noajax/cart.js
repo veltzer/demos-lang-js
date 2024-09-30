@@ -35,7 +35,7 @@ Cart.prototype.buyItemById=function(id,amount) {
 };
 Cart.prototype.verifyBuyingItem=function(id) {
 	if(!(id in this.buyMap)) {
-		throw 'didnt buy item '+id;
+		throw "didnt buy item "+id;
 	}
 };
 Cart.prototype.sellItemById=function(id,amount) {
@@ -44,7 +44,7 @@ Cart.prototype.sellItemById=function(id,amount) {
 	this.verifyBuyingItem(id);
 	var amount_in_cart=this.buyMap[id];
 	if(amount_in_cart<amount) {
-		throw 'too many items sold '+amount;
+		throw "too many items sold "+amount;
 	}
 	this.buyMap[id]-=amount;
 	this.domAmountMap[id].nodeValue=this.buyMap[id];
@@ -66,10 +66,10 @@ Cart.prototype.cartPrice=function() {
 	return sum;
 };
 Cart.prototype.createRow=function(id) {
-	var row=document.createElement('tr');
-	var cell1=document.createElement('td');
-	var cell2=document.createElement('td');
-	var cell3=document.createElement('button');
+	var row=document.createElement("tr");
+	var cell1=document.createElement("td");
+	var cell2=document.createElement("td");
+	var cell3=document.createElement("button");
 	cell3.onclick=(function(iid) {
 		return function() {
 			Cart.getInstance().sellItemById(iid,1);
@@ -77,7 +77,7 @@ Cart.prototype.createRow=function(id) {
 	})(id);
 	var text1=document.createTextNode(id);
 	var text2=document.createTextNode(this.buyMap[id]);
-	var text3=document.createTextNode('-');
+	var text3=document.createTextNode("-");
 	cell1.appendChild(text1);
 	cell2.appendChild(text2);
 	cell3.appendChild(text3);

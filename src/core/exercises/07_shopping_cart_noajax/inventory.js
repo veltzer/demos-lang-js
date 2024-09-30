@@ -6,11 +6,11 @@ function InventoryItem(id,name,price,storage) {
 	this.storage=storage;
 }
 InventoryItem.prototype.toString=function() {
-	return ''+this.id+','+this.name+','+this.price+','+this.storage;
+	return ""+this.id+","+this.name+","+this.price+","+this.storage;
 };
 InventoryItem.prototype.verifyStorage=function(storage) {
 	if(this.storage<storage) {
-		throw 'havent got enough items';
+		throw "havent got enough items";
 	}
 };
 InventoryItem.prototype.changeStorage=function(storage) {
@@ -35,7 +35,7 @@ Inventory.prototype.getItemById=function(id) {
 };
 Inventory.prototype.verifyItemInInventory=function(id) {
 	if(!(id in this.itemMap)) {
-		throw 'no such item with id'+id;
+		throw "no such item with id"+id;
 	}
 };
 Inventory.prototype.verifyEnoughItems=function(id,amount) {
@@ -53,7 +53,7 @@ Inventory.prototype.toString=function() {
 	for(var id in this.itemMap) {
 		string_arr.push(this.itemMap[id].toString());
 	}
-	return string_arr.join('<br>')+'<br>';
+	return string_arr.join("<br>")+"<br>";
 };
 // singleton pattern
 Inventory.theInstance=new Inventory();
