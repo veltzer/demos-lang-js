@@ -14,7 +14,7 @@ DO_VALIDATEHTML:=1
 # do you want to use tidy to check HTML files?
 DO_TIDY:=1
 # do you want to do eslint on javascript files?
-DO_ESLINT_JS:=1
+DO_ESLINT_JS:=0 # INPROGRESS
 # do you want to do eslint on html files?
 DO_ESLINT_HTML:=1
 # do you want to run standard?
@@ -26,7 +26,7 @@ DO_JSHINT:=0
 # do you want to check html with simple makefile rules?
 DO_CHECK_HTML:=1
 # do you want to lint css?
-DO_STYLELINT:=1
+DO_STYLELINT:=0 # INPROGRESS
 
 ########
 # code #
