@@ -43,9 +43,9 @@ function drawStonePath(context) {
 	context.beginPath();
 
 	var stone = new Image();
-        stone.src = 'stone.jpg';
+        stone.src = "stone.jpg";
         stone.onload = function() {
-                context.strokeStyle = context.createPattern(stone, 'repeat');
+                context.strokeStyle = context.createPattern(stone, "repeat");
                 context.lineWidth = 40;
                 context.moveTo(200, 350);
                 context.lineTo(600, 350);

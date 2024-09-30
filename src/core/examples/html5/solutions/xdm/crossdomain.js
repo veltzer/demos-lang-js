@@ -19,7 +19,7 @@ function sendMessage() {
 	if (typeof window.postMessage === "undefined") {
 		alert("XDM is not supported on this browser!");
 	} else {
-		//alert('sending message');
+		//alert("sending message");
 		var msg = new Object();
 		msg.messageId = 1234;
 		msg.messageType = "OrderSent";
@@ -36,9 +36,9 @@ function receiveMessage(e) {
 //		A JSON.parse with a type reviver:
 //		serviceMessages = JSON.parse(e.data, function (key, value) {
 //		    var type;
-//		    if (value && typeof value === 'object') {
+//		    if (value && typeof value === "object") {
 //		        type = value.type;
-//		        if (typeof type === 'string' && typeof window[type] === 'function') {
+//		        if (typeof type === "string" && typeof window[type] === "function") {
 //		            return new (window[type])(value);
 //		        }
 //		    }
@@ -54,11 +54,11 @@ function setStatus(status) {
 }
 
 function addStatus(status) {
-	divStatus.innerHTML += status + "<br/>";
+	divStatus.innerHTML += status + "<br>";
 }
 
 function addMessage(message) {
-	divChatMessages.innerHTML += "Inner Frame says: " + message + "<br/>";
+	divChatMessages.innerHTML += "Inner Frame says: " + message + "<br>";
 }
 
 

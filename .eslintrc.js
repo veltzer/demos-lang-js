@@ -16,18 +16,19 @@ module.exports = {
 	},
 	plugins: ["html"],
 	"rules": {
-	// "html/indent": ["error", 2],
-	/*
-	"no-unused-vars": ["error", {
-		"argsIgnorePattern": "^_",
-		"varsIgnorePattern": "^_",
-		"caughtErrorsIgnorePattern": "^_"
-	}],
-	*/
-	"no-unused-vars": "off",
-	// "no-empty": ["error", { "allowEmptyCatch": true }]
-	"no-empty": "off",
-	"no-undef": "off",
+		/*
+		"html/indent": ["error", 2],
+		"no-unused-vars": ["error", {
+			"argsIgnorePattern": "^_",
+			"varsIgnorePattern": "^_",
+			"caughtErrorsIgnorePattern": "^_"
+		}],
+		"no-empty": ["error", { "allowEmptyCatch": true }]
+		*/
+		"no-empty": "off",
+		"no-unused-vars": "off",
+		"no-undef": "off",
+		"no-prototype-builtins": "off",
 	},
 	globals: {
 		"$": "readonly",

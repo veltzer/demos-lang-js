@@ -1,9 +1,9 @@
 var btnPressMe;
 var video;
 function init() {
-	btnPressMe=document.getElementById('pressMe');
+	btnPressMe=document.getElementById("pressMe");
 	btnPressMe.onclick=processSubmit;
-	video=document.getElementById('myVideo');
+	video=document.getElementById("myVideo");
 }
 function processSubmit() {
 	/* Enter Video Code Here */
@@ -13,10 +13,10 @@ function processSubmit() {
 function toggleSound() {
 	if (video.paused) {
 		video.play();
-		btnPressMe.innerHTML='Pause';
+		btnPressMe.innerHTML="Pause";
 	} else {
 		video.pause();
-		btnPressMe.innerHTML='Play';
+		btnPressMe.innerHTML="Play";
 	}
 }
 window.onload=init;

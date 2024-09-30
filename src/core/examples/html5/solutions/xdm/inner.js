@@ -38,7 +38,7 @@ function setStatus(status) {
 }
 
 function addStatus(status) {
-	divStatus.innerHTML += status + "<br/>";
+	divStatus.innerHTML += status + "<br>";
 }
 
 

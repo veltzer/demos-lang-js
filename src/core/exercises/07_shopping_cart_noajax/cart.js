@@ -19,7 +19,7 @@ Cart.prototype.buyItemById=function(id,amount) {
 };
 Cart.prototype.verifyBuyingItem=function(id) {
 	if(!(id in this.buyMap)) {
-		throw 'didnt buy item '+id;
+		throw "didnt buy item "+id;
 	}
 };
 Cart.prototype.sellItemById=function(id,amount) {
@@ -28,7 +28,7 @@ Cart.prototype.sellItemById=function(id,amount) {
 	this.verifyBuyingItem(id);
 	var amountInCart=this.buyMap[id];
 	if(amountInCart<amount) {
-		throw 'too many items sold '+amount;
+		throw "too many items sold "+amount;
 	}
 	this.buyMap[id]-=amount;
 	// if we returned the last items...
@@ -48,9 +48,9 @@ Cart.prototype.cartPrice=function() {
 Cart.prototype.toString=function() {
 	var string_arr=[];
 	for(var id in this.buyMap) {
-		string_arr.push(id+','+this.buyMap[id]);
+		string_arr.push(id+","+this.buyMap[id]);
 	}
-	return string_arr.join('<br/>')+'<br/>';
+	return string_arr.join("<br>")+"<br>";
 };
 // singleton pattern
 Cart.instance=new Cart();

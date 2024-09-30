@@ -58,7 +58,7 @@ function addMessage(chatMessage) {
 
 function processMessage(wsEvent, wsToken) {
 	setStatus("Got message: " + wsEvent.data);
-	// For some reason we're getting double messages. Ignore the second one.
+	// For some reason were getting double messages. Ignore the second one.
 //	if (wsEvent.timeStamp == lastProcessedUsId) {
 //		addStatus("Ignoring second copy...");
 //		return;

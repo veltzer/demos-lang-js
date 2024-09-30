@@ -44,7 +44,7 @@
 				for(var x in this) {
 					// do not iterate functions
 					if(typeof(this[x])!="function") {
-						document.write(x+", "+this[x]+", "+typeof(this[x])+"<br/>");
+						document.write(x+", "+this[x]+", "+typeof(this[x])+"<br>");
 					}
 				}
 			};
@@ -54,15 +54,15 @@
 			var person_child=new Person("jane","jones");
 			var person_parent=new Person("james","jones",person_child);
 			// standard method call
-			document.write(person_parent.getName()+"<br/>");
+			document.write(person_parent.getName()+"<br>");
 			// this works with toString
-			document.write(person_parent+"<br/>");
+			document.write(person_parent+"<br>");
 			// static method call
-			document.write(Person.getCounter()+"<br/>");
+			document.write(Person.getCounter()+"<br>");
 			// call the method from Object
 			person_parent.printAllProps();
 			// using toString again
-			document.write(person_parent.getChild(0)+"<br/>");
+			document.write(person_parent.getChild(0)+"<br>");
 		</script>
 	</head>
 	<body>

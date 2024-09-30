@@ -37,13 +37,13 @@ function processSubmit() {
 	context.font = "42px Helvetica,Arial,sans-serif";
 	context.fillStyle = "#000000";
 	context.textAlign = "left";
-	//context.strokeText('Sales By Region', 200, 35, cnvMyCanvas.width);
-	context.fillText('Sales By Region', 200, 35, cnvMyCanvas.width);
+	//context.strokeText("Sales By Region", 200, 35, cnvMyCanvas.width);
+	context.fillText("Sales By Region", 200, 35, cnvMyCanvas.width);
 	context.restore();
 	context.stroke();
 
 	var smiley = new Image();
-	smiley.src = 'BigSmiley.jpg';
+	smiley.src = "BigSmiley.jpg";
 	smiley.onload = function() {
 		context.drawImage(smiley, 400, 100, 50, 50);
 	}

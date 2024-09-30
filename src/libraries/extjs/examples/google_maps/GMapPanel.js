@@ -106,16 +106,16 @@ Ext.define('Ext.ux.GMapPanel', {
 	addMarker: function(point, marker, clear, center, listeners){
 		var evt;
 		Ext.applyIf(marker,G_DEFAULT_ICON);
-		if (clear === true){
+		if(clear === true) {
 			this.getMap().clearOverlays();
 		}
-		if (center === true) {
+		if(center === true) {
 			this.getMap().setCenter(point, this.zoomLevel);
 		}
 		var mark=new GMarker(point,marker);
 		if (typeof listeners === 'object'){
 			for (evt in listeners) {
-				if (!listeners.hasOwnProperty(evt)) {
+				if(!listeners.hasOwnProperty(evt)) {
 					continue;
 				}
 				GEvent.bind(mark, evt, this, listeners[evt]);

@@ -15,7 +15,7 @@ function processSubmit() {
 			divResults.innerHTML = JSON.parse(xhr.responseText);
 		};
 		xhr.onerror = function(_e) {
-			divResults.innerHTML = '<span class="error">' + JSON.parse(xhr.responseText) + '</span>';
+			divResults.innerHTML = "<span class=\"error\">" + JSON.parse(xhr.responseText) + "</span>";
 		};
 	} else {
 		xhr.onreadystatechange = function(_e) {
@@ -23,7 +23,7 @@ function processSubmit() {
 				if (xhr.status == 200) {
 					divResults.innerHTML = JSON.parse(xhr.responseText);
 				} else if (xhr.status == 500) {
-					divResults.innerHTML = '<span class="error">' + JSON.parse(xhr.responseText) + '</span>';
+					divResults.innerHTML = "<span class=\"error\">" + JSON.parse(xhr.responseText) + "</span>";
 				}
 			}
 		};

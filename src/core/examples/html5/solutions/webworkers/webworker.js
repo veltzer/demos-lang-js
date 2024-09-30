@@ -15,7 +15,7 @@ function init() {
 	
 	if (typeof(Worker) !== "undefined") {
 		setStatus("Your browser supports Web Workers.");
-		statsWorker = new Worker('stats.js');
+		statsWorker = new Worker("stats.js");
 		statsWorker.onmessage = messageHandler;
 		statsWorker.onerror = errorHandler;
 	} else {
@@ -129,7 +129,7 @@ function setStatus(status) {
 }
 
 function addStatus(status) {
-	divStatus.innerHTML += "<br/>" + status;
+	divStatus.innerHTML += "<br>" + status;
 }
 
 window.onload = init;

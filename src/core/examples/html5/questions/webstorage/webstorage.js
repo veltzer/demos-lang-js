@@ -8,7 +8,7 @@ function init() {
 	
 	// Insert Web Storage code here.
 	
-	// Only works with Gears apparently, but doesn't hurt to try
+	// Only works with Gears apparently, but doesnt hurt to try
 	if (navigator.geolocation.lastPosition) {
 		updatePosition(navigator.geolocation.lastPosition);
 	}
@@ -22,7 +22,7 @@ var watchId;
 function processSubmit() {
 	/* Enter GeoLocation Code Here */
 	if (!navigator.geolocation) {
-		geostatus.innerHTML = "<span class='error'>Your browser does not support GeoLocation</span>";
+		geostatus.innerHTML = "<span class=\"error\">Your browser does not support GeoLocation</span>";
 		return false;
 	}
 	geostatus.innerHTML = "GeoLocation Supported... Attempting to find you.";
@@ -57,12 +57,12 @@ function updatePosition(position) {
 
 function errorPosition(error) {
 	/* Enter Position Error Code here */
-	geostatus.innerHTML = "<span class='error'>";
+	geostatus.innerHTML = "<span class=\"error\">";
 	switch (error.code) {
-		case 0: geostatus.innerHTML += "There was some error - We couldn't find you... "; break;
+		case 0: geostatus.innerHTML += "There was some error - We couldnt find you... "; break;
 		case 1: geostatus.innerHTML += "You need to tell the browser to share your location if you want us to find you... "; break;
-		case 2: geostatus.innerHTML += "We tried, but we couldn't find you... "; break;
-		case 3: geostatus.innerHTML += "It's taking too long to find you... "; break;
+		case 2: geostatus.innerHTML += "We tried, but we couldnt find you... "; break;
+		case 3: geostatus.innerHTML += "Its taking too long to find you... "; break;
 	}
 	geostatus.innerHTML += error.message;
 	geostatus.innerHTML += "</span>";

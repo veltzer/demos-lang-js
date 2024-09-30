@@ -14,10 +14,8 @@ function processSubmit() {
 	context.lineWidth = 16;
 	context.strokeStyle = "#f42305";
 	context.lineTo(350, 100);
-	context.lineJoin = 'round';
+	context.lineJoin = "round";
 	context.stroke();
-
 }
 
 window.onload = init;
-
