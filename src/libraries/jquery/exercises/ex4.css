@@ -1,2 +1,6 @@
-.PaginatedTableCellsOdd { background: grey; } 
-.PaginatedTableCellsEven { background: white; } 
+.PaginatedTableCellsOdd {
+	background: grey
+}
+.PaginatedTableCellsEven {
+	background: white
+}

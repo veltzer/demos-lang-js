@@ -18,6 +18,13 @@ header {
 	text-align:center;
 }
 
+h2 {
+	font-size: 24px;
+	margin: 0;
+	text-align:center;
+	color: #fa2542;
+}
+
 header h2 {
 	margin: 0;
 }
@@ -25,13 +32,6 @@ header h2 {
 h1 {
 	font-size: 72px;
 	margin: 0;
-}
-
-h2 {
-	font-size: 24px;
-	margin: 0;
-	text-align:center;
-	color: #fa2542;
 }
 
 h3 {
@@ -78,24 +78,15 @@ article {
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 20px #888;
-	box-shadow: 2px 2px 20px #888;
 	box-shadow: 2px 2px 20px #888;
 }
 
 article header {
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
 	padding: 5px;
 }
 
 article footer {
-	border-radius: 10px;
-	border-radius: 10px;
 	border-radius: 10px;
 	padding: 5px;
 }
@@ -133,7 +124,8 @@ footer {
 	padding:25px;
 }
 
-footer h2 { font-size: 14px;
+footer h2 {
+	font-size: 14px;
 	color: #fff;
 }
 

@@ -131,6 +131,7 @@ aside p {
 	font-style:italic;
 }
 
-footer h2 { font-size: 14px;
+footer h2 {
+	font-size: 14px;
 	color: #fff;
 }
