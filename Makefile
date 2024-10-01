@@ -5,20 +5,21 @@
 DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
+
 # do you want to do htmlhint?
 DO_HTMLHINT:=1
 # do you want to do htmllint?
 DO_HTMLLINT:=1
+# do you want to do validate_html
+DO_VALIDATEHTML:=1
 # do you want to do htmlpyrelist?
 DO_HTMLPYRELIST:=1
 # do you want to do jspyrelist?
 DO_JSPYRELIST:=1
-# do you want to do validate_html
-DO_VALIDATEHTML:=1
 # do you want to use tidy to check HTML files?
 DO_TIDY:=1
 # do you want to do eslint on javascript files?
-DO_ESLINT_JS:=0 # INPROGRESS
+DO_ESLINT_JS:=1
 # do you want to do eslint on html files?
 DO_ESLINT_HTML:=1
 # do you want to run standard? (I don't use it because it is too restrictive).
@@ -28,7 +29,7 @@ DO_JSLINT:=0
 # do you want to do jshint?
 DO_JSHINT:=0
 # do you want to lint css?
-DO_STYLELINT:=0 # INPROGRESS
+DO_STYLELINT:=1
 
 ########
 # code #
@@ -38,11 +39,12 @@ ALL_HTML:=$(shell find src -type f -and -name "*.html")
 ALL_HTML_FRAG:=$(shell find src -type f -and -name "*.html_frag")
 ALL_JS:=$(shell find src -type f -and -name "*.js")
 ALL_CSS:=$(shell find src -type f -and -name "*.css")
-ALL_HTMLPYRELIST:=$(addprefix out/,$(addsuffix .htmlpyrelist, $(basename $(ALL_HTML))))
-ALL_JSPYRELIST:=$(addprefix out/,$(addsuffix .jspyrelist, $(basename $(ALL_JS))))
+
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
 ALL_HTMLLINT:=$(addprefix out/,$(addsuffix .htmllint, $(basename $(ALL_HTML))))
 ALL_VALIDATEHTML:=$(addprefix out/,$(addsuffix .vhtml, $(basename $(ALL_HTML))))
+ALL_HTMLPYRELIST:=$(addprefix out/,$(addsuffix .htmlpyrelist, $(basename $(ALL_HTML))))
+ALL_JSPYRELIST:=$(addprefix out/,$(addsuffix .jspyrelist, $(basename $(ALL_JS))))
 ALL_TIDY:=$(addprefix out/,$(addsuffix .tidy, $(basename $(ALL_HTML))))
 ALL_ESLINT_JS:=$(addprefix out/,$(addsuffix .eslint_js, $(basename $(ALL_JS))))
 ALL_ESLINT_HTML:=$(addprefix out/,$(addsuffix .eslint_html, $(basename $(ALL_HTML))))
@@ -72,6 +74,14 @@ ifeq ($(DO_VALIDATEHTML),1)
 ALL+=$(ALL_VALIDATEHTML)
 endif # DO_VALIDATEHTML
 
+ifeq ($(DO_HTMLPYRELIST),1)
+ALL+=$(ALL_HTMLPYRELIST)
+endif # DO_HTMLPYRELIST
+
+ifeq ($(DO_JSPYRELIST),1)
+ALL+=$(ALL_JSPYRELIST)
+endif # DO_JSPYRELIST
+
 ifeq ($(DO_TIDY),1)
 ALL+=$(ALL_TIDY)
 endif # DO_TIDY
@@ -99,14 +109,6 @@ endif # DO_JSHINT
 ifeq ($(DO_STYLELINT),1)
 ALL+=$(ALL_STYLELINT)
 endif # DO_STYLELINT
-
-ifeq ($(DO_HTMLPYRELIST),1)
-ALL+=$(ALL_HTMLPYRELIST)
-endif # DO_HTMLPYRELIST
-
-ifeq ($(DO_JSPYRELIST),1)
-ALL+=$(ALL_JSPYRELIST)
-endif # DO_JSPYRELIST
 
 # dependency on the makefile itself
 ifeq ($(DO_ALLDEP),1)
@@ -161,9 +163,9 @@ debug:
 	$(info ALL_JS is $(ALL_JS))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
 	$(info ALL_HTMLLINT is $(ALL_HTMLLINT))
+	$(info ALL_VADLIDATEHTML is $(ALL_VADLIDATEHTML))
 	$(info ALL_HTMLPYRELIST is $(ALL_HTMLPYRELIST))
 	$(info ALL_JSPYRELIST is $(ALL_JSPYRELIST))
-	$(info ALL_VADLIDATEHTML is $(ALL_VADLIDATEHTML))
 	$(info ALL_TIDY is $(ALL_TIDY))
 	$(info ALL_ESLINT_JS is $(ALL_ESLINT_JS))
 	$(info ALL_ESLINT_HTML is $(ALL_ESLINT_HTML))
@@ -179,16 +181,16 @@ clean_hard:
 	$(info doing [$@])
 	$(Q)git clean -qffxd
 
-.PHONY: all_htmlpyrelist
-all_htmlpyrelist: $(ALL_HTMLPYRELIST)
-.PHONY: all_jspyrelist
-all_jspyrelist: $(ALL_JSPYRELIST)
 .PHONY: all_htmlhint
 all_htmlhint: $(ALL_HTMLHINT)
 .PHONY: all_htmllint
 all_htmllint: $(ALL_HTMLLINT)
 .PHONY: all_validatehtml
 all_validatehtml: $(ALL_VALIDATEHTML)
+.PHONY: all_htmlpyrelist
+all_htmlpyrelist: $(ALL_HTMLPYRELIST)
+.PHONY: all_jspyrelist
+all_jspyrelist: $(ALL_JSPYRELIST)
 .PHONY: all_tidy
 all_tidy: $(ALL_TIDY)
 .PHONY: all_eslint_js
@@ -207,14 +209,6 @@ all_stylelint: $(ALL_STYLELINT)
 ############
 # patterns #
 ############
-$(ALL_HTMLPYRELIST): out/%.htmlpyrelist: %.html support/pyrelist.json
-	$(info doing [$@])
-	$(Q)pyrelist match --patterns=support/pyrelist.json $<
-	$(Q)pymakehelper touch_mkdir $@
-$(ALL_JSPYRELIST): out/%.jspyrelist: %.js support/pyrelist.json
-	$(info doing [$@])
-	$(Q)pyrelist match --patterns=support/pyrelist.json $<
-	$(Q)pymakehelper touch_mkdir $@
 $(ALL_HTMLHINT): out/%.htmlhint: %.html scripts/run_with_ignore.py .htmlhintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLHINT node_modules/.bin/htmlhint $<
@@ -226,6 +220,14 @@ $(ALL_HTMLLINT): out/%.htmllint: %.html scripts/run_with_ignore.py .htmllintrc
 $(ALL_VALIDATEHTML): out/%.vhtml: %.html scripts/run_validate_html.py
 	$(info doing [$@])
 	$(Q)scripts/run_validate_html.py $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_HTMLPYRELIST): out/%.htmlpyrelist: %.html support/pyrelist.json
+	$(info doing [$@])
+	$(Q)pyrelist match --patterns=support/pyrelist.json $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_JSPYRELIST): out/%.jspyrelist: %.js support/pyrelist.json
+	$(info doing [$@])
+	$(Q)pyrelist match --patterns=support/pyrelist.json $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py .tidy.config
 	$(info doing [$@])

@@ -17,7 +17,7 @@ function init() {
 	txtUserName = document.getElementById("user_name");
 	txtMessageTo = document.getElementById("messageTo");
 	cbPrivate = document.getElementById("private");
-	divChatMessages = document.getElementById("chat_messages");
+	divChatMessages = document.getElementById("chat-messagess");
 	divStatus = document.getElementById("status");
 	var url = "ws://localhost:8787/Chat";
 	var browserInfo = getBrowserInfo();

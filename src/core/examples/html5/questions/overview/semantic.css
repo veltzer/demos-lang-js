@@ -14,6 +14,13 @@ header {
 	text-align:center;
 }
 
+h2 {
+	font-size: 24px;
+	margin: 0;
+	text-align:center;
+	color: #fa2542;
+}
+
 header h2 {
 	margin: 0;
 }
@@ -21,13 +28,6 @@ header h2 {
 h1 {
 	font-size: 72px;
 	margin: 0;
-}
-
-h2 {
-	font-size: 24px;
-	margin: 0;
-	text-align:center;
-	color: #fa2542;
 }
 
 h3 {
@@ -43,10 +43,6 @@ h3 {
 	background-color: #fff;
 	box-shadow: 2px 2px 20px #888;
 	transform: rotate(-45deg);
-	box-shadow: 2px 2px 20px #888;
-	transform: rotate(-45deg);
-	box-shadow: 2px 2px 20px #888;
-	transform: rotate(-45deg);
 	position: absolute;
 	padding: 0 150px;
 	bottom: 100px;
@@ -58,6 +54,14 @@ nav {
 	display:block;
 	width:25%;
 	float:left;
+}
+
+a {
+	color: #fa2542;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 nav a:link, nav a:visited {
@@ -91,36 +95,30 @@ article {
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 20px #888;
-	transform: rotate(15deg);
-	box-shadow: 2px 2px 20px #888;
-	transform: rotate(15deg);
 	box-shadow: 2px 2px 20px #888;
 	transform: rotate(15deg);
 }
 
-.rotate_left {
-	box-shadow: 2px 2px 20px #888;
-	transform: rotate(-15deg);
-	box-shadow: 2px 2px 20px #888;
-	transform: rotate(-15deg);
+.rotate-left {
 	box-shadow: 2px 2px 20px #888;
 	transform: rotate(-15deg);
 }
 
 article header {
 	border-radius: 10px;
-	border-radius: 10px;
-	border-radius: 10px;
 	padding: 5px;
 }
 
+footer {
+	clear:both;
+	display:block;
+	background-color:#fa2542;
+	color:#fff;
+	text-align:center;
+	padding:25px;
+}
+
 article footer {
-	border-radius: 10px;
-	border-radius: 10px;
 	border-radius: 10px;
 	padding: 5px;
 }
@@ -149,23 +147,6 @@ aside p {
 	font-style:italic;
 }
 
-footer {
-	clear:both;
-	display:block;
-	background-color:#fa2542;
-	color:#fff;
-	text-align:center;
-	padding:25px;
-}
-
 footer h2 { font-size: 14px;
 	color: #fff;
-}
-
-a {
-	color: #fa2542;
-}
-
-a:hover {
-	text-decoration: underline;
 }
