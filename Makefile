@@ -100,6 +100,14 @@ ifeq ($(DO_STYLELINT),1)
 ALL+=$(ALL_STYLELINT)
 endif # DO_STYLELINT
 
+ifeq ($(DO_HTMLPYRELIST),1)
+ALL+=$(ALL_HTMLPYRELIST)
+endif # DO_HTMLPYRELIST
+
+ifeq ($(DO_JSPYRELIST),1)
+ALL+=$(ALL_JSPYRELIST)
+endif # DO_JSPYRELIST
+
 # dependency on the makefile itself
 ifeq ($(DO_ALLDEP),1)
 .EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
