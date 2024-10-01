@@ -17,8 +17,8 @@ chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gi
 
 ## Number of examples
 
-Currently there are 553 examples in this repo.
-151 javascript files.
+Currently there are 550 examples in this repo.
+148 javascript files.
 402 HTML files.
 
 Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
