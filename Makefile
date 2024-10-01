@@ -9,6 +9,10 @@ DO_ALLDEP:=1
 DO_HTMLHINT:=1
 # do you want to do htmllint?
 DO_HTMLLINT:=1
+# do you want to do htmlpyrelist?
+DO_HTMLPYRELIST:=1
+# do you want to do jspyrelist?
+DO_JSPYRELIST:=1
 # do you want to do validate_html
 DO_VALIDATEHTML:=1
 # do you want to use tidy to check HTML files?
@@ -23,8 +27,6 @@ DO_STANDARD:=0
 DO_JSLINT:=0
 # do you want to do jshint?
 DO_JSHINT:=0
-# do you want to check html with simple makefile rules?
-DO_CHECK_HTML:=1
 # do you want to lint css?
 DO_STYLELINT:=0 # INPROGRESS
 
@@ -36,6 +38,8 @@ ALL_HTML:=$(shell find src -type f -and -name "*.html")
 ALL_HTML_FRAG:=$(shell find src -type f -and -name "*.html_frag")
 ALL_JS:=$(shell find src -type f -and -name "*.js")
 ALL_CSS:=$(shell find src -type f -and -name "*.css")
+ALL_HTMLPYRELIST:=$(addprefix out/,$(addsuffix .htmlpyrelist, $(basename $(ALL_HTML))))
+ALL_JSPYRELIST:=$(addprefix out/,$(addsuffix .jspyrelist, $(basename $(ALL_JS))))
 ALL_HTMLHINT:=$(addprefix out/,$(addsuffix .htmlhint, $(basename $(ALL_HTML))))
 ALL_HTMLLINT:=$(addprefix out/,$(addsuffix .htmllint, $(basename $(ALL_HTML))))
 ALL_VALIDATEHTML:=$(addprefix out/,$(addsuffix .vhtml, $(basename $(ALL_HTML))))
@@ -96,10 +100,6 @@ ifeq ($(DO_STYLELINT),1)
 ALL+=$(ALL_STYLELINT)
 endif # DO_STYLELINT
 
-ifeq ($(DO_CHECK_HTML),1)
-ALL+=out/html.stamp
-endif # DO_CHECK_HTML
-
 # dependency on the makefile itself
 ifeq ($(DO_ALLDEP),1)
 .EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
@@ -153,6 +153,8 @@ debug:
 	$(info ALL_JS is $(ALL_JS))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
 	$(info ALL_HTMLLINT is $(ALL_HTMLLINT))
+	$(info ALL_HTMLPYRELIST is $(ALL_HTMLPYRELIST))
+	$(info ALL_JSPYRELIST is $(ALL_JSPYRELIST))
 	$(info ALL_VADLIDATEHTML is $(ALL_VADLIDATEHTML))
 	$(info ALL_TIDY is $(ALL_TIDY))
 	$(info ALL_ESLINT_JS is $(ALL_ESLINT_JS))
@@ -168,13 +170,11 @@ clean:
 clean_hard:
 	$(info doing [$@])
 	$(Q)git clean -qffxd
-out/html.stamp: $(ALL_HTML)
-	$(info doing [$@])
-	$(Q)pymakehelper error_on_print git grep -l "'" -- "src/**/*.html" "src/**/*.js"
-	$(Q)pymakehelper error_on_print git grep -l " $$" -- "src/**/*.html" "src/**/*.js"
-	$(Q)pymakehelper error_on_print git grep -l "  " -- "src/**/*.html" "src/**/*.js"
-	$(Q)pymakehelper touch_mkdir $@
 
+.PHONY: all_htmlpyrelist
+all_htmlpyrelist: $(ALL_HTMLPYRELIST)
+.PHONY: all_jspyrelist
+all_jspyrelist: $(ALL_JSPYRELIST)
 .PHONY: all_htmlhint
 all_htmlhint: $(ALL_HTMLHINT)
 .PHONY: all_htmllint
@@ -199,6 +199,14 @@ all_stylelint: $(ALL_STYLELINT)
 ############
 # patterns #
 ############
+$(ALL_HTMLPYRELIST): out/%.htmlpyrelist: %.html support/pyrelist.json
+	$(info doing [$@])
+	$(Q)pyrelist match --patterns=support/pyrelist.json $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_JSPYRELIST): out/%.jspyrelist: %.js support/pyrelist.json
+	$(info doing [$@])
+	$(Q)pyrelist match --patterns=support/pyrelist.json $<
+	$(Q)pymakehelper touch_mkdir $@
 $(ALL_HTMLHINT): out/%.htmlhint: %.html scripts/run_with_ignore.py .htmlhintrc
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLHINT node_modules/.bin/htmlhint $<
