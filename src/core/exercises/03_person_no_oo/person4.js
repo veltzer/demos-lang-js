@@ -24,7 +24,7 @@ createPerson.printSelf = function () {
 }
 createPerson.toString = function () {
 	let s = ""
-	for (const key in this) {
+	for (key in this) {
 		if (typeof (this[key]) !== "function") {
 			s += key + ": " + this[key] + "\n"
 		}
@@ -33,7 +33,7 @@ createPerson.toString = function () {
 }
 
 // This is the client code
-const p1 = createPerson("Bilbo", 111)
-const p2 = createPerson("Frodo", 33)
+p1 = createPerson("Bilbo", 111)
+p2 = createPerson("Frodo", 33)
 console.log("" + p1)
 console.log("" + p2)

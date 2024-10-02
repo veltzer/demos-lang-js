@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const person1 = {
+person1 = {
 	name: "Bilbo",
 	age: 111,
 	getName: function () {
@@ -15,7 +15,7 @@ const person1 = {
 		console.log(this.getFullName())
 	}
 }
-const person2 = {
+person2 = {
 	name: "Frodo",
 	age: 33,
 	getName: function () {

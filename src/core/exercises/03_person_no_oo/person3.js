@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-const g_getName = function () {
+g_getName = function () {
 	return this.name
 }
-const g_setName = function (iname) {
+g_setName = function (iname) {
 	this.name = iname
 }
-const g_getFullName = function () {
+g_getFullName = function () {
 	return this.name + " " + this.age
 }
-const g_printSelf = function () {
+g_printSelf = function () {
 	console.log(this.getFullName())
 }
 
@@ -22,7 +22,7 @@ function createPerson (iname, iage) {
 		printSelf: g_printSelf
 	}
 }
-const p1 = createPerson("Bilbo", 111)
-const p2 = createPerson("Frodo", 33)
+p1 = createPerson("Bilbo", 111)
+p2 = createPerson("Frodo", 33)
 p1.printSelf()
 p2.printSelf()

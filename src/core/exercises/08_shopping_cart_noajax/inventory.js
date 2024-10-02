@@ -52,10 +52,10 @@ Inventory.prototype.verifyItemInInventory = function (id) {
 }
 Inventory.prototype.load = function (url) {
 	// for closure
-	const inventory = this
+	inventory = this
 	jsonGet(url, function (data) {
-		for (const id in data) {
-			const ii = data[id]
+		for (id in data) {
+			ii = data[id]
 			inventory.addProduct(new InventoryItem(id, ii.name, parseInt(ii.price, 10), parseInt(ii.storage, 10)))
 			// uglier!!
 			// Inventory.getInstance().addProduct(new InventoryItem(id,ii.name,parseInt(ii.price),parseInt(ii.storage)));
@@ -64,27 +64,27 @@ Inventory.prototype.load = function (url) {
 }
 Inventory.prototype.verifyEnoughItems = function (id, amount) {
 	this.verifyItemInInventory(id)
-	const item = this.itemMap[id]
+	item = this.itemMap[id]
 	item.verifyStorage(amount)
 }
 Inventory.prototype.changeStorage = function (id, storage) {
 	this.verifyItemInInventory(id)
-	const item = this.itemMap[id]
+	item = this.itemMap[id]
 	item.changeStorage(storage)
 }
 Inventory.prototype.createRow = function (id) {
-	const item = this.itemMap[id]
-	const row = document.createElement("tr")
-	const cell1 = document.createElement("td")
-	const cell2 = document.createElement("td")
-	const cell3 = document.createElement("td")
-	const cell4 = document.createElement("td")
-	const cell5 = document.createElement("td")
-	const inner1 = document.createTextNode(item.id)
-	const inner2 = document.createTextNode(item.name)
-	const inner3 = document.createTextNode(item.price)
-	const inner4 = document.createTextNode(item.storage)
-	const inner5 = document.createElement("button")
+	item = this.itemMap[id]
+	row = document.createElement("tr")
+	cell1 = document.createElement("td")
+	cell2 = document.createElement("td")
+	cell3 = document.createElement("td")
+	cell4 = document.createElement("td")
+	cell5 = document.createElement("td")
+	inner1 = document.createTextNode(item.id)
+	inner2 = document.createTextNode(item.name)
+	inner3 = document.createTextNode(item.price)
+	inner4 = document.createTextNode(item.storage)
+	inner5 = document.createElement("button")
 	inner5.onclick = (function (iid) {
 		return function () {
 			Cart.getInstance().buyItemById(iid, 1)
@@ -108,7 +108,7 @@ Inventory.prototype.createRow = function (id) {
 	row.appendChild(cell3)
 	row.appendChild(cell4)
 	row.appendChild(cell5)
-	const table = document.getElementById(this.tbid)
+	table = document.getElementById(this.tbid)
 	table.appendChild(row)
 	item.domStorage = inner4
 	item.domBuyButton = inner5

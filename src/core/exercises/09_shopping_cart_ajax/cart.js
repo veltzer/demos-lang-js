@@ -19,7 +19,7 @@ Cart.prototype.setTotalid = function (totalid) {
 	this.updateTotal()
 }
 Cart.prototype.buyItemById = function (id, amount) {
-	const i = Inventory.getInstance()
+	i = Inventory.getInstance()
 	i.verifyEnoughItems(id, amount)
 	if (id in this.buyMap) {
 		// already have item in cart
@@ -39,10 +39,10 @@ Cart.prototype.verifyBuyingItem = function (id) {
 	}
 }
 Cart.prototype.sellItemById = function (id, amount) {
-	const i = Inventory.getInstance()
+	i = Inventory.getInstance()
 	i.verifyItemInInventory(id)
 	this.verifyBuyingItem(id)
-	const amountInCart = this.buyMap[id]
+	amountInCart = this.buyMap[id]
 	if (amountInCart < amount) {
 		throw new Error("too many items sold " + amount)
 	}
@@ -58,26 +58,26 @@ Cart.prototype.sellItemById = function (id, amount) {
 	this.updateTotal()
 }
 Cart.prototype.cartPrice = function () {
-	const i = Inventory.getInstance()
+	i = Inventory.getInstance()
 	let sum = 0
-	for (const id in this.buyMap) {
+	for (id in this.buyMap) {
 		sum += i.getItemById(id).price * this.buyMap[id]
 	}
 	return sum
 }
 Cart.prototype.createRow = function (id) {
-	const row = document.createElement("tr")
-	const cell1 = document.createElement("td")
-	const cell2 = document.createElement("td")
-	const cell3 = document.createElement("button")
+	row = document.createElement("tr")
+	cell1 = document.createElement("td")
+	cell2 = document.createElement("td")
+	cell3 = document.createElement("button")
 	cell3.onclick = (function (iid) {
 		return function () {
 			Cart.getInstance().sellItemById(iid, 1)
 		}
 	})(id)
-	const text1 = document.createTextNode(id)
-	const text2 = document.createTextNode(this.buyMap[id])
-	const text3 = document.createTextNode("-")
+	text1 = document.createTextNode(id)
+	text2 = document.createTextNode(this.buyMap[id])
+	text3 = document.createTextNode("-")
 	cell1.appendChild(text1)
 	cell2.appendChild(text2)
 	cell3.appendChild(text3)
@@ -86,11 +86,11 @@ Cart.prototype.createRow = function (id) {
 	row.appendChild(cell3)
 	this.domRowMap[id] = row
 	this.domAmountMap[id] = text2
-	const table = document.getElementById(this.tbid)
+	table = document.getElementById(this.tbid)
 	table.appendChild(row)
 }
 Cart.prototype.updateTotal = function () {
-	const span = document.getElementById(this.totalid)
+	span = document.getElementById(this.totalid)
 	span.innerHTML = this.cartPrice()
 }
 // singleton pattern

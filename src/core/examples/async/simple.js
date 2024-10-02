@@ -23,8 +23,8 @@ function more_explicit_sleep() {
 }
 function f2() {
 	console.log("f2");
-	// const p = sleep(3000);
-	const p = more_explicit_sleep();
+	// p = sleep(3000);
+	p = more_explicit_sleep();
 	p.then(() => {
 		console.log("f2-late");
 	});
