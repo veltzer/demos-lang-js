@@ -163,6 +163,7 @@ find_weird_files:
 debug:
 	$(info doing [$@])
 	$(info ALL_HTML is $(ALL_HTML))
+	$(info ALL_HTML_FRAG is $(ALL_HTML_FRAG))
 	$(info ALL_JS is $(ALL_JS))
 	$(info ALL_HTMLHINT is $(ALL_HTMLHINT))
 	$(info ALL_HTMLLINT is $(ALL_HTMLLINT))
