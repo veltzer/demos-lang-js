@@ -22,7 +22,7 @@ function handleInvalidData(evt) {
 	var field = evt.srcElement;
 	updateStatus(field.name + ": " + field.validationMessage);
 }
-				
+
 function processSubmit() {
 	/* Enter Form Validation Code here */
 	clearStatus();

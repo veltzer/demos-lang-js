@@ -18,7 +18,6 @@ function messageHandler(event) {
 	} else {
 		embeddedMessage = event.data;
 	}
-	
 	postMessage( {
 		message : "I have received an event: " + embeddedMessage,
 		timestamp : new Date()

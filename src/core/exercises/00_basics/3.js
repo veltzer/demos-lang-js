@@ -16,8 +16,7 @@ function mapping(arr, f) {
 	arr.forEach(function(e) {
 		result.push(f(e));
 	});
-	
-	return result;	
+	return result;
 }
 
 console.log(mapping([1, 2, 3, 4, 5], square_it));

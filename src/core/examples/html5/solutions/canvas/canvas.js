@@ -23,7 +23,6 @@ function processSubmit() {
 	context.lineTo(350, 50);
 	context.stroke();
 */
-	
 	drawBackGround(context, cnvMyCanvas);
 	drawGrid(context, cnvMyCanvas);
 	drawBar(context, cnvMyCanvas, 30, 270, "#ff0000");

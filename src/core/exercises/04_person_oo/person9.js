@@ -1,4 +1,4 @@
-#!/usr/bin/env node	
+#!/usr/bin/env node
 /*
 Person with Employee as child
 */

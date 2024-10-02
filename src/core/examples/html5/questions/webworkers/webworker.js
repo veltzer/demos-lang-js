@@ -25,7 +25,6 @@ function drawBar(context, relativeX, height, style) {
 	var padding = 20;
 	var bottomLine = mapCanvas.height;
 	context.clearRect(padding + relativeX - 10, bottomLine, padding + relativeX + 10, bottomLine - height);
-	
 	// Draw new bar
 	context.beginPath();
 	context.moveTo(padding + relativeX - 10, bottomLine);

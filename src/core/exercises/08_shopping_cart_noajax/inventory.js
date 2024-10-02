@@ -90,8 +90,7 @@ Inventory.prototype.createRow = function (id) {
 			Cart.getInstance().buyItemById(iid, 1)
 		}
 	})(id)
-	/*
-	 * This trick will not work...
+	/* This trick will not work...
 	function callback(e) {
 		Cart.getInstance().buyItemById(arguments.callee.id,1);
 	}

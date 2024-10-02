@@ -29,7 +29,7 @@ function processSubmit() {
 		};
 	}
 	xhr.send(null);
-	
+
 	return false; // Prevent actual form submission
 }
 

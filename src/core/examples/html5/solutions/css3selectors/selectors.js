@@ -12,7 +12,6 @@ function processSubmit() {
 	for (var counter = 0; counter < lstInputs.length; counter++) {
 		lstInputs[counter].style.background="#ff9942";
 	}
-	
 	var taComments = document.querySelector(".comments");
 	taComments.disabled = true;
 

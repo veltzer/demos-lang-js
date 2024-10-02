@@ -8,11 +8,11 @@ function init() {
 	mapCanvas = document.getElementById("map_canvas");
 	divStatus = document.getElementById("status");
 	btnPressMe = document.getElementById("press_me");
-	
+
 	btnPressMe.onclick = processSubmit;
-	
+
 	drawResults([270, 70, 135, 35, 235, 185]);
-	
+
 	if (typeof(Worker) !== "undefined") {
 		setStatus("Your browser supports Web Workers.");
 		statsWorker = new Worker("stats.js");
@@ -71,7 +71,7 @@ function drawBar(context, relativeX, height, style) {
 	var padding = 20;
 	var bottomLine = mapCanvas.height;
 	context.clearRect(padding + relativeX - 10, bottomLine, padding + relativeX + 10, bottomLine - height);
-	
+
 	// Draw new bar
 	context.beginPath();
 	context.moveTo(padding + relativeX - 10, bottomLine);

@@ -95,13 +95,13 @@ this.onload = function(event) {
 	this.checking = function(e) {
 		alert("F")
 	};
-	
-	importScript("date.js");
-	
-	divStatus = document.getElementById("status");
-	
 
-	
+	importScript("date.js");
+
+	divStatus = document.getElementById("status");
+
+
+
 	var xhrStatus = getXhr();
 	xhrStatus.onreadystatechange = function(e) {
 		if (xhrStatus.readyState == 4) {
@@ -113,7 +113,7 @@ this.onload = function(event) {
 	};
 	xhrStatus.open("GET", "status.html_frag", true);
 	xhrStatus.send(null);
-	
+
 	var xhr = getXhr();
 	xhr.onreadystatechange = function(e) {
 		if (xhr.readyState == 4) {

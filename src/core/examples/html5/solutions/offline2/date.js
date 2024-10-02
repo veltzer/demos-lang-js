@@ -2,7 +2,7 @@ var current;
 var clientDataSource;
 
 function ClientDateSource(timestamp) {
-	this.date = new Date(timestamp);	
+	this.date = new Date(timestamp);
 	this.timer = tick();
 	this.constructor = init;
 	init();

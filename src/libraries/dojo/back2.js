@@ -8,7 +8,7 @@ function sumNumbers(e) {
 
 	var w_num = dijit.byId("id_val");
 	var v_num = parseInt(w_num.attr("value"));
-	
+
 	if(v_num%2==1) {
 		// now invalidate all previous states...
 		for(i=0;i<states.length;i++) {

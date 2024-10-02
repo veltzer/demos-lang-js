@@ -5,9 +5,9 @@ function init() {
 	btnStop.onclick = stopWatchingLocation;
 	geostatus = document.getElementById("geostatus");
 	// var map = document.getElementById("map");
-	
+
 	// Insert Web Storage code here.
-	
+
 	// Only works with Gears apparently, but doesnt hurt to try
 	if (navigator.geolocation.lastPosition) {
 		updatePosition(navigator.geolocation.lastPosition);
@@ -48,7 +48,7 @@ function updatePosition(position) {
 	txtLatitude.value = position.coords.latitude;
 	txtLongitude.value = position.coords.longitude;
 	txtAccuracy.value = position.coords.accuracy;
-	
+
 	// Insert Web Storage code here.
 }
 

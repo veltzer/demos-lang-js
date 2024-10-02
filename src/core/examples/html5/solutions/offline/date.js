@@ -2,7 +2,7 @@ var current;
 var clientDataSource;
 
 function ClientDateSource(timestamp) {
-	this.date = new Date(timestamp);	
+	this.date = new Date(timestamp);
 	this.timer = tick();
 	this.constructor = init;
 	init();
@@ -19,6 +19,3 @@ function ClientDateSource(timestamp) {
 window.onload = function() {
 	current = document.getElementById("current");
 }
-
-
-

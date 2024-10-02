@@ -23,12 +23,12 @@ function init() {
 	var browserInfo = getBrowserInfo();
 	var chatUsername = browserInfo.product;
 	var password = "password";
-	
+
 	txtUserName.value = chatUsername;
 	taMessage.value = browserInfo.product + " " + browserInfo.version;
-	
+
 	users = new Array();
-	
+
 	if( jws.browserSupportsWebSockets() ) {
 		jWebSocketClient = new jws.jWebSocketJSONClient();
 		var logonResult = jWebSocketClient.logon( url, chatUsername, password, {

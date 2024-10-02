@@ -17,7 +17,7 @@ function init() {
 		}
 		displayResultsTable(results);
 	}
-	
+
 	// Only works with Gears apparently, but doesnt hurt to try
 	if (navigator.geolocation.lastPosition) {
 		updatePosition(navigator.geolocation.lastPosition);
@@ -42,7 +42,7 @@ function processSubmit() {
 	txtLatitude = document.getElementById("latitude");
 	txtLongitude = document.getElementById("longitude");
 	txtAccuracy = document.getElementById("accuracy");
-	
+
 	/*
 	navigator.geolocation.getCurrentPosition(updatePosition, errorPosition, optionsPosition);
 	*/

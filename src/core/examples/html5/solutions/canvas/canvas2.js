@@ -14,7 +14,6 @@ function processSubmit() {
 	context.lineTo(350, 50);
 	context.stroke();
 */
-	
 	drawBackGround(context, cnvMyCanvas);
 	drawGrid(context, cnvMyCanvas);
 	drawBar(context, cnvMyCanvas, 30, 270, "#ff0000");
@@ -69,8 +68,5 @@ function drawBackGround(context, canvas) {
 	context.fillStyle="#dadada";
 	context.fill();
 }
-	
 
 window.onload = init;
-
-

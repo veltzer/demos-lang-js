@@ -8,7 +8,6 @@ function init() {
 
 function processSubmit() {
 	/* Enter XHR2 Code Here */
-	
 	return false; // Prevent actual form submission
 }
 
