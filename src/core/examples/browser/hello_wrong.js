@@ -1,4 +1,3 @@
-/* jsl:ignore */
 /*
 	This shows that if you call the file.js then most browsers will not render its content correctly
 */
@@ -9,4 +8,3 @@
 		</script>
 	</head>
 </html>
-/* jsl:end */

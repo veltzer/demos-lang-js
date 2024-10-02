@@ -1,4 +1,3 @@
-/*jsl:import complete.js*/
 function AutoComplete(id_for_append,name,submitName,list,errorMsg) {
 	this.id_for_append=id_for_append;
 	this.name=name;

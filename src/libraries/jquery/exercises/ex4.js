@@ -1,4 +1,3 @@
-/*jsl:import postoffice.js*/
 /*
 here starts the paginated table...
 

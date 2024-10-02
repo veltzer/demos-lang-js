@@ -1,5 +1,3 @@
-/*jsl:import ajax.js*/
-/*jsl:import cart.js*/
 import { Cart } from "cart.js";
 import jsonGet from "ajax.js";
 function InventoryItem(id,name,price,storage) {

@@ -1,5 +1,3 @@
-/* jsl:import inventory.js */
-/* jsl:import cart.js */
 /* import { Cart } from "cart.js" */
 /* import { Inventory, InventoryItem } from "inventory.js" */
 /*global Inventory,InventoryItem,Cart*/

@@ -1,5 +1,3 @@
-/* jsl:import cart.js */
-/* jsl:import inventory.js */
 /* global Inventory */
 /* global InventoryItem */
 /* global Cart */

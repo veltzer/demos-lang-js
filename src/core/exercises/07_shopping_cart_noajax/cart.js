@@ -1,4 +1,3 @@
-/*jsl:import inventory.js*/
 /*global Inventory*/
 // cart object
 function Cart() {

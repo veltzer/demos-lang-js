@@ -128,10 +128,6 @@ endif # DO_ALLDEP
 .PHONY: all
 all: $(ALL)
 	@true
-.PHONY: check_jsl
-check_jsl:
-	$(info doing [$@])
-	$(Q)tools/jsl/jsl --conf=support/jsl.conf --quiet --nologo --nosummary --nofilelisting $(ALL_HTML) $(ALL_JS)
 .PHONY: check_eslint
 check_eslint:
 	$(info doing [$@])

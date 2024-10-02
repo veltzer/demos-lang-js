@@ -1,5 +1,3 @@
-/* jsl:import cart.js */
-/* jsl:import ajax.js */
 /* global jsonGet,Cart */
 function InventoryItem (id, name, price, storage) {
 	this.id = id

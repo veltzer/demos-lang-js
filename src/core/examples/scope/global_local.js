@@ -2,7 +2,6 @@
 /*
 	Exploration of global and local variable interaction in JavaScript.
 */
-/*jsl:ignore*/
 var i=7;
 console.log(i);
 function do_something() {
@@ -16,4 +15,3 @@ function do_something() {
 }
 do_something();
 console.log(i);
-/*jsl:end*/
