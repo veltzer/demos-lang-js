@@ -18,4 +18,4 @@ function ClientDateSource(timestamp) {
 
 window.onload = function() {
 	current = document.getElementById("current");
-}
+};

@@ -1,5 +1,5 @@
 var first=true;
-var id=undefined;
+var id; // initialize to undefined by default
 // this next line causes an exception even though chrome has a console tab
 // in its debugger...
 //console.log("hello");

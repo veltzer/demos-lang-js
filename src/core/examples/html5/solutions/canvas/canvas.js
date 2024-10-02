@@ -45,7 +45,7 @@ function processSubmit() {
 	smiley.src = "BigSmiley.jpg";
 	smiley.onload = function() {
 		context.drawImage(smiley, 400, 100, 50, 50);
-	}
+	};
 
 	return false; // Prevent actual form submission
 }

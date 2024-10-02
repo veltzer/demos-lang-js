@@ -7,10 +7,10 @@ function PaginatedTable(options) {
 	this.create_buttons=options.create_buttons || 1;
 	this.id=options.id;
 	this.tab=$("<table>").addClass("PaginatedTable");
-	this.data=new Array();
+	this.data=[];
 	for(var i=0;i<this.rows;i++) {
 		var tr=$("<tr>").addClass("PaginatedRows");
-		this.data[i]=new Array();
+		this.data[i]=[];
 		for(var j=0;j<this.cols;j++) {
 			var td=$("<td>").addClass("PaginatedTableCells");
 			if(i%2===0) {

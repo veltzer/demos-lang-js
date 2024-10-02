@@ -20,24 +20,23 @@ var data=[
 		"price":"1.99",
 		"storage":"10"
 	}
-]
+];
 
-var mypage=" \
-<html>\
-	<head>\
-		<script src=\"Model.js\"></script>\
-		<script src=\"View.js\"></script>\
-		<script src=\"TableView.js\"></script>\
-		<script src=\"onload.js\"></script>\
-	</head>\
-	<body>\
-		Store is:\
-		<div id=\"store\"/>\
-		Shopping cart is:\
-		<div id=\"cart\"/>\
-	</body>\
-</html>\
-"
+var mypage=`<html>
+	<head>
+		<script src="Model.js"></script>
+		<script src="View.js"></script>
+		<script src="TableView.js"></script>
+		<script src="onload.js"></script>
+	</head>
+	<body>
+		Store is:
+		<div id="store"/>
+		Shopping cart is:
+		<div id="cart"/>
+	</body>
+</html>
+`;
 
 http.createServer(
 	function (request, response) {
@@ -50,7 +49,7 @@ http.createServer(
 			case "/data":
 				response.writeHead(200, {"Content-Type": "text/plain"});
 				for(var i=0;i<data.length;i++) {
-					data[i]["price"]=""+Math.floor(Math.random()*30)
+					data[i].price=""+Math.floor(Math.random()*30);
 				}
 				response.end(JSON.stringify(data));
 				break;

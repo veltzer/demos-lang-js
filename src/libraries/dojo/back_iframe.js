@@ -23,7 +23,7 @@ MyState.prototype.restoreState=function() {
 	} else {
 		frm.src=this.p_url;
 	}
-}
+};
 MyState.prototype.back=MyState.prototype.restoreState;
 MyState.prototype.forward=MyState.prototype.restoreState;
 // global to hold the iframe...
@@ -39,7 +39,7 @@ function myinit() {
 			//window.location.href="http://www.sourceforge.net";
 		}
 		mybool=true;
-	}
+	};
 	var s=new MyState("http://www.gnu.org");
 	dojo.back.setInitialState(s);
 	s.restoreState();

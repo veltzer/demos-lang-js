@@ -43,14 +43,14 @@ MyState.prototype.restoreState=function() {
 	} else {
 		alert("you can not go back to this state");
 	}
-}
+};
 MyState.prototype.back=MyState.prototype.restoreState;
 MyState.prototype.forward=MyState.prototype.restoreState;
 MyState.prototype.backButton=MyState.prototype.restoreState;
 MyState.prototype.forwardButton=MyState.prototype.restoreState;
 MyState.prototype.invalidate=function() {
 	this.valid=false;
-}
+};
 function myinit() {
 	var s=new MyState(0,0);
 	dojo.back.setInitialState(s);

@@ -7,7 +7,7 @@ function plusOneOf(myFirstArgument) {
 	myFirstArgment=myFirstArgument+1;
 	return myFirstArgument;
 }
-console.log(plusOneOf(5))
-console.log(myFirstArgment)
-console.log(plusOneOf(6))
-console.log(myFirstArgment)
+console.log(plusOneOf(5));
+console.log(myFirstArgment);
+console.log(plusOneOf(6));
+console.log(myFirstArgment);

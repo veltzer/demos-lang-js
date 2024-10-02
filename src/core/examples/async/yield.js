@@ -8,7 +8,7 @@ async function* foo() {
 }
 
 (async function () {
-	for await (num of foo()) {
+	for await (var num of foo()) {
 		console.log(num);
 		//break;
 	}

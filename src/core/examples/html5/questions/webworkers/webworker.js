@@ -61,7 +61,7 @@ function drawGrid(canvas, gridSize) {
 }
 
 function getBrowserInfo() { // eslint-disable-line no-unused-vars
-	var browserInfo = new Object();
+	var browserInfo = {};
 	var agent = navigator.userAgent;
 	if (agent.match(/Chrome/)) {
 		browserInfo.product = "Chrome";

@@ -50,7 +50,7 @@ function drawStonePath(context) {
 		context.moveTo(200, 350);
 		context.lineTo(600, 350);
 		context.stroke();
-	}
+	};
 
 	context.closePath();
 	context.restore();

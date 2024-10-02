@@ -27,7 +27,7 @@ function init() {
 	txtUserName.value = chatUsername;
 	taMessage.value = browserInfo.product + " " + browserInfo.version;
 
-	users = new Array();
+	users = [];
 
 	if( jws.browserSupportsWebSockets() ) {
 		jWebSocketClient = new jws.jWebSocketJSONClient();
@@ -78,7 +78,7 @@ function processMessage(wsEvent, wsToken) {
 		} else if (wsToken.name && wsToken.name == "disconnect") {
 			setStatus(users[wsToken.sourceId] + " has disconnected.");
 		} else {
-			setStatus("No user found!")
+			setStatus("No user found!");
 			addStatus("Token: " + JSON.stringify(wsToken));
 		}
 	}
@@ -106,7 +106,7 @@ function processSubmit() {
 		messageType: "chatMessage"
 	};
 	messageToken.message = message;
-	messageToken.user = new Object();
+	messageToken.user = {};
 	messageToken.user.user_name = user_name;
 
 	if (cbPrivate.checked) {
@@ -115,8 +115,8 @@ function processSubmit() {
 	} else {
 		jWebSocketClient.broadcastToken( messageToken, {
 			OnResponse: function( responseToken ) {
-				setStatus("Server responded: " + "vendor: " + responseToken.vendor
-					+ ", version: " + responseToken.version
+				setStatus("Server responded: " + "vendor: " + responseToken.vendor +
+					", version: " + responseToken.version
 				);
 				processMessage(null, responseToken);
 			}
@@ -127,7 +127,7 @@ function processSubmit() {
 }
 
 function getBrowserInfo() {
-	var browserInfo = new Object();
+	var browserInfo = {};
 	var agent = navigator.userAgent;
 	if (agent.match(/Chrome/)) {
 		browserInfo.product = "Chrome";

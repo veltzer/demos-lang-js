@@ -108,7 +108,7 @@ function drawGrid(canvas, gridSize) {
 }
 
 function getBrowserInfo() {
-	var browserInfo = new Object();
+	var browserInfo = {};
 	var agent = navigator.userAgent;
 	if (agent.match(/Chrome/)) {
 		browserInfo.product = "Chrome";

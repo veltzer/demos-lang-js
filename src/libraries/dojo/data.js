@@ -9,7 +9,7 @@ function initialization() {
 	getData();
 }
 function getData() {
-	store.fetch({ start: startPoint , count: 3, onComplete: showCurrent})
+	store.fetch({ start: startPoint , count: 3, onComplete: showCurrent});
 }
 dojo.addOnLoad(initialization);
 

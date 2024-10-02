@@ -29,7 +29,7 @@ DO_STANDARD:=0
 # do you want to do jslint?
 DO_JSLINT:=0
 # do you want to do jshint?
-DO_JSHINT:=0
+DO_JSHINT:=1
 # do you want to lint css?
 DO_STYLELINT:=1
 
@@ -216,11 +216,11 @@ all_stylelint: $(ALL_STYLELINT)
 ############
 # patterns #
 ############
-$(ALL_HTMLHINT): out/%.htmlhint: %.html scripts/run_with_ignore.py .htmlhintrc
+$(ALL_HTMLHINT): out/%.htmlhint: %.html .htmlhintrc scripts/run_with_ignore.py
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLHINT node_modules/.bin/htmlhint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_HTMLLINT): out/%.htmllint: %.html scripts/run_with_ignore.py .htmllintrc
+$(ALL_HTMLLINT): out/%.htmllint: %.html .htmllintrc scripts/run_with_ignore.py
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLLINT node_modules/.bin/htmllint $<
 	$(Q)pymakehelper touch_mkdir $@
@@ -260,9 +260,9 @@ $(ALL_JSLINT): out/%.jslint: %.js
 	$(info doing [$@])
 	$(Q)node_modules/.bin/jslint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_JSHINT): out/%.jshint: %.js
+$(ALL_JSHINT): out/%.jshint: %.js .jshintrc scripts/run_with_ignore.py
 	$(info doing [$@])
-	$(Q)node_modules/.bin/jshint $<
+	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOJSHINT node_modules/.bin/jshint $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_STYLELINT): out/%.stylelint: %.css
 	$(info doing [$@])

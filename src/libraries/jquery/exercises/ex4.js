@@ -27,15 +27,15 @@ function PaginatedTable(options) {
 	this.id=options.id;
 	this.tab=$("<table>");
 	this.tab.addClass("PaginatedTable");
-	this.data=new Array();
+	this.data=[];
 	for(var i=0;i<this.rows;i++) {
 		var tr=$("<tr>");
 		tr.attr("rowNumber",i);
-		tr.click(function() {
+		tr.click(function() { // jshint ignore:line
 			PostOffice.getInstance().publish("/rowClicked",[$(this).attr("rowNumber")]);
 		});
 		tr.addClass("PaginatedRows");
-		this.data[i]=new Array();
+		this.data[i]=[];
 		for(var j=0;j<this.cols;j++) {
 			var td=$("<td>");
 			td.addClass("PaginatedTableCells");
@@ -49,7 +49,7 @@ function PaginatedTable(options) {
 			}
 			td.attr("rowNumber",i);
 			td.attr("colNumber",j);
-			td.click(function() {
+			td.click(function() { // jshint ignore:line
 				PostOffice.getInstance().publish("/cellClicked",[$(this).attr("rowNumber"),$(this).attr("colNumber")]);
 			});
 			this.data[i][j]=td;
@@ -57,9 +57,11 @@ function PaginatedTable(options) {
 		}
 		this.tab.append(tr);
 	}
+	var prev;
+	var next;
 	if(this.create_buttons) {
-		var prev=$("<button>");
-		var next=$("<button>");
+		prev=$("<button>");
+		next=$("<button>");
 		prev.text("prev");
 		next.text("next");
 		var my_object=this;

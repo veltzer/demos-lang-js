@@ -5,9 +5,9 @@
 */
 function doWork(obj,name) {
 	console.log("analysis of "+name);
-	obj["one"]="First";
-	obj["two"]="Second";
-	obj["three"]="Third";
+	obj.one="First";
+	obj["two"]="Second"; // jshint ignore:line
+	obj.three="Third";
 	console.log(typeof(obj));
 	// length does not tell you how many elements the associative array has
 	console.log(obj.length);
@@ -17,5 +17,5 @@ function doWork(obj,name) {
 }
 doWork([],"[]");
 doWork({},"{}");
-doWork(new Object(),"new Object()");
-doWork(Object(),"Object()");
+doWork(new Object(),"new Object()"); // jshint ignore:line
+doWork(Object(),"Object()"); // jshint ignore:line

@@ -15,7 +15,7 @@ function sendMessage() {
 	if (typeof window.postMessage === "undefined") {
 		alert("XDM is not supported on this browser!");
 	} else {
-		var msg = new Object();
+		var msg = {};
 		msg.messageId = 1234;
 		msg.messageType = "Ack";
 		msg.message = "Acknowledged Order";

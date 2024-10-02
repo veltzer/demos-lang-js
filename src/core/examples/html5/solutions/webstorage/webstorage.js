@@ -12,7 +12,7 @@ function init() {
 		} catch (e) {
 		}
 		if (mapData == "undefined" || mapData == null) {
-			mapData = new Array();
+			mapData = [];
 			window.localStorage.setItem("mapData", JSON.stringify(mapData));
 		}
 		displayResultsTable(results);

@@ -7,7 +7,7 @@ window.onload=function() {
 		"name",
 		"price",
 		"storage"
-	])
+	]);
 	m.addRow({
 		"id": "14",
 		"name":"Bicycle",
@@ -27,5 +27,5 @@ window.onload=function() {
 		"storage":"10"
 	});
 	var v=new TableView(m,"store");
-	v.create()
+	v.create();
 };

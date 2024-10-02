@@ -93,7 +93,7 @@ this.onload = function(_event) {
 	addEventListener("checking", cacheChecking, true);
 	addEventListener("updateready", cacheUpdateReady, true);
 	this.checking = function(_e) {
-		alert("F")
+		alert("F");
 	};
 
 	importScript("date.js");
@@ -119,7 +119,7 @@ this.onload = function(_event) {
 	};
 	xhr.open("GET", "date.jsp", true);
 	xhr.send(null);
-}
+};
 
 function cacheUpdateReady(_event) {
 	divStatus.innerHTML += "Update Ready...";

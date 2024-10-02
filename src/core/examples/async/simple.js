@@ -32,7 +32,7 @@ function f2() {
 async function f3() {
 	console.log("f3");
 	await sleep(3000);
-	console.log("f3-after")
+	console.log("f3-after");
 }
 function f4() {
 	f3().then((v) => { console.log("foo"+v); });
@@ -45,8 +45,8 @@ async function double_sleep() {
 function f5() {
 	double_sleep().then(() => { console.log("bar"); });
 }
-f1()
-f2()
-f3()
-f4()
-f5()
+f1();
+f2();
+f3();
+f4();
+f5();
