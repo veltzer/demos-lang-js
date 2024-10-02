@@ -1,0 +1,6 @@
+We are using the following linters in order of importance:
+eslint
+jshint
+jslint
+
+we used to use jsl but it's considerd old.

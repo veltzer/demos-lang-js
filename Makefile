@@ -29,7 +29,7 @@ DO_STANDARD:=0
 # do you want to do jslint?
 DO_JSLINT:=0
 # do you want to do jshint?
-DO_JSHINT:=0 # INPROGRESS
+DO_JSHINT:=0
 # do you want to lint css?
 DO_STYLELINT:=1
 
