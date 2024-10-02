@@ -16,6 +16,8 @@ DO_VALIDATEHTML:=1
 DO_HTMLPYRELIST:=1
 # do you want to do jspyrelist?
 DO_JSPYRELIST:=1
+# do you want to do csspyrelist?
+DO_CSSPYRELIST:=1
 # do you want to use tidy to check HTML files?
 DO_TIDY:=1
 # do you want to do eslint on javascript files?
@@ -45,6 +47,7 @@ ALL_HTMLLINT:=$(addprefix out/,$(addsuffix .htmllint, $(basename $(ALL_HTML))))
 ALL_VALIDATEHTML:=$(addprefix out/,$(addsuffix .vhtml, $(basename $(ALL_HTML))))
 ALL_HTMLPYRELIST:=$(addprefix out/,$(addsuffix .htmlpyrelist, $(basename $(ALL_HTML))))
 ALL_JSPYRELIST:=$(addprefix out/,$(addsuffix .jspyrelist, $(basename $(ALL_JS))))
+ALL_CSSPYRELIST:=$(addprefix out/,$(addsuffix .csspyrelist, $(basename $(ALL_CSS))))
 ALL_TIDY:=$(addprefix out/,$(addsuffix .tidy, $(basename $(ALL_HTML))))
 ALL_ESLINT_JS:=$(addprefix out/,$(addsuffix .eslint_js, $(basename $(ALL_JS))))
 ALL_ESLINT_HTML:=$(addprefix out/,$(addsuffix .eslint_html, $(basename $(ALL_HTML))))
@@ -81,6 +84,10 @@ endif # DO_HTMLPYRELIST
 ifeq ($(DO_JSPYRELIST),1)
 ALL+=$(ALL_JSPYRELIST)
 endif # DO_JSPYRELIST
+
+ifeq ($(DO_CSSPYRELIST),1)
+ALL+=$(ALL_CSSPYRELIST)
+endif # DO_CSSPYRELIST
 
 ifeq ($(DO_TIDY),1)
 ALL+=$(ALL_TIDY)
@@ -166,6 +173,7 @@ debug:
 	$(info ALL_VADLIDATEHTML is $(ALL_VADLIDATEHTML))
 	$(info ALL_HTMLPYRELIST is $(ALL_HTMLPYRELIST))
 	$(info ALL_JSPYRELIST is $(ALL_JSPYRELIST))
+	$(info ALL_CSSPYRELIST is $(ALL_CSSPYRELIST))
 	$(info ALL_TIDY is $(ALL_TIDY))
 	$(info ALL_ESLINT_JS is $(ALL_ESLINT_JS))
 	$(info ALL_ESLINT_HTML is $(ALL_ESLINT_HTML))
@@ -191,6 +199,8 @@ all_validatehtml: $(ALL_VALIDATEHTML)
 all_htmlpyrelist: $(ALL_HTMLPYRELIST)
 .PHONY: all_jspyrelist
 all_jspyrelist: $(ALL_JSPYRELIST)
+.PHONY: all_csspyrelist
+all_csspyrelist: $(ALL_CSSPYRELIST)
 .PHONY: all_tidy
 all_tidy: $(ALL_TIDY)
 .PHONY: all_eslint_js
@@ -226,6 +236,10 @@ $(ALL_HTMLPYRELIST): out/%.htmlpyrelist: %.html support/pyrelist.json
 	$(Q)pyrelist match --patterns=support/pyrelist.json $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_JSPYRELIST): out/%.jspyrelist: %.js support/pyrelist.json
+	$(info doing [$@])
+	$(Q)pyrelist match --patterns=support/pyrelist.json $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_CSSPYRELIST): out/%.csspyrelist: %.css support/pyrelist.json
 	$(info doing [$@])
 	$(Q)pyrelist match --patterns=support/pyrelist.json $<
 	$(Q)pymakehelper touch_mkdir $@
