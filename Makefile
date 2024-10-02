@@ -117,11 +117,6 @@ ifeq ($(DO_STYLELINT),1)
 ALL+=$(ALL_STYLELINT)
 endif # DO_STYLELINT
 
-# dependency on the makefile itself
-ifeq ($(DO_ALLDEP),1)
-.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
-endif # DO_ALLDEP
-
 #########
 # rules #
 #########
@@ -268,3 +263,10 @@ $(ALL_STYLELINT): out/%.stylelint: %.css
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error node_modules/.bin/stylelint $<
 	$(Q)pymakehelper touch_mkdir $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP
