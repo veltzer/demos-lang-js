@@ -1,3 +1,6 @@
+- unite all of scripts/run_* script.
+	They are all very similar.
+
 - split off:
 	demos-css
 	demos-jquery
