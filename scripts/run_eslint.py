@@ -20,7 +20,7 @@ def get_flags(filename: str) -> set[str]:
     with open(filename, encoding="utf-8") as stream:
         for line in stream:
             line = line.strip()
-            if line.startswith("FLAGS:"):
+            if line.find("FLAGS:") != -1:
                 all_flags = line.split(":")[1]
                 for flag in all_flags.split(","):
                     flags.add(flag.strip())

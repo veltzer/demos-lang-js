@@ -235,9 +235,9 @@ $(ALL_CSSPYRELIST): out/%.csspyrelist: %.css support/pyrelist.json
 	$(info doing [$@])
 	$(Q)pyrelist match --patterns=support/pyrelist.json $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_TIDY): out/%.tidy: %.html scripts/run_tidy.py .tidy.config
+$(ALL_TIDY): out/%.tidy: %.html scripts/run_with_ignore.py .tidy.config
 	$(info doing [$@])
-	$(Q)scripts/run_tidy.py $<
+	$(Q)scripts/run_with_ignore.py $< NOTIDY tidy -errors -quiet -config .tidy.config
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_ESLINT_JS): out/%.eslint_js: %.js scripts/run_eslint.py .eslintrc.js
 	$(info doing [$@])
