@@ -219,9 +219,9 @@ $(ALL_HTMLLINT): out/%.htmllint: %.html .htmllintrc scripts/run_with_ignore.py
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error scripts/run_with_ignore.py $< NOHTMLLINT node_modules/.bin/htmllint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_VALIDATEHTML): out/%.vhtml: %.html scripts/run_validate_html.py
+$(ALL_VALIDATEHTML): out/%.vhtml: %.html scripts/run_with_ignore.py
 	$(info doing [$@])
-	$(Q)scripts/run_validate_html.py $<
+	$(Q)scripts/run_with_ignore.py $< NOVALIDATEHTML pycmdtools validate_html $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_HTMLPYRELIST): out/%.htmlpyrelist: %.html support/pyrelist.json
 	$(info doing [$@])
@@ -237,15 +237,15 @@ $(ALL_CSSPYRELIST): out/%.csspyrelist: %.css support/pyrelist.json
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_TIDY): out/%.tidy: %.html scripts/run_with_ignore.py .tidy.config
 	$(info doing [$@])
-	$(Q)scripts/run_with_ignore.py $< NOTIDY tidy -errors -quiet -config .tidy.config
+	$(Q)scripts/run_with_ignore.py $< NOTIDY tidy -errors -quiet -config .tidy.config $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_ESLINT_JS): out/%.eslint_js: %.js scripts/run_eslint.py .eslintrc.js
+$(ALL_ESLINT_JS): out/%.eslint_js: %.js scripts/run_with_ignore.py .eslintrc.js
 	$(info doing [$@])
-	$(Q)scripts/run_eslint.py $<
+	$(Q)scripts/run_with_ignore.py $< NOESLINT node_modules/.bin/eslint $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_ESLINT_HTML): out/%.eslint_html: %.html scripts/run_eslint.py .eslintrc.js
+$(ALL_ESLINT_HTML): out/%.eslint_html: %.html scripts/run_with_ignore.py .eslintrc.js
 	$(info doing [$@])
-	$(Q)scripts/run_eslint.py $<
+	$(Q)scripts/run_with_ignore.py $< NOESLINT node_modules/.bin/eslint $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_STANDARD): out/%.standard: %.js
 	$(info doing [$@])
