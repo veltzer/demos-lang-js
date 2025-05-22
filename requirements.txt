@@ -26,7 +26,7 @@ pydmt==0.3.19
 pyfakeuse==0.0.9
 Pygments==2.19.1
 pylogconf==0.0.38
-pymakehelper==0.0.35
+pymakehelper==0.0.37
 pyrelist==0.0.5
 pytconf==0.1.18
 python-dateutil==2.9.0.post0
