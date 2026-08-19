@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
-from flask import Flask
+""" Tiny flask server for the iframe race-condition demo. """
+
 import time
+
+from flask import Flask
 
 app = Flask(
     "server",
@@ -11,34 +14,41 @@ app = Flask(
 
 @app.route("/")
 def default():
+    """ Serve the demo index page. """
     return app.send_static_file("index.html")
 
 @app.route("/iframe")
 def iframe():
+    """ Serve the iframe content page. """
     return app.send_static_file("iframe.html")
 
 @app.route("/away")
 def away():
-    time.sleep(13);
+    """ Serve the away page after a long delay. """
+    time.sleep(13)
     return app.send_static_file("away.html")
 
 @app.route("/doit")
 def doit():
-    time.sleep(30);
+    """ Respond after a very long delay. """
+    time.sleep(30)
     return "response"
 
 @app.route("/delay")
 def delay():
-    time.sleep(3);
+    """ Respond after a short delay. """
+    time.sleep(3)
     return ""
 
 @app.route("/interval_request")
 def interval_request():
+    """ Respond to the polling interval request. """
     return "interval_request"
 
 @app.route("/unload")
 def unload():
-    time.sleep(6);
+    """ Respond slowly to the unload beacon. """
+    time.sleep(6)
     return ""
 
 app.run(port=8000, host="127.0.0.1")

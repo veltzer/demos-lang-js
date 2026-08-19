@@ -1,0 +1,7 @@
+## Number of examples
+
+{% set js = git_count_files(pattern="src/**/*.js") -%}
+{% set html = git_count_files(pattern="src/**/*.html") -%}
+Currently there are {{ js + html }} examples in this repo.
+{{ js }} javascript files.
+{{ html }} HTML files.
