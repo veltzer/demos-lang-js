@@ -94,7 +94,24 @@ batch = false
 batch = false
 
 # Runtime deps so CI installs what the code imports.
+# The Makefile ran eslint over src/**/*.js with the old .eslintrc.js. eslint 9/10
+# dropped .eslintrc.* for flat config, so the config now lives at
+# config/eslint.config.js (js.configs.recommended + eslint-plugin-html for
+# scripts embedded in HTML, with the same demo-noise rules off and library
+# globals declared). hello_wrong.js is a deliberately malformed demo -- a .js
+# file that is really HTML, showing the browser won't render it; it carried the
+# Makefile's NOJSHINT/NOESLINT opt-out, so it is excluded here too.
+[processor.eslint]
+src_dirs = ["src"]
+args = ["-c", "config/eslint.config.js"]
+src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
+
 [dependencies]
 pip = [
     "flask",
+]
+npm = [
+    "eslint",
+    "@eslint/js",
+    "eslint-plugin-html",
 ]
