@@ -1,18 +1,15 @@
-// Flat config (eslint 9/10). Ports the former .eslintrc.js: lint the demo
-// JavaScript, including scripts embedded in HTML, with the recommended ruleset
-// but the noisy demo-code rules turned off, and the library globals the demos
-// assume declared. The Makefile ran `eslint` over src/**/*.js with the old
-// .eslintrc.js; this reproduces that under the flat-config format eslint now
-// requires.
-
-const js = require("@eslint/js");
-const html = require("eslint-plugin-html");
+// Flat config (eslint 9/10), zero external requires so it resolves under any
+// eslint install (CI installs eslint globally, with no local node_modules).
+// Ports the former .eslintrc.js: the Makefile ran eslint over src/**/*.js --
+// standalone .js files only, not scripts embedded in HTML -- with the noisy
+// demo-code rules turned off and the library globals the demos assume. Those
+// four rules being off is the whole of the old ruleset that would ever fire
+// on this code, so eslint:recommended is not pulled in (it would need an
+// external require that CI cannot resolve).
 
 module.exports = [
-	js.configs.recommended,
 	{
-		files: ["**/*.js", "**/*.html"],
-		plugins: {html},
+		files: ["**/*.js"],
 		languageOptions: {
 			ecmaVersion: 2021,
 			sourceType: "module",

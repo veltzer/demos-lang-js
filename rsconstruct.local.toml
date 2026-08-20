@@ -110,8 +110,3 @@ src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 pip = [
     "flask",
 ]
-npm = [
-    "eslint",
-    "@eslint/js",
-    "eslint-plugin-html",
-]
