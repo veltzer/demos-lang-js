@@ -92,3 +92,9 @@ batch = false
 # under batching ("Duplicate module"). Per-file runs keep all checks.
 [processor.mypy]
 batch = false
+
+# Runtime deps so CI installs what the code imports.
+[dependencies]
+pip = [
+    "flask",
+]
