@@ -16,12 +16,6 @@ Currently there are 550 examples in this repo.
 148 javascript files.
 402 HTML files.
 
-## Number of examples
-
-Currently there are 550 examples in this repo.
-148 javascript files.
-402 HTML files.
-
 ## Contact
 
 chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/veltzer/mark.veltzer)
