@@ -1,15 +1,5 @@
-# Canonical shared rsconstruct.toml — this file is IDENTICAL in every repo.
-#
-# Do not edit per-repo copies. Edit the canonical copy
-# (/home/mark/git/rsconstruct.canonical.toml) and sync it out.
-# Repo-specific configuration (dependencies, explicit generators, excludes,
-# one-off workarounds) lives in rsconstruct.local.toml, which rsconstruct
-# deep-merges over this file at load time.
-#
-# This file is a menu: src_dirs entries that don't exist in a given repo are
-# skipped (default behavior since 0.9.46), so a processor whose directories
-# are all absent simply matches no files there. The directory layout of each
-# repo decides which checks run.
+# rsconstruct configuration for this repository — shared defaults plus
+# repo-specific config (merged from the former rsconstruct.local.toml).
 
 # ─── analyzers ───────────────────────────────────────────────────────────────
 
@@ -33,85 +23,129 @@ dep_auto = [
 	"config/python.lua",
 	"config/shared.lua",
 ]
+src_dirs = ["tera.templates"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
 [processor.rumdl]
-src_dirs = ["src", "docs", "exercises", "notes", "marp"]
+src_dirs = ["src"]
 
 [processor.zspell]
-src_dirs = ["src", "docs", "exercises", "notes", "marp", "syllabi", "out/generator"]
+src_dirs = ["src"]
 
 # ─── python ──────────────────────────────────────────────────────────────────
 
 [processor.ruff]
-src_dirs = ["src", "scripts", "config", "tests", "exercises", "animations"]
+src_dirs = ["src", "config"]
 
 [processor.pylint]
-src_dirs = ["src", "scripts", "config", "tests", "exercises", "animations"]
+src_dirs = ["src", "config"]
+batch = false
 
 [processor.mypy]
-src_dirs = ["src", "scripts", "config", "tests", "exercises", "animations"]
+src_dirs = ["src", "config"]
+batch = false
 
 [processor.requirements]
-src_dirs = ["src", "scripts", "config", "tests", "animations"]
-
-[processor.pytest]
-src_dirs = ["tests"]
+src_dirs = ["src", "config"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 [processor.shellcheck]
-src_dirs = ["scripts", "src", "misc", "exercises", "docs", "config"]
+src_dirs = ["src", "config"]
 args = ["--severity=error", "--shell=bash"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
 [processor.luacheck]
-src_dirs = ["config", "print"]
+src_dirs = ["config"]
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
 [processor.taplo]
 src_dirs = ["."]
 
-[processor.iyamllint]
-src_dirs = ["yaml", "tracks"]
-
-[processor.ijsonlint]
-src_dirs = ["json"]
-
-# ─── web ─────────────────────────────────────────────────────────────────────
-
-[processor.stylelint]
-src_dirs = ["resources", "site-resources", "print"]
-
 [processor.htmlhint]
-src_dirs = ["src", "site-resources"]
+src_dirs = ["src"]
 
 [processor.tidy]
-src_dirs = ["src", "blog"]
+src_dirs = ["src"]
+args = ["-config", ".tidy.config"]
+src_exclude_paths = [
+    "src/core/examples/browser/hello2.html",
+    "src/core/examples/browser/hello3.html",
+    "src/core/examples/debug/document_write.html",
+    "src/core/examples/dom/document_write.html",
+    "src/core/examples/html/examples/cdata.html",
+    "src/core/examples/html/exercises/Exercise5-tables/Matrices.html",
+    "src/core/examples/html/exercises/Exercise5-tables/Tables.html",
+    "src/features/pdf_embedding/scribd/flash.html",
+    "src/libraries/dojo/addonload.html",
+    "src/libraries/dojo/ajax.html",
+    "src/libraries/dojo/back.html",
+    "src/libraries/dojo/back2.html",
+    "src/libraries/dojo/back_iframe.html",
+    "src/libraries/dojo/browser.html",
+    "src/libraries/dojo/change_dojo_button.html",
+    "src/libraries/dojo/connect.html",
+    "src/libraries/dojo/connect2.html",
+    "src/libraries/dojo/connect3.html",
+    "src/libraries/dojo/create.html",
+    "src/libraries/dojo/custom_widget.html",
+    "src/libraries/dojo/data.html",
+    "src/libraries/dojo/data3.html",
+    "src/libraries/dojo/datagrid.html",
+    "src/libraries/dojo/datagrid2.html",
+    "src/libraries/dojo/ebutton.html",
+    "src/libraries/dojo/fx.html",
+    "src/libraries/dojo/grid.html",
+    "src/libraries/dojo/hello_world_djconfig.html",
+    "src/libraries/dojo/i18n.html",
+    "src/libraries/dojo/jsid.html",
+    "src/libraries/dojo/json.html",
+    "src/libraries/dojo/login.html",
+    "src/libraries/dojo/new_button.html",
+    "src/libraries/dojo/oo1.html",
+    "src/libraries/dojo/oo2.html",
+    "src/libraries/dojo/oo3.html",
+    "src/libraries/dojo/parser.html",
+    "src/libraries/dojo/parser2.html",
+    "src/libraries/dojo/parser3.html",
+    "src/libraries/dojo/prog1.html",
+    "src/libraries/dojo/prog2.html",
+    "src/libraries/dojo/prog3.html",
+    "src/libraries/dojo/prog4.html",
+    "src/libraries/dojo/publish.html",
+    "src/libraries/dojo/regexp.html",
+    "src/libraries/dojo/tabs_basic.html",
+    "src/libraries/dojo/tabs_programmatic.html",
+    "src/libraries/dojo/theme.html",
+    "src/libraries/dojo/to_integrate/datastore.html",
+    "src/libraries/dojo/to_integrate/ex5a.html",
+    "src/libraries/dojo/to_integrate/ex6.html",
+    "src/libraries/dojo/to_integrate/example_aspect.html",
+    "src/libraries/dojo/to_integrate/example_closure.html",
+    "src/libraries/dojo/to_integrate/example_console.html",
+    "src/libraries/dojo/to_integrate/hello_ajax.html",
+    "src/libraries/dojo/to_integrate/hello_back.html",
+    "src/libraries/dojo/to_integrate/hello_back2.html",
+    "src/libraries/dojo/to_integrate/hello_connect.html",
+    "src/libraries/dojo/to_integrate/hello_datagrid2.html",
+    "src/libraries/dojo/to_integrate/hello_grid.html",
+    "src/libraries/dojo/to_integrate/hello_prog.html",
+    "src/libraries/dojo/to_integrate/hello_tree.html",
+    "src/libraries/dojo/tree.html",
+    "src/libraries/dojo/tree_lazy.html",
+]
 
 [processor.eslint]
-src_dirs = ["site-resources", "shared", "config", "blog"]
+src_dirs = ["src"]
 args = ["-c", "config/eslint.config.js"]
+src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 
-# ─── teaching content ────────────────────────────────────────────────────────
+# ─── merged from rsconstruct.local.toml ─────────────────────────────────────
 
-[processor.tags]
-src_dirs = ["syllabi", "out/generator"]
-required_fields = ["tags", "level", "category", "audience"]
-required_field_groups = [["duration_hours"], ["duration_hours_long", "duration_hours_short"]]
-
-[processor.terms]
-src_dirs = ["syllabi", "out/generator"]
-
-[processor.pandoc.syllabi]
-src_dirs = ["syllabi"]
-formats = ["pdf", "html", "docx"]
-
-[processor.script.check_md]
-command = "scripts/check_md.py"
-src_extensions = [".md"]
-src_dirs = ["syllabi", "marp", "out/generator"]
-batch = true
+[dependencies]
+pip = [
+    "flask",
+]
