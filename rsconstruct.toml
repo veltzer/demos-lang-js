@@ -5,8 +5,6 @@
 
 [analyzer.tera]
 
-[analyzer.markdown]
-
 [analyzer.python]
 
 # ─── templating ──────────────────────────────────────────────────────────────
@@ -24,16 +22,6 @@ dep_auto = [
 	"config/shared.lua",
 ]
 src_dirs = ["tera.templates"]
-
-# ─── markdown ────────────────────────────────────────────────────────────────
-
-[processor.rumdl]
-src_dirs = ["src"]
-
-[processor.zspell]
-src_dirs = ["src"]
-
-# ─── python ──────────────────────────────────────────────────────────────────
 
 [processor.ruff]
 src_dirs = ["src", "config"]
