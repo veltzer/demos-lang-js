@@ -128,7 +128,7 @@ src_exclude_paths = [
 
 [processor.eslint]
 src_dirs = ["src"]
-args = ["-c", "config/eslint.config.js"]
+args = ["-c", ".eslint.config.js"]
 src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 
 # ─── merged from rsconstruct.local.toml ─────────────────────────────────────
