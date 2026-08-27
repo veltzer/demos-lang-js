@@ -34,9 +34,6 @@ batch = false
 src_dirs = ["src", "config"]
 batch = false
 
-[processor.requirements]
-src_dirs = ["src", "config"]
-
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 [processor.shellcheck]
@@ -133,7 +130,3 @@ src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 
 # ─── merged from rsconstruct.local.toml ─────────────────────────────────────
 
-[dependencies]
-pip = [
-    "flask",
-]
