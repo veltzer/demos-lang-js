@@ -1,5 +1,4 @@
-# rsconstruct configuration for this repository — shared defaults plus
-# repo-specific config (merged from the former rsconstruct.local.toml).
+# rsconstruct build configuration for this repository.
 
 # ─── analyzers ───────────────────────────────────────────────────────────────
 
@@ -128,7 +127,7 @@ src_dirs = ["src"]
 args = ["-c", ".eslint.config.js"]
 src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 
-# ─── merged from rsconstruct.local.toml ─────────────────────────────────────
+# ─── repo-specific configuration ────────────────────────────────────────────
 
 
 # lint the GitHub Actions workflow files with actionlint
