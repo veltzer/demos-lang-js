@@ -1,34 +1,76 @@
-// Flat config (eslint 9/10), zero external requires so it resolves under any
-// eslint install (CI installs eslint globally, with no local node_modules).
-// Ports the former .eslintrc.js: the Makefile ran eslint over src/**/*.js --
-// standalone .js files only, not scripts embedded in HTML -- with the noisy
-// demo-code rules turned off and the library globals the demos assume. Those
-// four rules being off is the whole of the old ruleset that would ever fire
-// on this code, so eslint:recommended is not pulled in (it would need an
-// external require that CI cannot resolve).
-
+// ESLint flat config. Zero requires so it resolves under a global eslint
+// install with no local node_modules. The rules are eslint:recommended
+// spelled out; no-undef is off because the browser demos assume library
+// globals (jQuery, dojo, Ext, ...) that vary per file.
 module.exports = [
 	{
-		files: ["**/*.js"],
+		files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
 		languageOptions: {
-			ecmaVersion: 2021,
+			ecmaVersion: 2022,
 			sourceType: "module",
-			globals: {
-				window: "readonly",
-				document: "readonly",
-				console: "readonly",
-				$: "readonly",
-				dojo: "readonly",
-				dijit: "readonly",
-				Ext: "readonly",
-				Raphael: "readonly",
-			},
 		},
 		rules: {
-			"no-empty": "off",
-			"no-unused-vars": "off",
+			"constructor-super": "error",
+			"for-direction": "error",
+			"getter-return": "error",
+			"no-async-promise-executor": "error",
+			"no-case-declarations": "error",
+			"no-class-assign": "error",
+			"no-compare-neg-zero": "error",
+			"no-cond-assign": "error",
+			"no-const-assign": "error",
+			"no-constant-binary-expression": "error",
+			"no-constant-condition": "error",
+			"no-control-regex": "error",
+			"no-debugger": "error",
+			"no-delete-var": "error",
+			"no-dupe-args": "error",
+			"no-dupe-class-members": "error",
+			"no-dupe-else-if": "error",
+			"no-dupe-keys": "error",
+			"no-duplicate-case": "error",
+			"no-empty": "error",
+			"no-empty-character-class": "error",
+			"no-empty-pattern": "error",
+			"no-empty-static-block": "error",
+			"no-ex-assign": "error",
+			"no-extra-boolean-cast": "error",
+			"no-fallthrough": "error",
+			"no-func-assign": "error",
+			"no-global-assign": "error",
+			"no-import-assign": "error",
+			"no-invalid-regexp": "error",
+			"no-irregular-whitespace": "error",
+			"no-loss-of-precision": "error",
+			"no-misleading-character-class": "error",
+			"no-new-native-nonconstructor": "error",
+			"no-nonoctal-decimal-escape": "error",
+			"no-obj-calls": "error",
+			"no-octal": "error",
+			"no-prototype-builtins": "error",
+			"no-redeclare": "error",
+			"no-regex-spaces": "error",
+			"no-self-assign": "error",
+			"no-setter-return": "error",
+			"no-shadow-restricted-names": "error",
+			"no-sparse-arrays": "error",
+			"no-this-before-super": "error",
 			"no-undef": "off",
-			"no-prototype-builtins": "off",
+			"no-unexpected-multiline": "error",
+			"no-unreachable": "error",
+			"no-unsafe-finally": "error",
+			"no-unsafe-negation": "error",
+			"no-unsafe-optional-chaining": "error",
+			"no-unused-labels": "error",
+			"no-unused-private-class-members": "error",
+			"no-unused-vars": ["error", { "args": "none", "caughtErrors": "none" }],
+			"no-useless-backreference": "error",
+			"no-useless-catch": "error",
+			"no-useless-escape": "error",
+			"no-with": "error",
+			"require-yield": "error",
+			"use-isnan": "error",
+			"valid-typeof": "error",
 		},
 	},
 ];

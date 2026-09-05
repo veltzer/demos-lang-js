@@ -11,7 +11,6 @@ class AsyncClass {
 	    var instance = new AsyncClass();
 	    instance.data = a*2;
             throw new Error("some error");
-	    return instance;
     }
 
     get_data() {

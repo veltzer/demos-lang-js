@@ -7,10 +7,10 @@ import Fastify from 'fastify'
 const fastify = Fastify({
   logger: true
 })
-// CommonJs
-const fastify = require('fastify')({
-  logger: true
-})
+// CommonJs (alternative to the ESM import above; use one or the other)
+// const fastify = require('fastify')({
+//   logger: true
+// })
 
 // Declare a route
 fastify.get('/', (request, reply) => {

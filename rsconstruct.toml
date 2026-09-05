@@ -35,7 +35,6 @@ batch = false
 
 [processor.shellcheck]
 src_dirs = ["src", "config"]
-args = ["--severity=error", "--shell=bash"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
@@ -47,6 +46,7 @@ src_dirs = ["config"]
 [processor.taplo]
 src_dirs = ["."]
 
+# not linted: not_mine (third-party file, see directory name)
 [processor.htmlhint]
 src_dirs = ["src"]
 
@@ -120,14 +120,48 @@ src_exclude_paths = [
     "src/libraries/dojo/tree_lazy.html",
 ]
 
+# not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
 [processor.eslint]
-src_dirs = ["src"]
+src_dirs = ["src", "nodejs", "to_integrate/async"]
 args = ["-c", ".eslint.config.js"]
 src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 
 # ─── repo-specific configuration ────────────────────────────────────────────
 
-
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── markdown ────────────────────────────────────────────────────────────────
+
+[processor.rumdl]
+src_dirs = ["nodejs/exercises"]
+src_files = ["README.md"]
+
+# ─── json ────────────────────────────────────────────────────────────────────
+
+[processor.ijsonlint]
+src_dirs = ["nodejs/exercises", "src/core", "support"]
+src_files = ["package.json"]
+
+# ─── xml / svg ───────────────────────────────────────────────────────────────
+
+[processor.xmllint]
+src_dirs = ["src/core/examples/html5/solutions/websockets/WebContent/WEB-INF"]
+
+# ─── php ─────────────────────────────────────────────────────────────────────
+
+[processor.php_lint]
+src_dirs = ["src"]
+
+# ─── java ────────────────────────────────────────────────────────────────────
+
+[processor.checkstyle]
+src_dirs = ["src/core/examples/html5"]
+args = ["-c", "checkstyle.xml"]
+
+# ─── css ─────────────────────────────────────────────────────────────────────
+
+# not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
+[processor.stylelint]
+src_dirs = ["src"]
