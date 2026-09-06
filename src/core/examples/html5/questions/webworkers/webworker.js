@@ -1,6 +1,6 @@
 /*global mapCanvas,divStatus*/
 
-function init() { // eslint-disable-line no-unused-vars
+function init() {
 }
 
 function processSubmit() { // eslint-disable-line no-unused-vars

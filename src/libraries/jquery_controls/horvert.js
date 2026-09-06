@@ -1,4 +1,4 @@
-function HorVertElem(elid) {
+function HorVertElem(elid) { // eslint-disable-line no-unused-vars
 	this.el=$(elid);
 }
 

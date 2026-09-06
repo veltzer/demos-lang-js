@@ -5,7 +5,7 @@ var divChatMessages;
 var divStatus;
 var btnPressMe;
 var jWebSocketClient;
-var txtMessageTo;
+var txtMessageTo; // eslint-disable-line no-unused-vars
 var cbPrivate;
 var users;
 //var lastProcessedUsId;
@@ -31,7 +31,7 @@ function init() {
 
 	if( jws.browserSupportsWebSockets() ) {
 		jWebSocketClient = new jws.jWebSocketJSONClient();
-		var logonResult = jWebSocketClient.logon( url, chatUsername, password, {
+		var logonResult = jWebSocketClient.logon( url, chatUsername, password, { // eslint-disable-line no-unused-vars
 		// OnOpen callback
 		OnOpen: connectionOpened,
 		// OnMessage callback

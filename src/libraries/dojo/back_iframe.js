@@ -17,7 +17,7 @@ MyState.prototype.restoreState=function() {
 	if(i>0) {
 		//alert("restoring to "+i);
 		i--;
-		var s=states[i];
+		var s=states[i]; // eslint-disable-line no-unused-vars
 		//frm.src=s.p_url;
 		frm.src="http://www.sourceforge.net";
 	} else {
@@ -44,7 +44,7 @@ function myinit() {
 	dojo.back.setInitialState(s);
 	s.restoreState();
 }
-function go() {
+function go() { // eslint-disable-line no-unused-vars
 	var w_url = dijit.byId("id_url");
 	var v_url=w_url.attr("value");
 	//alert("going to "+v_url);

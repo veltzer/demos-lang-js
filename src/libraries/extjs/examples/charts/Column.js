@@ -50,7 +50,7 @@ Ext.onReady(function () {
 		});
 
 
-	var win = Ext.create("Ext.window.Window", {
+	var win = Ext.create("Ext.window.Window", { // eslint-disable-line no-unused-vars
 		width: 800,
 		height: 600,
 		minHeight: 400,

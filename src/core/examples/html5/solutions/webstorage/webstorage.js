@@ -10,6 +10,7 @@ function init() {
 		try {
 			mapData = JSON.parse(window.localStorage.getItem("mapData"));
 		} catch (e) {
+		// malformed or absent stored data: fall through to the default below
 		}
 		if (mapData == "undefined" || mapData == null) {
 			mapData = [];

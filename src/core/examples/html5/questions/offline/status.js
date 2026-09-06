@@ -2,7 +2,7 @@ var statusMessages = ["Uncached","Idle","Checking","Downloading","Update Ready",
 var needsUploading = false;
 
 function init() { // eslint-disable-line no-unused-vars
-	var _tdNeedsUploading = document.getElementById("tdNeedsUploading");
+	var _tdNeedsUploading = document.getElementById("tdNeedsUploading"); // eslint-disable-line no-unused-vars
 }
 
 function setEmailAddress(email) { // eslint-disable-line no-unused-vars
@@ -21,7 +21,7 @@ function setOnline(online) { // eslint-disable-line no-unused-vars
 	}
 }
 
-function getCacheStatusValue(number) { // eslint-disable-line no-unused-vars
+function getCacheStatusValue(number) {
 	return statusMessages[number];
 }
 

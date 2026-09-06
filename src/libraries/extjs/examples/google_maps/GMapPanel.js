@@ -115,7 +115,7 @@ Ext.define("Ext.ux.GMapPanel", {
 		var mark=new GMarker(point,marker);
 		if (typeof listeners === "object"){
 			for (evt in listeners) {
-				if(!listeners.hasOwnProperty(evt)) {
+				if(!Object.prototype.hasOwnProperty.call(listeners, evt)) {
 					continue;
 				}
 				GEvent.bind(mark, evt, this, listeners[evt]);

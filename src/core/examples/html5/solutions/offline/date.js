@@ -1,7 +1,7 @@
 var current;
-var clientDataSource;
+var clientDataSource; // eslint-disable-line no-unused-vars
 
-function ClientDateSource(timestamp) {
+function ClientDateSource(timestamp) { // eslint-disable-line no-unused-vars
 	this.date = new Date(timestamp);
 	this.timer = tick();
 	this.constructor = init;
@@ -11,7 +11,7 @@ function ClientDateSource(timestamp) {
 		current.innerHTML = this.date.getMilliseconds();
 		return setTimeout(tick, 1000);
 	}
-	function setTime(timestamp) {
+	function setTime(timestamp) { // eslint-disable-line no-unused-vars
 		this.date.setMilliseconds(timestamp);
 	}
 }

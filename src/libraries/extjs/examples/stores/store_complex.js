@@ -1,4 +1,4 @@
-var store=Ext.create("Ext.data.Store", {
+var store=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
 	autoLoad: true,
 	model: "User",
 	proxy: {

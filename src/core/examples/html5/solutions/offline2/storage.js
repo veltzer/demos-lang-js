@@ -1,36 +1,30 @@
-
-function saveData(key, data) {
+function saveData(key, data) { // eslint-disable-line no-unused-vars
+	/*
 	if (navigator.onLine) {
-
 	} else {
 	}
+	*/
 }
 
-function getData(key) {
+function getData(key) { // eslint-disable-line no-unused-vars
+	/*
 	if (navigator.onLine) {
-
 	} else {
-
 	}
+	*/
 }
 
-function uploadData() {
-
+function uploadData() { // eslint-disable-line no-unused-vars
 }
 
-function downloadData() {
-
+function downloadData() { // eslint-disable-line no-unused-vars
 }
 
-function offlineListener(event) {
-
+function offlineListener(event) { // eslint-disable-line no-unused-vars
 }
 
-function onlineListener(event) {
-
+function onlineListener(event) { // eslint-disable-line no-unused-vars
 }
 
-function init() {
-
+function init() { // eslint-disable-line no-unused-vars
 }
-

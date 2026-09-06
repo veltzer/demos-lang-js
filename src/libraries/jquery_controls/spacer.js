@@ -1,4 +1,4 @@
-function SpacerElem(elid) {
+function SpacerElem(elid) { // eslint-disable-line no-unused-vars
 	this.el=$(elid);
 }
 

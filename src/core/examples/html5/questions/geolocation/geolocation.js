@@ -5,11 +5,11 @@ function init() {
 	btnStop.onclick = stopWatchingLocation;
 }
 
-function processSubmit() { // eslint-disable-line no-unused-vars
+function processSubmit() {
 	/* Enter GeoLocation Code Here */
 }
 
-function stopWatchingLocation() { // eslint-disable-line no-unused-vars
+function stopWatchingLocation() {
 	/* Enter Stop Watching Code here */
 }
 

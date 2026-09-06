@@ -1,5 +1,5 @@
 // this is a store with an inlined model...
-var states=Ext.create("Ext.data.Store", {
+var states=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
 	fields: ["abbr", "name"],
 	data : [
 		{"abbr":"AL", "name":"Alabama"},
@@ -17,7 +17,7 @@ Ext.define("MovieModel", {
 	idProperty: "id",
 });
 // and a store using the model
-var w_store=Ext.create("Ext.data.Store",{
+var w_store=Ext.create("Ext.data.Store",{ // eslint-disable-line no-unused-vars
 	autoLoad: false,
 	pageSize: 20,
 	model: "MovieModel",

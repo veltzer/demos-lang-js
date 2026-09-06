@@ -2,7 +2,7 @@ dojo.require("dijit.form.Button");
 dojo.require("dijit.form.NumberTextBox");
 dojo.require("dojo.back");
 
-function sumNumbers(e) {
+function sumNumbers(e) { // eslint-disable-line no-unused-vars
 	var w_sum = dijit.byId("id_sum");
 	var v_sum = parseInt(w_sum.attr("value"));
 
@@ -20,10 +20,10 @@ function sumNumbers(e) {
 	var s=new MyState(v_sum,v_num);
 	dojo.back.addToHistory(s);
 }
-function Back(e) {
+function Back(e) { // eslint-disable-line no-unused-vars
 	dojo.back.goBack();
 }
-function Back2(e) {
+function Back2(e) { // eslint-disable-line no-unused-vars
 	dojo.back.goBack();
 	dojo.back.goBack();
 }

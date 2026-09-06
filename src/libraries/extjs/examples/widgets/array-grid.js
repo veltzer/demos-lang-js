@@ -96,7 +96,7 @@ Ext.onReady(function() {
 	});
 
 	// create the Grid
-	var grid=Ext.create("Ext.grid.Panel", {
+	var grid=Ext.create("Ext.grid.Panel", { // eslint-disable-line no-unused-vars
 		store: store,
 		stateful: true,
 		stateId: "stateGrid",

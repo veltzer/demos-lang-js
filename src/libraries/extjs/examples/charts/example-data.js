@@ -4,7 +4,7 @@ Ext.onReady(function() {
 
 	window.generateData = function(n, floor){
 		var data = [],
-			p = (Math.random() * 11) + 1,
+			p = (Math.random() * 11) + 1, // eslint-disable-line no-unused-vars
 			i;
 
 		floor = (!floor && floor !== 0)? 20 : floor;
@@ -28,7 +28,7 @@ Ext.onReady(function() {
 
 	window.generateDataNegative = function(n, floor){
 		var data = [],
-			p = (Math.random() * 11) + 1,
+			p = (Math.random() * 11) + 1, // eslint-disable-line no-unused-vars
 			i;
 		floor = (!floor && floor !== 0)? 20 : floor;
 		for (i = 0; i < (n || 12); i++) {

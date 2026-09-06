@@ -4,7 +4,7 @@ function messageHandler(event) { // eslint-disable-line no-unused-vars
 function errorHandler(event) { // eslint-disable-line no-unused-vars
 }
 
-function updateData(data) { // eslint-disable-line no-unused-vars
+function updateData(data) {
 	postMessage(data);
 }
 
@@ -16,5 +16,5 @@ function init() { // eslint-disable-line no-unused-vars
 	});
 }
 
-function trigger() { // eslint-disable-line no-unused-vars
+function trigger() {
 }

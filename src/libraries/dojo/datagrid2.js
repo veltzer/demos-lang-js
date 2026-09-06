@@ -4,7 +4,7 @@ dojo.require("dijit.form.Button");
 function init() {
 	// load some data
 }
-function do_click() {
+function do_click() { // eslint-disable-line no-unused-vars
 	var w=dijit.byId("grid");
 	var store=w.store;
 	for(i=0;i<w.rowCount;i++) {
@@ -14,7 +14,7 @@ function do_click() {
 		store.setValue(item,"price",new_price);
 	}
 }
-function do_populate() {
+function do_populate() { // eslint-disable-line no-unused-vars
 	// create some data
 }
 dojo.addOnLoad(init);

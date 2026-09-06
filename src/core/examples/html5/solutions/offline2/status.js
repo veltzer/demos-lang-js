@@ -48,11 +48,11 @@ function setCacheStatus(status) {
 	}
 }
 
-function _getCacheStatus() {
+function _getCacheStatus() { // eslint-disable-line no-unused-vars
 	return window.applicationCache.status;
 }
 
-function _setNeedsUploading(needs) {
+function _setNeedsUploading(needs) { // eslint-disable-line no-unused-vars
 	if (needs) {
 		tdNeedsUploading.innerHTML = "Data needs to be uploaded";
 		tdNeedsUploading.style = "#ff0000";
@@ -62,7 +62,7 @@ function _setNeedsUploading(needs) {
 	}
 }
 
-function _getNeedsUploading() {
+function _getNeedsUploading() { // eslint-disable-line no-unused-vars
 	return needsUploading;
 }
 
@@ -151,7 +151,7 @@ function cacheDownloading(_event) {
 
 function wentOffline(_event) {
 	/*global ClientDataSource*/
-	var _cds = new ClientDataSource(document.getElementById("current").innerText);
+	var _cds = new ClientDataSource(document.getElementById("current").innerText); // eslint-disable-line no-unused-vars
 	setOnline(false);
 }
 

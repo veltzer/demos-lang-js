@@ -1,5 +1,5 @@
 // a store with inline data (hopefully the list of states will not change...)
-var store_inline=Ext.create("Ext.data.Store", {
+var store_inline=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
 	fields: ["abbr", "name"],
 	data : [
 		{"abbr":"AL", "name":"Alabama"},
@@ -8,7 +8,7 @@ var store_inline=Ext.create("Ext.data.Store", {
 	]
 });
 // same store with a proxy to fetch the data from the server...
-var w_store=Ext.create("Ext.data.Store",{
+var w_store=Ext.create("Ext.data.Store",{ // eslint-disable-line no-unused-vars
 	fields: ["abbr", "name"],
 	autoLoad: true,
 	proxy: {

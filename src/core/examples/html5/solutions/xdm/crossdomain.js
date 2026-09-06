@@ -49,11 +49,11 @@ function receiveMessage(e) {
 	}
 }
 
-function setStatus(status) {
+function setStatus(status) { // eslint-disable-line no-unused-vars
 	divStatus.innerHTML = status;
 }
 
-function addStatus(status) {
+function addStatus(status) { // eslint-disable-line no-unused-vars
 	divStatus.innerHTML += status + "<br>";
 }
 

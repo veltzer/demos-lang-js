@@ -19,7 +19,7 @@ function gcd(t1,t2) {
 	var ret2=t1.substring(0,len);
 	return ret2;
 }
-function complete(text, list) {
+function complete(text, list) { // eslint-disable-line no-unused-vars
 	// lets build a match list...
 	var mlen=text.length;
 	var matchlist=[];

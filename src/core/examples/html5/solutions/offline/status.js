@@ -48,11 +48,11 @@ function setCacheStatus(status) {
 	}
 }
 
-function getCacheStatus() {
+function getCacheStatus() { // eslint-disable-line no-unused-vars
 	return window.applicationCache.status;
 }
 
-function setNeedsUploading(needs) {
+function setNeedsUploading(needs) { // eslint-disable-line no-unused-vars
 	if (needs) {
 		tdNeedsUploading.innerHTML = "Data needs to be uploaded";
 		tdNeedsUploading.style = "#ff0000";
@@ -62,7 +62,7 @@ function setNeedsUploading(needs) {
 	}
 }
 
-function getNeedsUploading() {
+function getNeedsUploading() { // eslint-disable-line no-unused-vars
 	return needsUploading;
 }
 

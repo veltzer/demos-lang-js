@@ -35,14 +35,14 @@ function showCurrent(items,request) {
 		dijit.byId("nextButton").attr("disabled",false);
 	}
 }
-function next() {
+function next() { // eslint-disable-line no-unused-vars
 	// enable the prev button if we are right at the begining...
 	if(startPoint==0)
 		dijit.byId("prevButton").attr("disabled",false);
 	startPoint+=3;
 	getData();
 }
-function prev() {
+function prev() { // eslint-disable-line no-unused-vars
 	startPoint-=3;
 	getData();
 	if(startPoint==0)
