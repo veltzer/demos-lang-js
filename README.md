@@ -1,11 +1,11 @@
 <!-- This file is generated. Do not edit it by hand: your changes will be
      lost on the next build. Edit the template it is rendered from, or the
      values that template reads, and build again. -->
-# *demos-javascript* project by Mark Veltzer
+# *demos-lang-js* project by Mark Veltzer
 
 description: Demos for the javascript programming language
 
-project website: https://veltzer.github.io/demos-javascript
+project website: https://veltzer.github.io/demos-lang-js
 
 author: Mark Veltzer
 
@@ -15,11 +15,11 @@ version: 0.0.1
 
 ## github
 
-![License](https://img.shields.io/github/license/veltzer/demos-javascript)
+![License](https://img.shields.io/github/license/veltzer/demos-lang-js)
 
 ## build
 
-![build](https://github.com/veltzer/demos-javascript/workflows/build/badge.svg)
+![build](https://github.com/veltzer/demos-lang-js/workflows/build/badge.svg)
 ## Number of examples
 
 Currently there are 550 examples in this repo.
