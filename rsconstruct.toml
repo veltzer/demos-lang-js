@@ -57,16 +57,9 @@ src_dirs = ["src"]
 args = ["-config", ".tidy.config"]
 
 # not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
-# oxlint has no rsconstruct processor yet, so it runs through the generic
-# script checker. The binary comes from package.json (installed by `tools
-# install-deps` via `npm ci` into node_modules/.bin, which rsconstruct puts
-# on PATH), so no tool-registry entry is needed.
-[processor.script.oxlint]
-command = "oxlint"
-args = ["-c", ".oxlintrc.json"]
-dep_auto = [".oxlintrc.json"]
+[processor.oxlint]
 src_dirs = ["src", "nodejs", "to_integrate/async"]
-src_extensions = [".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs"]
+args = ["-c", ".oxlintrc.json"]
 
 # ─── repo-specific configuration ────────────────────────────────────────────
 
@@ -84,7 +77,6 @@ src_files = ["README.md"]
 
 [processor.ijsonlint]
 src_dirs = ["nodejs/exercises", "src/core", "support"]
-src_files = ["package.json"]
 
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
@@ -105,5 +97,8 @@ args = ["-c", "checkstyle.xml"]
 # ─── css ─────────────────────────────────────────────────────────────────────
 
 # not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
-[processor.stylelint]
+# Only .css is passed: biome.jsonc turns biome's JavaScript and JSON linters
+# off, oxlint covers JavaScript and ijsonlint covers JSON.
+[processor.biome]
 src_dirs = ["src"]
+src_extensions = [".css"]
