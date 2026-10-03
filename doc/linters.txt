@@ -1,5 +1,5 @@
 We are using the following linters in order of importance:
-eslint
+oxlint
 jshint
 jslint
 

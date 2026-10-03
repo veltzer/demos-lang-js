@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "eslint-plugin-html": "latest",
     "express": "latest",
     "htmlhint": "latest",
     "htmllint-cli": "latest",
@@ -10,7 +9,7 @@
     "standard": "latest"
   },
   "devDependencies": {
-    "eslint": "latest",
+    "oxlint": "latest",
     "stylelint": "latest",
     "stylelint-config-standard": "latest"
   }

@@ -123,9 +123,16 @@ src_exclude_paths = [
 ]
 
 # not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
-[processor.eslint]
+# oxlint has no rsconstruct processor yet, so it runs through the generic
+# script checker. The binary comes from package.json (installed by `tools
+# install-deps` via `npm ci` into node_modules/.bin, which rsconstruct puts
+# on PATH), so no tool-registry entry is needed.
+[processor.script.oxlint]
+command = "oxlint"
+args = ["-c", ".oxlintrc.json"]
+dep_auto = [".oxlintrc.json"]
 src_dirs = ["src", "nodejs", "to_integrate/async"]
-args = ["-c", ".eslint.config.js"]
+src_extensions = [".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs"]
 src_exclude_paths = ["src/core/examples/browser/hello_wrong.js"]
 
 # ─── repo-specific configuration ────────────────────────────────────────────
