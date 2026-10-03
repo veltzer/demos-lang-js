@@ -49,9 +49,6 @@ src_dirs = ["config"]
 src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # not linted: not_mine (third-party file, see directory name)
-[processor.htmlhint]
-src_dirs = ["src"]
-
 [processor.tidy]
 src_dirs = ["src"]
 args = ["-config", ".tidy.config"]
