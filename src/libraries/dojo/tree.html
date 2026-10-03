@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<head>
 		<title>Hello, Tree!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -37,19 +34,16 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dojo.data.ItemFileReadStore"
+		<div data-dojo-type="dojo.data.ItemFileReadStore" data-dojo-props="url:'tree.ajax'"
 			id="store"
-			url="tree.ajax"
-			jsid="popStore">
+			data-dojo-id="popStore">
 		</div>
 
-		<div data-dojo-type="dijit.Tree"
-			store="popStore"
+		<div data-dojo-type="dijit.Tree" data-dojo-props="store:popStore, label:'Pop Tarts'"
 			id="tree"
-			onclick="_do_click"
-			label="Pop Tarts">
+			onclick="_do_click">
 		</div>
-		<div data-dojo-type="dijit.form.TextBox" id="textbox" disabled="true" title="selection"></div>
-		<div data-dojo-type="dijit.form.TextBox" id="textbox2" disabled="true" title="selection"></div>
+		<div data-dojo-type="dijit.form.TextBox" data-dojo-props="disabled:true" id="textbox" title="selection"></div>
+		<div data-dojo-type="dijit.form.TextBox" data-dojo-props="disabled:true" id="textbox2" title="selection"></div>
 	</body>
 </html>

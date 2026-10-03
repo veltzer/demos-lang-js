@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<head>
 	<title>Hello World</title>
-	<script src="dojo/dojo/dojo.js" dj-config="parseOnLoad:true,preventBackButtonFix:false"></script>
+	<script src="dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true,preventBackButtonFix:false"></script>
 	<style type="text/css">
 		@import "dojo/dijit/themes/tundra/tundra.css";
 		@import "dojo/dojo/resources/dojo.css";
@@ -57,7 +54,7 @@
 	<script>
 		dojo.back.init()
 	</script>
-	<div id="id_sum" disabled="true" data-dojo-type="dijit.form.NumberTextBox">
+	<div id="id_sum" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="disabled:true">
 	</div>
 	<div id="id_val" data-dojo-type="dijit.form.NumberTextBox">
 	</div>

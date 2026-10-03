@@ -2,13 +2,11 @@
 <!--
 	This is a solution to the advanced part of the dojo.back exercise.
 	(the odd number invalidation).
-
-	FLAGS: NOTIDY
 -->
 <html>
 	<head>
 		<title>Solution to the dojo.back exercise</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true,preventBackButtonFix:false"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true,preventBackButtonFix:false"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script src="back2.js"></script>
@@ -18,7 +16,7 @@
 		<script>
 			dojo.back.init();
 		</script>
-		<div id="id_sum" readonly="true" data-dojo-type="dijit.form.NumberTextBox">
+		<div id="id_sum" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="readOnly:true">
 		</div>
 		<div id="id_val" data-dojo-type="dijit.form.NumberTextBox">
 		</div>

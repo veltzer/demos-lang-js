@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <!--
 	This is a basic datagrid which does nothing but define
-	its columns delerativly
-
-	FLAGS: NOTIDY
+	its columns in a layout
 -->
 <html>
 	<head>
 		<title>Hello, DataGrid world!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojox/grid/resources/Grid.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojox/grid/resources/tundraGrid.css"/>
 		<script>
 			dojo.require("dojox.grid.DataGrid");
+			var layout=[
+				{ name: "product", field: "product", width: "100px" },
+				{ name: "price", field: "price", width: "100px" }
+			];
 		</script>
 	</head>
 	<body class="tundra">
-		<table data-dojo-type="dojox.grid.DataGrid">
-			<thead><tr>
-				<th name="product" width="100px"></th>
-				<th name="price" width="100px"></th>
-			</tr></thead>
-		</table>
+		<div data-dojo-type="dojox.grid.DataGrid" data-dojo-props="structure:layout"></div>
 	</body>
 </html>

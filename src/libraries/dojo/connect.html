@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <!--
 	Dojo.connect for connecting signals
-
-	FLAGS: NOTIDY
 -->
 <html>
 	<head>
 		<title>Hello, dojo.connect</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -34,7 +32,7 @@
 	</head>
 	<body class="tundra">
 		<div data-dojo-type="dijit.form.Button" id="connect" title="connect the event" onclick="_do_connect">Connect</div>
-		<div data-dojo-type="dijit.form.Button" id="disconnect" title="disconnect the event" onclick="_do_disconnect" disabled="true">Disconnect</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" id="disconnect" title="disconnect the event" onclick="_do_disconnect">Disconnect</div>
 		<div data-dojo-type="dijit.form.Button" id="click" title="click me">Click</div>
 	</body>
 </html>

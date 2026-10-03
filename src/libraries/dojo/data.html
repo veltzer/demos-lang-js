@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <!--
 	Data store example
-
-	FLAGS: NOTIDY
 -->
 <html>
 	<head>
 		<title>Dojo: Data Store Example</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script src="data.js"></script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" id="prevButton" onclick="prev" disabled="true">Prev</div>
-		<div data-dojo-type="dijit.form.TextBox" id="dataOne" disabled="true"></div>
-		<div data-dojo-type="dijit.form.TextBox" id="dataTwo" disabled="true"></div>
-		<div data-dojo-type="dijit.form.TextBox" id="dataThree" disabled="true"></div>
-		<div data-dojo-type="dijit.form.Button" id="nextButton" onclick="next" disabled="true">Next</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" id="prevButton" onclick="prev">Prev</div>
+		<div data-dojo-type="dijit.form.TextBox" data-dojo-props="disabled:true" id="dataOne"></div>
+		<div data-dojo-type="dijit.form.TextBox" data-dojo-props="disabled:true" id="dataTwo"></div>
+		<div data-dojo-type="dijit.form.TextBox" data-dojo-props="disabled:true" id="dataThree"></div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" id="nextButton" onclick="next">Next</div>
 	</body>
 </html>

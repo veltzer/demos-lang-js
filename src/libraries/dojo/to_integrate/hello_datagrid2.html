@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<!--
 		This enhanced the previous example by loading data
@@ -9,7 +6,7 @@
 	-->
 	<head>
 		<title>Hello, DataGrid world!</title>
-		<script src="dojo/dojo/dojo.js" dj-config="parseOnLoad:true, isDebug:false"></script>
+		<script src="dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true, isDebug:false"></script>
 		<style type="text/css">
 			@import "dojo/dijit/themes/tundra/tundra.css";
 			@import "dojo/dojox/grid/resources/Grid.css";
@@ -20,6 +17,10 @@
 			dojo.require("dojox.grid.DataGrid");
 			dojo.require("dojo.data.ItemFileWriteStore");
 			dojo.require("dijit.form.Button");
+			var layout=[
+				{ name: "Product", field: "product" },
+				{ name: "Price", field: "price" }
+			];
 			function init() {
 				// load some data
 			}
@@ -41,17 +42,11 @@
 	</head>
 	<body class="tundra">
 		<div id="mydatastore"
-			data-dojo-type="dojo.data.ItemFileWriteStore"
-			js-id="mystore"
-			url="hello_datagrid2.ajax"
+			data-dojo-type="dojo.data.ItemFileWriteStore" data-dojo-props="url:'hello_datagrid2.ajax'"
+			data-dojo-id="mystore"
 		>
 		</div>
-		<table id="grid" data-dojo-type="dojox.grid.DataGrid" store="mystore">
-			<thead><tr>
-				<th name="product">Product</th>
-				<th name="price">Price</th>
-			</tr></thead>
-		</table>
+		<div id="grid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="store:mystore, structure:layout"></div>
 		<div id="button" data-dojo-type="dijit.form.Button" onclick="_do_click">Modify Data</div>
 		<div id="button2" data-dojo-type="dijit.form.Button" onclick="_do_populate">Populate</div>
 	</body>

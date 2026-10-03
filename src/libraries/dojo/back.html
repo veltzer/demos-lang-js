@@ -3,13 +3,11 @@
 	This is a solution to the dojo.back exercise from the exercises.txt file.
 	Have a look at it to see the requirements.
 	This can also be used as an example of how to use the dojo.back API.
-
-	FLAGS: NOTIDY
 -->
 <html>
 	<head>
 		<title>Solution to the dojo.back exercise</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true,preventBackButtonFix:false"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true,preventBackButtonFix:false"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -52,7 +50,7 @@
 		<script>
 			dojo.back.init()
 		</script>
-		<div id="id_sum" readonly="true" data-dojo-type="dijit.form.NumberTextBox">
+		<div id="id_sum" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="readOnly:true">
 		</div>
 		<div id="id_val" data-dojo-type="dijit.form.NumberTextBox">
 		</div>

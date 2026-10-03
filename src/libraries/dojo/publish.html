@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<head>
 		<title>Hello, publish/subscribe</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -53,9 +50,9 @@
 	</head>
 	<body class="tundra">
 		<div data-dojo-type="dijit.form.Button" id="sub1" title="sub1" onclick="_do_sub1">sub1</div>
-		<div data-dojo-type="dijit.form.Button" id="unsub1" title="unsub1" onclick="_do_unsub1" disabled="true">unsub1</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" id="unsub1" title="unsub1" onclick="_do_unsub1">unsub1</div>
 		<div data-dojo-type="dijit.form.Button" id="sub2" title="sub2" onclick="_do_sub2">sub2</div>
-		<div data-dojo-type="dijit.form.Button" id="unsub2" title="unsub2" onclick="_do_unsub2" disabled="true">unsub2</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" id="unsub2" title="unsub2" onclick="_do_unsub2">unsub2</div>
 		<div data-dojo-type="dijit.form.Button" id="pub" title="publish" onclick="_do_publish">publish</div>
 		<div data-dojo-type="dijit.form.TextBox" id="textbox" title="This is the value to publish"></div>
 	</body>

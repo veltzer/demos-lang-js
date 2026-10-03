@@ -1,6 +1,13 @@
 dojo.require("dojox.grid.DataGrid");
 dojo.require("dojo.data.ItemFileWriteStore");
 dojo.require("dijit.form.Button");
+var layout=[ // eslint-disable-line no-unused-vars
+	{ name: "Product", field: "product" },
+	{ name: "Price", field: "price" }
+];
+var layout2=[ // eslint-disable-line no-unused-vars
+	{ name: "Price", field: "price" }
+];
 function init() {
 	// load some data
 }

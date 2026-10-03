@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<head>
 		<title>Login page exercise</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -44,55 +41,31 @@
 	</head>
 	<body class="tundra">
 		<form id="formid" data-dojo-type="dijit.form.Form">
-		First Name<div type="text"
+		First Name<div
 			id="first_name"
-			name="firstName"
-			data-dojo-type="dijit.form.ValidationTextBox"
-			required="true"
-			propercase="true"
-			reg-exp="^[a-zA-Z]+$"
-			maxlength="10"
-			prompt-message="Enter your first name"
-			invalid-message="First name is required"
-			trim="true"
+			data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="type:'text', name:'firstName', required:true, propercase:true, regExp:'^[a-zA-Z]+$', maxLength:10, promptMessage:'Enter your first name', invalidMessage:'First name is required', trim:true"
 		></div>
 		<br>
-		Last Name<div type="text"
+		Last Name<div
 			id="last_name"
-			name="lastName"
-			data-dojo-type="dijit.form.ValidationTextBox"
-			required="true"
-			propercase="true"
-			reg-exp="^[a-zA-Z]+$"
-			maxlength="10"
-			prompt-message="Enter your last name"
-			invalid-message="Last name is required"
-			trim="true"
+			data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="type:'text', name:'lastName', required:true, propercase:true, regExp:'^[a-zA-Z]+$', maxLength:10, promptMessage:'Enter your last name', invalidMessage:'Last name is required', trim:true"
 		></div>
 		<br>
-		<div data-dojo-type="dojox.form.PasswordValidator" name="pwValidate" pw-check="_pwCheck">
+		<div data-dojo-type="dojox.form.PasswordValidator" data-dojo-props="name:'pwValidate', pwCheck:_pwCheck">
 			<!--
-			Old password<input type="password" pw-type="old"/><br>
+			Old password<input type="password" data-dojo-props="pwType:'old'"/><br>
 			-->
-			New password<input type="password" pw-type="new"/><br>
-			Verify new password<input type="password" pw-type="verify"/><br>
+			New password<input type="password" data-dojo-props="pwType:'new'"/><br>
+			Verify new password<input type="password" data-dojo-props="pwType:'verify'"/><br>
 		</div>
-		<div data-dojo-type="dijit.form.ComboBox" id="im" value="Enter your IM system"></div>
+		<div data-dojo-type="dijit.form.ComboBox" data-dojo-props="value:'Enter your IM system'" id="im"></div>
 		<br>
-		IM id<div type="text"
+		IM id<div
 			id="im_id"
-			name="IMid"
-			data-dojo-type="dijit.form.ValidationTextBox"
-			required="true"
-			propercase="true"
-			reg-exp="^[0-9a-zA-Z]+$"
-			maxlength="10"
-			prompt-message="Enter your IM id"
-			invalid-message="IM id is required"
-			trim="true"
+			data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="type:'text', name:'IMid', required:true, propercase:true, regExp:'^[0-9a-zA-Z]+$', maxLength:10, promptMessage:'Enter your IM id', invalidMessage:'IM id is required', trim:true"
 		></div>
 		<br>
-		<div id="submitid" data-dojo-type="dijit.form.Button" title="click to see an alert" onclick="_register" disabled="true">Register to this website</div>
+		<div id="submitid" data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" title="click to see an alert" onclick="_register">Register to this website</div>
 		</form>
 	</body>
 </html>

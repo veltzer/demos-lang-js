@@ -20,9 +20,9 @@ version: 0.0.1
 ![build](https://github.com/veltzer/demos-lang-js/workflows/build/badge.svg)
 ## Number of examples
 
-Currently there are 550 examples in this repo.
-148 javascript files.
-402 HTML files.
+Currently there are 546 examples in this repo.
+147 javascript files.
+399 HTML files.
 
 ## contact me
 

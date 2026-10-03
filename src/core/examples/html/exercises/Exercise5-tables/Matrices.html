@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<head>
 		<title>Matrices</title>
+		<style>
+			table td { padding: 5px; }
+			table table td { padding: 1px; }
+		</style>
 	</head>
 	<body>
-		<h1 align="left">Matrix</h1>
+		<h1 style="text-align: left;">Matrix</h1>
 		<p><!-- Start of Simple Table --></p>
-		<center>
-			<table bordercolor="blue" cellspacing="2" cellpadding="5" width="95%" border="10">
+		<div style="text-align: center;">
+			<table border="10" style="border-color: blue; border-spacing: 2px; width: 95%;">
 		<tr>
-			<td valign="center" width="20%" background="BackGround.gif" rowspan="3"></td>
-			<td valign="center" colspan="2">This is my table</td>
+			<td rowspan="3" style="vertical-align: middle; width: 20%; background-image: url(BackGround.gif);"></td>
+			<td colspan="2" style="vertical-align: middle;">This is my table</td>
 		</tr>
 		<tr>
-			<td valign="top" width="40%">&nbsp;</td>
-			<td valign="center"><!-- Nested Table --><br>
-			<table cellspacing="2" cellpadding="1" width="100%" border="0">
+			<td style="vertical-align: top; width: 40%;">&nbsp;</td>
+			<td style="vertical-align: middle;"><!-- Nested Table --><br>
+			<table border="0" style="border-spacing: 2px; width: 100%;">
 				<tr>
-					<td valign="center" colspan="2" align="middle"><b>Title</b></td>
+					<td colspan="2" style="vertical-align: middle; text-align: center;"><b>Title</b></td>
 				</tr>
 				<tr>
-					<td valign="center" align="middle">first</td>
-					<td valign="center" align="middle">third</td>
+					<td style="vertical-align: middle; text-align: center;">first</td>
+					<td style="vertical-align: middle; text-align: center;">third</td>
 				</tr>
 				<tr>
-					<td valign="center" align="middle">second</td>
-					<td valign="center" align="middle">fourth</td>
+					<td style="vertical-align: middle; text-align: center;">second</td>
+					<td style="vertical-align: middle; text-align: center;">fourth</td>
 				</tr>
 			</table>
 			</td></tr><tr>
-		<td valign="center"><p align="right">Cell number 1</p></td>
-		<td valign="center"><p>Cell number 2</p></td></tr></table>
-		</center>
+		<td style="vertical-align: middle;"><p style="text-align: right;">Cell number 1</p></td>
+		<td style="vertical-align: middle;"><p>Cell number 2</p></td></tr></table>
+		</div>
 		<p>&nbsp;</p>
 		<p style="color:black;"><br>&nbsp;</p>
 	</body>

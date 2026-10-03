@@ -9,13 +9,11 @@
 	declerative widget.
 	Just remmember to have them declared in the right order and avoid two widgets with
 	the same jsId attribute which will cause them to overwrite one another.
-
-	FLAGS: NOTIDY
 -->
 <html>
 	<head>
 		<title>Hello, JsId!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -27,6 +25,6 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dijit.form.Button" js-id="myJSId" title="click to see an alert" onclick="_do_click">Lets see if this works</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-id="myJSId" title="click to see an alert" onclick="_do_click">Lets see if this works</div>
 	</body>
 </html>

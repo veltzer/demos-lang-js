@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<!--
-	FLAGS: NOTIDY
--->
 <html>
 	<head>
 		<title>Hello, Lazy Tree!</title>
-		<script src="../toolkits/dojo/dojo/dojo.js" dj-config="parseOnLoad:true"></script>
+		<script src="../toolkits/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad:true"></script>
 		<link rel="stylesheet" href="../toolkits/dojo/dijit/themes/tundra/tundra.css"/>
 		<link rel="stylesheet" href="../toolkits/dojo/dojo/resources/dojo.css"/>
 		<script>
@@ -34,23 +31,15 @@
 		</script>
 	</head>
 	<body class="tundra">
-		<div data-dojo-type="dojox.data.QueryReadStore"
-			url="tree_lazy.php"
-			js-id="treeStore">
+		<div data-dojo-type="dojox.data.QueryReadStore" data-dojo-props="url:'tree_lazy.php'"
+			data-dojo-id="treeStore">
 		</div>
-		<div data-dojo-type="my.ForestStoreModel"
-			store="treeStore"
-			root-id="/"
-			root-label="/"
-			query="{ path: &quot;/&quot; }"
-			children-attrs="children"
-			js-id="treeModel">
+		<div data-dojo-type="my.ForestStoreModel" data-dojo-props="store:treeStore, rootId:'/', rootLabel:'/', query:{ path: '/' }, childrenAttrs:['children']"
+			data-dojo-id="treeModel">
 		</div>
-		<div data-dojo-type="dijit.Tree"
-			model="treeModel"
-			js-id="itemTree"
-			persist="false">
-			<script type="dojo/method" event="onClick" args="item">
+		<div data-dojo-type="dijit.Tree" data-dojo-props="model:treeModel, persist:false"
+			data-dojo-id="itemTree">
+			<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="item">
 				alert("you clicked: " + treeStore.getLabel(item));
 			</script>
 		</div>
