@@ -77,7 +77,7 @@ src_dirs = ["nodejs/exercises", "src/core", "support"]
 
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
-[processor.checker.xmllint]
+[processor.checker.ixmllint]
 src_dirs = ["src/core/examples/html5/solutions/websockets/WebContent/WEB-INF"]
 
 # ─── php ─────────────────────────────────────────────────────────────────────
