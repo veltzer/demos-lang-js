@@ -49,9 +49,10 @@ src_dirs = ["config"]
 src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # not linted: not_mine (third-party file, see directory name)
-[processor.checker.tidy]
+[processor.checker.itidy]
 src_dirs = ["src"]
-args = ["-config", ".tidy.config"]
+config_file = ".tidy.config"
+dep_inputs = [".tidy.config"]
 
 # not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
 [processor.checker.oxlint]
