@@ -34,7 +34,7 @@ src_dirs = ["src", "config"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
-[processor.checker.shellcheck]
+[processor.checker.ishellcheck]
 src_dirs = ["src", "config"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
@@ -87,9 +87,8 @@ src_dirs = ["src"]
 
 # ─── java ────────────────────────────────────────────────────────────────────
 
-[processor.checker.checkstyle]
+[processor.checker.icheckstyle]
 src_dirs = ["src/core/examples/html5"]
-args = ["-c", "checkstyle.xml"]
 
 # ─── css ─────────────────────────────────────────────────────────────────────
 
