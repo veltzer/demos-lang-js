@@ -50,23 +50,23 @@ Ext.onReady(function() {
 
 	window.store1 = Ext.create("Ext.data.JsonStore", {
 		fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
-		data: generateData()
+		data: window.generateData()
 	});
 	window.storeNegatives = Ext.create("Ext.data.JsonStore", {
 		fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
-		data: generateDataNegative()
+		data: window.generateDataNegative()
 	});
 	window.store3 = Ext.create("Ext.data.JsonStore", {
 		fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
-		data: generateData()
+		data: window.generateData()
 	});
 	window.store4 = Ext.create("Ext.data.JsonStore", {
 		fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
-		data: generateData()
+		data: window.generateData()
 	});
 	window.store5 = Ext.create("Ext.data.JsonStore", {
 		fields: ["name", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data9", "data9"],
-		data: generateData()
+		data: window.generateData()
 	});
 
 	window.loadTask = new Ext.util.DelayedTask();

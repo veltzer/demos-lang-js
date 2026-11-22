@@ -150,8 +150,6 @@ function cacheDownloading(_event) {
 }
 
 function wentOffline(_event) {
-	/*global ClientDataSource*/
-	var _cds = new ClientDataSource(document.getElementById("current").innerText); // eslint-disable-line no-unused-vars
 	setOnline(false);
 }
 

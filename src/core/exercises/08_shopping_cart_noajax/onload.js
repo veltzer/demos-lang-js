@@ -4,8 +4,8 @@
 window.onload = function() {
 	"use strict";
 	// lets add items to the inventory
-	i = Inventory.getInstance();
-	c = Cart.getInstance();
+	var i = Inventory.getInstance();
+	var c = Cart.getInstance();
 	i.setTbid("inventory_tbl");
 	i.addProduct(new InventoryItem(14, "Bicycle", 145, 3));
 	i.addProduct(new InventoryItem(15, "Basketball", 3.99, 12));

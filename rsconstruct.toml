@@ -46,7 +46,8 @@ config_file = ".tidy.config"
 # not linted: toolkits (vendored libraries: raphael, prototype, jquery.mobile)
 [processor.checker.oxlint]
 src_dirs = ["src", "nodejs", "to_integrate/async"]
-args = ["-c", ".oxlintrc.json"]
+args = ["-c", ".oxlintrc.repo.json"]
+dep_inputs = [".oxlintrc.repo.json"]
 
 # ─── repo-specific configuration ────────────────────────────────────────────
 

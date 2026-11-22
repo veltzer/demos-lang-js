@@ -1,0 +1,142 @@
+{
+	// This repo's oxlint config: the fleet's shared rules (.oxlintrc.json,
+	// byte-identical everywhere, through extends), plus what extends does not
+	// carry over: the plugins, the environment this repo's JavaScript runs in,
+	// and the globals its pages get from the libraries their <script> tags
+	// load, so no-undef knows them and still catches every other undefined name.
+	"$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+	"extends": ["./.oxlintrc.json"],
+	"plugins": ["eslint"],
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2022": true
+	},
+	"globals": {},
+	// each library's demos get that library's globals, from the <script> tags of their pages
+	"overrides": [
+		{
+			"files": ["src/libraries/extjs/**/*.js"],
+			"globals": {
+				// Ext JS (ext-all.js)
+				"Ext": "readonly"
+			}
+		},
+		{
+			"files": ["src/libraries/extjs/examples/google_maps/*.js"],
+			"globals": {
+				// the Google Maps v2 API, which the Ext JS map example loads
+				"G_DEFAULT_ICON": "readonly",
+				"GClientGeocoder": "readonly",
+				"GEvent": "readonly",
+				"GLatLng": "readonly",
+				"GMap2": "readonly",
+				"GMarker": "readonly",
+				"GStreetviewPanorama": "readonly"
+			}
+		},
+		{
+			"files": ["src/libraries/dojo/**/*.js"],
+			"globals": {
+				// Dojo (dojo.js) and its widgets
+				"dijit": "readonly",
+				"dojo": "readonly"
+			}
+		},
+		{
+			"files": ["src/libraries/jquery/**/*.js", "src/libraries/jquery_ui/**/*.js", "src/libraries/jquery_controls/**/*.js"],
+			"globals": {
+				// jQuery (and jQuery UI)
+				"$": "readonly",
+				"jQuery": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/examples/html5/**/websockets/**/*.js"],
+			"globals": {
+				// jWebSocket (jWebSocket.js), which the chat pages load
+				"jws": "readonly"
+			}
+		},
+		// each exercise's page loads its files in order as plain <script>s: a file may use what one beside it defines (the comment names it)
+		{
+			"files": ["src/core/exercises/07_shopping_cart_noajax/cart.js"],
+			"globals": {
+				// src/core/exercises/07_shopping_cart_noajax/inventory.js
+				"Inventory": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/exercises/07_shopping_cart_noajax/onload.js"],
+			"globals": {
+				// src/core/exercises/07_shopping_cart_noajax/cart.js
+				"Cart": "readonly",
+				// src/core/exercises/07_shopping_cart_noajax/inventory.js
+				"Inventory": "readonly",
+				// src/core/exercises/07_shopping_cart_noajax/inventory.js
+				"InventoryItem": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/exercises/08_shopping_cart_noajax/cart.js"],
+			"globals": {
+				// src/core/exercises/08_shopping_cart_noajax/inventory.js
+				"Inventory": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/exercises/08_shopping_cart_noajax/inventory.js"],
+			"globals": {
+				// src/core/exercises/08_shopping_cart_noajax/cart.js
+				"Cart": "readonly",
+				// src/core/exercises/08_shopping_cart_noajax/ajax.js
+				"jsonGet": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/exercises/08_shopping_cart_noajax/onload.js"],
+			"globals": {
+				// src/core/exercises/08_shopping_cart_noajax/cart.js
+				"Cart": "readonly",
+				// src/core/exercises/08_shopping_cart_noajax/inventory.js
+				"Inventory": "readonly",
+				// src/core/exercises/08_shopping_cart_noajax/inventory.js
+				"InventoryItem": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/exercises/09_shopping_cart_ajax/onload.js"],
+			"globals": {
+				// src/core/exercises/09_shopping_cart_ajax/cart.js
+				"Cart": "readonly",
+				// src/core/exercises/09_shopping_cart_ajax/inventory.js
+				"Inventory": "readonly",
+				// src/core/exercises/09_shopping_cart_ajax/inventory.js
+				"InventoryItem": "readonly"
+			}
+		},
+		{
+			"files": ["src/core/exercises/10_mvc/onload.js"],
+			"globals": {
+				// src/core/exercises/10_mvc/Model.js
+				"Model": "readonly",
+				// src/core/exercises/10_mvc/TableView.js
+				"TableView": "readonly"
+			}
+		},
+		{
+			"files": ["src/libraries/jquery/exercises/autocomplete.js"],
+			"globals": {
+				// src/libraries/jquery/exercises/complete.js
+				"complete": "readonly"
+			}
+		},
+		{
+			"files": ["src/libraries/jquery/exercises/ex4.js"],
+			"globals": {
+				// src/libraries/jquery/exercises/postoffice.js
+				"PostOffice": "readonly"
+			}
+		}
+	]
+}

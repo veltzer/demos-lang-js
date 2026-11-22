@@ -24,7 +24,7 @@ function more_explicit_sleep() {
 function f2() {
 	console.log("f2");
 	// p = sleep(3000);
-	p = more_explicit_sleep();
+	var p = more_explicit_sleep();
 	p.then(() => {
 		console.log("f2-late");
 	});

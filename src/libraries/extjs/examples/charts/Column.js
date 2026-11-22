@@ -7,7 +7,7 @@ Ext.onReady(function () {
 			style: "background:#fff",
 			animate: true,
 			shadow: true,
-			store: store1,
+			store: window.store1,
 			axes: [{
 				type: "Numeric",
 				position: "left",
@@ -76,7 +76,7 @@ Ext.onReady(function () {
 			handler: function() {
 				// Add a short delay to prevent fast sequential clicks
 				window.loadTask.delay(100, function() {
-					store1.loadData(generateData());
+					window.store1.loadData(window.generateData());
 				});
 			}
 		}],

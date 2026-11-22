@@ -1,4 +1,6 @@
-/*global mapCanvas,divStatus*/
+// the page's canvas and status line: init() is to set them (see the solution)
+var mapCanvas;
+var divStatus;
 
 function init() {
 }

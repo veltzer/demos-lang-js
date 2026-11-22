@@ -31,7 +31,7 @@ TableView.prototype.create=function() {
 			var c_d_td=document.createElement("td");
 			var c_d_text=document.createTextNode(c_cur_col);
 			c_d_td.appendChild(c_d_text);
-			c_d_tr.appendChild(c_d_td);
+			d_tr.appendChild(c_d_td);
 		}
 		d_body.appendChild(d_tr);
 	}

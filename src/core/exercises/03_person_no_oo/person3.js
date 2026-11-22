@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-g_getName = function () {
+var g_getName = function () {
 	return this.name;
 };
-g_setName = function (iname) {
+var g_setName = function (iname) {
 	this.name = iname;
 };
-g_getFullName = function () {
+var g_getFullName = function () {
 	return this.name + " " + this.age;
 };
-g_printSelf = function () {
+var g_printSelf = function () {
 	console.log(this.getFullName());
 };
 
@@ -22,7 +22,7 @@ function createPerson (iname, iage) {
 		printSelf: g_printSelf
 	};
 }
-p1 = createPerson("Bilbo", 111);
-p2 = createPerson("Frodo", 33);
+var p1 = createPerson("Bilbo", 111);
+var p2 = createPerson("Frodo", 33);
 p1.printSelf();
 p2.printSelf();

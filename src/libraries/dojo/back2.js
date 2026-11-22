@@ -11,7 +11,7 @@ function sumNumbers(e) { // eslint-disable-line no-unused-vars
 
 	if(v_num%2==1) {
 		// now invalidate all previous states...
-		for(i=0;i<states.length;i++) {
+		for(var i=0;i<states.length;i++) {
 			states[i].invalidate();
 		}
 	}

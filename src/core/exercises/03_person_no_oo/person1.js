@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-person1 = {
+var person1 = {
 	name: "Bilbo",
 	age: 111,
 	getName: function () {
@@ -15,7 +15,7 @@ person1 = {
 		console.log(this.getFullName());
 	}
 };
-person2 = {
+var person2 = {
 	name: "Frodo",
 	age: 33,
 	getName: function () {
