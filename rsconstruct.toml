@@ -74,6 +74,8 @@ src_dirs = ["nodejs/exercises", "src/core", "support"]
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
 [processor.checker.ixmllint]
+# warnings fail too, not only fatal errors
+strict = true
 src_dirs = ["src/core/examples/html5/solutions/websockets/WebContent/WEB-INF"]
 
 # ─── php ─────────────────────────────────────────────────────────────────────
