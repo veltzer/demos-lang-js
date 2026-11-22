@@ -5,7 +5,7 @@
 
 description: Demos for the javascript programming language
 
-project website: https://veltzer.github.io/demos-lang-js
+project website: <https://veltzer.github.io/demos-lang-js>
 
 author: Mark Veltzer
 
