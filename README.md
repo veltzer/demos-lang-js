@@ -18,6 +18,7 @@ version: 0.0.1
 ## build
 
 ![build](https://github.com/veltzer/demos-lang-js/workflows/build/badge.svg)
+
 ## Number of examples
 
 Currently there are 546 examples in this repo.

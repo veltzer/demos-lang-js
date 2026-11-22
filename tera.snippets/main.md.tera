@@ -1,3 +1,4 @@
+
 ## Number of examples
 
 {% set js = git_count_files(pattern="src/**/*.js") -%}
