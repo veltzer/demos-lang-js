@@ -1,6 +1,6 @@
-// the page's canvas and status line: init() is to set them (see the solution)
-var mapCanvas;
-var divStatus;
+// the page's canvas and status line: setting them in init() is part of the exercise (see the solution)
+var mapCanvas; // eslint-disable-line no-unassigned-vars -- the student's init() assigns it
+var divStatus; // eslint-disable-line no-unassigned-vars -- the student's init() assigns it
 
 function init() {
 }

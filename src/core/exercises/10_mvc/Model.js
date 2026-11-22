@@ -2,18 +2,24 @@ function Model() {
 	this.data={};
 	this.columnNames=[]; // only names, not data
 	this.rows=0;
-	this.views={};
+	// the views showing this model, each told when it changes
+	this.views=[];
 }
 // this method empties the model
 Model.prototype.empty=function(_v) {
 	this.data={};
 };
 Model.prototype.addView=function(v) {
-	this.views[v]=0;
+	if(this.views.indexOf(v)===-1) {
+		this.views.push(v);
+	}
 	this.updateViews();
 };
 Model.prototype.deleteView=function(v) {
-	delete this.views[v];
+	var i=this.views.indexOf(v);
+	if(i!==-1) {
+		this.views.splice(i,1);
+	}
 };
 Model.prototype.getColumns=function() {
 	return this.columns;
@@ -46,8 +52,7 @@ Model.prototype.deleteRow=function(row) {
 	this.updateViews();
 };
 Model.prototype.updateViews=function() {
-	var view;
-	if(view in this.views) {
+	this.views.forEach(function(view) {
 		view.updateFromModel();
-	}
+	});
 };
