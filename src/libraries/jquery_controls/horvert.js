@@ -1,4 +1,4 @@
-function HorVertElem(elid) { // eslint-disable-line no-unused-vars
+function HorVertElem(elid) {
 	this.el=$(elid);
 }
 
@@ -70,3 +70,6 @@ HorVert.prototype.resize=function() {
 		}
 	}
 };
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { HorVertElem });

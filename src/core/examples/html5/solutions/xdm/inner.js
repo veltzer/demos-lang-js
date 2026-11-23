@@ -33,7 +33,7 @@ function receiveMessage(e) {
 	}
 }
 
-function setStatus(status) { // eslint-disable-line no-unused-vars
+function setStatus(status) {
 	divStatus.innerHTML = status;
 }
 
@@ -41,6 +41,5 @@ function addStatus(status) {
 	divStatus.innerHTML += status + "<br>";
 }
 
-
-
-
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { setStatus });

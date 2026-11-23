@@ -49,11 +49,11 @@ function receiveMessage(e) {
 	}
 }
 
-function setStatus(status) { // eslint-disable-line no-unused-vars
+function setStatus(status) {
 	divStatus.innerHTML = status;
 }
 
-function addStatus(status) { // eslint-disable-line no-unused-vars
+function addStatus(status) {
 	divStatus.innerHTML += status + "<br>";
 }
 
@@ -61,6 +61,5 @@ function addMessage(message) {
 	divChatMessages.innerHTML += "Inner Frame says: " + message + "<br>";
 }
 
-
-
-
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { setStatus, addStatus });

@@ -5,7 +5,6 @@ var divChatMessages;
 var divStatus;
 var btnPressMe;
 var jWebSocketClient;
-var txtMessageTo; // eslint-disable-line no-unused-vars
 var cbPrivate;
 var users;
 //var lastProcessedUsId;
@@ -15,7 +14,6 @@ function init() {
 	btnPressMe.onclick = processSubmit;
 	taMessage = document.getElementById("message");
 	txtUserName = document.getElementById("user_name");
-	txtMessageTo = document.getElementById("messageTo");
 	cbPrivate = document.getElementById("private");
 	divChatMessages = document.getElementById("chat-messagess");
 	divStatus = document.getElementById("status");
@@ -31,7 +29,7 @@ function init() {
 
 	if( jws.browserSupportsWebSockets() ) {
 		jWebSocketClient = new jws.jWebSocketJSONClient();
-		var logonResult = jWebSocketClient.logon( url, chatUsername, password, { // eslint-disable-line no-unused-vars
+		jWebSocketClient.logon( url, chatUsername, password, {
 		// OnOpen callback
 		OnOpen: connectionOpened,
 		// OnMessage callback

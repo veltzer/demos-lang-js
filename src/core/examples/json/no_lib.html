@@ -15,16 +15,16 @@
 			// how about a simple varialbe assignment ?
 			var e2=eval("var a=13");
 			console.log(`e2 is ${e2}`);
-			console.log(`a is ${a}`); // eslint-disable-line no-undef
+			console.log(`a is ${a}`); // eslint-disable-line no-undef -- teaching: reassigning/using this name is what the example shows
 
 			// a variable assignment from a string of any data? yes!
 			// this is the basis of JSON
 			var someString="[1,2,3]";
 			var e3=eval("var b="+someString);
 			console.log(`e3 is ${e3}`);
-			console.log(`b is ${b}`); // eslint-disable-line no-undef
-			console.log(`typeof(b) is ${typeof(b)}`); // eslint-disable-line no-undef
-			console.log(`b.length is ${b.length}`); // eslint-disable-line no-undef
+			console.log(`b is ${b}`); // eslint-disable-line no-undef -- teaching: reassigning/using this name is what the example shows
+			console.log(`typeof(b) is ${typeof(b)}`); // eslint-disable-line no-undef -- teaching: reassigning/using this name is what the example shows
+			console.log(`b.length is ${b.length}`); // eslint-disable-line no-undef -- teaching: reassigning/using this name is what the example shows
 		</script>
 	</head>
 	<body>

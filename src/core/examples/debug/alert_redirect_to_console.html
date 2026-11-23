@@ -7,7 +7,7 @@
 		<title>Title</title>
 		<script>
 			alert("This one is still a regular alert");
-			alert=function(m) { // eslint-disable-line no-global-assign
+			alert=function(m) { // eslint-disable-line no-global-assign -- teaching: reassigning/using this name is what the example shows
 				console.log(m);
 			};
 			alert("where did this go?!? -> to the console of course...");

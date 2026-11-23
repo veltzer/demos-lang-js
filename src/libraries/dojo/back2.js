@@ -2,7 +2,7 @@ dojo.require("dijit.form.Button");
 dojo.require("dijit.form.NumberTextBox");
 dojo.require("dojo.back");
 
-function sumNumbers(e) { // eslint-disable-line no-unused-vars
+function sumNumbers(e) {
 	var w_sum = dijit.byId("id_sum");
 	var v_sum = parseInt(w_sum.attr("value"), 10);
 
@@ -20,10 +20,10 @@ function sumNumbers(e) { // eslint-disable-line no-unused-vars
 	var s=new MyState(v_sum,v_num);
 	dojo.back.addToHistory(s);
 }
-function Back(e) { // eslint-disable-line no-unused-vars
+function Back(e) {
 	dojo.back.goBack();
 }
-function Back2(e) { // eslint-disable-line no-unused-vars
+function Back2(e) {
 	dojo.back.goBack();
 	dojo.back.goBack();
 }
@@ -57,3 +57,6 @@ function myinit() {
 	s.restoreState();
 }
 dojo.addOnLoad(myinit);
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { sumNumbers, Back, Back2 });

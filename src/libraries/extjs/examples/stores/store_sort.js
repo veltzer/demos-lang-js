@@ -1,4 +1,4 @@
-var store=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
+var store=Ext.create("Ext.data.Store", {
 	model: "User",
 	sorters: [
 		{
@@ -11,3 +11,6 @@ var store=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
 		}
 	]
 });
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { store });

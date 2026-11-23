@@ -1,7 +1,7 @@
 /*
  * A small helper to do ajax requests
  */
-function jsonGet (url, callback) { // eslint-disable-line no-unused-vars
+function jsonGet (url, callback) {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
 		if (this.readyState === 4 && this.status === 200) {
@@ -11,3 +11,6 @@ function jsonGet (url, callback) { // eslint-disable-line no-unused-vars
 	xhr.open("GET", url, true);
 	xhr.send(null);
 }
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { jsonGet });

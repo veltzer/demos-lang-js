@@ -21,7 +21,7 @@ Ext.onReady(function(){
 			},
 		}
 	});
-	var w_grid=Ext.create("Ext.grid.Panel",{ // eslint-disable-line no-unused-vars
+	Ext.create("Ext.grid.Panel",{
 		title: "Movies that I have seen",
 		store: w_store,
 		columns:[

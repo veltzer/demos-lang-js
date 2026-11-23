@@ -48,11 +48,11 @@ function setCacheStatus(status) {
 	}
 }
 
-function _getCacheStatus() { // eslint-disable-line no-unused-vars
+function getCacheStatus() {
 	return window.applicationCache.status;
 }
 
-function _setNeedsUploading(needs) { // eslint-disable-line no-unused-vars
+function setNeedsUploading(needs) {
 	if (needs) {
 		tdNeedsUploading.innerHTML = "Data needs to be uploaded";
 		tdNeedsUploading.style = "#ff0000";
@@ -62,7 +62,7 @@ function _setNeedsUploading(needs) { // eslint-disable-line no-unused-vars
 	}
 }
 
-function _getNeedsUploading() { // eslint-disable-line no-unused-vars
+function getNeedsUploading() {
 	return needsUploading;
 }
 
@@ -157,3 +157,6 @@ function cameOnline(_event) {
 	setOnline(true);
 	setCacheStatus(window.applicationCache.status);
 }
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { getCacheStatus, setNeedsUploading, getNeedsUploading });

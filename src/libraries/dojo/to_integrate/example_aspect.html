@@ -8,14 +8,14 @@
 			}
 
 			var tmp=foo
-			foo=function() { // eslint-disable-line no-func-assign
+			foo=function() { // eslint-disable-line no-func-assign -- teaching: reassigning/using this name is what the example shows
 				alert("before foo");
 				var ret=tmp()
 				alert("after foo");
 				return ret
 			}
 			foo()
-			foo=tmp // eslint-disable-line no-func-assign
+			foo=tmp // eslint-disable-line no-func-assign -- teaching: reassigning/using this name is what the example shows
 			foo()
 		</script>
 	</head>

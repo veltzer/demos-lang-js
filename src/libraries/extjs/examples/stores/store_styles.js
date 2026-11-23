@@ -1,5 +1,5 @@
 // this is a store with an inlined model...
-var states=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
+var states=Ext.create("Ext.data.Store", {
 	fields: ["abbr", "name"],
 	data : [
 		{"abbr":"AL", "name":"Alabama"},
@@ -17,7 +17,7 @@ Ext.define("MovieModel", {
 	idProperty: "id",
 });
 // and a store using the model
-var w_store=Ext.create("Ext.data.Store",{ // eslint-disable-line no-unused-vars
+var w_store=Ext.create("Ext.data.Store",{
 	autoLoad: false,
 	pageSize: 20,
 	model: "MovieModel",
@@ -31,3 +31,6 @@ var w_store=Ext.create("Ext.data.Store",{ // eslint-disable-line no-unused-vars
 		},
 	},
 });
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { states, w_store });

@@ -13,16 +13,19 @@ function stopWatchingLocation() {
 	/* Enter Stop Watching Code here */
 }
 
-function updatePosition(position) { // eslint-disable-line no-unused-vars
+function updatePosition(position) {
 	/* Enter Position Update Code here */
 }
 
-function errorPosition(error) { // eslint-disable-line no-unused-vars
+function errorPosition(error) {
 	/* Enter Position Error Code here */
 }
 
-function optionsPosition() { // eslint-disable-line no-unused-vars
+function optionsPosition() {
 	/* Enter Position Options Code here */
 }
 
 window.onload = init;
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { updatePosition, errorPosition, optionsPosition });

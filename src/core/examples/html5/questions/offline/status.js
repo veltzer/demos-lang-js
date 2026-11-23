@@ -1,16 +1,15 @@
 var statusMessages = ["Uncached","Idle","Checking","Downloading","Update Ready","Obsolete"];
 var needsUploading = false;
 
-function init() { // eslint-disable-line no-unused-vars
-	var _tdNeedsUploading = document.getElementById("tdNeedsUploading"); // eslint-disable-line no-unused-vars
+function init() {
 }
 
-function setEmailAddress(email) { // eslint-disable-line no-unused-vars
+function setEmailAddress(email) {
 	var tdEmail = document.getElementById("tdEmail");
 	tdEmail.innerHTML = email;
 }
 
-function setOnline(online) { // eslint-disable-line no-unused-vars
+function setOnline(online) {
 	var tdOnline = document.getElementById("tdOnline");
 	if (online) {
 		tdOnline.innerHTML = "Connected to Server";
@@ -25,7 +24,7 @@ function getCacheStatusValue(number) {
 	return statusMessages[number];
 }
 
-function setCacheStatus(status) { // eslint-disable-line no-unused-vars
+function setCacheStatus(status) {
 	var tdCache = document.getElementById("tdCache");
 	if (status instanceof Number) {
 		tdCache.innerHTML = getCacheStatusValue(7);
@@ -34,11 +33,11 @@ function setCacheStatus(status) { // eslint-disable-line no-unused-vars
 	}
 }
 
-function getCacheStatus() { // eslint-disable-line no-unused-vars
+function getCacheStatus() {
 	return window.applicationCache.status;
 }
 
-function setNeedsUploading(needs) { // eslint-disable-line no-unused-vars
+function setNeedsUploading(needs) {
 	var tdNeedsUploading = document.getElementById("tdNeedsUploading");
 	if (needs) {
 		tdNeedsUploading.innerHTML = "Data needs to be uploaded";
@@ -49,6 +48,9 @@ function setNeedsUploading(needs) { // eslint-disable-line no-unused-vars
 	}
 }
 
-function getNeedsUploading() { // eslint-disable-line no-unused-vars
+function getNeedsUploading() {
 	return needsUploading;
 }
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { init, setEmailAddress, setOnline, setCacheStatus, getCacheStatus, setNeedsUploading, getNeedsUploading });

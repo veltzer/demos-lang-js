@@ -1,4 +1,4 @@
-function SpacerElem(elid) { // eslint-disable-line no-unused-vars
+function SpacerElem(elid) {
 	this.el=$(elid);
 }
 
@@ -63,3 +63,6 @@ Spacer.prototype.resize=function() {
 		runner+=ielem.el.width()+space;
 	}
 };
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { SpacerElem });

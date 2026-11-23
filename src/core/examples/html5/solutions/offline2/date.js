@@ -1,19 +1,11 @@
-var current;
-var clientDataSource; // eslint-disable-line no-unused-vars
-
-function ClientDateSource(timestamp) { // eslint-disable-line no-unused-vars
-	this.date = new Date(timestamp);
-	this.timer = tick();
-	function tick() {
-		this.date.setMilliseconds(this.date.getMilliseconds() + 1000);
-		current.innerHTML = this.date.getMilliseconds();
-		return setTimeout(tick, 1000);
-	}
-	function setTime(newTimestamp) { // eslint-disable-line no-unused-vars
-		this.date.setMilliseconds(newTimestamp);
-	}
-}
-
+// A clock that starts from the server's time (date.jsp writes it into
+// #current) and keeps counting in the browser, so the page still shows the
+// time while offline.
 window.onload = function() {
-	current = document.getElementById("current");
+	var current = document.getElementById("current");
+	var date = new Date(Number(current.textContent) || Date.now());
+	setInterval(function() {
+		date.setSeconds(date.getSeconds() + 1);
+		current.textContent = date.toString();
+	}, 1000);
 };

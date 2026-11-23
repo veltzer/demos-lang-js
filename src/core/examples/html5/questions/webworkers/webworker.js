@@ -1,20 +1,20 @@
 // the page's canvas and status line: setting them in init() is part of the exercise (see the solution)
-var mapCanvas; // eslint-disable-line no-unassigned-vars -- the student's init() assigns it
-var divStatus; // eslint-disable-line no-unassigned-vars -- the student's init() assigns it
+var mapCanvas; // eslint-disable-line no-unassigned-vars -- teaching: exercise skeleton, the student's init() assigns it
+var divStatus; // eslint-disable-line no-unassigned-vars -- teaching: exercise skeleton, the student's init() assigns it
 
 function init() {
 }
 
-function processSubmit() { // eslint-disable-line no-unused-vars
+function processSubmit() {
 }
 
-function messageHandler(event) { // eslint-disable-line no-unused-vars
+function messageHandler(event) {
 }
 
-function errorHandler(event) { // eslint-disable-line no-unused-vars
+function errorHandler(event) {
 }
 
-function drawResults(resultsArray) { // eslint-disable-line no-unused-vars
+function drawResults(resultsArray) {
 	var colors = ["#ff0000", "#00ff00", "#ffff00", "#ff00ff", "#00ffff", "#0000ff", "#f0f0f0", "#f0000f", "#f0f000", "#00ff0f"];
 	drawGrid(mapCanvas, 20);
 	var context = mapCanvas.getContext("2d");
@@ -63,7 +63,7 @@ function drawGrid(canvas, gridSize) {
 	context.stroke();
 }
 
-function getBrowserInfo() { // eslint-disable-line no-unused-vars
+function getBrowserInfo() {
 	var browserInfo = {};
 	var agent = navigator.userAgent;
 	if (agent.match(/Chrome/)) {
@@ -80,12 +80,15 @@ function getBrowserInfo() { // eslint-disable-line no-unused-vars
 	return browserInfo;
 }
 
-function setStatus(status) { // eslint-disable-line no-unused-vars
+function setStatus(status) {
 	divStatus.innerHTML = status;
 }
 
-function addStatus(status) { // eslint-disable-line no-unused-vars
+function addStatus(status) {
 	divStatus.innerHTML += "<br>" + status;
 }
 
 window.onload = init;
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { processSubmit, messageHandler, errorHandler, drawResults, getBrowserInfo, setStatus, addStatus });

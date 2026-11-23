@@ -1,17 +1,17 @@
 dojo.require("dojox.grid.DataGrid");
 dojo.require("dojo.data.ItemFileWriteStore");
 dojo.require("dijit.form.Button");
-var layout=[ // eslint-disable-line no-unused-vars
+var layout=[
 	{ name: "Product", field: "product" },
 	{ name: "Price", field: "price" }
 ];
-var layout2=[ // eslint-disable-line no-unused-vars
+var layout2=[
 	{ name: "Price", field: "price" }
 ];
 function init() {
 	// load some data
 }
-function do_click() { // eslint-disable-line no-unused-vars
+function do_click() {
 	var w=dijit.byId("grid");
 	var store=w.store;
 	for(var i=0;i<w.rowCount;i++) {
@@ -21,7 +21,10 @@ function do_click() { // eslint-disable-line no-unused-vars
 		store.setValue(item,"price",new_price);
 	}
 }
-function do_populate() { // eslint-disable-line no-unused-vars
+function do_populate() {
 	// create some data
 }
 dojo.addOnLoad(init);
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { layout, layout2, do_click, do_populate });

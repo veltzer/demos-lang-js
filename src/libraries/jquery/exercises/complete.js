@@ -18,7 +18,7 @@ function gcd(t1,t2) {
 	var ret2=t1.substring(0,len);
 	return ret2;
 }
-function complete(text, list) { // eslint-disable-line no-unused-vars
+function complete(text, list) {
 	// lets build a match list...
 	var mlen=text.length;
 	var matchlist=[];
@@ -38,3 +38,6 @@ function complete(text, list) { // eslint-disable-line no-unused-vars
 	}
 	return sgcd;
 }
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { complete });

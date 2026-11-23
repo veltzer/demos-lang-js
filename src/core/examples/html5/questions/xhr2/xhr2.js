@@ -1,4 +1,4 @@
-var divResults; // eslint-disable-line no-unused-vars
+var divResults;  // eslint-disable-line no-unused-vars -- teaching: exercise skeleton, the student's code uses it
 
 function init() {
 	var btnPresMe = document.getElementById("press_me");

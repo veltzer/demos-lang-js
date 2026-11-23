@@ -1,14 +1,14 @@
-function messageHandler(event) { // eslint-disable-line no-unused-vars
+function messageHandler(event) {
 }
 
-function errorHandler(event) { // eslint-disable-line no-unused-vars
+function errorHandler(event) {
 }
 
 function updateData(data) {
 	postMessage(data);
 }
 
-function init() { // eslint-disable-line no-unused-vars
+function init() {
 	trigger();
 	updateData( {
 		message : "Init",
@@ -18,3 +18,6 @@ function init() { // eslint-disable-line no-unused-vars
 
 function trigger() {
 }
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { messageHandler, errorHandler, init });

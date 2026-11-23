@@ -30,7 +30,7 @@ function init() {
 
 	if(jws.browserSupportsWebSockets()) {
 		jWebSocketClient = new jws.jWebSocketJSONClient();
-		var _logonResult = jWebSocketClient.logon( url, chatUsername, password, { // eslint-disable-line no-unused-vars
+		jWebSocketClient.logon( url, chatUsername, password, {
 			// OnOpen callback
 			OnOpen: connectionOpened,
 			// OnMessage callback

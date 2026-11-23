@@ -17,7 +17,6 @@ MyState.prototype.restoreState=function() {
 	if(i>0) {
 		//alert("restoring to "+i);
 		i--;
-		var s=states[i]; // eslint-disable-line no-unused-vars
 		//frm.src=s.p_url;
 		frm.src="http://www.sourceforge.net";
 	} else {
@@ -44,7 +43,7 @@ function myinit() {
 	dojo.back.setInitialState(s);
 	s.restoreState();
 }
-function go() { // eslint-disable-line no-unused-vars
+function go() {
 	var w_url = dijit.byId("id_url");
 	var v_url=w_url.attr("value");
 	//alert("going to "+v_url);
@@ -53,3 +52,6 @@ function go() { // eslint-disable-line no-unused-vars
 	frm.src=v_url;
 }
 dojo.addOnLoad(myinit);
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { go });

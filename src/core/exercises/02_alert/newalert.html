@@ -19,7 +19,7 @@
 				} else {
 					// this is the real magic: replace the
 					// newalert function.
-					newalert=function(msg) { // eslint-disable-line no-global-assign,no-func-assign
+					newalert=function(msg) { // eslint-disable-line no-global-assign,no-func-assign -- teaching: reassigning/using this name is what the example shows
 						newalert.a.push(msg);
 					};
 					// now store the message or else we would

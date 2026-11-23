@@ -1,5 +1,5 @@
 var btnPressMe;
-var video; // eslint-disable-line no-unused-vars
+var video;  // eslint-disable-line no-unused-vars -- teaching: exercise skeleton, the student's code uses it
 
 function init() {
 	btnPressMe = document.getElementById("press_me");

@@ -1,4 +1,4 @@
-var store=Ext.create("Ext.data.Store", { // eslint-disable-line no-unused-vars
+var store=Ext.create("Ext.data.Store", {
 	autoLoad: true,
 	model: "User",
 	proxy: {
@@ -35,3 +35,6 @@ that the "User" model was correctly defined...)...
 	]
 }
 */
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { store });

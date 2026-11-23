@@ -3,7 +3,7 @@ function init() {
 	btnPresMe.onclick = processSubmit;
 }
 
-function degreesToRadians(degrees) { // eslint-disable-line no-unused-vars
+function degreesToRadians(degrees) {
 	return degrees / 360 * Math.PI * 2;
 }
 
@@ -58,3 +58,5 @@ function drawStonePath(context) {
 
 window.onload = init;
 
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { degreesToRadians });

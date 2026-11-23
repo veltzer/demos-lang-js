@@ -1,4 +1,4 @@
-var statsWorker, imageWorker; // eslint-disable-line no-unused-vars
+var statsWorker;
 var mapCanvas;
 var divStatus;
 var btnPressMe;
@@ -108,7 +108,7 @@ function drawGrid(canvas, gridSize) {
 	context.stroke();
 }
 
-function getBrowserInfo() { // eslint-disable-line no-unused-vars
+function getBrowserInfo() {
 	var browserInfo = {};
 	var agent = navigator.userAgent;
 	if (agent.match(/Chrome/)) {
@@ -135,4 +135,5 @@ function addStatus(status) {
 
 window.onload = init;
 
-
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { getBrowserInfo });

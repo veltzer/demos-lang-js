@@ -1,4 +1,4 @@
-function saveData(key, data) { // eslint-disable-line no-unused-vars
+function saveData(key, data) {
 	/*
 	if (navigator.onLine) {
 	} else {
@@ -6,7 +6,7 @@ function saveData(key, data) { // eslint-disable-line no-unused-vars
 	*/
 }
 
-function getData(key) { // eslint-disable-line no-unused-vars
+function getData(key) {
 	/*
 	if (navigator.onLine) {
 	} else {
@@ -14,17 +14,20 @@ function getData(key) { // eslint-disable-line no-unused-vars
 	*/
 }
 
-function uploadData() { // eslint-disable-line no-unused-vars
+function uploadData() {
 }
 
-function downloadData() { // eslint-disable-line no-unused-vars
+function downloadData() {
 }
 
-function offlineListener(event) { // eslint-disable-line no-unused-vars
+function offlineListener(event) {
 }
 
-function onlineListener(event) { // eslint-disable-line no-unused-vars
+function onlineListener(event) {
 }
 
-function init() { // eslint-disable-line no-unused-vars
+function init() {
 }
+
+// The page's HTML and its other scripts call these by name.
+Object.assign(globalThis, { saveData, getData, uploadData, downloadData, offlineListener, onlineListener, init });
