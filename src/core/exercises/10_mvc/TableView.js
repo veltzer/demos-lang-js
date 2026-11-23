@@ -15,7 +15,8 @@ TableView.prototype.create=function() {
 	var d_body=document.createElement("body");
 	var d_tr=document.createElement("tr");
 	var columns=this.model.getColumns();
-	for(var i=0;i<columns.length;i++) {
+	var i;
+	for(i=0;i<columns.length;i++) {
 		var cur_col=columns[i];
 		var d_td=document.createElement("td");
 		var d_text=document.createTextNode(cur_col);

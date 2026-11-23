@@ -51,7 +51,7 @@ HorVert.prototype.resize=function() {
 	var runner_x=this.margin;
 	var runner_y=this.margin;
 	var max_vert_size=0;
-	for(var i in this.elems) {
+	for (var i of Object.keys(this.elems)) {
 		var elem=this.elems[i];
 		// if we dont have enough horizontal space...
 		this.debug("elem.el.width is "+elem.el.width());

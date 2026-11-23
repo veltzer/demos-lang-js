@@ -20,17 +20,17 @@ jQuery(document).ready(function() {
 			var widget=this;
 
 			// check that certain options have been passed
-			if(this.options.name==null) {
-				throw "must declare name attribute";
+			if(this.options.name===null || this.options.name===undefined) {
+				throw new Error("must declare name attribute");
 			}
-			if(this.options.init_text==null) {
-				throw "must declare init_text attribute";
+			if(this.options.init_text===null || this.options.init_text===undefined) {
+				throw new Error("must declare init_text attribute");
 			}
-			if(this.options.state==null) {
-				throw "must declare state attribute";
+			if(this.options.state===null || this.options.state===undefined) {
+				throw new Error("must declare state attribute");
 			}
-			if(this.options.regex==null) {
-				throw "must declare regex attribute";
+			if(this.options.regex===null || this.options.regex===undefined) {
+				throw new Error("must declare regex attribute");
 			}
 
 			var attrs={

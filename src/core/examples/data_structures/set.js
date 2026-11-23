@@ -6,7 +6,7 @@
 */
 var MySet=function() {
 	this.items={};
-	for(var i in arguments) {
+	for(var i=0; i<arguments.length; i++) {
 		this.add(arguments[i]);
 	}
 };
@@ -17,12 +17,12 @@ MySet.prototype.remove=function(o) {
 	delete this.items[o];
 };
 MySet.prototype.addObject=function(o) {
-	for(var prop in o) {
+	for (var prop of Object.keys(o)) {
 		this.add(prop);
 	}
 };
 MySet.prototype.removeObject=function(o) {
-	for(var prop in o) {
+	for (var prop of Object.keys(o)) {
 		this.remove(prop);
 	}
 };
@@ -31,13 +31,13 @@ MySet.prototype.clear=function() {
 };
 MySet.prototype.toString=function() {
 	var a=[];
-	for(var x in this.items) {
+	for (var x of Object.keys(this.items)) {
 		a.push(x);
 	}
 	return a.join(",");
 };
 MySet.prototype.foreach=function(func) {
-	for(var x in this.items) {
+	for (var x of Object.keys(this.items)) {
 		func(x);
 	}
 };

@@ -9,8 +9,8 @@ function ClientDateSource(timestamp) { // eslint-disable-line no-unused-vars
 		current.innerHTML = this.date.getMilliseconds();
 		return setTimeout(tick, 1000);
 	}
-	function setTime(timestamp) { // eslint-disable-line no-unused-vars
-		this.date.setMilliseconds(timestamp);
+	function setTime(newTimestamp) { // eslint-disable-line no-unused-vars
+		this.date.setMilliseconds(newTimestamp);
 	}
 }
 

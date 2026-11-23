@@ -49,7 +49,7 @@ http.createServer(
 			case "/data":
 				response.writeHead(200, {"Content-Type": "text/plain"});
 				for(var i=0;i<data.length;i++) {
-					data[i].price=""+Math.floor(Math.random()*30);
+					data[i].price=String(Math.floor(Math.random()*30));
 				}
 				response.end(JSON.stringify(data));
 				break;

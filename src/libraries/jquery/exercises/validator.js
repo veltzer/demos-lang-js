@@ -25,7 +25,7 @@ function Validator(id_for_append,name,submitName,validator,errorMsg) {
 }
 Validator.prototype.validate=function() {
 	var result=this.validator(this.jq_input.val());
-	if(result!=this.state) {
+	if(result!==this.state) {
 		if(result) {
 			this.jq_err.hide();
 		} else {
@@ -39,7 +39,7 @@ Validator.prototype.addListener=function(l) {
 	this.listeners.push(l);
 };
 Validator.prototype.notifyChanges=function(data) {
-	for(var i in this.listeners) {
+	for (var i of Object.keys(this.listeners)) {
 		var elem=this.listeners[i];
 		elem.notify(data);
 	}

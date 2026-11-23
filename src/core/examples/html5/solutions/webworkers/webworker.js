@@ -87,7 +87,8 @@ function drawGrid(canvas, gridSize) {
 	var context = canvas.getContext("2d");
 	context.clearRect(0, 0, canvas.width-1, canvas.height-1);
 	context.lineWidth=1;
-	for (var i = 0 ; i < canvas.width; i+=gridSize) {
+	var i;
+	for (i = 0 ; i < canvas.width; i+=gridSize) {
 		context.beginPath();
 		context.moveTo(i, 0);
 		context.lineTo(i, canvas.height);

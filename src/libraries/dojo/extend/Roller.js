@@ -35,9 +35,9 @@ if(!dojo._hasResource["extend.Roller"]){
 				this.textbox.attr("value",this.initVal);
 			},
 			_onDec:function() {
-				var iinitVal=parseInt(this.initVal);
-				var idecVal=parseInt(this.decVal);
-				var imaxVal=parseInt(this.maxVal);
+				var iinitVal=parseInt(this.initVal, 10);
+				var idecVal=parseInt(this.decVal, 10);
+				var imaxVal=parseInt(this.maxVal, 10);
 				iinitVal-=idecVal;
 				iinitVal%=imaxVal;
 				this.textbox.attr("value",iinitVal);
@@ -45,9 +45,9 @@ if(!dojo._hasResource["extend.Roller"]){
 				console.dir(this.arr);
 			},
 			_onInc:function() {
-				var iinitVal=parseInt(this.initVal);
-				var iincVal=parseInt(this.incVal);
-				var imaxVal=parseInt(this.maxVal);
+				var iinitVal=parseInt(this.initVal, 10);
+				var iincVal=parseInt(this.incVal, 10);
+				var imaxVal=parseInt(this.maxVal, 10);
 				iinitVal+=iincVal;
 				iinitVal%=imaxVal;
 				this.textbox.attr("value",iinitVal);

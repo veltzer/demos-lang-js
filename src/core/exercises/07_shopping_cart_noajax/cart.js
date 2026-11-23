@@ -18,7 +18,7 @@ Cart.prototype.buyItemById=function(id,amount) {
 };
 Cart.prototype.verifyBuyingItem=function(id) {
 	if(!(id in this.buyMap)) {
-		throw "didnt buy item "+id;
+		throw new Error("didnt buy item "+id);
 	}
 };
 Cart.prototype.sellItemById=function(id,amount) {
@@ -27,7 +27,7 @@ Cart.prototype.sellItemById=function(id,amount) {
 	this.verifyBuyingItem(id);
 	var amountInCart=this.buyMap[id];
 	if(amountInCart<amount) {
-		throw "too many items sold "+amount;
+		throw new Error("too many items sold "+amount);
 	}
 	this.buyMap[id]-=amount;
 	// if we returned the last items...
@@ -39,14 +39,14 @@ Cart.prototype.sellItemById=function(id,amount) {
 Cart.prototype.cartPrice=function() {
 	var i=Inventory.getInstance();
 	var sum=0;
-	for(var id in this.buyMap) {
+	for (var id of Object.keys(this.buyMap)) {
 		sum+=i.getItemById(id).price*this.buyMap[id];
 	}
 	return sum;
 };
 Cart.prototype.toString=function() {
 	var string_arr=[];
-	for(var id in this.buyMap) {
+	for (var id of Object.keys(this.buyMap)) {
 		string_arr.push(id+","+this.buyMap[id]);
 	}
 	return string_arr.join("<br>")+"<br>";

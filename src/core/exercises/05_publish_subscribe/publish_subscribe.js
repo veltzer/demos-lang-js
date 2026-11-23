@@ -2,7 +2,7 @@
 // Here comes the post office implementation...
 function PostOffice() {
 	if(PostOffice.instance) {
-		throw "already created!";
+		throw new Error("already created!");
 	} else {
 		this.subscribers={};
 		PostOffice.instance=this;
@@ -10,7 +10,7 @@ function PostOffice() {
 }
 PostOffice.instance=undefined;
 PostOffice.getInstance=function() {
-	if(PostOffice.instance==undefined) {
+	if(PostOffice.instance===undefined) {
 		PostOffice.instance=new PostOffice();
 	}
 	return PostOffice.instance;
@@ -23,7 +23,7 @@ PostOffice.prototype.subscribe=function(evt,obj,method) {
 };
 PostOffice.prototype.publish=function(evt,data) {
 	if(this.subscribers[evt]) {
-		for(var x in this.subscribers[evt]) {
+		for (var x of Object.keys(this.subscribers[evt])) {
 			var oam=this.subscribers[evt][x];
 			var curr_obj=oam[0];
 			var curr_method=oam[1];

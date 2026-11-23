@@ -1,10 +1,7 @@
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const delay = ms => new Promise(resolve => { setTimeout(resolve, ms); });
 
 
 class AsyncClass {
-    constructor() {
-    }
-
     async waitForData() {
 	    await delay(1000);
 	    this.data=5;

@@ -4,7 +4,7 @@ function make_iterator(start,step,stop) {
 	return function() {
 		value+=step;
 		if(value>stop) {
-			throw "wow man! too much for me...";
+			throw new Error("wow man! too much for me...");
 		} else {
 			return value;
 		}

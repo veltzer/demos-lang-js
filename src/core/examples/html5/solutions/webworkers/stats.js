@@ -8,9 +8,9 @@ function messageHandler(event) {
 	var embeddedMessage;
 	if (event.data.action) {
 		embeddedMessage = event.data.action;
-		if (event.data.action == "resume") {
+		if (event.data.action === "resume") {
 			trigger();
-		} else if (event.data.action == "pause"){
+		} else if (event.data.action === "pause"){
 			clearTimeout(timer);
 		}
 	} else if (event.data.message) {

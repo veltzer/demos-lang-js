@@ -11,12 +11,12 @@ function Submit(id_for_append,mytext) {
 	});
 }
 Submit.prototype.click=function() {
-	for(var i in this.fields) {
+	for (var i of Object.keys(this.fields)) {
 		var field=this.fields[i];
 		field.animate();
 	}
 	var s="{";
-	for(var i2 in this.fields) {
+	for (var i2 of Object.keys(this.fields)) {
 		var field2=this.fields[i2];
 		//console.log(field.getSubmitName());
 		//console.log(field.getValue());

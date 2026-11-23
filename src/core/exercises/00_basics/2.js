@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 function min_max_avg(arr) {
-	var min=0; var max=0; var sum=0;
+	var min=0; var max=0; var sum=0; var avg;
 	for (var i = 0; i<arr.length; i++) {
 		if (i===0) {
-			min=max=avg=arr[0];
+			min=arr[0];
+			max=arr[0];
+			avg=arr[0];
 		}
 		if (arr[i] < min) {
 			min = arr[i];
@@ -13,7 +15,7 @@ function min_max_avg(arr) {
 		}
 		sum += arr[i];
 	}
-	var avg = sum / arr.length;
+	avg = sum / arr.length;
 	return {
 		min: min,
 		max: max,

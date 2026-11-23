@@ -64,7 +64,7 @@ Ext.onReady(function () {
 			text: "Save Chart",
 			handler: function() {
 				Ext.MessageBox.confirm("Confirm Download", "Would you like to download the chart as an image?", function(choice){
-					if(choice == "yes"){
+					if(choice === "yes"){
 						chart.save({
 							type: "image/png"
 						});

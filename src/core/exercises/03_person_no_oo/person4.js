@@ -35,5 +35,5 @@ createPerson.toString = function () {
 // This is the client code
 var p1 = createPerson("Bilbo", 111);
 var p2 = createPerson("Frodo", 33);
-console.log("" + p1);
-console.log("" + p2);
+console.log(String(p1));
+console.log(String(p2));

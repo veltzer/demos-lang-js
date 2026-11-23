@@ -13,7 +13,7 @@ function f1() {
 	}, 3000);
 }
 function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise(resolve => { setTimeout(resolve, ms); });
 }
 function resolution(r) {
 	setTimeout(r, 1000);

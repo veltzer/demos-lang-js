@@ -12,7 +12,7 @@ function init() {
 		} catch(e) {
 		// malformed or absent stored data: fall through to the default below
 		}
-		if (mapData == "undefined" || mapData == null) {
+		if (mapData === "undefined" || mapData === null || mapData === undefined) {
 			mapData = [];
 			window.localStorage.setItem("mapData", JSON.stringify(mapData));
 		}
@@ -102,7 +102,7 @@ function errorPosition(error) {
 		case 0: geostatus.innerHTML += "There was some error - We couldnt find you... "; break;
 		case 1: geostatus.innerHTML += "You need to tell the browser to share your location if you want us to find you... "; break;
 		case 2: geostatus.innerHTML += "We tried, but we couldnt find you... "; break;
-		case 3: geostatus.innerHTML += "Its taking too long to find you... "; break;
+		case 3: geostatus.innerHTML += "Its taking too long to find you... "; break;		default: break;
 	}
 	geostatus.innerHTML += error.message;
 	geostatus.innerHTML += "</span>";

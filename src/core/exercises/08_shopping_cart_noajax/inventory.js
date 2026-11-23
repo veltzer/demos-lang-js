@@ -9,7 +9,7 @@ function InventoryItem (id, name, price, storage) {
 }
 InventoryItem.prototype.verifyStorage = function (storage) {
 	if (this.storage < storage) {
-		throw "havent got enough items";
+		throw new Error("havent got enough items");
 	}
 };
 InventoryItem.prototype.changeStorage = function (storage) {
@@ -45,14 +45,14 @@ Inventory.prototype.getItemById = function (id) {
 };
 Inventory.prototype.verifyItemInInventory = function (id) {
 	if (!(id in this.itemMap)) {
-		throw "no such item with id" + id;
+		throw new Error("no such item with id" + id);
 	}
 };
 Inventory.prototype.load = function (url) {
 	// for closure
 	var inventory = this;
 	jsonGet(url, function (data) {
-		for (var id in data) {
+		for (var id of Object.keys(data)) {
 			var ii = data[id];
 			inventory.addProduct(new InventoryItem(id, ii.name, parseInt(ii.price, 10), parseInt(ii.storage, 10)));
 			// uglier!!

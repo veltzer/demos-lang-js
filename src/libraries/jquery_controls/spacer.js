@@ -49,14 +49,14 @@ Spacer.prototype.resize=function() {
 	var total_width=this.total.width();
 	this.debug("total_width="+total_width);
 	var sum_width=0;
-	for(var i in this.elems) {
+	for (var i of Object.keys(this.elems)) {
 		var elem=this.elems[i];
 		sum_width+=elem.el.width();
 		this.debug("i "+i+", width "+elem.el.width());
 	}
 	var space=(total_width-sum_width-2*this.margin)/(this.elems.length-1);
 	var runner=this.margin;
-	for(var ii in this.elems) {
+	for (var ii of Object.keys(this.elems)) {
 		var ielem=this.elems[ii];
 		ielem.el.offset({left:runner});
 		this.debug("ii "+ii+", width "+ielem.el.width());

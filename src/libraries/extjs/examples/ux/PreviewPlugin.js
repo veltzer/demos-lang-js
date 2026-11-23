@@ -71,7 +71,8 @@ Ext.define("Ext.ux.PreviewPlugin", {
 	*/
 	toggleExpanded: function(expanded) {
 		var view=this.getCmp();
-		this.previewExpanded=view.previewExpanded=expanded;
+		view.previewExpanded=expanded;
+		this.previewExpanded=expanded;
 		view.refresh();
 	}
 });

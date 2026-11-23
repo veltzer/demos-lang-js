@@ -8,7 +8,7 @@ function do_something() {
 	console.log(i);
 	i=9;
 	console.log(i);
-	var i;
+	var i; // oxlint-disable-line no-shadow -- teaching: the hoisted local var i shadows the global i, that is the lesson
 	console.log(i);
 	i=i+1;
 	console.log(i);

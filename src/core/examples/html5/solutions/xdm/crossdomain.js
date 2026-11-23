@@ -30,7 +30,7 @@ function sendMessage() {
 
 
 function receiveMessage(e) {
-	if (e.origin == "http://dev2.nextgened.com") {
+	if (e.origin === "http://dev2.nextgened.com") {
 		// The data can probably be trusted
 		// It came from the inner frame as an acknowledgement
 //		A JSON.parse with a type reviver:

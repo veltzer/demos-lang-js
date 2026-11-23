@@ -18,7 +18,7 @@ var User=Ext.ModelManager.getModel("User");
 
 //Uses the configured RestProxy to make a GET request to /users/123
 User.load(123, {
-	success: function(user) {
-		console.log(user.getId()); //logs 123
+	success: function(loadedUser) {
+		console.log(loadedUser.getId()); //logs 123
 	}
 });

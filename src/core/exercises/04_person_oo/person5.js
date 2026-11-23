@@ -23,7 +23,7 @@ Person.printSelf=function() {
 Person.toString=function() {
 	var s="";
 	for(var key in this) {
-		if(typeof(this[key])!="function") {
+		if(typeof(this[key])!=="function") {
 			s+=key+": "+this[key];
 		}
 	}

@@ -41,7 +41,7 @@ function getCacheStatusValue(number) {
 }
 
 function setCacheStatus(status) {
-	if (typeof status=="number") {
+	if (typeof status==="number") {
 		tdCacheStatus.innerHTML = getCacheStatusValue(status);
 	} else {
 		tdCacheStatus.innerHTML = status;
@@ -68,7 +68,7 @@ function _getNeedsUploading() { // eslint-disable-line no-unused-vars
 
 function getXhr() {
 	var xhr;
-	if (xhr != null) {
+	if (xhr !== null && xhr !== undefined) {
 		xhr.abort();
 	}
 	xhr = new XMLHttpRequest();
@@ -101,7 +101,7 @@ this.onload = function(_event) {
 	divStatus = document.getElementById("status");
 	var xhrStatus = getXhr();
 	xhrStatus.onreadystatechange = function(_e) {
-		if (xhrStatus.readyState == 4) {
+		if (xhrStatus.readyState === 4) {
 			divStatus.innerHTML += xhrStatus.responseText;
 			initStatus(document);
 			setEmailAddress("foo@bar.com");
@@ -113,7 +113,7 @@ this.onload = function(_event) {
 
 	var xhr = getXhr();
 	xhr.onreadystatechange = function(_e) {
-		if (xhr.readyState == 4) {
+		if (xhr.readyState === 4) {
 			tdTimeStamp.innerHTML += xhr.responseText;
 		}
 	};

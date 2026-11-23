@@ -34,7 +34,7 @@ function myinit() {
 	mydiv.appendChild(frm);
 	frm.onload=function() {
 		alert("loaded "+frm.src);
-		if(frm.src=="http://www.gnu.org/" && mybool) {
+		if(frm.src==="http://www.gnu.org/" && mybool) {
 			frm.src="http://www.sourceforge.net";
 			//window.location.href="http://www.sourceforge.net";
 		}

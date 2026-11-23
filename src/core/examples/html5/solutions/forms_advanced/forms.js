@@ -42,13 +42,13 @@ function processSubmit() {
 }
 
 function updateStatus(statusMessage) {
-	if (formStatus != null) {
+	if (formStatus !== null && formStatus !== undefined) {
 		formStatus.innerHTML += statusMessage + "<br>";
 	}
 }
 
 function clearStatus() {
-	if (formStatus != null) {
+	if (formStatus !== null && formStatus !== undefined) {
 		formStatus.innerHTML = "";
 	}
 }

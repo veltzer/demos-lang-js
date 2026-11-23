@@ -59,7 +59,7 @@ Cart.prototype.sellItemById = function (id, amount) {
 Cart.prototype.cartPrice = function () {
 	var i = Inventory.getInstance();
 	var sum = 0;
-	for (var id in this.buyMap) {
+	for (var id of Object.keys(this.buyMap)) {
 		sum += i.getItemById(id).price * this.buyMap[id];
 	}
 	return sum;

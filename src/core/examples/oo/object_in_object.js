@@ -27,7 +27,7 @@ o[p]=undefined;
 // this next loop would produce an error because
 // the toString is what really gets saved inside
 // the class
-for(var i in o) {
+for (var i of Object.keys(o)) {
 	console.log(i);
 	console.log(typeof i);
 	try {

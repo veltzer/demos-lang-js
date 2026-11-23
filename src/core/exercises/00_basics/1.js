@@ -2,13 +2,14 @@
 function mySplit(str, seperator) {
 	var result = [];
 	var lastIndexFound=0;
-	for(var i=0; i<str.length; i++) {
-		if (str.charAt(i) == seperator) {
+	var i;
+	for(i=0; i<str.length; i++) {
+		if (str.charAt(i) === seperator) {
 			result.push(str.substr(lastIndexFound, i-lastIndexFound));
 			lastIndexFound = i+1;
 		}
 	}
-	if(lastIndexFound!=i) {
+	if(lastIndexFound!==i) {
 		result.push(str.substr(lastIndexFound, i-lastIndexFound));
 	}
 	return result;

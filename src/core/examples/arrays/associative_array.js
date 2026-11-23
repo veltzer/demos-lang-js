@@ -11,11 +11,11 @@ function doWork(obj,name) {
 	console.log(typeof(obj));
 	// length does not tell you how many elements the associative array has
 	console.log(obj.length);
-	for(var x in obj) {
+	for (var x of Object.keys(obj)) {
 		console.log(x+" -- "+obj[x]);
 	}
 }
 doWork([],"[]");
 doWork({},"{}");
-doWork(new Object(),"new Object()"); // jshint ignore:line
-doWork(Object(),"Object()"); // jshint ignore:line
+doWork(new Object(),"new Object()"); // oxlint-disable-line no-object-constructor -- teaching: the demo compares the ways of creating an associative array
+doWork(Object(),"Object()"); // oxlint-disable-line no-object-constructor -- teaching: the demo compares the ways of creating an associative array

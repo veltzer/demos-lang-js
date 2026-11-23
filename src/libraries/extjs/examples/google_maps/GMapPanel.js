@@ -45,7 +45,7 @@ Ext.define("Ext.ux.GMapPanel", {
 		if(this.gmapType === "panorama") {
 			this.gmap=new GStreetviewPanorama(this.body.dom);
 		}
-		if(typeof this.addControl == "object" && this.gmapType === "map") {
+		if(typeof this.addControl === "object" && this.gmapType === "map") {
 			this.gmap.addControl(this.addControl);
 		}
 		if(typeof this.setCenter === "object") {
@@ -74,13 +74,13 @@ Ext.define("Ext.ux.GMapPanel", {
 		this.addOptions();
 	},
 	afterComponentLayout : function(w, h){
-		if (typeof this.getMap() == "object") {
+		if (typeof this.getMap() === "object") {
 			this.gmap.checkResize();
 		}
 		this.callParent(arguments);
 	},
 	setSize : function(width, height, animate){
-		if (typeof this.getMap() == "object") {
+		if (typeof this.getMap() === "object") {
 			this.gmap.checkResize();
 		}
 		this.callParent(arguments);
@@ -115,7 +115,7 @@ Ext.define("Ext.ux.GMapPanel", {
 		var mark=new GMarker(point,marker);
 		if (typeof listeners === "object"){
 			for (evt in listeners) {
-				if(!Object.prototype.hasOwnProperty.call(listeners, evt)) {
+				if(!Object.hasOwn(listeners, evt)) {
 					continue;
 				}
 				GEvent.bind(mark, evt, this, listeners[evt]);
@@ -163,7 +163,7 @@ Ext.define("Ext.ux.GMapPanel", {
 	},
 	addAddressToMap: function(response) {
 		var place, addressinfo, accuracy, point;
-		if (!response || response.Status.code != 200) {
+		if (!response || response.Status.code !== 200) {
 			Ext.MessageBox.alert("Error", "Code "+response.Status.code+" Error Returned");
 		} else {
 			place=response.Placemark[0];
@@ -171,14 +171,12 @@ Ext.define("Ext.ux.GMapPanel", {
 			accuracy=addressinfo.Accuracy;
 			if (accuracy === 0) {
 				Ext.MessageBox.alert("Unable to Locate Address", "Unable to Locate the Address you provided");
+			}else if (accuracy<7) {
+				Ext.MessageBox.alert("Address Accuracy", "The address provided has a low accuracy.<br><br>Level "+accuracy+" Accuracy (8=Exact Match, 1=Vague Match)");
 			}else{
-				if (accuracy<7) {
-					Ext.MessageBox.alert("Address Accuracy", "The address provided has a low accuracy.<br><br>Level "+accuracy+" Accuracy (8=Exact Match, 1=Vague Match)");
-				}else{
-					point=new GLatLng(place.Point.coordinates[1], place.Point.coordinates[0]);
-					if (typeof this.setCenter.marker === "object" && typeof point === "object"){
-						this.addMarker(point,this.setCenter.marker,this.setCenter.marker.clear,true, this.setCenter.listeners);
-					}
+				point=new GLatLng(place.Point.coordinates[1], place.Point.coordinates[0]);
+				if (typeof this.setCenter.marker === "object" && typeof point === "object"){
+					this.addMarker(point,this.setCenter.marker,this.setCenter.marker.clear,true, this.setCenter.listeners);
 				}
 			}
 		}

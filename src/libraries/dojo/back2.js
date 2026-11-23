@@ -4,12 +4,12 @@ dojo.require("dojo.back");
 
 function sumNumbers(e) { // eslint-disable-line no-unused-vars
 	var w_sum = dijit.byId("id_sum");
-	var v_sum = parseInt(w_sum.attr("value"));
+	var v_sum = parseInt(w_sum.attr("value"), 10);
 
 	var w_num = dijit.byId("id_val");
-	var v_num = parseInt(w_num.attr("value"));
+	var v_num = parseInt(w_num.attr("value"), 10);
 
-	if(v_num%2==1) {
+	if(v_num%2===1) {
 		// now invalidate all previous states...
 		for(var i=0;i<states.length;i++) {
 			states[i].invalidate();

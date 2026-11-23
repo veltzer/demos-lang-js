@@ -12,27 +12,27 @@ function myonmessage(e) {
 		self.postMessage("worker got id "+id);
 		return;
 	}
-	if(e.data=="close") {
+	if(e.data==="close") {
 		postMessage(id+" calling close()");
 		// this is the best way for a webworker to finish up
 		close();
 		return;
 	}
-	if(e.data=="undefine") {
+	if(e.data==="undefine") {
 		postMessage(id+" unregistering onmessage");
 		onmessage=undefined;
 		//delete window.onmessage;
 		return;
 	}
-	if(e.data=="error") {
-		throw "this is an error from worker "+id;
+	if(e.data==="error") {
+		throw new Error("this is an error from worker "+id);
 		//var d=t+u;
 		//return;
 	}
-	if(e.data=="debug") {
-		postMessage(""+self);
-		postMessage(""+location);
-		for(var k in self) {
+	if(e.data==="debug") {
+		postMessage(String(self));
+		postMessage(String(location));
+		for (var k of Object.keys(self)) {
 			postMessage(id+": "+self[k]);
 		}
 		return;

@@ -5,7 +5,7 @@ class AsyncClass {
             await instance.init();  // Async initialization
             return instance;
         } catch (error) {
-            throw new Error(`Failed to create instance: ${error.message}`);
+            throw new Error(`Failed to create instance: ${error.message}`, { cause: error });
         }
     }
 

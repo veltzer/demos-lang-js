@@ -3,8 +3,8 @@
 var results = [];
 
 function resultReceiver(event) {
-	results.push(parseInt(event.data));
-	if (results.length == 2) {
+	results.push(parseInt(event.data, 10));
+	if (results.length === 2) {
 		postMessage(results[0] + results[1]);
 	}
 }
@@ -14,9 +14,9 @@ function errorReceiver(event) {
 }
 
 onmessage = function(event) {
-	var n = parseInt(event.data);
+	var n = parseInt(event.data, 10);
 
-	if (n == 0 || n == 1) {
+	if (n === 0 || n === 1) {
 		postMessage(n);
 		return;
 	}

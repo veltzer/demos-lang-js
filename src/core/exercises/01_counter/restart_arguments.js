@@ -5,14 +5,12 @@ function make_iterator(start,step,stop) {
 		if(arguments.length>0) {
 			value=start-step;
 			return undefined;
-		} else {
-			value+=step;
-			if(value>stop) {
-				throw "wow man! too much for me...";
-			} else {
-				return value;
-			}
 		}
+		value+=step;
+		if(value>stop) {
+			throw new Error("wow man! too much for me...");
+		}
+		return value;
 	};
 }
 var iter=make_iterator(5,2,17);

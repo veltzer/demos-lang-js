@@ -68,17 +68,14 @@ function processMessage(wsEvent, wsToken) {
 	if (chatMessage.user) {
 		users[wsToken.sourceId] = chatMessage.user.user_name	;
 		addMessage(chatMessage);
+	} else if (wsToken.reqType && wsToken.reqType === "login") {
+		setStatus(wsToken.username + " has entered the chat.");
+		users[wsToken.sourceId] = wsToken.username;
+	} else if (wsToken.name && wsToken.name === "disconnect") {
+		setStatus(users[wsToken.sourceId] + " has disconnected.");
 	} else {
-		if (wsToken.reqType && wsToken.reqType == "login") {
-			setStatus(wsToken.username + " has entered the chat.");
-			users[wsToken.sourceId] = wsToken.username;
-			return;
-		} else if (wsToken.name && wsToken.name == "disconnect") {
-			setStatus(users[wsToken.sourceId] + " has disconnected.");
-		} else {
-			setStatus("No user found!");
-			addStatus("Token: " + JSON.stringify(wsToken));
-		}
+		setStatus("No user found!");
+		addStatus("Token: " + JSON.stringify(wsToken));
 	}
 }
 
@@ -110,18 +107,17 @@ function processSubmit() {
 	if (cbPrivate.checked) {
 		setStatus("Private Messages not supported yet!");
 		return;
-	} else {
-		jWebSocketClient.broadcastToken( message_token, {
-			OnResponse: function( responseToken ) {
-				setStatus("Server responded: " +
-					"vendor: " + responseToken.vendor +
-					", version: " + responseToken.version
-				);
-				processMessage(null, responseToken);
-			}
-		});
-		setStatus("Message sent: " + JSON.stringify(message_token));
 	}
+	jWebSocketClient.broadcastToken( message_token, {
+		OnResponse: function( responseToken ) {
+			setStatus("Server responded: " +
+				"vendor: " + responseToken.vendor +
+				", version: " + responseToken.version
+			);
+			processMessage(null, responseToken);
+		}
+	});
+	setStatus("Message sent: " + JSON.stringify(message_token));
 	return false; // Prevent actual form submission
 }
 

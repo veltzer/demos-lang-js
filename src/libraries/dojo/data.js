@@ -31,13 +31,13 @@ function showCurrent(items,request) {
 		var thirdItem = items[2];
 		dijit.byId("dataThree").attr("value",store.getValue(thirdItem,"name"));
 	}
-	if(items.length==3) {
+	if(items.length===3) {
 		dijit.byId("nextButton").attr("disabled",false);
 	}
 }
 function next() { // eslint-disable-line no-unused-vars
 	// enable the prev button if we are right at the begining...
-	if(startPoint==0)
+	if(startPoint===0)
 		dijit.byId("prevButton").attr("disabled",false);
 	startPoint+=3;
 	getData();
@@ -45,6 +45,6 @@ function next() { // eslint-disable-line no-unused-vars
 function prev() { // eslint-disable-line no-unused-vars
 	startPoint-=3;
 	getData();
-	if(startPoint==0)
+	if(startPoint===0)
 		dijit.byId("prevButton").attr("disabled",true);
 }
