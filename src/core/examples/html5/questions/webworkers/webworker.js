@@ -8,10 +8,10 @@ function init() {
 function processSubmit() {
 }
 
-function messageHandler(event) {
+function messageHandler(event) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 }
 
-function errorHandler(event) {
+function errorHandler(event) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 }
 
 function drawResults(resultsArray) {

@@ -32,7 +32,7 @@ Ext.onReady(function () {
 					trackMouse: true,
 					width: 140,
 					height: 28,
-					renderer: function(storeItem, item) {
+					renderer: function(storeItem) {
 						this.setTitle(storeItem.get("name") + ": " + storeItem.get("data1") + " $");
 					}
 				},

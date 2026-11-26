@@ -73,13 +73,13 @@ Ext.define("Ext.ux.GMapPanel", {
 		this.addMapControls();
 		this.addOptions();
 	},
-	afterComponentLayout : function(w, h){
+	afterComponentLayout : function(){
 		if (typeof this.getMap() === "object") {
 			this.gmap.checkResize();
 		}
 		this.callParent(arguments);
 	},
-	setSize : function(width, height, animate){
+	setSize : function(){
 		if (typeof this.getMap() === "object") {
 			this.gmap.checkResize();
 		}

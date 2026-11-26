@@ -49,7 +49,7 @@ Ext.onReady(function(){
 						lng: -71.094224,
 						marker: {title: "Boston Museum of Fine Arts"},
 						listeners: {
-							click: function(e){
+							click: function(){
 								Ext.Msg.alert({title: "Its fine", text: "and its art."});
 							}
 						}

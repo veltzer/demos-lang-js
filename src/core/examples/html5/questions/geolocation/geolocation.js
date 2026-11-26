@@ -13,11 +13,11 @@ function stopWatchingLocation() {
 	/* Enter Stop Watching Code here */
 }
 
-function updatePosition(position) {
+function updatePosition(position) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 	/* Enter Position Update Code here */
 }
 
-function errorPosition(error) {
+function errorPosition(error) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 	/* Enter Position Error Code here */
 }
 

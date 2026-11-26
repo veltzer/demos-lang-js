@@ -1,6 +1,6 @@
 
 
-function foo(a, b, c) {
+function foo(a, b, c) { // oxlint-disable-line no-unused-vars -- teaching: a function called with fewer arguments than it declares is the lesson
 	console.log("in here");
 }
 

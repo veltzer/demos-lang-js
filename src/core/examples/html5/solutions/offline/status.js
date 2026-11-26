@@ -82,7 +82,7 @@ function importScript(file) {
 	scr.src = file;
 }
 
-this.onload = function(event) {
+this.onload = function() {
 	addEventListener("online", cameOnline, true);
 	addEventListener("offline", wentOffline, true);
 	addEventListener("obsolete", cacheObsolete, true);
@@ -92,7 +92,7 @@ this.onload = function(event) {
 	addEventListener("downloading", cacheDownloading, true);
 	addEventListener("checking", cacheChecking, true);
 	addEventListener("updateready", cacheUpdateReady, true);
-	this.checking = function(e) {
+	this.checking = function() {
 		alert("F");
 	};
 
@@ -103,7 +103,7 @@ this.onload = function(event) {
 
 
 	var xhrStatus = getXhr();
-	xhrStatus.onreadystatechange = function(e) {
+	xhrStatus.onreadystatechange = function() {
 		if (xhrStatus.readyState === 4) {
 			divStatus.innerHTML += xhrStatus.responseText;
 			initStatus(document);
@@ -115,7 +115,7 @@ this.onload = function(event) {
 	xhrStatus.send(null);
 
 	var xhr = getXhr();
-	xhr.onreadystatechange = function(e) {
+	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
 			tdTimeStamp.innerHTML += xhr.responseText;
 		}
@@ -124,41 +124,41 @@ this.onload = function(event) {
 	xhr.send(null);
 };
 
-function cacheUpdateReady(event) {
+function cacheUpdateReady() {
 	divStatus.innerHTML += "Update Ready...";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheChecking(event) {
+function cacheChecking() {
 	divStatus.innerHTML += "Checking...";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheObsolete(event) {
+function cacheObsolete() {
 	divStatus.innerHTML += "Obsolete";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheProgress(event) {
+function cacheProgress() {
 	divStatus.innerHTML += "Progress";
 	setCacheStatus(window.applicationCache.status);
 }
 function cacheError(event) {
 	divStatus.innerHTML += "Error: " + event + "<br>";
 }
-function cacheNoUpdate(event) {
+function cacheNoUpdate() {
 	divStatus.innerHTML += "NoUpdate";
 	setCacheStatus(window.applicationCache.status);
 }
-function cacheDownloading(event) {
+function cacheDownloading() {
 	divStatus.innerHTML += "Downloading";
 	setCacheStatus(window.applicationCache.status);
 }
 
 
-function wentOffline(event) {
+function wentOffline() {
 //	var cds = new ClientDataSource(document.getElementById("current").innerText);
 	setOnline(false);
 }
 
-function cameOnline(event) {
+function cameOnline() {
 	setOnline(true);
 	setCacheStatus(window.applicationCache.status);
 }

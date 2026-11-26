@@ -18,7 +18,7 @@ fastify.get('/', (request, reply) => {
 })
 
 // Run the server!
-fastify.listen({ port: 3000 }, (err, address) => {
+fastify.listen({ port: 3000 }, (err) => {
   if (err) throw err
-  // Server is now listening on ${address}
+  // Server is now listening
 })

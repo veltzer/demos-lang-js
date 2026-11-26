@@ -108,7 +108,7 @@ Ext.define("My.controller.Contacts", {
 			autoCreate: true
 		}
 	],
-	init: function(application) {
+	init: function() {
 		if (this.inited) {
 			return;
 		}
@@ -141,7 +141,7 @@ Ext.define("My.controller.Orders", {
 		xtype: "orders-grid",
 		autoCreate: true}
 	],
-	init: function(application) {
+	init: function() {
 		if (this.inited) {
 			return;
 		}
@@ -162,7 +162,7 @@ Ext.define("My.controller.Orders", {
 
 Ext.define("My.controller.Viewport", {
 	extend: "Ext.app.Controller",
-	init: function(application) {
+	init: function() {
 		if (this.inited) {
 			return;
 		}

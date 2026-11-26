@@ -141,7 +141,7 @@ Ext.onReady(function() {
 				items: [{
 					icon : "delete.gif", // Use a URL in the icon config
 					tooltip: "Sell stock",
-					handler: function(gridView, rowIndex, colIndex) {
+					handler: function(gridView, rowIndex) {
 						var rec=store.getAt(rowIndex);
 						alert("Sell "+rec.get("company"));
 					}
@@ -154,7 +154,7 @@ Ext.onReady(function() {
 						this.items[1].tooltip="Buy stock";
 						return "buy-col";
 					},
-					handler: function(gridView, rowIndex, colIndex) {
+					handler: function(gridView, rowIndex) {
 						var rec=store.getAt(rowIndex);
 						alert((rec.get("change")<0 ? "Hold " : "Buy ")+rec.get("company"));
 					}

@@ -1,4 +1,4 @@
-function saveData(key, data) {
+function saveData(key, data) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 	/*
 	if (navigator.onLine) {
 	} else {
@@ -6,7 +6,7 @@ function saveData(key, data) {
 	*/
 }
 
-function getData(key) {
+function getData(key) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 	/*
 	if (navigator.onLine) {
 	} else {
@@ -20,10 +20,10 @@ function uploadData() {
 function downloadData() {
 }
 
-function offlineListener(event) {
+function offlineListener(event) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 }
 
-function onlineListener(event) {
+function onlineListener(event) { // oxlint-disable-line no-unused-vars -- teaching: exercise stub, the student writes the body that uses it
 }
 
 function init() {

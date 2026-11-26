@@ -40,14 +40,14 @@ Ext.define("Ext.ux.PreviewPlugin", {
 	* @cfg {Boolean} previewExpanded
 	*/
 	previewExpanded: true,
-	constructor: function(config) {
+	constructor: function() {
 		this.callParent(arguments);
 		var bodyField=this.bodyField,
 		hideBodyCls=this.hideBodyCls,
 		section=this.getCmp(),
 		features=[{
 			ftype: "rowbody",
-			getAdditionalData: function(data, idx, record, orig, view) {
+			getAdditionalData: function(data) {
 				var o=Ext.grid.feature.RowBody.prototype.getAdditionalData.apply(this, arguments);
 				Ext.apply(o, {
 					rowBody: data[bodyField],
