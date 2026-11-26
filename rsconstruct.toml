@@ -78,11 +78,12 @@ src_files = ["README.md"]
 # ─── json ────────────────────────────────────────────────────────────────────
 
 [processor.checker.ijsonlint]
-src_dirs = ["nodejs/exercises", "src/core", "support"]
+src_dirs = ["nodejs/exercises", "src/core", "src/libraries", "support"]
 
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
 [processor.checker.ixmllint]
+src_files = ["checkstyle.xml"]
 # warnings fail too, not only fatal errors
 strict = true
 src_dirs = ["src/core/examples/html5/solutions/websockets/WebContent/WEB-INF"]
