@@ -1,14 +1,11 @@
-/* stylelint-disable-next-line selector-class-pattern */
 .tundra .dijitButtonNode {
 	background: orange;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .soria .dijitButtonNode {
 	background: orange;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
 .alertButton .dijitButtonNode {
 	background: red;
 }

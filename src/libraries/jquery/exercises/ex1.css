@@ -1,4 +1,2 @@
-/* stylelint-disable-next-line selector-class-pattern */
 .PaginatedTableCellsOdd { background: grey; }
-/* stylelint-disable-next-line selector-class-pattern */
 .PaginatedTableCellsEven { background: white; }
